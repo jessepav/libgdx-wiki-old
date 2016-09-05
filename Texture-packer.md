@@ -197,7 +197,7 @@ TexturePacker can also be run from the [standalone nightly](https://libgdx.badlo
 
 If `outputDir` is omitted, files will be placed in a new directory that is a sibling to `inputDir` with the suffix "-packed". If `packFileName` is omitted, "pack" is used.
 
-While texture packing is intended to be a fully automated process, there has also been a nice UI contributed by Obli (though slightly out of date): [TexturePacker GUI](https://code.google.com/p/libgdx-texturepacker-gui/). There is also a commercial product at [texturepacker.com](http://www.codeandweb.com/texturepacker) which is completely unrelated to libgdx's texture packer and has a UI, many features and nice documentation.
+While texture packing is intended to be a fully automated process, there has also been a nice UI contributed by Obli (though slightly out of date): [TexturePacker GUI](https://code.google.com/p/libgdx-texturepacker-gui/) (check out [its up to date successor](https://github.com/crashinvaders/gdx-texture-packer-gui)). There is also a commercial product at [texturepacker.com](http://www.codeandweb.com/texturepacker) which is completely unrelated to libgdx's texture packer and has a UI, many features and nice documentation.
 
 ## <a id="Automatic_packing"></a>Automatic packing ##
 
