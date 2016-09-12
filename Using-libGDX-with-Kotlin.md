@@ -90,5 +90,6 @@ That’s it. You successfully enabled Kotlin in your libGDX application. Build a
 These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.
 
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license. lots of helper/wrapper code to make use of libGDX, artemis-odb, kryonet easier and more idiomatic)
+* [HitKlack](https://github.com/TobseF/hitklack) (desktop & android, small size, code examples to explain Kotlins features)
 
 *TODO:* add more real life project examples of Kotlin being used for libGDX projects.
