@@ -1,3 +1,7 @@
+# Information
+
+libGDX has its own Tween engine, more info here: https://github.com/libgdx/libgdx/wiki/Interpolation
+
 # Universal Tween Engine
 
 Since switching over to the gradle based build system some users have been having a hard time adding the Universal Tween Engine to their newly created projects. This article aims to make this process as painless as possible.
