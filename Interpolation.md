@@ -15,6 +15,26 @@ These are the basic built-in types of interpolation:
   * Sine
   * Swing
 
+## Code Example ##
+
+```kotlin
+// Written in Kotlin
+
+val easAlpha:Interpolation = Interpolation.fade
+val lifeTime:Int = 2
+var elapsed:Float = 0f
+..
+fun update(delta:Float)
+{
+    elapsed += delta
+
+    val progress = Math.min(1f, elapsed/lifeTime)   // 0 -> 1 
+    val alpha = easAlpha.apply(progress)
+}
+
+```
+
+
 Most types offer three varieties which bias towards one or the other or both ends of the curve creating an easing in or out of the animation.
 
 See [InterpolationTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java) for a visual display of each interpolation.
