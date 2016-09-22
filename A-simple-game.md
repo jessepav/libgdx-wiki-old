@@ -314,8 +314,8 @@ On the desktop and in the browser we can also receive keyboard input. Let's make
 We want the bucket to move without acceleration, at two hundred pixels/units per second, either to the left or the right. To implement such time-based movement we need to know the time that passed in between the last and the current rendering frame. Here's how we can do all this:
 
 ```java
-   if(Gdx.input.isKeyPressed(Keys.LEFT)) bucket.x -= 200 * Gdx.graphics.getDeltaTime();
-   if(Gdx.input.isKeyPressed(Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();
+   if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) bucket.x -= 200 * Gdx.graphics.getDeltaTime();
+   if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();
 ```
 
 The method `Gdx.input.isKeyPressed()` tells us whether a specific key is pressed. The `Keys` enumeration contains all the keycodes that libgdx supports. The method `Gdx.graphics.getDeltaTime()` returns the time passed between the last and the current frame in seconds. All we need to do is modify the bucket's x-coordinate by adding/subtracting 200 units times the delta time in seconds.
