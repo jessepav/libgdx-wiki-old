@@ -24,7 +24,7 @@ To bring up the dialog, simple invoke the following method with your listener:
 
 ```java
 MyTextInputListener listener = new MyTextInputListener();
-Gdx.input.getTextInput(listener, "Dialog Title", "Initial Textfield Value");
+Gdx.input.getTextInput(listener, "Dialog Title", "Initial Textfield Value", "Hint Value");
 ```
 
 The methods of the listener will be called on the rendering thread, right before the `ApplicationListener.render()` method is called.
