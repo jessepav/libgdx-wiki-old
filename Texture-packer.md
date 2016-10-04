@@ -33,7 +33,8 @@ If you use gradle and the `TexturePacker` class is not found, add gdx-tools to y
 
 
 You can also run `texturePacker` as a gradle task if you make the following updates to your gradle files. First, you will need to update your 'main' build.gradle:
-```
+
+```gradle
 buildscript {
   dependencies {
     // ... other dependencies trimmed ...
@@ -41,8 +42,10 @@ buildscript {
     }
 }
 ```
-Naturally, you'll want to change the version number to reflect the current libGDX version. Then you will need to update your 'desktop' build.gradle:
-```
+
+If you want to use specific version, just replace the $gdxVersion variable with the version of your choice
+
+```gradle
 // Store the parameters you want to pass the texturePacker here...
 project.ext.texturePacker = [ "android/assets/input/path/", "android/assets/output/path/", "atlas_name" ]
 
@@ -93,7 +96,7 @@ Each directory may contain a "pack.json" file, which is a JSON representation of
 
 Below is a JSON example with every available setting and the default value for each. All settings do not need to be specified, any or all may be omitted. If a setting is not specified for a directory or any parent directory, the default value is used.
 
-```
+```json
 {
 	pot: true,
 	paddingX: 2,
