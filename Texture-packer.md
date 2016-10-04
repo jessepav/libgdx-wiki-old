@@ -37,7 +37,7 @@ You can also run `texturePacker` as a gradle task if you make the following upda
 buildscript {
   dependencies {
     // ... other dependencies trimmed ...
-    classpath "com.badlogicgames.gdx:gdx-tools:1.9.4"
+    classpath "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
     }
 }
 ```
