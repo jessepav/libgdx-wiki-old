@@ -32,10 +32,24 @@ public class MyPacker {
 If you use gradle and the `TexturePacker` class is not found, add gdx-tools to your [build.gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#tools-gradle) file.
 
 
-You can also run `texturePacker` as a gradle task if you add the following to your build.gradle:
-
+You can also run `texturePacker` as a gradle task if you make the following updates to your gradle files. First, you will need to update your 'main' build.gradle:
 ```
+buildscript {
+  dependencies {
+    // ... other dependencies trimmed ...
+    classpath "com.badlogicgames.gdx:gdx-tools:1.9.4"
+    }
+}
+```
+Naturally, you'll want to change the version number to reflect the current libGDX version. Then you will need to update your 'desktop' build.gradle:
+```
+// Store the parameters you want to pass the texturePacker here...
+project.ext.texturePacker = [ "android/assets/input/path/", "android/assets/output/path/", "atlas_name" ]
+
+// Import the texture packer
 import com.badlogic.gdx.tools.texturepacker.TexturePacker
+
+// Add a new task that packs the textures for you
 task texturePacker << {
   if (project.ext.has('texturePacker')) {
     logger.info "Calling TexturePacker: "+texturePacker
