@@ -4,6 +4,7 @@
  * [Customizing Serialization](#customizing-serialization)
  * [Serialization Methods](#serialization-methods)
  * [Event Based Parsing](#event-based-parsing)
+ * [Supported Classes](#supported-classes)
 
 ## <a id="overview"></a>Overview ##
 
@@ -353,3 +354,15 @@ Note that the `Json` class uses generics on Java field declarations to determine
 ## <a id="event-based-parsing"></a>Event Based Parsing ##
 
 The `JsonReader` class reads JSON and has protected methods that are called as JSON objects, arrays, strings, floats, longs, and booleans are encountered. By default, these methods build a DOM out of `JsonValue` objects. These methods can be overridden to do your own event based JSON handling.
+
+## <a id="supported-classes"></a>Supported Classes ##
+
+Note that when using GWT, not all classes are serializable. `Json` supports the following:
+* POJOs
+* OrderedMap (but not ArrayMap)
+* Array
+* String
+* Float
+* Boolean
+
+Make sure to provide your own de/serializers or mark objects you don't intend to serialize with the 'transient' keyword.
