@@ -110,7 +110,7 @@ The world coordinates are converted, in the vertex shader, to normalized render 
 You can have multiple camera's or viewports and likewise, you can also have multiple world coordinate systems. A typical game has at least two of those, namely:
 
 ### GUI/HUD coordinates
-This are buttons, labels and such which are stationary and always visible on the screen. Often they involve rendering text. For example in Super Mario the clock is always visible in the upper right corner of the screen and does not move when mario moves in the game world.
+These are buttons, labels and such which are stationary and always visible on the screen. Often they involve rendering text. For example in Super Mario the clock is always visible in the upper right corner of the screen and does not move when mario moves in the game world.
 
 Most commonly [scene2d](https://github.com/libgdx/libgdx/wiki/Scene2d) is used for the HUD, which means that you'd use a [Viewport](https://github.com/libgdx/libgdx/wiki/Viewports) to define the coordinate system. This coordinates system is typically in a range that is close to the device resolution, to give the best results when rendering the font. These coordinates are called [banana units](https://xoppa.github.io/blog/pixels/). This camera is practically never moved or rotated, it sits stationary at a location so that the world coordinate (0, 0) is located at the bottom left corner of the screen.
 
