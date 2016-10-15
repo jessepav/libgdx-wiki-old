@@ -93,3 +93,12 @@ The `btBroadphasePairArray` class adds methods to get all collision objects with
 btBroadphasePairArray.getCollisionObjects(Array<btCollisionObject> out, btCollisionObject other, int[] tempArray)
 btBroadphasePairArray.getCollisionObjectsValue(int[] out, btCollisionObject other)
 ```
+### <a id="FilterableVehicleRaycaster"></a>FilterableVehicleRaycaster ###
+
+The `FilterableVehicleRaycaster` class extends `btDefaultVehicleRaycaster` and adds support for collision filtering using groups and masks:
+```java
+FilterableVehicleRaycaster raycaster = new FilterableVehicleRaycaster(dynamicsWorld);
+raycaster.setCollisionFilterGroup(FILTER_GROUP);
+raycaster.setCollisionFilterMask(FILTER_MASK);
+btRaycastVehicle vehicle = new btRaycastVehicle(vehicleTuning, chassis, raycaster);
+```
