@@ -22,6 +22,7 @@
       * [[Running Demos]]
       * [[Running Tests]]
       * [[Building libGDX From Source]]
+      * [[Building the Bullet wrapper]]
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Modules Overview]]
