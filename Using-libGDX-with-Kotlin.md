@@ -91,5 +91,6 @@ These are some examples of projects that are using Kotlin, to help give you idea
 
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license. lots of helper/wrapper code to make use of libGDX, artemis-odb, kryonet easier and more idiomatic)
 * [HitKlack](https://github.com/TobseF/hitklack) (desktop & android, small size, code examples to explain Kotlins features)
+* [SplinterSweets](https://github.com/reime005/splintersweets)(desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob implementation, small sized and simple) 
 
 *TODO:* add more real life project examples of Kotlin being used for libGDX projects.
