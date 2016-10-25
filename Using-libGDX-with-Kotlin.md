@@ -85,6 +85,10 @@ Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Jav
 
 That’s it. You successfully enabled Kotlin in your libGDX application. Build and run your project to verify that everything works.
 
+## Kotlin LibGDX extensions
+
+- [KTX](https://github.com/czyzby/ktx) is a set of libraries that aim to make most aspects of LibGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more. 
+
 # Examples of libGDX projects using Kotlin
 
 These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.
@@ -92,5 +96,3 @@ These are some examples of projects that are using Kotlin, to help give you idea
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license. lots of helper/wrapper code to make use of libGDX, artemis-odb, kryonet easier and more idiomatic)
 * [HitKlack](https://github.com/TobseF/hitklack) (desktop & android, small size, code examples to explain Kotlins features)
 * [SplinterSweets](https://github.com/reime005/splintersweets) (desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob integration, small sized and simple) 
-
-*TODO:* add more real life project examples of Kotlin being used for libGDX projects.
