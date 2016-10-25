@@ -8,4 +8,4 @@ Multiple Third Party Extensions are available in the Libgdx setup app.
   * [[gdx-facebook]]
   * [[gdx-dialogs]]
   * [[gdx-kiwi]]
-  * [[gdx-iml]]
+  * [[gdx-lml]]
