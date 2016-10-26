@@ -26,7 +26,8 @@ Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the ru
 
 Here is a download link for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
 
-[Download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)
+~~[Download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)~~(link not work?)
+
 
 ## Using the Particle Editor ##
 
