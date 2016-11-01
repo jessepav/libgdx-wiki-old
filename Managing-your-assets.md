@@ -65,30 +65,46 @@ manager.load("data/mytexture.png", Texture.class, param);
 
 Look into the loaders mentioned above to find out about their parameters.
 
-Example code for FreeTypeFontGenerator:
+### Loading a TTF using the AssetHandler
+
+Loading a TrueType file via the AssetHandler requires only a little bit extra tweaking. Before we can load a TTF, we need to set the type of loader we're going to use for FreeType fonts. This is done with the following:
 
 ```java
 FileHandleResolver resolver = new InternalFileHandleResolver();
 manager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(resolver));
 manager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
-
-// load to fonts via the generator (implicitely done by the FreetypeFontLoader).
-// Note: you MUST specify a FreetypeFontGenerator defining the ttf font file name and the size
-// of the font to be generated. The names of the fonts are arbitrary and are not pointing
-// to a file on disk!
-FreeTypeFontLoaderParameter size1Params = new FreeTypeFontLoaderParameter();
-size1Params.fontFileName = "data/arial.ttf";
-size1Params.fontParameters.size = 10;
-manager.load("size10.ttf", BitmapFont.class, size1Params);
-
-FreeTypeFontLoaderParameter size2Params = new FreeTypeFontLoaderParameter();
-size2Params.fontFileName = "data/arial.ttf";
-size2Params.fontParameters.size = 20;
-manager.load("size20.ttf", BitmapFont.class, size2Params);
-
-// we also load a "normal" font generated via Hiero
-manager.load("data/default.fnt", BitmapFont.class);
 ```
+
+Next, we'll want to create a `FreeTypeFontLoaderParameter` that defines 1) our actual font file, and 2) our font size. There are other parameters we can define here, too, when you have time to dig more. 
+
+Let's say we want to create two different fonts: a smaller, sans-serif font that will be used for one type of writing text, and a larger, serif font for titles and other fun things. I've decided to use Arial and Georgia for these two fonts, respectively. Here's how I can load them using the AssetManager:
+
+```java
+// First, let's define the params and then load our smaller font
+FreeTypeFontLoaderParameter mySmallFont = new FreeTypeFontLoaderParameter();
+mySmallFont.fontFileName = "arial.ttf";
+mySmallFont.fontParameters.size = 10;
+manager.load("arial.ttf", BitmapFont.class, mySmallFont);
+
+// Next, let's define the params and then load our bigger font
+FreeTypeFontLoaderParameter myBigFont = new FreeTypeFontLoaderParameter();
+myBigFont.fontFileName = "georgia.ttf";
+myBigFont.fontParameters.size = 20;
+manager.load("georgia.ttf", BitmapFont.class, myBigFont);
+```
+
+Neat! Now we've got two different fonts, `mySmallFont` and `myBigFont`, that we can use to display different text. 
+
+We're not quite done yet. Now that the fonts have been `.load`ed, we still need to set them. We can do this like so:
+
+```java
+BitmapFont mySmallFont = manager.get("arial.ttf", BitmapFont.class);
+BitmapFont myBigFont = manager.get("georgia.ttf", BitmapFont.class);
+```
+
+
+
+-----
 
 So far we only queued assets to be loaded. The AssetManager does not yet load anything. To kick this off we have to call AssetManager#update() continuously, say in our ApplicationListener#render() method:
 
