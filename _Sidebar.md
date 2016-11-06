@@ -35,6 +35,7 @@
       * [[Extending the Simple Game]]
     * User Interface  
       * [[TextButton]]
+      * [[VerticalGroup]]
     * [[File Handling]]
     * [[Networking]]
     * [[Preferences]]
