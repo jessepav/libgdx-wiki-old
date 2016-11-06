@@ -1,6 +1,6 @@
-# TextButton. General usage
+# TextButton. General usage.
 
-## Create
+## Create.
 
 `TextButton tb = new TextButton("Text on the Button", textButtonStyle);`
 
@@ -8,7 +8,7 @@
 
 `tb.getLabel().setFontScale(2);`
 
-## Add ChangeListener
+## Add ChangeListener.
 
 ```
 tb.addListener(new ChangeListener() {
