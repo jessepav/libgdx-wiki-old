@@ -33,8 +33,6 @@
       * [[Interfacing With Platform-Specific Code]]
     * [[A Simple Game]]
       * [[Extending the Simple Game]]
-    * User Interface  
-      * [[TextButton]]
     * [[File Handling]]
     * [[Networking]]
     * [[Preferences]]
