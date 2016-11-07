@@ -18,7 +18,7 @@ The first run will take a bit longer as RoboVM has to compile the entire JDK for
 ## Debugging Your Project ##
 Follow the steps for running the project, but instead of launching via `Run`, launch your configuration via `Debug`. Note that RoboVM currently does not support debugging. Debugging of the html build can be done in the browser as follows:
 
-Run the superDev Gradle task as before. Go to [http://localhost:8080/gwt](http://localhost:8080/gwt), click on the `SuperDev Refresh` button and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
+Run the superDev Gradle task as before. Go to [http://localhost:8080/html](http://localhost:8080/html), click on the `SuperDev Refresh` button and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
 
 [[images/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png]]
 
