@@ -309,6 +309,8 @@ This code is almost 95% the same as the original implementation, except now we u
 
 We also added a string to the top left corner of the game, which tracks the number of raindrops collected.
 
+Note that the `dispose()` method of the `GameScreen` class is not called automatically, see [the Screen API](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Screen.html). It is your duty to get it called. You can call this method from the `dispose()` method of the `Game` class, if the `GameScreen` class passes a reference to itself to the `Game` class. It is important to do this, else `GameScreen` assets might persist and occupy memory even after exiting the application.
+
 That's it, you have the complete game finished. That is all there is to know about the Screen interface and Game abstract Class, and all there is to creating multifaceted games with multiple states.
 
 For the full code, please visit [this Github gist](https://gist.github.com/sinistersnare/6367829) 
