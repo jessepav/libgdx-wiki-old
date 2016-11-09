@@ -69,11 +69,7 @@ This will create a new Java btCollisionShape class which doesn’t implement any
 
 There is one exception to this for btCollisionObject, where the wrapper tries to reuse the same Java class. Furthermore the Java implementation of the btCollisionObject class adds a `userData` member which can be used to attach additional data to the object. To accomplish this the wrapper maintains an array with references to all btCollisionObject instances. You can access that array using the static field `btCollisionObject.instances`. Check the [btCollisionObject](./Bullet Wrapper: Custom classes#btcollisionobject) section for detailed information on this.
 
-Some classes provide a static `upcast` method which can be used to cast the object to an higher class. For example:
-
-```java
-btRigidBody bodyA = btRigidBody.upcast(collisionObjectA);
-```
+The upcast methods are not present because of a [issue](https://code.google.com/archive/p/libgdx/issues/1453). There is no need for them for classes that are created in java. These classes can directly be casted.
 
 ## <a id="Comparing_classes"></a>Comparing classes ##
 You can compare wrapper classes using the `equals()` method, which checks if the classes both wrap the same native class. To get the pointer to the underlying C++ class you can use the `getCPointer` method of the specific object. You can also compare these pointers to check whether the Java classes wrap the same C++ class.
