@@ -230,7 +230,7 @@ natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
 ```
 **iOS Dependency:**
 ```groovy
-natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
+compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
 ```groovy
