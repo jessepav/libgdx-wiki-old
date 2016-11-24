@@ -14,7 +14,7 @@ public class MyGameObject {
 Array<MyGameObject> gameObjects;
 ...
 gameObjects.add(myGameObject);
-myGameObject.setUserValue(gameObjects.size-1);
+myGameObject.body.setUserValue(gameObjects.size-1);
 ```
 
 You can use the `userData` field to add some additional data. For example:
