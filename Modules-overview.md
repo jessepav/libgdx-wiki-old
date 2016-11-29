@@ -93,4 +93,4 @@ music.setLooping(true);
 ### Net ###
 _TBD_
 
-[[Prev|The life cycle]] | [[Next|Querying]]
+[[Prev|The life cycle]] | [[Next|Starter Classes & Configuration]]
