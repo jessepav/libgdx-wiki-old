@@ -445,3 +445,5 @@ public PreloaderCallback getPreloaderCallback () {
 ```
 
 Note that you can only use pure GWT facilities to display the loading screen, libgdx APIs will only be available after the preloading is complete.
+
+[[Prev|Modules Overview]] | [[Next|Querying]]
