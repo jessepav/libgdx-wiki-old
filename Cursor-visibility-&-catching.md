@@ -34,4 +34,4 @@ Supported system cursors are the
 
 cursors.
 
-[[Next|Cursor Visibility & Catching]]
+[[Next|Back and Menu Key Catching]]
