@@ -33,3 +33,5 @@ Supported system cursors are the
 * `VerticalResize` ![Image of a vertical-resize cursor](https://developer.mozilla.org/files/3808/6-resize.gif)
 
 cursors.
+
+[[Next|Cursor Visibility & Catching]]
