@@ -49,7 +49,7 @@ note: You may get a message indicating that you have a more recent version of an
 # Additional reading on LibGDX projects
 
 This section provides additional information regarding:
-* how to create a project from the command line, without the wizard.
+* How to create a project from the command line, without the wizard.
 * The structure of a libGDX project.
 * What is Gradle
 
