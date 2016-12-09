@@ -20,7 +20,8 @@ To develop your application via Eclipse, you need to install the following piece
 
 #### To additionally target iOS
 
-  * A Mac with Mac OS X and the latest Xcode 7 from the Mac OS X App Store for free
+  * A Mac with Mac OS X
+  * The latest Xcode 7 from the Mac OS X App Store for free
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors)
 
@@ -35,7 +36,7 @@ To develop your application via Intellij IDEA, you need to install the following
 
 #### To additionally target iOS
 
-  * A Mac with Mac OS X and Xcode 7 or above
+  * A Mac with Mac OS X 
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). 
@@ -51,12 +52,9 @@ To develop your application via Android Studio, you need to install the followin
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Android Studio] (https://developer.android.com/sdk/index.html) Android Studio already comes packaged with the Android SDK so contrary to Eclipse or Intellij IDEA you do not need to install this component.
 
-Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-i-setting-up-up-android-studio-for-creating-games/) on how to install libGDX using a tool provided by Bad Logic.
-
-
 #### To additionally target iOS
 
-  * A Mac with Mac OS X and Xcode 7 or above
+  * A Mac with Mac OS X 
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). 
@@ -65,7 +63,6 @@ Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-
 As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
-
 
 ### Setting up NetBeans
 To develop your application via NetBeans, you need to install the following pieces of software.
