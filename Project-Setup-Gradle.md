@@ -46,9 +46,14 @@ note: You may get a message indicating that you have a more recent version of an
   * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
-# Additional reading on project creation
+# Additional reading on LibGDX projects
 
-## Creating a libgdx project on the command line
+This section provides additional information regarding:
+* how to create a project from the command line, without the wizard.
+* The structure of a libGDX project.
+* What is Gradle
+
+## Creating a libgdx project using the command line
 
 This section is to create your project from the command line. This is not required if you use the wizard above.
 IF you run it from the command line, specify the following arguments.
