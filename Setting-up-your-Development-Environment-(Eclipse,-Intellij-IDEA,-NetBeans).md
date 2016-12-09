@@ -3,7 +3,7 @@ Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the
 ### Setup for iOS development
 Regardless of your development environment of choice, here's what you'll need for iOS:
 
-  * A Mac with Mac OS X and Xcode 7
+  * A Mac with Mac OS X and Xcode 7 or above
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
 
 #### Setting up RoboVM for iOS development
