@@ -3,7 +3,7 @@
 Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily get you started.
 
 1. Downdload [LibGDX Project setup tool "gdx-setup.jar"](https://bitly.com/1i3C7i3)
-2. Open you command line tool, go to the download folder and run `java -jar ./gdx-setup.jar`
+2. Open you command line tool, go to the download folder and run <br>`java -jar ./gdx-setup.jar`
 
 Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
