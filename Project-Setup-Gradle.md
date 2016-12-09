@@ -33,16 +33,18 @@ You are asked to provide the following parameters:
 
 by clicking "Show Third Party Extensions" you can access the list of other popular LibGDX extensions
 
+Note that the Advanced button lets you set the project generation to generate Eclipse and/or IDEA projects **without** Gradle integration, as described in more detail in the wiki article about [workflow without Gradle](Improving-workflow-with-Gradle#how-to-remove-gradle-ide-integration-from-your-project), as well as options to use an alternative repository to Maven Central and to not force downloading dependencies. You do not need to change the advance settings if you are a beginner.
+
 When ready, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
-note: You may get a message indicating that you have a more recent version of android build tools than the recomended. This is not a blocking message and you may continue.
+note: You may get a message indicating that you have a more recent version of android build tools or android API than the recomended. This is not a blocking message and you may continue.
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA and Android studio|Gradle and Intellij IDEA]]
   * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
-Note that the Advanced button lets you set the project generation to generate Eclipse and/or IDEA projects **without** Gradle integration, as described in more detail in the wiki article about [workflow without Gradle](Improving-workflow-with-Gradle#how-to-remove-gradle-ide-integration-from-your-project), as well as options to use an alternative repository to Maven Central and to not force downloading dependencies.
+
 
 
 ### Creating a libgdx project on the command line
