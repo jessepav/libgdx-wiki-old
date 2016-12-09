@@ -3,8 +3,7 @@ Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the
 ### Setup for iOS development
 Regardless of your development environment of choice, here's what you'll need for iOS:
 
-  * A Mac with Mac OS X and Xcode 7 or above
-  * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
+
 
 #### Setting up RoboVM for iOS development
 As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
@@ -30,7 +29,8 @@ To develop your application via Eclipse, you need to install the following piece
 
 To additionally target iOS
 
-  * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
+  * A Mac with Mac OS X and Xcode 7 or above
+  * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM Eclipse plugin as described above.
 
@@ -47,7 +47,8 @@ To develop your application via Intellij IDEA, you need to install the following
 
 To additionally target iOS
 
-  * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
+  * A Mac with Mac OS X and Xcode 7 or above
+  * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
@@ -66,7 +67,8 @@ Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-
 
 To additionally target iOS
 
-  * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
+  * A Mac with Mac OS X and Xcode 7 or above
+  * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
