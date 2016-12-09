@@ -1,17 +1,5 @@
 Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the build process, and IDE integration. This allows you to develop your app with whatever development environment you prefer. Best of all: your team mates can use a different dev environment while working on the same project! Just don't commit your IDE specific files to your source control. The `.gitignore` file contained in libgdx projects will take care of that if you use Git.
 
-### Setup for iOS development
-Regardless of your development environment of choice, here's what you'll need for iOS:
-
-
-
-#### Setting up RoboVM for iOS development
-As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
-
-
-For Gradle, everything is already setup for you. The RoboVM Gradle plugin will be automatically downloaded and used by your Gradle build.
-
-
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
@@ -25,12 +13,16 @@ To develop your application via Eclipse, you need to install the following piece
 
 To additionally target iOS
 
-  * A Mac with Mac OS X and Xcode 7 or above
+note: As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
+
+  * A Mac with Mac OS X and the latest Xcode 7 from the Mac OS X App Store for free
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
-  * The latest XCode, which you can get from the Mac OS X App Store for free
-  * The RoboVM Eclipse plugin as described above.
+  * The [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com) plugin as described above.
 
 For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
+
+
+
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
