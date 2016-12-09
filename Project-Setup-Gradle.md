@@ -10,6 +10,19 @@ This will open the following setup that will allow you to generate your project<
 
 ![screen capture of gdx-setup.jar](http://i.imgur.com/nI5lQKT.jpg)
 
+You are asked to provide the following parameters:
+* **Name**: the name of the application, lower-case with minuses is usually a good idea, e.g. mygame
+* **Package**: the Java package under which your code will live, e.g. com.badlogic.mygame
+* **Game Class**: the name of the main game java class of your app, e.g. MyGame
+* **Destination**: Folder where your app will be created
+* **Android SDK**: the location of your android sdk. To find out where it is:
+1. Start Android Studio and click "Configure"->"SDK Manager"
+![Android studio 1](http://i.imgur.com/re4m4ZW.png)
+![Android studio 2](http://i.imgur.com/Y4F3UsH.png)
+
+* **excludeModules**: the modules to exclude (Desktop; Android; iOS; HTML) separated by ';' and not case sensitive, e.g. Android;ios. Optional. Default it includes all the modules
+* **extensions**: the extensions to include (same name as in GUI: Bullet; Freetype; Tools; Controllers; Box2d; Box2dlights; Ashley; Ai) separated by ';' and not case sensitive, e.g. box2d;box2dlights;Ai. Optional
+
 
 Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
