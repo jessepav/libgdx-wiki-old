@@ -11,13 +11,11 @@ To develop your application via Eclipse, you need to install the following piece
   * [Android Development Tools for Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html), aka ADT Plugin. Use this update site: https://dl-ssl.google.com/android/eclipse/
   * [Eclipse Integration Gradle](https://github.com/spring-projects/eclipse-integration-gradle/), use this update site: http://dist.springsource.com/snapshot/TOOLS/gradle/nightly (for Eclipse 4.4) or http://dist.springsource.com/release/TOOLS/gradle (for Eclipse < 4.4)
 
-To additionally target iOS
-
-note: As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
+#### To additionally target iOS
 
   * A Mac with Mac OS X and the latest Xcode 7 from the Mac OS X App Store for free
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
-  * The [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com) plugin as described above.
+  * The [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com) plugin. (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors)
 
 For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
