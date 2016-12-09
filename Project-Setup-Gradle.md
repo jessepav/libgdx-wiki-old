@@ -31,7 +31,11 @@ You are asked to provide the following parameters:
     **[Ashley](https://github.com/libgdx/ashley)**:A tiny entity framework.<br>
     **[Ai](https://github.com/libgdx/gdx-ai)**: An artificial intelligence framework.<br>
 
-When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
+by clicking "Show Third Party Extensions" you can access the list of other popular LibGDX extensions
+
+When ready, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
+
+note: You may get a message indicating that you have a more recent version of android build tools than the recomended. This is not a blocking message and you may continue.
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA and Android studio|Gradle and Intellij IDEA]]
