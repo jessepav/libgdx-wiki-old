@@ -19,7 +19,7 @@ You are asked to provide the following parameters:
 ![Android studio 1](http://i.imgur.com/re4m4ZW.png)
 ![Android studio 2](http://i.imgur.com/Y4F3UsH.png)
 
-* **Sub Projects**: LibGDX is crossplatform. By default all the target platform are included (Desktop; Android; iOS; HTML). No need to change the default value unless you are sure you will never compile for a specific target.
+* **Sub Projects**: LibGDX is crossplatform. By default all the target platform except ios-moe are included (Desktop; Android; iOS; HTML). No need to change the default value unless you are sure you will never compile for a specific target. ios-moe is an alternative to robovm supported by Intel.
 
 * **extensions**: the extensions to include:<br>
     **[Bullet](https://github.com/libgdx/libgdx/wiki/Bullet-physics)**: 3D Collision Detection and Rigid Body Dynamics Library.<br>
