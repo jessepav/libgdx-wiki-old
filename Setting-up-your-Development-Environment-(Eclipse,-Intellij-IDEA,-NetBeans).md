@@ -30,7 +30,7 @@ To develop your application via Intellij IDEA, you need to install the following
   * A Mac with Mac OS X and Xcode 7 or above
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
+  * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). 
 
 ##### Setting up Intel Multi-OS Engine
 As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
@@ -51,7 +51,7 @@ Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-
   * A Mac with Mac OS X and Xcode 7 or above
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
+  * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). 
 
 ##### Setting up Intel Multi-OS Engine
 As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
