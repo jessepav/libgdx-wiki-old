@@ -9,6 +9,8 @@ This will create a gradle ready project that ready to be imported into your IDE 
 This will open the following setup that will allow you to generate your project<br>
 
 ![screen capture of gdx-setup.jar](http://imgur.com/a/8qBV5)
+![LibGDX wizard](http://imgur.com/a/8qBV5)
+
 
 Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
