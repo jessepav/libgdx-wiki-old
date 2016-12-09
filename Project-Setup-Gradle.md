@@ -70,6 +70,8 @@ ios/
 ```
 \* These scripts contain tasks that package natives and distribute your applications on the respective platforms, you can add/maintain these tasks yourself, but only do so if you are familiar with Gradle, and what these tasks are doing, otherwise you will break your project.
 
+Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-i-setting-up-up-android-studio-for-creating-games/) on how to install libGDX using a tool provided by Bad Logic.
+
 ### What is Gradle?
 [Gradle](http://www.gradle.org/) is a dependency management and build system. 
 
