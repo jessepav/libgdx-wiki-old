@@ -9,13 +9,9 @@ Regardless of your development environment of choice, here's what you'll need fo
 As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
 
 
-
-
-
 For Gradle, everything is already setup for you. The RoboVM Gradle plugin will be automatically downloaded and used by your Gradle build.
 
-#### Setting up Intel Multi-OS Engine
-As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
+
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
@@ -45,7 +41,7 @@ To develop your application via Intellij IDEA, you need to install the following
   * [Intellij IDEA](http://www.jetbrains.com/idea/download/), the Community edition is sufficient.
   * [Android SDK](http://developer.android.com/sdk/index.html), you only need the SDK (available at the bottom of the page in the 'command line tools' section), not the whole Android Studio package which is a customized version of Intellij bundled with the Android SDK. Install the latest stable platform via the [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html). You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
-To additionally target iOS
+#### To additionally target iOS
 
   * A Mac with Mac OS X and Xcode 7 or above
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
@@ -53,6 +49,9 @@ To additionally target iOS
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
 For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
+
+##### Setting up Intel Multi-OS Engine
+As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
@@ -65,7 +64,7 @@ To develop your application via Android Studio, you need to install the followin
 Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-i-setting-up-up-android-studio-for-creating-games/) on how to install libGDX using a tool provided by Bad Logic.
 
 
-To additionally target iOS
+#### To additionally target iOS
 
   * A Mac with Mac OS X and Xcode 7 or above
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
@@ -73,6 +72,9 @@ To additionally target iOS
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
 For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
+
+##### Setting up Intel Multi-OS Engine
+As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
