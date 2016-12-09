@@ -14,12 +14,9 @@ To develop your application via Eclipse, you need to install the following piece
 
   * A Mac with Mac OS X and the latest Xcode 7 from the Mac OS X App Store for free
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
-  * The [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com) plugin. (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors)
+  * The [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors)
 
-For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
-
-
-
+For Eclipse, check what is the latest release version of the [RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
