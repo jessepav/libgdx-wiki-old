@@ -15,12 +15,12 @@ You are asked to provide the following parameters:
 * **Package**: the Java package under which your code will live, e.g. com.badlogic.mygame
 * **Game Class**: the name of the main game java class of your app, e.g. MyGame
 * **Destination**: Folder where your app will be created
-* **Android SDK**: the location of your android sdk. To find out where it is:
-1. Start Android Studio and click "Configure"->"SDK Manager"
+* **Android SDK**: the location of your android sdk. To find out where it is, start Android Studio and click "Configure"->"SDK Manager"
 ![Android studio 1](http://i.imgur.com/re4m4ZW.png)
 ![Android studio 2](http://i.imgur.com/Y4F3UsH.png)
 
-* **excludeModules**: the modules to exclude (Desktop; Android; iOS; HTML) separated by ';' and not case sensitive, e.g. Android;ios. Optional. Default it includes all the modules
+* **Sub Projects**: the modules to include (Desktop; Android; iOS; HTML). By Default it includes all the modules. No need to change the default value unless you are sure you will never compile for a specific platform.
+
 * **extensions**: the extensions to include (same name as in GUI: Bullet; Freetype; Tools; Controllers; Box2d; Box2dlights; Ashley; Ai) separated by ';' and not case sensitive, e.g. box2d;box2dlights;Ai. Optional
 
 
