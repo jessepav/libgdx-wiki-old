@@ -4,9 +4,13 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 Go to `Import Project`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, uncheck `Create separate module per source set` and hit `OK` again. A final window will appear asking which modules to import, leave everything checked and click `OK`. It will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
 
 ### Common Problems
-If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
 
-`Unsupported major.minor version 51.0` may occur on Mac OS X. If this is your first project using Intellij IDEA, make sure to define your JDK at the global level: see this [help page](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html#d2125997e12) to do so, or alternatively from the welcome screen go to `Configure -> Project Defaults -> Project Structure` then add your JDK in `Platform Settings -> SDKs`.  Otherwise, check out [this article by Serapth](http://www.gamefromscratch.com/post/2014/04/03/Troubleshooting-IntelliJLibGDXRoboVMGradle-issues-on-Mac-OS.aspx) detailing other possible causes and fixes for this issue (just be warned that it is not recommended to edit Intellij's Info.plist, as the app is digitally signed).
+#### PSI and index do not match: PSI and index do not match on Android Studio
+in Android studio, click `File->Invalidate Caches / restart...`
+
+#### If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
+
+#### `Unsupported major.minor version 51.0` may occur on Mac OS X. If this is your first project using Intellij IDEA, make sure to define your JDK at the global level: see this [help page](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html#d2125997e12) to do so, or alternatively from the welcome screen go to `Configure -> Project Defaults -> Project Structure` then add your JDK in `Platform Settings -> SDKs`.  Otherwise, check out [this article by Serapth](http://www.gamefromscratch.com/post/2014/04/03/Troubleshooting-IntelliJLibGDXRoboVMGradle-issues-on-Mac-OS.aspx) detailing other possible causes and fixes for this issue (just be warned that it is not recommended to edit Intellij's Info.plist, as the app is digitally signed).
 
 If you run into "Error:org.gradle.tooling.GradleConnectionException: Could not execute build using Gradle installation" check project structure ( Ctrl + Alt + Shift + S ) and add your Java JDK to the Project SDK.
 
