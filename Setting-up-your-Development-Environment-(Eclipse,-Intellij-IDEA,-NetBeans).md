@@ -9,9 +9,9 @@ Regardless of your development environment of choice, here's what you'll need fo
 #### Setting up RoboVM for iOS development
 As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
 
-For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
-For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
+
+
 
 For Gradle, everything is already setup for you. The RoboVM Gradle plugin will be automatically downloaded and used by your Gradle build.
 
@@ -34,6 +34,7 @@ To additionally target iOS
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM Eclipse plugin as described above.
 
+For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
@@ -49,6 +50,8 @@ To additionally target iOS
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
+
+For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
@@ -66,6 +69,8 @@ To additionally target iOS
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
+
+For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
