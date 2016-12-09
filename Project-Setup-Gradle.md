@@ -21,18 +21,17 @@ You are asked to provide the following parameters:
 
 * **Sub Projects**: LibGDX is crossplatform. By default all the target platform are included (Desktop; Android; iOS; HTML). No need to change the default value unless you are sure you will never compile for a specific target.
 
-* **extensions**: the extensions to include.
-* **[Bullet](https://github.com/libgdx/libgdx/wiki/Bullet-physics)**: 3D Collision Detection and Rigid Body Dynamics Library
+* **extensions**: the extensions to include:
+* **[Bullet](https://github.com/libgdx/libgdx/wiki/Bullet-physics)**: 3D Collision Detection and Rigid Body Dynamics Library.
 * **[FreeType](https://github.com/libgdx/libgdx/wiki/Gdx-freetype)** Scallable font. Great to manipulate font size dynamically. However be aware that it does not work with HTML target if you cross compile for that target.
-
 * **[Tools](https://libgdx.badlogicgames.com/tools.html)** Set of tools including: particle editor (2d/3d), bitmap font and image texture packers.
-* **[Controller](https://github.com/libgdx/libgdx/wiki/Controllers)** Library to handle controllers (e.g.:XBox 360 controller)
+* **[Controller](https://github.com/libgdx/libgdx/wiki/Controllers)** Library to handle controllers (e.g.:XBox 360 controller).
 * **[Box2d](https://github.com/libgdx/libgdx/wiki/Box2d)**: Box2D is a 2D physics library.
 * **[Box2dlights](https://github.com/libgdx/box2dlights)**: 2D lighting framework that uses box2d for raycasting and OpenGL ES 2.0 for rendering.
-* **[Ashley](https://github.com/libgdx/ashley)**:A tiny entity framework 
-* **[Ai](https://github.com/libgdx/gdx-ai)An artificial intelligence framework, entirely written in Java, for game development.
+* **[Ashley](https://github.com/libgdx/ashley)**:A tiny entity framework.
+* **[Ai](https://github.com/libgdx/gdx-ai)**: An artificial intelligence framework.
 
-Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
+When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA and Android studio|Gradle and Intellij IDEA]]
