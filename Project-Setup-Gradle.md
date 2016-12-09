@@ -21,7 +21,7 @@ You are asked to provide the following parameters:
 
 * **Sub Projects**: LibGDX is crossplatform. By default all the target platform are included (Desktop; Android; iOS; HTML). No need to change the default value unless you are sure you will never compile for a specific target.
 
-* **extensions**: the extensions to include:
+* **extensions**: the extensions to include:<br>
     **[Bullet](https://github.com/libgdx/libgdx/wiki/Bullet-physics)**: 3D Collision Detection and Rigid Body Dynamics Library.<br>
     **[FreeType](https://github.com/libgdx/libgdx/wiki/Gdx-freetype)** Scallable font. Great to manipulate font size dynamically. However be aware that it does not work with HTML target if you cross compile for that target.<br>
     **[Tools](https://libgdx.badlogicgames.com/tools.html)** Set of tools including: particle editor (2d/3d), bitmap font and image texture packers.<br>
