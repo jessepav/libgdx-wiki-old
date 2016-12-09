@@ -5,9 +5,6 @@ In order to get started you must setup your developement environment. LibGDX sup
 * [NetBeans](https://github.com/libgdx/libgdx/wiki/Setting-up-your-Development-Environment-(Eclipse,-Intellij-IDEA,-NetBeans)#setting-up-netbeans)
 
 
-
-Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the build process, and IDE integration. This allows you to develop your app with whatever development environment you prefer. Best of all: your team mates can use a different dev environment while working on the same project! 
-
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
 
