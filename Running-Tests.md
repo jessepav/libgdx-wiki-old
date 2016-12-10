@@ -14,6 +14,8 @@ cd libgdx
 ant -f fetch.xml
 ```
 
+If you're getting this error: `javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target`, make sure to use the latest version of Java8.
+
 This fetches all the source code from the git repository, then downloads the native files from the build server via the fetch.xml Ant script. The Git repository does not contain these native libraries to trim down its size, hence the two steps.
 
 To stay up to date you can do the following from within the libgdx directory every now and then:
