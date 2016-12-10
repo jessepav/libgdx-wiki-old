@@ -14,6 +14,8 @@ ant -f fetch.xml
 ant
 ```
 
+If you're getting this error: `javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target`, make sure to use the latest version of Java8.
+
 This will first fetch the latest native libraries (compiled C/C++ code for all platforms) from the [build server](http://libgdx.badlogicgames.com/nightlies/) so you don't have to build them yourself. Next it will invoke the main build script to build all the Java parts. 
 
 The end result is a zip file called libgdx-version.zip and a folder called `dist` containing the expanded contents of the zip file, which will essentially be the same as the one you can get from the nightly build server, plus any modifications you made to the source.
