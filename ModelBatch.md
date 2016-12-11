@@ -129,7 +129,7 @@ The `DefaultShader` class provides a default implementation of most of the stand
 The behavior of this class is configurable by supplying a [`DefaultShader.Config`](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.Config.html) instance to the `DefaultShaderProvider`.
 
 ```java
-DefaultShader.Config config = new DefaultShader.Confg();
+DefaultShader.Config config = new DefaultShader.Config();
 config.numDirectionalLights = 1;
 config.numPointLights = 0;
 config.numBones = 16;
