@@ -77,7 +77,7 @@ public class MainMenuScreen implements Screen {
 	OrthographicCamera camera;
 
 	public MainMenuScreen(final Drop game) {
-		game = gam;
+		this.game = game;
 
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
