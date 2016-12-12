@@ -76,7 +76,7 @@ public class MainMenuScreen implements Screen {
 
 	OrthographicCamera camera;
 
-	public MainMenuScreen(final Drop gam) {
+	public MainMenuScreen(final Drop game) {
 		game = gam;
 
 		camera = new OrthographicCamera();
