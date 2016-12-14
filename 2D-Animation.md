@@ -33,7 +33,8 @@ public Animation<TextureRegion> runningAnimation;
 
 //...
 
-runningAnimation = new Animation<TextureRegion>(0.033f, textureAtlas.findRegions("running"), PlayMode.Looping);
+runningAnimation = 
+    new Animation<TextureRegion>(0.033f, atlas.findRegions("running"), PlayMode.Looping);
 ```
 
 ## Sprite sheet example ##
@@ -47,7 +48,7 @@ public class Animator implements ApplicationListener {
 	private static final int FRAME_COLS = 6, FRAME_ROWS = 5;
 
 	// Objects used
-	Animation<TextureRegion> walkAnimation; // Animation type (TextureRegion) must be declared
+	Animation<TextureRegion> walkAnimation; // Must declare frame type (TextureRegion)
 	Texture walkSheet;
 	SpriteBatch spriteBatch;
 
@@ -60,13 +61,15 @@ public class Animator implements ApplicationListener {
 		// Load the sprite sheet as a Texture
 		walkSheet = new Texture(Gdx.files.internal("animation_sheet.png"));
 
-		// Use the split utility method to create a 2D array of TextureRegions. This is possible
-		// because this sprite sheet contains frames of equal size and they are all aligned.
-		TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth() / FRAME_COLS,
+		// Use the split utility method to create a 2D array of TextureRegions. This is 
+		// possible because this sprite sheet contains frames of equal size and they are 
+		// all aligned.
+		TextureRegion[][] tmp = TextureRegion.split(walkSheet, 
+				walkSheet.getWidth() / FRAME_COLS,
 				walkSheet.getHeight() / FRAME_ROWS);
 
-		// Place the regions into a 1D array in the correct order, starting from the top left, 
-		// going across first. The Animation constructor requires a 1D array.
+		// Place the regions into a 1D array in the correct order, starting from the top 
+		// left, going across first. The Animation constructor requires a 1D array.
 		TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
 		int index = 0;
 		for (int i = 0; i < FRAME_ROWS; i++) {
@@ -91,7 +94,6 @@ public class Animator implements ApplicationListener {
 		
 		// Get current frame of animation for the current stateTime
 		TextureRegion currentFrame = walkAnimation.getKeyFrame(stateTime, true);
-
 		spriteBatch.begin();
 		spriteBatch.draw(currentFrame, 50, 50); // Draw current frame at (50, 50)
 		spriteBatch.end();
