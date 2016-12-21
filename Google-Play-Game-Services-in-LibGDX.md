@@ -14,7 +14,12 @@ Latest tutorial using Android Studio can be found [here](https://chandruscm.word
 
 1. Install Google Play Service and Google Play Repository using and Android SDK
 
-2. Download BaseGameUtils sample project [here](https://github.com/playgameservices/android-basic-samples) and place it in your project root folder.
+To do that on Android Studio, Open up SDK Manager, ( Click the button next to the AVD manager in the top toolbar ) click Launch Standalone SDK Manager
+Scroll down to the Extras section and make sure these 2 packages are installed and updated to the latest :
+* Google Play services
+* Google Repository
+
+2. Download BaseGameUtils sample project [here](https://github.com/playgameservices/android-basic-samples), copy folder `BaseGameUtils`, located in folder `BasicSamples` into your project root folder.
 
 3. Edit settings.gradle 
 ```
@@ -24,6 +29,34 @@ include 'desktop', 'android', 'ios', 'html', 'core', "BaseGameUtils"
 ```
 compile project(":BaseGameUtils")
 ```
+
+5. in your AndroidManifest.xml file
+
+* add two permissions:
+`<uses-permission android:name="android.permission.INTERNET" />`
+`<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`
+
+* add to your application tag
+`<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />`
+
+6. string.xml
+
+in your android project, under 'res'->'values', in file `strings.xml` add app_id as follow, where 123456789 is your app ID in as declared in the Google Play Developer Console.
+
+`<?xml version="1.0" encoding="utf-8"?>`
+`<resources>`
+
+    `<string name="app_name">sample_ios_google_signin</string>`
+    `<string name="app_id">123456789</string>`
+`</resources>`
+
+6. build.gradle in Android project
+
+Synchronize with Gradle. you will get the following message: 
+`Error:Execution failed for task ':android:processDebugManifest'.`
+`> Manifest merger failed : uses-sdk:minSdkVersion 9 cannot be smaller than version 15 declared in library [libgdx-GPGS:BaseGameUtils:1.0] `
+
+edit and set `minSdkVersion` to the version number in the message above (in this case '15')
 
 ## iOS integration
 
