@@ -232,6 +232,8 @@ The labels that use the same font will be the same size, though they may have di
 
 [Image](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Image.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Image.java)) simply displays a drawable. The drawable can be a texture, texture region, ninepatch, sprite, etc. The drawable may be scaled and aligned within the image widget bounds in various ways.
 
+For a tutorial on using Image (Create, rotate, resize and creating images with repeating texture [see this Image tutorial](https://libgdx.info/basic_image/))
+
 ### <a id="Button"></a>Button ###
 
 [Button](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Button.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Button.java)) by itself it is just an empty button, but it extends table so other widgets can be added to it. It has an `up` background that is normally displayed, and a `down` background that is displayed when pressed. It has a checked state which is toggled each time it is clicked, and when checked it will use the `checked` background instead of `up`, if defined. It also has pressed/unpressed offsets, which offset the entire button contents when pressed/unpressed.
