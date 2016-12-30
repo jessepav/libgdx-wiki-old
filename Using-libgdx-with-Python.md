@@ -8,7 +8,7 @@ This article uses the latest Jython beta (Jython 2.7b1 available [here](http://t
 
 ## Setup ##
 
-Jython can be worked on with any text editor, including Vim or Emacs. [PyDev](http://pydev.org/) is an option for eclipse users. Once the environment is setup, create a new Jython project, and all of the libgdx dependencies to the PYTHONPATH. for using the desktop LWJGL backend, this includes `gdx.jar`, `gdx-backend-lwjgl.jar`, `gdx-backend-lwjgl-natives.jar`, `gdx-backend-lwjgl.jar`, `gdx-natives.jar`, and `gdx-sources.jar`.
+Jython can be worked on with any text editor, including Vim or Emacs. [PyDev](http://pydev.org/) is an option for eclipse users. Once the environment is setup, create a new Jython project, and all of the libgdx dependencies to the PYTHONPATH. for using the desktop LWJGL backend, this includes `gdx.jar`, `gdx-backend-lwjgl.jar`, `gdx-backend-lwjgl-natives.jar`, `gdx-natives.jar`, and `gdx-sources.jar`.
 
 ## Coding With Python ##
 
