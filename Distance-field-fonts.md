@@ -99,8 +99,8 @@ const float smoothing = 1.0/16.0;
 
 void main() {
     float distance = texture2D(u_texture, v_texCoord).a;
-    float alpha = smoothstep(0.5 - smoothing, 0.5 + smoothing, distance) * v_color.a;
-    gl_FragColor = vec4(v_color.rgb, alpha);
+    float alpha = smoothstep(0.5 - smoothing, 0.5 + smoothing, distance);
+    gl_FragColor = vec4(v_color.rgb, v_color.a * alpha);
 }
 ```
 
@@ -121,9 +121,52 @@ spriteBatch.setShader(null);
 
 # Customizing the shader #
 
-Did you notice the `smoothing` constant in the fragment shader? You will need to tweak that for your font and scale. The right value for crisp fonts is `0.25f / (spread * scale)`, where `spread` is the value you used when generating the font, and `scale` is the scale you're drawing it at. If the scale is not constant, you can pass it in via a `uniform` variable.
+Remember that `distance` is a value between 0 and 1, with 0 being far away from the letter, 0.5 being right on the edge, and 1 being well inside it. The `smoothstep` function in the shader above is mapping values well below 0.5 to 0, and values well above 0.5 to 1, but gives a smooth transition around 0.5 to provide antialiasing. The softness of this transition is configured by the `smoothing` constant, which you should tweak to be correct for your font and scale.
 
-There are all sorts of additional tricks you can do based on the `distance` variable in the shader. Adding an outline when `distance` is between, say, 0.25 and 0.5 is a simple exercise. With some more work, and using the texture's gradient, it is possible to add directional drop shadows. Have fun!
+The right `smoothing` value for crisp fonts is `0.25f / (spread * scale)`, where `spread` is the value you used when generating the font, and `scale` is the scale you're drawing it at (how pixels in the distance field font are mapped to screen pixels). If the scale is not constant, you can pass it in via a `uniform` variable.
+
+There are all sorts of additional tricks you can do based on the `distance` variable in the shader. Here are some possibilities. I haven't tested any of these; if you find bugs, please update this wiki page!
+
+## Adding an outline ##
+
+The idea is that we output a different color when `distance` is between `u_outlineDistance` and `0.5`.
+
+```cpp
+...
+const float outlineDistance; // Between 0 and 0.5, 0 = thick outline, 0.5 = no outline
+const vec4 outlineColor;
+...
+void main() {
+    float distance = texture2D(u_texture, v_texCoord).a;
+    float outlineFactor = smoothstep(0.5 - smoothing, 0.5 + smoothing, distance);
+    vec4 color = mix(outlineColor, v_color, outlineFactor);
+    float alpha = smoothstep(outlineDistance - smoothing, outlineDistance + smoothing, distance);
+    gl_FragColor = vec4(color.rgb, color.a * alpha);
+}
+```
+
+## Adding a drop shadow ##
+
+Here, we sample the texture a second time, slightly offset from the first. The second application gets a lot more smoothing applied to it, and is rendered "behind" the actual text.
+
+```cpp
+...
+const vec2 shadowOffset; // Between 0 and spread / textureSize
+const float shadowSmoothing; // Between 0 and 0.5
+const vec4 shadowColor;
+...
+void main() {
+    float distance = texture2D(u_texture, v_texCoord).a;
+    float alpha = smoothstep(0.5 - smoothing, 0.5 + smoothing, distance);
+    vec4 text = vec4(v_color.rgb, v_color.a * alpha);
+
+    float shadowDistance = texture2D(u_texture, v_texCoord - shadowOffset).a;
+    float shadowAlpha = smoothstep(0.5 - shadowSmoothing, 0.5 + shadowSmoothing, shadowDistance);
+    vec4 shadow = vec4(shadowColor.rgb, shadowColor.a * shadowAlpha);
+
+    gl_FragColor = mix(text, shadow, text.a);
+}
+```
 
 # Using distance fields for arbitrary images #
 
