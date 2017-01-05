@@ -129,7 +129,7 @@ There are all sorts of additional tricks you can do based on the `distance` vari
 
 ## Adding an outline ##
 
-The idea is that we output a different color when `distance` is between `u_outlineDistance` and `0.5`.
+The idea is that we output a different color when `distance` is between `outlineDistance` and `0.5`.
 
 ```cpp
 ...
