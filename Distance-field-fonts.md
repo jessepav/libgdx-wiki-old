@@ -164,7 +164,7 @@ void main() {
     float shadowAlpha = smoothstep(0.5 - shadowSmoothing, 0.5 + shadowSmoothing, shadowDistance);
     vec4 shadow = vec4(shadowColor.rgb, shadowColor.a * shadowAlpha);
 
-    gl_FragColor = mix(text, shadow, text.a);
+    gl_FragColor = mix(shadow, text, text.a);
 }
 ```
 
