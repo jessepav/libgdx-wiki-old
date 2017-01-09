@@ -23,7 +23,6 @@ These are webpages where individuals or companies write about their experience w
 http://libgdxspain.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Xoppa's blog - http://blog.xoppa.com
- * libgdx.cn - http://www.libgdx.cn (Chinese)
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
  * Fighting Kitten blog (LibGDX, gdxAI) - http://fightingkitten.webcindario.com/
  * Libgdx tutorials on specific topics - http://libgdx.heerbann.com
