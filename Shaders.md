@@ -119,6 +119,6 @@ mesh.render(shader, GL20.GL_TRIANGLES);
 shader.end();
 ```
 
-And that's it!
+And that's it! *lol! just that!*
 
 The good thing about shaders in OpenGL ES 2.0 is that you have a huge library of shaders available to you. Pretty much anything that's done in WebGL can be easily ported over to run on mobiles. Go and experiment!
