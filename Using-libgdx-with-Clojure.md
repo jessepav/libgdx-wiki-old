@@ -1,5 +1,99 @@
 Clojure is a dialect of Lisp, written for the JVM and with functional programming in mind. Clojure comes with native Java interoperability, making it able to leverage the powerful existing libraries in the Java ecosystem. [ClojureTV on YouTube](http://www.youtube.com/user/ClojureTV) has a lot of good videos, specifically [Clojure for Java Programmers](http://www.youtube.com/watch?v=P76Vbsk_3J0) [(Part 2)](http://www.youtube.com/watch?v=hb3rurFxrZ8).
 
+## project setup ##
+
+Your project's directory structure should look something like
+```
+demo
+- android
+- desktop
+  - resources
+  - src
+    - demo
+      - core
+        - desktop-launcher.clj
+  - src-common
+    - demo
+      - core.clj
+  - project.clj
+```
+
+### project.clj
+```clj
+(defproject demo "0.0.1-SNAPSHOT"
+  :description "FIXME: write description"
+  :dependencies [[com.badlogicgames.gdx/gdx "1.9.3"]
+                 [com.badlogicgames.gdx/gdx-backend-lwjgl "1.9.3"]
+                 [com.badlogicgames.gdx/gdx-box2d "1.9.3"]
+                 [com.badlogicgames.gdx/gdx-box2d-platform "1.9.3"
+                  :classifier "natives-desktop"]
+                 [com.badlogicgames.gdx/gdx-bullet "1.9.3"]
+                 [com.badlogicgames.gdx/gdx-bullet-platform "1.9.3"
+                  :classifier "natives-desktop"]
+                 [com.badlogicgames.gdx/gdx-platform "1.9.3"
+                  :classifier "natives-desktop"]
+                 [org.clojure/clojure "1.7.0"]]
+  :source-paths ["src" "src-common"]
+  :javac-options ["-target" "1.6" "-source" "1.6" "-Xlint:-options"]
+  :aot [demo.core.desktop-launcher]
+  :main demo.core.desktop-launcher)
+```
+
+### desktop-launcher.clj
+```clj
+(ns demo.core.desktop-launcher
+  (:require [demo.core :refer :all])
+  (:import [com.badlogic.gdx.backends.lwjgl LwjglApplication]
+           [org.lwjgl.input Keyboard])
+  (:gen-class))
+
+(defn -main []
+  (LwjglApplication. (cljdx.core.Game.) "demo" 800 600)
+  (Keyboard/enableRepeatEvents true))
+```
+
+### core.clj
+```clj
+(ns demo.core
+  (:import [com.badlogic.gdx Game Gdx Graphics Screen]
+           [com.badlogic.gdx.graphics Color GL20]
+           [com.badlogic.gdx.graphics.g2d BitmapFont]
+           [com.badlogic.gdx.scenes.scene2d Stage]
+           [com.badlogic.gdx.scenes.scene2d.ui Label Label$LabelStyle]))
+
+(gen-class
+  :name demo.core.Game
+  :extends com.badlogic.gdx.Game)
+
+(def main-screen
+  (let [stage (atom nil)]
+    (proxy [Screen] []
+      (show []
+        (reset! stage (Stage.))
+        (let [style (Label$LabelStyle. (BitmapFont.) (Color. 1 1 1 1))
+              label (Label. "Hello world!" style)]
+          (.addActor @stage label)))
+      (render [delta]
+        (.glClearColor (Gdx/gl) 0 0 0 0)
+        (.glClear (Gdx/gl) GL20/GL_COLOR_BUFFER_BIT)
+        (doto @stage
+          (.act delta)
+          (.draw)))
+      (dispose[])
+      (hide [])
+      (pause [])
+      (resize [w h])
+      (resume []))))
+
+(defn -create [^Game this]
+  (.setScreen this main-screen))
+```
+
+you can launch the window with `lein run` in the `project.clj` directory, or the repl of your choice by calling `(demo.core.desktop-launcher/-main)`.
+
+For repl based dev have your `main-screen` call `fn`s for each lifecycle method you wish to re-evaluate.
+
+
 ## play-clj ##
 
 The [play-clj](https://github.com/oakes/play-clj) library provides a Clojure wrapper for libGDX. To get started, install [Leiningen](http://leiningen.org/) and run the following command:
