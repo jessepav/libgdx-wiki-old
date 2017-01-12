@@ -17,6 +17,10 @@ Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/
 
 Resources in a skin typically come from a [[texture atlas| Texture-packer#textureatlas]], widget styles and other objects defined using JSON, and objects added to the skin via code. Even when JSON is not used, it is still recommended to use Skin with a texture atlas and objects added via code. This is much more convenient to obtain instances of drawables and serves as a central place to obtain UI resources.
 
+Useful resources:
+* List of skin [available for download](https://github.com/czyzby/gdx-skins)
+* basic tutorial on using skin for Label on [LibGDX.info](https://libgdx.info/basic-label/)
+
 ## <a id="Resources"></a>Resources ##
 
 Each resource in the skin has a name and type. The regions from a [[texture atlas| Texture-packer#textureatlas]] can be made available as resources in the skin. Texture regions can be retrieved as a ninepatch, sprite, tiled drawable, or drawable.
