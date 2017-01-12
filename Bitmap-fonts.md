@@ -4,6 +4,8 @@ LibGdx makes use of bitmap files (pngs) to render fonts.  Each glyph in the font
 
 BitmapFont was refactored for the LibGdx 1.5.6 release. [This blog post](http://www.badlogicgames.com/wordpress/?p=3658) has details about the changes and also a small example showing how to move from pre 1.5.6 code to the new API.
 
+A tutorial on using BitmapFont is available on [LibGDX.info](https://libgdx.info/basic-label/)
+
 ## File format specifications for the font file
 
 References point to bmFont being originally created by Andreas Jönsson over at [AngelCode](http://www.angelcode.com/)
