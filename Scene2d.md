@@ -244,6 +244,8 @@ action.setDuration(duration);
 actor.addAction(action);
 ```
 
+Check out [LibGDX.info](https://libgdx.info/basic_action/) for a tutorial on Actions
+
 ### Action pooling ###
 
 To avoid allocating a new action each time it is needed, a pool can be used:
