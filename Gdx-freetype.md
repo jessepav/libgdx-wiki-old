@@ -14,6 +14,8 @@ The solution to your problem is the `gdx-freetype` extension:
   * generate a BitmapFont of your desired size on the fly
   * user might put his own fonts into your game
 
+Tutorial available on [LibGDX.info](https://libgdx.info/basic-label/)
+
 # Details #
 
 Since this is an extension, it is not included in your LibGDX project by default. How you add the extension differs based on the setup of your project.
