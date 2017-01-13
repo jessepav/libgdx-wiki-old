@@ -3,7 +3,7 @@
 LibGDX comprises several modules that provide services for each step of a typical game architecture. 
 
  * *[[Input | Input Handling]]* - Provides a unified input model and handler for all platforms. Supports keyboard, touchscreen, accelerometer and mouse where available. 
- * *[[Graphics | Graphics]]** - Enables the drawing of images to the screen using the hardware provided OpenGL ES implementation.
+ * *[[Graphics | Graphics]]* - Enables the drawing of images to the screen using the hardware provided OpenGL ES implementation.
  * *[[Files | File Handling]]* - Abstracts file access on all platforms by providing convenient methods for read/write operations regardless of the media.
  * *[[Audio | Audio]]* - Facilitates sound recording and playback on all platforms.
  * *[[Networking | Networking]]* - Provides methods to perform networking operations, such as simple HTTP get and post requests, and TCP server/client socket communication.
@@ -61,7 +61,7 @@ The following API versions are supported:
 To learn more about the Graphics module check its documentation [[here|Graphics Module]].
 
 ### Files ###
-The Files module provides a generic way to access files regardless of the platform.
+The _Files_ module provides a generic way to access files regardless of the platform.
 It makes it easy to read and write files. File writing has some limitations, which are due to the platform security limitations.
 
 The most common use case for the Files module, is to load game assets (textures, sound files) from the same sub-directory of the application for all platforms.
@@ -90,7 +90,33 @@ music.play();
 music.setLooping(true);
 ```
 
-### Net ###
-_TBD_
+### Networking ###
+The _Networking_ module offers functions useful for game networking and can be used to add multiplayer, send players to your website, or perform other networking tasks. These features are available across multiple platforms, although some platforms may require additional considerations or lack certain features.
+
+The Networking module includes configurable TCP client and server sockets with settings optimized for low latency.
+
+There are also methods and utilities for making HTTP requests. One such utility is the Request Builder, which uses method chaining to easily create HTTP Requests.
+
+The Request Builder can be used to create HTTP Requests using the following code snippet:
+```
+HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+HttpRequest httpRequest = requestBuilder.newRequest()
+   .method(HttpMethods.GET)
+   .url("http://www.google.de")
+   .build();
+Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
+```
+
+It can also be used to create HTTP Requests with arguments using the following code snippet:
+```
+HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+HttpRequest httpRequest = requestBuilder.newRequest()
+   .method(HttpMethods.GET)
+   .url("http://www.google.de")
+   .content("q=libgdx&example=example")
+   .build();
+Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
+```
+
 
 [[Prev|The life cycle]] | [[Next|Starter Classes & Configuration]]
