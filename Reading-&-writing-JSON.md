@@ -203,7 +203,7 @@ The `JsonValue` describes a JSON object, array, string, float, long, boolean, or
 
 ## <a id="customizing-serialization"></a>Customizing Serialization ##
 
-Usually automatic serialization is desired and there is no need to customize how specific classes are serialized. When needed, serialization can be customized by either having the class to be serialized implement the `Json.Serializable` interface, or by registering a `Json.Serializer` with the `Json` instance.
+Usually automatic serialization is sufficient, however there are some classes where automatic serialization is not possible or custom serialization is desired. Serialization may be customized by having the class implement the `Json.Serializable` interface or by registering a `Json.Serializer` with the `Json` instance.
 
 This example uses `Json.Serializable` to write a phone number as an object with a single field:
 
