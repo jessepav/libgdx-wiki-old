@@ -9,6 +9,8 @@ We'll look at:
   * Basic input processing
   * Playing sound effects
 
+Visual examples of such concepts are also available on [LibGDX.info](https://libgdx.info/)
+
 ## Project Setup ##
 Follow the steps in [[Project Setup Gradle]]. I used the following names:
 
