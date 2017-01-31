@@ -147,6 +147,8 @@ batch.end();
 
 ## video-example
 
+  
+  * (ParticleEffect Example on LibGDX.info)[https://libgdx.info/particleeffect/]
   * [source](https://bitbucket.org/dermetfan/somelibgdxtests/src/207cfc0a6123b48200d5cf721df222cbe7faf1be/src/net/dermetfan/someLibgdxTests/screens/ParticleEffectsTutorial.java?at=default) of the video
   * [source](https://bitbucket.org/dermetfan/somelibgdxtests/src/4582a1bf94bded4f30df47b9195d1ae14728b847/src/net/dermetfan/someLibgdxTests/screens/ParticleEffectsTutorial.java?at=default) of the video using [pooling](https://www.youtube.com/watch?v=3OwIiELYa70)
 
