@@ -77,6 +77,9 @@ ParticleEffects are no different than Sprites, in fact they [ARE](https://github
   This is great, efficiently drawing lots of ParticleEffects with the same blend state! Be careful with this function, you are now in charge of returning the Batch's blend state to the original, so you must do this after you are finished drawing all your particles.
 
 # Examples
+
+[Example of Particle Effect on LibGDX.info](https://libgdx.info/particleeffect/)
+
 ## Pooled effect example:
 ```java
 ParticleEffectPool bombEffectPool;
