@@ -104,7 +104,7 @@ public class AndroidLauncher extends FragmentActivity implements AndroidFragment
    }
 
    // 4. Create a Class that extends AndroidFragmentApplication which is the Fragment implementation for Libgdx.
-   private class GameFragment extends AndroidFragmentApplication
+   public static class GameFragment extends AndroidFragmentApplication
    {
       // 5. Add the initializeForView() code in the Fragment's onCreateView method.
       @Override
