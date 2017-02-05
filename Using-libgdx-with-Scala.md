@@ -64,6 +64,13 @@ In your favourite shell type:
 
 After filling in some information about your project, you can start placing your game's source files and assets in common/src/main/scala and common/src/main/resources, respectively.
 
+**NOTICE** The setup above might not be working with iOS build. If you want to use MobiDevelop's fork of RoboVM, then one should use
+
+1. this [fork of sbt-robovm](https://github.com/molikto/sbt-robovm), you need `sbt publish-local` this plugin yourself for now.
+2. this [fork of project template](https://github.com/Darkyenus/libgdx-sbt-project.g8) and use sbt-robovm and RoboVM version 2.3.0. Then it will resolve to the plugin that get `publish-local`ed
+
+ 
+
 ## Managing your project
 
 Update to the latest libraries:
