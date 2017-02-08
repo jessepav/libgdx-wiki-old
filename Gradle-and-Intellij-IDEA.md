@@ -1,6 +1,6 @@
 You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in Intellij IDEA or Android Studio (Android Studio is built on Intellij IDEA)! Before you can import your project into Intellij or Android Studio, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]!
 
-at the end of this section you will find a list of common issues with possible solutions to them.
+At the end of this section you will find a list of common issues with possible solutions to them.
 
 ## Importing Your Project
 Go to `Import Project`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, uncheck `Create separate module per source set` and hit `OK` again. A final window will appear asking which modules to import, leave everything checked and click `OK`. It will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
