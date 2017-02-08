@@ -115,7 +115,7 @@ batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 ...
 ```
 
-The 'Texture' can be constructed in many different ways and the different constructors are well documented in the [javadocs](http://libgdx.l33tlabs.org/docs/api/com/badlogic/gdx/graphics/Texture.html).
+The 'Texture' can be constructed in many different ways and the different constructors are well documented in the [javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html).
 
 When opting to use *mipmaps*, the `Texture` will create them at instantiation time. 
 *MipMaps* are pre-calculated, optimized resized copies of the same image to save on computation time when resizing the texture to fit a rectangle. Smaller (halved) copies of the same image are created and uploaded to the GPU and used for different sized geometries instead of being shrunk on the fly. It adds to memory consumption but makes rendering faster.
