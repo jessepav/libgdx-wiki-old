@@ -8,7 +8,7 @@ On top of these low-level facilities we built a powerful set of APIs that help y
 
 Where necessary, libgdx leaves the realm of Java and resorts to native code to aim for the best possible performance. All of this functionality is hidden behind Java APIs so you don't have to worry about cross-compiling native code for all platforms. Many parts of libgdx work around known platform issues so you don't have to deal with them.
 
-Libgdx aims to be a framework rather than an engine, acknowledging that there is no one-size-fits-all solution. Instead we give you powerful abstractions that let you chose how you want to write your game or application.
+Libgdx aims to be a framework rather than an engine, acknowledging that there is no one-size-fits-all solution. Instead we give you powerful abstractions that let you choose how you want to write your game or application.
 
 # Standing on the Shoulders of Giants
 
