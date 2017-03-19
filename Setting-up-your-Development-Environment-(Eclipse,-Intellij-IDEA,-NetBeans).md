@@ -76,4 +76,3 @@ To additionally target iOS
   * The latest XCode, which you can get from the Mac OS X App Store for free
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
-test
