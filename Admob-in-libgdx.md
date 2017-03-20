@@ -126,7 +126,7 @@ Let's take a closer look inside `initializeForView()`. Again, there are two vers
 
 You'll note that this time, the function didn't do anything about setting the Activity to be full-screen, removing the title, and so on. Most likely, you will want all those things. So make sure you call them in your AndroidActivity:
 
-````java
+```java
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
