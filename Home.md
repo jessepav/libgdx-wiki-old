@@ -1,6 +1,6 @@
 ![logo](http://libgdx.badlogicgames.com/img/logo.png)
 
-#**[[Looking for help?|Getting Help]]**
+# **[[Looking for help?|Getting Help]]**
 
   * **[[Wiki Style Guide]]**
   * **Developer's Guide**
