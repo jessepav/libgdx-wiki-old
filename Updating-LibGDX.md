@@ -28,13 +28,12 @@ And that's it! No need to manually juggle JAR files, .so files or anything else.
 ## Gradle Wrapper and Updating It
 Essentially, the gradle wrapper (./gradlew) is pretty standard for gradle projects. You don't have to use it and can use a system gradle installation. But basically, it's a very lightweight wrapper which will download the version of gradle you want into the project dir. This means that anyone can just clone your code, run ./gradlew and it will automatically download said version of gradle. No need for complex setup, etc.
 
-Though, gradle releases new versions quite steadily, so over the months/years, the version that is embedded (and stored in your repository), is old. A recommended way of making updating this trivial, is adding the following custom gradle task to your top-level build.gradle:
+Though, gradle releases new versions quite steadily, so over the months/years, the version that is embedded (and stored in your repository), is old. You can just run following command line:
 
-`task createWrapper(type: Wrapper) {`
-    `gradleVersion = "2.10"`
-`}`
+    ./gradlew wrapper --gradle-version #{GRADLE_VERSION}
 
-Now, to update it you can simply enter the gradle version you'd like to create the wrapper for, and run the new gradle task (will show up in your IDE, if you hit refresh, or it automatically does). Then just click the 'createWrapper' task. You can also run it from the command line, './gradlew createWrapper'. Then add the appropriate new/updated files to your project's version control (yes, even the gradle jar file. it's small so shouldn't be an issue). This is all how it is typically done, to ease the process of people getting started on your project.
+To upgrade your gradle wrapper.
+
 
 ## Gradle Versions Plugin And Updating Your Dependencies
 
