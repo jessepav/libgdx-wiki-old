@@ -32,6 +32,10 @@ Though, gradle releases new versions quite steadily, so over the months/years, t
 
     ./gradlew wrapper --gradle-version #{GRADLE_VERSION}
 
+Or if you want to specify a Gradle distribution by URL(find official distributions [here](https://services.gradle.org)):
+
+     ./gradlew wrapper --gradle-distribution-url #{GRADLE_DISTRIBUTION_URL}
+
 To upgrade your gradle wrapper.
 
 
