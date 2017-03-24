@@ -1,6 +1,6 @@
-* [**Switching libgdx Versions**] (#switching-libgdx-versions)
-* [**Gradle Wrapper and Updating it**] (#gradle-wrapper-and-updating-it)
-* [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-versions-plugin-and-updating-your-dependencies)
+* [**Switching libgdx Versions**](#switching-libgdx-versions)
+* [**Gradle Wrapper and Updating it**](#gradle-wrapper-and-updating-it)
+* [**Gradle Versions Plugin and Updating Your Dependencies**](#gradle-versions-plugin-and-updating-your-dependencies)
 
 # Switching libgdx Versions
 libGDX's Gradle based projects make it very easy to switch between libGDX versions. In general you'll be interested in two types of libGDX builds:
