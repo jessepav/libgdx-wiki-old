@@ -73,6 +73,16 @@ If you intend to use Kotlin’s reflection capabilities as well, add the respect
         compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
     }
 
+#### Note for Intellij users
+
+If you let Intellij to automatically configure `build.gradle` for you, and you choose Kotlin 1.1 or higher version, it would add this dependency:
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    }
+
+If you're targeting platforms that don't support Java 8 library, such as most Android phones, it won't compile. You can replace it with `kotlin-stdlib` library.
+
 ## Convert your code from Java to Kotlin
 
 You do not need to migrate all or any of your Java code right away. Both languages are fully interoperable with each other.
