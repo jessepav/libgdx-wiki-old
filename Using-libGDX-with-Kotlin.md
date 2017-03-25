@@ -75,7 +75,7 @@ If you intend to use Kotlin’s reflection capabilities as well, add the respect
 
 #### Note for Intellij users
 
-If you let Intellij to automatically configure `build.gradle` for you, and you choose Kotlin 1.1 or higher version, it would add this dependency:
+If you made Intellij automatically configure `build.gradle` for you, and chose Kotlin 1.1 or higher version, it would add this dependency:
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
