@@ -81,7 +81,7 @@ If you let Intellij to automatically configure `build.gradle` for you, and you c
         compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
     }
 
-If you're targeting platforms that don't support Java 8 library, such as most Android phones, it won't compile. You can replace it with `kotlin-stdlib` library.
+If you're targeting platforms that don't support Java 8 library, such as most Android phones, it won't compile. You may need to replace it with `kotlin-stdlib` library.
 
 ## Convert your code from Java to Kotlin
 
