@@ -91,7 +91,7 @@ Now we need to alter the image, and add black borders where we want to
 allow the image to stretch. This can be done in any image editor. But
 there are editors to ease the process.
 #### weblaf ninepatch-editor
-A more up-to-date and functional tool than the below Android SDK one, it was actually created because of the shortcomings of the draw9patch tool, can be found in the weblaf project [https://github.com/mgarin/weblaf/tree/v1.28]. Scroll down and find the ninepatch-editor tool standalone jar release available for download.
+A more up-to-date and functional tool than the below Android SDK one, it was actually created because of the shortcomings of the draw9patch tool, can be found in the [weblaf project] (https://github.com/mgarin/weblaf). Scroll down and find the ninepatch-editor tool standalone jar release available for download.
 
 #### Android SDK draw9patch
 The Android SDK contains an excellent tool for exactly this purpose,
