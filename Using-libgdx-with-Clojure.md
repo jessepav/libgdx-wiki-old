@@ -11,7 +11,7 @@ demo
   - src
     - demo
       - core
-        - desktop-launcher.clj
+        - desktop_launcher.clj
   - src-common
     - demo
       - core.clj
@@ -39,7 +39,7 @@ demo
   :main demo.core.desktop-launcher)
 ```
 
-### desktop-launcher.clj
+### desktop_launcher.clj
 ```clj
 (ns demo.core.desktop-launcher
   (:require [demo.core :refer :all])
