@@ -48,7 +48,7 @@ demo
   (:gen-class))
 
 (defn -main []
-  (LwjglApplication. (cljdx.core.Game.) "demo" 800 600)
+  (LwjglApplication. (demo.core.Game.) "demo" 800 600)
   (Keyboard/enableRepeatEvents true))
 ```
 
