@@ -66,7 +66,7 @@ There are two ways (called `Backend`) to integrate Google Play Games Services wi
 
 Please read the specific page for more information on [Mobidevelop's RoboVM and its Robopods](https://github.com/MobiDevelop/robovm)
 
-*Warning:You can no longer integrate Google Play Game Services with iOS. There is a [Simple LIBDX Google Play Games Services integration for iOS](https://github.com/julienvillegas/libgdx-GPGS) but it explains why the new version of Google SDK does not allow iOS users to create a GPGS account from iOS (not a LibGDX issue).*
+*Warning:You can no longer create new Google Play Game Services accounts with iOS. There is a [Simple LIBDX Google Play Games Services integration for iOS](https://github.com/julienvillegas/libgdx-GPGS) but it explains why the new version of Google SDK does not allow iOS users to create a GPGS account from iOS (not a LibGDX issue).*
 
 note: Until early 2016, LibGDX iOS integration was achieved using [RoboVM.com](robovm.com). This has been deprecated. Be careful when you check examples on the Internet as older examples may be based on this version.
 The easy way to find out which version is being referred to:
