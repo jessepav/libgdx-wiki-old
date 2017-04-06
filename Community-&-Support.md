@@ -1,4 +1,4 @@
-Libgdx is a (pretty huge) spare time project consisting of individuals from all around the globe. As such the team members can not give individual support via e-mail or instant messaging. Instead we want to focus on the community aspect and give support on the forums and IRC where it can be of help to others as well.
+Libgdx is a (pretty huge) spare time project consisting of individuals from all around the globe. As such, the team members can not give individual support via e-mail or instant messaging. Instead we want to focus on the community aspect and give support on the forums and IRC where it can be of help to others as well.
 
 *Forum*: http://badlogicgames.com/forum
 
