@@ -15,7 +15,7 @@ You are asked to provide the following parameters:
 * **Package**: the Java package under which your code will live, e.g. com.badlogic.mygame
 * **Game Class**: the name of the main game java class of your app, e.g. MyGame
 * **Destination**: Folder where your app will be created
-* **Android SDK**: the location of your android sdk. With Android Studio, to find out where it is, start Android Studio and click "Configure"->"SDK Manager". By default is is in /Users/username/Library/Android/sdk
+* **Android SDK**: the location of your android sdk. With Android Studio, to find out where it is, start Android Studio and click "Configure"->"SDK Manager". By default it is in /Users/username/Library/Android/sdk
 ![Android studio 1](http://i.imgur.com/re4m4ZW.png)
 ![Android studio 2](http://i.imgur.com/Y4F3UsH.png)
 
@@ -23,7 +23,7 @@ You are asked to provide the following parameters:
 
 * **extensions**: the extensions to include:<br>
     **[Bullet](https://github.com/libgdx/libgdx/wiki/Bullet-physics)**: 3D Collision Detection and Rigid Body Dynamics Library.<br>
-    **[FreeType](https://github.com/libgdx/libgdx/wiki/Gdx-freetype)** Scallable font. Great to manipulate font size dynamically. However be aware that it does not work with HTML target if you cross compile for that target.<br>
+    **[FreeType](https://github.com/libgdx/libgdx/wiki/Gdx-freetype)** Scalable font. Great to manipulate font size dynamically. However be aware that it does not work with HTML target if you cross compile for that target.<br>
     **[Tools](https://libgdx.badlogicgames.com/tools.html)** Set of tools including: particle editor (2d/3d), bitmap font and image texture packers.<br>
     **[Controller](https://github.com/libgdx/libgdx/wiki/Controllers)** Library to handle controllers (e.g.:XBox 360 controller).<br>
     **[Box2d](https://github.com/libgdx/libgdx/wiki/Box2d)**: Box2D is a 2D physics library.<br>
@@ -37,7 +37,7 @@ Note that the Advanced button lets you set the project generation to generate Ec
 
 When ready, click "Generate". 
 
-note: You may get a message indicating that you have a more recent version of android build tools or android API than the recomended. This is not a blocking message and you may continue.
+note: You may get a message indicating that you have a more recent version of android build tools or android API than the recommended. This is not a blocking message and you may continue.
 
 **Now you are ready to import the project into your IDE, run, debug and package it!**
 
