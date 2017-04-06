@@ -1,4 +1,4 @@
-Most Android devices and all iOS devices do not posses a hardware keyboard. Instead, a soft- or on-screen keyboard can be presented to the user. To bring up the on-screen keyboard we can call this method:
+Most Android devices and all iOS devices do not possess a hardware keyboard. Instead, a soft- or on-screen keyboard can be presented to the user. To bring up the on-screen keyboard we can call this method:
 
 ```java
 Gdx.input.setOnscreenKeyboardVisible(true);
