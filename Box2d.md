@@ -259,7 +259,7 @@ if (Gdx.input.isKeyPressed(Keys.D) && vel.x < MAX_VELOCITY) {
 
 ## <a id="joints_and_gears"></a>Joints and Gears ##
 
-Every joint requires to have definition set up before creating it by box2d world. Using *initalize* helps with ensuring that all joint parameters are set.
+Every joint requires to have definition set up before creating it by box2d world. Using *initialize* helps with ensuring that all joint parameters are set.
 
 Note that destroying the joint after the body will cause crash. Destroying the body also destroys joints connected to it.
 
