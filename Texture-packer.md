@@ -18,6 +18,8 @@ TexturePacker uses multiple packing algorithms but the most important is based o
 
 ## <a id="Running_TexturePacker"></a>Running TexturePacker ##
 
+(If you prefer to pack your textures using a GUI, check this tool: https://github.com/crashinvaders/gdx-texture-packer-gui)
+
 The `TexturePacker` class is in the gdx-tools project. It can be run from source via Eclipse:
 
 ```java
