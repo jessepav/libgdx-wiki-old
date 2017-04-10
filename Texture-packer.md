@@ -192,7 +192,7 @@ MipMapNearestLinear: no filtering, smooth transition between mipmaps<br/>
 
 ## <a id="NinePatches"></a>NinePatches ##
 
-If an image file name ends with ".9" just before the file extension, it is considered a ninepatch. NinePatch images can be created using [this tool](http://developer.android.com/tools/help/draw9patch.html). The image must have a 1px transparent border. The upper and left edge may optionally have one contiguous line of black pixels which denote the split information, ie what part of the ninepatch will stretch. The bottom and right edge may optionally have one contiguous line of black pixels which denote the padding information, ie how content on top of the NinePatch should be inset. When this image is packed, the 1px border is removed and the split and padding information stored in the pack file. `TextureAtlas` allows an instance of NinePatch to created for the region using the split information.
+If an image file name ends with ".9" just before the file extension, it is considered a ninepatch. See [ninepatches](https://github.com/libgdx/libgdx/wiki/Ninepatches). The image must have a 1px transparent border. The upper and left edge may optionally have one contiguous line of black pixels which denote the split information, ie what part of the ninepatch will stretch. The bottom and right edge may optionally have one contiguous line of black pixels which denote the padding information, ie how content on top of the NinePatch should be inset. When this image is packed, the 1px border is removed and the split and padding information stored in the pack file. `TextureAtlas` allows an instance of NinePatch to created for the region using the split information.
 
 ## <a id="Image_indexes"></a>Image indexes ##
 
