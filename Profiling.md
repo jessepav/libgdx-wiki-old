@@ -43,3 +43,13 @@ By default, encountered errors will be printed to console (using `Gdx.app.error`
 If you want to know where exactly did the error happen in your code, you may want to use the [`GLErrorListener.THROWING_LISTENER`](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/profiling/GLErrorListener.html#THROWING_LISTENER) which throws an exception on any GL error. Error listener callback is called inside GL call, so the stack trace will reveal where exactly things went wrong. _(Throwing an exception on GL error will most likely crash your application in case of errors, so it is not used by default.)_
 
 For example use and testing, there is a [GLProfilerErrorTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/GLProfilerErrorTest.java)
+
+# apitrace
+
+[apitrace](https://github.com/apitrace/apitrace) is an open source cross platform debugger and profiler for OpenGL. You run the tracer to record the state and each call (including contents of buffers). You then run the viewing tool will read the trace and playback any state at any point in time. It breaks down the cpu/gpu time, every single OpenGL call. You can see the contents of the framebuffer and each texture bound at any point you choose.
+
+Running:
+For linux, do:
+```apitrace trace java -cp /home/me/my-app/desktop/build/libs/*.jar  -Dorg.lwjgl.opengl.libname=/usr/lib/apitrace/wrappers/glxtrace.so com.my.app.desktop.DesktopLauncher```
+ 
+Then just exit your app (if you want), run ```qapitrace``` and open that trace file.
