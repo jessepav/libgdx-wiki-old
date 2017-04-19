@@ -39,7 +39,7 @@ To develop your application via Intellij IDEA, you need to install the following
   * The latest release of [MobiDevelop's RoboVM plugin](http://robovm.mobidevelop.com). (Microsoft's legacy RoboVM has been replaced by a version supported by LibGDX's core contributors). 
 
 ##### Setting up Intel Multi-OS Engine
-As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
+As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can learn how to install it [here](https://multi-os-engine.org/start/).
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
