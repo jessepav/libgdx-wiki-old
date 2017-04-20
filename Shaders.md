@@ -113,7 +113,7 @@ In the render method we then simply call `shader.begin()` and pass the uniforms 
 ```java
 texture.bind();
 shader.begin();
-shader.setUniformMatrix("u_worldView", matrix);
+shader.setUniformMatrix("u_projTrans", matrix);
 shader.setUniformi("u_texture", 0);
 mesh.render(shader, GL20.GL_TRIANGLES);
 shader.end();
