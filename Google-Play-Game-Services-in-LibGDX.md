@@ -33,22 +33,27 @@ compile project(":BaseGameUtils")
 5. in your AndroidManifest.xml file
 
 * add two permissions:
-`<uses-permission android:name="android.permission.INTERNET" />`
-`<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`
+```
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
 
 * add to your application tag
-`<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />`
+```
+<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />
+```
 
 6. string.xml
 
 in your android project, under 'res'->'values', in file `strings.xml` add app_id as follow, where 123456789 is your app ID in as declared in the Google Play Developer Console.
 
-`<?xml version="1.0" encoding="utf-8"?>`
-`<resources>`
-
-    `<string name="app_name">sample_ios_google_signin</string>`
-    `<string name="app_id">123456789</string>`
-`</resources>`
+```
+<?xml version="1.0" encoding="utf-8"?>
+  <resources>
+  <string name="app_name">sample_ios_google_signin</string>
+  <string name="app_id">123456789</string>
+</resources>
+```
 
 6. build.gradle in Android project
 
