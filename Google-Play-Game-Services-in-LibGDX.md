@@ -58,8 +58,10 @@ in your android project, under 'res'->'values', in file `strings.xml` add app_id
 6. build.gradle in Android project
 
 Synchronize with Gradle. you will get the following message: 
-`Error:Execution failed for task ':android:processDebugManifest'.`
-`> Manifest merger failed : uses-sdk:minSdkVersion 9 cannot be smaller than version 15 declared in library [libgdx-GPGS:BaseGameUtils:1.0] `
+```
+Error:Execution failed for task ':android:processDebugManifest'.
+> Manifest merger failed : uses-sdk:minSdkVersion 9 cannot be smaller than version 15 declared in library [libgdx-GPGS:BaseGameUtils:1.0]
+```
 
 edit and set `minSdkVersion` to the version number in the message above (in this case '15')
 
