@@ -34,7 +34,7 @@ public Animation<TextureRegion> runningAnimation;
 //...
 
 runningAnimation = 
-    new Animation<TextureRegion>(0.033f, atlas.findRegions("running"), PlayMode.Looping);
+    new Animation<TextureRegion>(0.033f, atlas.findRegions("running"), PlayMode.LOOP);
 ```
 
 ## Sprite sheet example ##
