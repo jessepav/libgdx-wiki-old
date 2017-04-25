@@ -1,14 +1,14 @@
 # Contents
 
-* [**Introduction**] (#introduction)
-* [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
- * [**Gradle Daemon**] (#gradle-daemon)
- * [**Configuration on Demand**] (#configuration-on-demand)
-* [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
- * [**Intellij IDEA**] (#creating-your-idea-project)
- * [**Eclipse**] (#creating-your-eclipse-project)
-* [**LibGDX without Gradle**] (#libgdx-without-gradle)
-* [**Why does LibGDX recommend Gradle**] (#why-does-libgdx-recommend-gradle)
+* [**Introduction**](#introduction)
+* [**Optimizing Gradle integration in your IDE and on the command line**](#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
+ * [**Gradle Daemon**](#gradle-daemon)
+ * [**Configuration on Demand**](#configuration-on-demand)
+* [**Removing Gradle integration from your IDE**](#how-to-remove-gradle-ide-integration-from-your-project)
+ * [**Intellij IDEA**](#creating-your-idea-project)
+ * [**Eclipse**](#creating-your-eclipse-project)
+* [**LibGDX without Gradle**](#libgdx-without-gradle)
+* [**Why does LibGDX recommend Gradle**](#why-does-libgdx-recommend-gradle)
 
 
 ## Introduction
