@@ -43,7 +43,7 @@ To create the world we use the following code:
 World world = new World(new Vector2(0, -10), true); 
 ```
 
-The first argument we supply is a 2D vector containing the gravity: `0` to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 metre.
+The first argument we supply is a 2D vector containing the gravity: `0` to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 meter.
 
 The second value in the world creation is a boolean value which tells the world if we want objects to sleep or not. Generally we want objects to sleep as this conserves CPU usage, but there are situations where you might not want your objects to sleep.
 
