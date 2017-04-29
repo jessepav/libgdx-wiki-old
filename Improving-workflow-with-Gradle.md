@@ -70,7 +70,7 @@ File > Import > Existing project into workspace > Locate the .project file and i
 
 ## Libgdx without Gradle
 
-You are **never** forced to use Gradle, it is just recommended. If you want clarification on why it is recommended, check [here] (#why-does-libgdx-recommend-gradle)
+You are **never** forced to use Gradle, it is just recommended. If you want clarification on why it is recommended, check [here](#why-does-libgdx-recommend-gradle).
 
 If you don't want to use Gradle, you have the following choices.
 
