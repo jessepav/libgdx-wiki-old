@@ -104,6 +104,7 @@ Below is a JSON example with every available setting and the default value for e
 	paddingX: 2,
 	paddingY: 2,
 	bleed: true,
+	bleedIterations: 2,
 	edgePadding: true,
 	duplicatePadding: false,
 	rotation: false,
@@ -147,6 +148,7 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `paddingX` | The number of pixels between packed images on the x-axis. | 2 |
 | `paddingY` | The number of pixels between packed images on the y-axis. | 2 |
 | `bleed` | If true, RGB values for transparent pixels are set based on the RGB values of the nearest non-transparent pixels. This prevents filtering artifacts when RGB values are sampled for transparent pixels. | true |
+| `bleedIterations` | The amount of bleed iterations that should be performed. Use greater values such as 4 or 8 if you're having artifacts when downscaling your textures. | 2 |
 | `edgePadding` | If true, half of the `paddingX` and `paddingY` will be used around the edges of the packed texture. | true |
 | `duplicatePadding` | If true, edge pixels are copied into the padding. `paddingX/Y` should be >= 2. | false |
 | `rotation` | If true, TexturePacker will attempt more efficient packing by rotating images 90 degrees. Applications must take special care to draw these regions properly. | false |
