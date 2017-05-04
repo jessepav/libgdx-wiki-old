@@ -41,7 +41,7 @@ Whenever working with [mouse or touch](https://github.com/libgdx/libgdx/wiki/Mou
 
 This is OpenGL's counterpart to touch coordinates; that is: it is used to specify (index) a pixel of the (portion of the) physical screen. It is also used as indexer for an image in memory. Likewise, these are integers, they can't be fractional.
 
-The only difference between touch and screen coordinates is that touch coordinates are y-down, while screen coordinates are y-up. Converting between them is therefor quite easy:
+The only difference between touch and screen coordinates is that touch coordinates are y-down, while screen coordinates are y-up. Converting between them is therefore quite easy:
 
 ```java
 y = Gdx.graphics.getHeight() - 1 - y;
