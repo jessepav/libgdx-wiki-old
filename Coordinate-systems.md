@@ -25,7 +25,7 @@ Starts at the upper left *pixel* of the (application portion of the) physical sc
 
 [[images/screenpixels.png]]
 
-Each coordinate is an index in the 2D array of this grid, representing a physical pixel on the screen. Therefor these coordinates are always represented as integers, they can't be fractional.
+Each coordinate is an index in the 2D array of this grid, representing a physical pixel on the screen. Therefore these coordinates are always represented as integers, they can't be fractional.
 
 This coordinate system is based on the classic representation of the display, which is usually also closest to the device/OS specific implementation. If you're familiar with canvas graphics or basic image editors, then you are probably already familiar with these coordinates. You might even lean towards using these as your default/favorite, which you shouldn't.
 
