@@ -15,9 +15,10 @@ Notable features:
 * Operator overloading
 * Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android.
 * 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly. Has a button to convert existing Java code to Kotlin too.
-* Properties
+* Properties - no need to write boilerplate getters and setters
 * Ranges and range operator: `if (x in 0..10) println("in range!")`
-* … many more
+* Inlined methods, which make it possible to reduce method counts, as well as optimize methods using lambdas
+* And more - see language reference docs.
 
 It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It’s a more pragmatic language, rather than academic/forceful.
 
@@ -43,13 +44,15 @@ This step basically includes following the [instructions from the official Kotli
 
 Add the following to your parent project’s `build.gradle`:
 
-    buildscript {
-        ext.kotlinVersion = '<version to use>'
+```Groovy
+buildscript {
+    ext.kotlinVersion = '<version to use>'
 
-        dependencies {
-            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
+}
+```
 
 Since most likely you already got the `buildscript` block in your Gradle config, make sure to only add the sub-items accordingly.
 
@@ -63,23 +66,29 @@ In the android sub-project, add `apply plugin: "kotlin-android"` after the `appl
 
 Add Kotlin’s stdlib to your core project's dependencies list:
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    }
+```Groovy
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
+```
 
 If you intend to use Kotlin’s reflection capabilities as well, add the respective library too:
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    }
+```Kotlin
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+}
+```
 
 #### Note for Intellij users
 
-If you made Intellij automatically configure `build.gradle` for you, and chose Kotlin 1.1 or higher version, it would add this dependency:
+If you made Intellij automatically configure `build.gradle` for you, and chose Kotlin 1.1 or higher version, it might add this dependency:
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
-    }
+```Kotlin
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+}
+```
 
 If you're targeting platforms that don't support Java 8 library, such as most Android phones, it won't compile. You may need to replace it with `kotlin-stdlib` library.
 
@@ -89,7 +98,7 @@ You do not need to migrate all or any of your Java code right away. Both languag
 
 However, if you decide to migrate your Java code to Kotlin, IntelliJ IDEA has a handy function for that.
 
-Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate. While it is still in its infancy so it won't be error proof, but it will help you come up with more idiomatic ways of coding your project. There will be some errors, specifically with some Class<> usage, and Java code that it could not deduce null safety (because that information is lacking from Java).
+Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate. While it is still in its infancy so it won't be error proof, but it will help you come up with more idiomatic ways of coding your project. There will be some errors, specifically with some `Class<>` usage, and Java code that it could not deduce null safety (because that information is lacking from Java).
 
 ## Build and run
 
@@ -97,7 +106,7 @@ That’s it. You successfully enabled Kotlin in your libGDX application. Build a
 
 ## Kotlin LibGDX extensions
 
-- [KTX](https://github.com/libktx/ktx) is a set of libraries that aim to make most aspects of LibGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, coroutines, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more. 
+- [KTX](https://github.com/libktx/ktx) is a set of libraries that aim to make most aspects of LibGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, Box2D, coroutines, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more. 
 
 # Examples of libGDX projects using Kotlin
 
@@ -105,4 +114,5 @@ These are some examples of projects that are using Kotlin, to help give you idea
 
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, uses artemis-odb, kryonet, ktx, protobuf)
 * [HitKlack](https://github.com/TobseF/hitklack) (desktop & android, small size, code examples to explain Kotlin's features)
-* [SplinterSweets](https://github.com/reime005/splintersweets) (desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob integration, small sized and simple) 
+* [SplinterSweets](https://github.com/reime005/splintersweets) (desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob integration, small sized and simple)
+* [Herring.io](https://github.com/czyzby/egu2016), [Neighbourhood Watch](https://github.com/czyzby/egu-2016) (desktop, made by a single team in under 30 hours using [KTX](https://github.com/libktx/ktx) on _EGU Jam 2016_)
