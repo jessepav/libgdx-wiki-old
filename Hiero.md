@@ -3,7 +3,7 @@
 
 ```kotlin
 
-generateFont(16,2f, "data/fonts/pf_ronda_seven.ttf")
+generateFont(16, 2f, "data/fonts/pf_ronda_seven.ttf")
 
 
 fun generateFont(size: Int, outline: Float, path: String)
@@ -28,7 +28,7 @@ fun generateFont(size: Int, outline: Float, path: String)
 
             val generator = FreeTypeFontGenerator(Gdx.files.internal(path))
             val data = generator.generateData(param)
-            val name ="pf_ronda_seven_x${size}"
+            val name ="pf_ronda_seven_x$size"
             BitmapFontWriter.setOutputFormat(BitmapFontWriter.OutputFormat.XML)
             BitmapFontWriter.writeFont(data, arrayOf("$name.png"),
                     Gdx.files.absolute("generated/$name.fnt"), info, 512, 512)
