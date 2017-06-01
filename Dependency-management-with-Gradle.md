@@ -20,7 +20,7 @@
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
 * [Gradle's User Guide](http://www.gradle.org/docs/current/userguide/userguide.html)
 * [Gradle's Depedency Management Guide](http://www.gradle.org/docs/current/userguide/dependency_management.html)
-* [Declare your dependencies] (http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
+* [Declare your dependencies](http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
 
 ### Guide to build.gradle
 Gradle projects are managed by `build.gradle` files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
@@ -201,14 +201,14 @@ After this you will need to refresh your dependencies. Easy eh.
 
 #### Libgdx Extensions
 Mavenized libgdx extensions ready to import from the `build.gradle` script include:
-* [Box2D] (#box2d-gradle)
-* [Bullet] (#bullet-gradle)
-* [FreeTypeFont] (#freetypefont-gradle)
+* [Box2D](#box2d-gradle)
+* [Bullet](#bullet-gradle)
+* [FreeTypeFont](#freetypefont-gradle)
 * [Controllers](#controllers-gradle)
-* [Tools] (#tools-gradle)
-* [Box2DLights] (#box2dlights-gradle)
-* [Ashley] (#ashley-gradle)
-* [AI] (#ai-gradle)
+* [Tools](#tools-gradle)
+* [Box2DLights](#box2dlights-gradle)
+* [Ashley](#ashley-gradle)
+* [AI](#ai-gradle)
 
 #### Box2D Gradle
 **Core Dependency:**
@@ -468,7 +468,7 @@ Command line - `$ ./gradlew --refresh-dependencies`
 Eclipse - `$ ./gradlew eclipse`  
 IntelliJ - `$ ./gradlew idea`  
 
-Also, don't forget that any dependencies added this way also need to be included in the [GWT inheritance file] (#gwt-inheritance).
+Also, don't forget that any dependencies added this way also need to be included in the [GWT inheritance file](#gwt-inheritance).
 
 ### File Dependencies
 If you have a dependency that is not mavenized, you can still depend on them!
