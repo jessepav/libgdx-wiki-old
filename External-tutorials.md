@@ -155,3 +155,4 @@ These are interesting open-source projects found on the web that use libGDX. Thi
  * https://github.com/rpgboss/rpgboss (RPG game editor based on libgdx)
  * https://github.com/wmora/martianrun (2D running game. Uses AdMob and Google Play Game Services)
  * https://github.com/gamedevpl/GdxCombat (2D mortal kombat like game)
+ * https://github.com/justinmarentette11/TDWorld (3D tower defense game)
