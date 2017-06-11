@@ -116,3 +116,4 @@ These are some examples of projects that are using Kotlin, to help give you idea
 * [HitKlack](https://github.com/TobseF/hitklack) (desktop & android, small size, code examples to explain Kotlin's features)
 * [SplinterSweets](https://github.com/reime005/splintersweets) (desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob integration, small sized and simple)
 * [Herring.io](https://github.com/czyzby/egu2016), [Neighbourhood Watch](https://github.com/czyzby/egu-2016) (desktop, made by a single team in under 30 hours using [KTX](https://github.com/libktx/ktx) on _EGU Jam 2016_)
+* [BlockBunny](https://github.com/haxpor/blockbunny) (desktop (with controller support), android, iOS (Multi-OS Engine) | with optimization, changes and improvement from original ForeignGuyMike's tutorial video)
