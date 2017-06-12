@@ -6,7 +6,7 @@ In order to get started you must setup your development environment. LibGDX supp
 
 
 ### Setting up Eclipse 
-Please note that Eclipse has been (deprecated for Android development by Google)[https://android-developers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html]. 
+Please note that Eclipse has been (deprecated for Android development by Google)[https://androiddevelopers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html]. 
 To develop your application via Eclipse, you need to install the following pieces of software.
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
