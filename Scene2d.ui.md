@@ -284,7 +284,7 @@ A progress bar can be setup to be of horizontal or vertical orientation, althoug
 
 ### <a id="Slider"></a>Slider ###
 
-[Slider](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Slider.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java)) is a horizontal indicator that allows a user to set a value. The slider his a range (min, max) and a stepping between each value the slider represents. Slider has drawables for the background, the slider knob, and for the portion of the slider before and after the knob.
+[Slider](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Slider.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java)) is a horizontal indicator that allows a user to set a value. The slider has a range (min, max) and a stepping between each value the slider represents. Slider has drawables for the background, the slider knob, and for the portion of the slider before and after the knob.
 
 A slider with touches disabled, a drawable before the knob, and without the knob can be used as a substitute for progress bar, as both widgets share the same codebase and use same visual style. Animation for changes to the slider value can be enabled to make the progress bar fill more smoothly.
 
