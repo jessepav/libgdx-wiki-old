@@ -1,6 +1,6 @@
 LibGDX comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests). To run and easily analyze these, you need to work directly from the libGDX source.
 
-Running the tests is currently limited to **Eclipse**, so [[make sure you have Eclipse setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
+Running the tests is possible in **Eclipse** and *Intellij Idea**, [[make sure your IDE is setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
 * [Ant](http://ant.apache.org/) installed and available in your `PATH` environment variable so you can execute it on the command line
 * [GWT Plugin](https://developers.google.com/eclipse/docs/download) for Eclipse - follow the instructions on the page and install only required and GWT stuff
     * Also make sure that default GWT SDK is 2.6.1. You will probably have to download it [here](http://www.gwtproject.org/versions.html) and install it by going to Window/Eclipse -> Preferences -> Google -> Web Toolkit -> Add and then make sure it is checked.
@@ -47,6 +47,20 @@ If you did not run 'ant -f fetch.xml' before this point, you will encounter many
 Also, if you are experiencing errors of the kind "The method (method name) of type (type name) must override a superclass method" and the suggested fix is to "Remove the @Override annotation" then you should go into the project settings and change the Java Compliance Level to something higher than 1.5 .
 
 
+You are now ready to start the tests or run the demo games.
+
+## Importing into Intellij IDEA ##
+Once you have the sources and native libraries, open Intellij IDEA and disable `Configure on demand` setting. It can be found in `File -> Settings`. Now you can import all the projects:
+
+  * Go to `File -> Open`
+  * `Browse` to the libgdx directory and select `build.gradle` file
+  * Click `Ok` and `Open as Project`
+  * Uncheck `Create separate module per source set`
+  * Click `Ok` in `Import...` dialog 
+  * When `Gradle project...` dialog shows up make sure all are selected and click `Ok`
+  * When non managed pom file popup shows up, click on `Add as Maven project`
+
+On the first run dependencies will be downloaded, which can take a while.
 You are now ready to start the tests or run the demo games.
 
 ## Running the Demos & Tests ##
