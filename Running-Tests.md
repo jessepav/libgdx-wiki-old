@@ -1,6 +1,6 @@
 LibGDX comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests). To run and easily analyze these, you need to work directly from the libGDX source.
 
-Running the tests is possible in **Eclipse** and *Intellij Idea**, [[make sure your IDE is setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
+Running the tests is possible in **Eclipse** and **Intellij Idea**, [[make sure your IDE is setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
 * [Ant](http://ant.apache.org/) installed and available in your `PATH` environment variable so you can execute it on the command line
 * [GWT Plugin](https://developers.google.com/eclipse/docs/download) for Eclipse - follow the instructions on the page and install only required and GWT stuff
     * Also make sure that default GWT SDK is 2.6.1. You will probably have to download it [here](http://www.gwtproject.org/versions.html) and install it by going to Window/Eclipse -> Preferences -> Google -> Web Toolkit -> Add and then make sure it is checked.
