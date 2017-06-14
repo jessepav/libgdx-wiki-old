@@ -62,7 +62,7 @@ For the tests the following steps are used to start the apps
 
 For a more in-depth description of the project setup as well as how to run and debug a libgdx project see [[Project Setup Gradle]] and follow the links for your preferred IDE.
 
-##Creating New Tests
+## Creating New Tests
 
 To add a test:
 
@@ -72,7 +72,7 @@ To add a test:
 * INCLUDE FOR GWT: Add your test to GwtTestWrapper, through creating an Instancer. Your test needs to specify that it needs GL20 for it to work with the GWT test harness.
 * EXCLUDE FROM GWT: Add a line to GdxTests.gwt.xml excluding your test and giving a short explanation for why it has been excluded in an xml comment.
 
-##Running Unit Tests
+## Running Unit Tests
 There are some unit tests ([junit](http://junit.org)) in `gdx/test` directory. To run these, use command:
 ```
 cd gdx
