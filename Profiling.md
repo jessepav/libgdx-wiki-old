@@ -1,6 +1,6 @@
 This article describes the little helpers and utilities that might come in handy in case you are running into performance problems and need to start profiling your game.
 
-# FPSLogger
+# FPSLogger
 
 The [`FPSLogger`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/FPSLogger.html) is a simple helper class to log the frames per seconds achieved. Just invoke the `log()` method in your rendering method. The output will be logged once per second.
 
