@@ -23,14 +23,7 @@ References point to bmFont being originally created by Andreas Jönsson over at 
 
 [Glyph Designer](http://71squared.com/en/glyphdesigner) - a commercial bitmap font tool with a wide variety of options for shadows, gradients, stroke, etc.
 
-[Glyphite.com](http://www.glyphite.com) - a browser-based Bitmap font generator that can create detailed Bitmap fonts in seconds and export them in most major formats.
-
-**Issues with Glyphite font output:**
-```
-*.fnt files should use spaces to separate key/value pair entries, not tabs.
-Kerning amount should be in int values, not float.
-```
-
+[Littera](http://kvazars.com/littera) - online bitmap font generator, with a great amount of customizations (needs Adobe Flash).
 
 ## Other Tools
 
