@@ -23,7 +23,12 @@ The next step is dependent on your IDE:
 * **Netbeans**: in the "Projects" view, right-click the top-most project node and select "Reload Project".  All sub-projects will also be reloaded with the new files.
 * **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownload anything that changed.
 
-And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
+### Replacing additional files
+
+You need to replace additional files for some releases. They are listed here:
+
+#### Update to release 1.9.6
+* Replace soundmanager files for HTML project, otherwise Web Application might not start. See [#2246](https://github.com/libgdx/libgdx/pull/4426)
 
 ## Gradle Wrapper and Updating It
 Essentially, the gradle wrapper (./gradlew) is pretty standard for gradle projects. You don't have to use it and can use a system gradle installation. But basically, it's a very lightweight wrapper which will download the version of gradle you want into the project dir. This means that anyone can just clone your code, run ./gradlew and it will automatically download said version of gradle. No need for complex setup, etc.
