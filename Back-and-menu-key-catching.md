@@ -13,5 +13,16 @@ Another key that might need to be caught is the menu key. If uncaught, it will b
 ```java
 Gdx.input.setCatchMenuKey(true);
 ```
-
+Then a "keyDown" event will be thrown with key code Keys.BACK:
+```   
+@Override
+public boolean keyDown(int keycode) {
+    if(keycode == Keys.BACK){
+       // Respond to the back button click here
+       return true;
+    }
+    return false;
+}
+```
+ 
 [[Prev|Cursor Visibility & Catching]] | [[Next|On-Screen Keyboard]]
