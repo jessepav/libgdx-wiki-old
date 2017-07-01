@@ -13,7 +13,7 @@ Another key that might need to be caught is the menu key. If uncaught, it will b
 ```java
 Gdx.input.setCatchMenuKey(true);
 ```
-Then a "keyDown" event will be thrown with key code Keys.BACK:
+Then a "keyDown" event will be thrown with a key code Keys.BACK:
 ```   
 @Override
 public boolean keyDown(int keycode) {
