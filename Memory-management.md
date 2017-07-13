@@ -34,7 +34,9 @@ The following classes need to be disposed of manually (might not be complete):
 
 Resources should be disposed of as soon as they are no longer needed, freeing up memory associated with them. Accessing a disposed resource will result in undefined errors, so make sure to clear out all references you have to a disposed resource.
 
-When in doubt about whether a specific class needs to be disposed of, check if it has a `dispose()` method. If it does, you are now working with a native resource.
+When in doubt about whether a specific class needs to be disposed of, check if it has a `dispose()` method which implemented from `Disposable` interface of `com.badlogic.gdx.utils`. If it does, you are now working with a native resource.
+
+> An idea to list all of such classes is to clone libgdx to your system, then use text editor such as Sublime Text or others to open its root directory, search for `implements Disposable`. It will show you result of all source files (thus class) you need to call `dispose()` when you're done with it. List above is already complete. Note that a few classes from result come from test class of libgdx itself which are not relevant to your interest.
 
 ### Object pooling ###
 
