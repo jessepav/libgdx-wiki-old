@@ -1,5 +1,5 @@
 # Table of Contents
-  * **[[维基风格指南]]**
+  * **[[Wiki Style Guide]]**
   * **Developer's Guide**
     * [[Introduction]]
       * [[Goals & Features]]
