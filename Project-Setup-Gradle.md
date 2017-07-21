@@ -1,6 +1,6 @@
 # Creating a libgdx project
 
-Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily get you started.
+Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily get started.
 This will create a gradle ready project that ready to be imported into your IDE (Android Studio, Eclipse..).
 
 1. Download [LibGDX Project setup tool "gdx-setup.jar"](https://bitly.com/1i3C7i3)
