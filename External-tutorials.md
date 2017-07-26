@@ -27,7 +27,7 @@ http://libgdxspain.blogspot.com
  * Fighting Kitten blog (LibGDX, gdxAI) - http://fightingkitten.webcindario.com/
  * Libgdx tutorials on specific topics - http://libgdx.heerbann.com
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
- * Libgdx focused Game Development Blog - https://www.gamedevelopment.blog/
+ * 26 LibGDX tutorials to create a game from scratch: http://www.badlogicgames.com/forum/viewtopic.php?f=17&t=24952
 
 # Topic Specific Tutorials #
 
