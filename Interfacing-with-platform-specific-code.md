@@ -2,7 +2,7 @@ Here's a [forum discussion](http://www.badlogicgames.com/forum/viewtopic.php?f=1
 
 Sometimes it is necessary to access platform specific APIs, e.g., adding advertisement services or leaderboard functionality provided by frameworks such as [Swarm](http://swarmconnect.com/).
 
-This can be achieved by interfacing these APIs with a Facade, providing a platform-specific implementation for each target.
+This can be achieved by allowing specific implementation to be defined through a common API interface; so called interface class.
 
 The following example is pure fiction and assumes we want to use a very simple leaderboard API that is only available on Android. For other targets we simply want to log invocations or provide mock return values.
 
