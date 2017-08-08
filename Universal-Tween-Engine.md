@@ -100,8 +100,10 @@ mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienr
       }
   }
   ```
+
 7. Make sure gradle is configured to read from your local repo. 
-    ```groovy
+
+```groovy
 allprojects {
    ...
     repositories {
@@ -111,16 +113,16 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
 }
+```
 
-  ```
-7. **Required for HTML Projects**
+8. **Required for HTML Projects**
   * Add the following line to **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml**
     * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
   ```xml
 <inherits name='aurelienribon.tweenengine'/>
   ```
 
-7. And most importantly you now need to refresh your project dependencies through your IDE or by running the following command from your project directory:
+9. And most importantly you now need to refresh your project dependencies through your IDE or by running the following command from your project directory:
 
   ```
   gradlew --refresh-dependencies
