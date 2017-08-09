@@ -299,7 +299,7 @@ Time to let the user control the bucket. Earlier we said we'll allow the user to
 
 ```java
    if(Gdx.input.isTouched()) {
-      Vector3 touchPos = new Vector3();
+      touchPos = new Vector3();
       touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
       camera.unproject(touchPos);
       bucket.x = touchPos.x - 64 / 2;
@@ -541,7 +541,7 @@ public class Drop extends ApplicationAdapter {
       
       // process user input
       if(Gdx.input.isTouched()) {
-         Vector3 touchPos = new Vector3();
+         touchPos = new Vector3();
          touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
          camera.unproject(touchPos);
          bucket.x = touchPos.x - 64 / 2;
