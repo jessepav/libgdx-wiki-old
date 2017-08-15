@@ -54,7 +54,7 @@ manager.load("data/myfont.fnt", BitmapFont.class);
 manager.load("data/mymusic.ogg", Music.class);
 ```
 
-These calls will enqueue those assets for loading. The assets will be loaded in the order we called the [AssetManager#load()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load(java.lang.String,%20java.lang.Class)) method. Some loaders allow you to also pass parameters to them via AssetManager#load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
+These calls will enqueue those assets for loading. The assets will be loaded in the order we called the [AssetManager.load()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load-java.lang.String-java.lang.Class-) method. Some loaders allow you to also pass parameters to them via AssetManager.load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
 
 ```java
 TextureParameter param = new TextureParameter();
@@ -106,7 +106,7 @@ BitmapFont myBigFont = manager.get("georgia.ttf", BitmapFont.class);
 
 -----
 
-So far we only queued assets to be loaded. The AssetManager does not yet load anything. To kick this off we have to call AssetManager#update() continuously, say in our ApplicationListener#render() method:
+So far we only queued assets to be loaded. The AssetManager does not yet load anything. To kick this off we have to call AssetManager.update() continuously, say in our ApplicationListener.render() method:
 
 ```java
 public MyAppListener implements ApplicationListener {
@@ -123,7 +123,7 @@ public MyAppListener implements ApplicationListener {
 }
 ```
 
-As long as AssetManager#update() returns false you know it's still loading assets. To poll the concrete state of loading you can use AssetManager#getProgress(), which returns a number between 0 and 1 indicating the percentage of assets loaded so far. There are other methods in AssetManager that give you similar information, like AssetManager#getLoadedAssets() or AssetManager#getQueuedAssets(). <b>You have to call AssetManager#update() to keep loading!</b>
+As long as AssetManager.update() returns false you know it's still loading assets. To poll the concrete state of loading you can use AssetManager.getProgress(), which returns a number between 0 and 1 indicating the percentage of assets loaded so far. There are other methods in AssetManager that give you similar information, like AssetManager.getLoadedAssets() or AssetManager.getQueuedAssets(). <b>You have to call AssetManager.update() to keep loading!</b>
 
 If you want to block and make sure all assets are loaded you can call:
 
@@ -159,7 +159,7 @@ manager.unload("data/myfont.fnt");
 
 If that font references a Texture that you loaded manually before, the texture won't get destroyed! It will be reference counted, getting one reference from the bitmap font and another from itself. As long as this count is not zero, the texture won't be disposed. 
 
-* Assets managed via the AssetManager shouldn't be disposed manually, instead call AssetManager#unload()!*
+* Assets managed via the AssetManager shouldn't be disposed manually, instead call AssetManager.unload()!
 
 If you want to get rid of all assets at once you can call:
 
@@ -173,7 +173,7 @@ or
 manager.dispose();
 ```
 
-Both will dispose all currently loaded assets and remove any queued and not yet loaded assets. The AssetManager#dispose() method will also kill the AssetManager itself. After a call to this method you should not use the manager anymore.
+Both will dispose all currently loaded assets and remove any queued and not yet loaded assets. The AssetManager.dispose() method will also kill the AssetManager itself. After a call to this method you should not use the manager anymore.
 
 And that's pretty much everything there is. Now for the nitty-gritty parts.
 
@@ -213,7 +213,7 @@ On Android your app can be paused and resumed. Managed OpenGL resources like Tex
 Texture.setAssetManager(manager);
 ```
 
-In your ApplicationListener#resume() method you can then switch to your loading screen and call AssetManager#update() again until everything is back to normal.
+In your ApplicationListener.resume() method you can then switch to your loading screen and call AssetManager.update() again until everything is back to normal.
 
 If you don't set the AssetManager as shown in the last snippet, the usual managed texture mechanism will kick in, so you don't have to worry about anything.
 
