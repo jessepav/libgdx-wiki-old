@@ -47,7 +47,7 @@ The first argument we supply is a 2D vector containing the gravity: `0` to indic
 
 The second value in the world creation is a boolean value which tells the world if we want objects to sleep or not. Generally we want objects to sleep as this conserves CPU usage, but there are situations where you might not want your objects to sleep.
 
-It is adviced to use the same scale you use for Box2D to draw graphics. This means drawing a Sprite with a width/height in meters. To scale up the graphics to make them visible, you should use a camera with a viewportWidth / viewportHeight also in meters. E.g: drawing a Sprite with a width of 2.0f (2 meters) and using a camera viewportWidth of 20.0f, the Sprite will fill 1/10th of the width on the window.
+It is advised to use the same scale you use for Box2D to draw graphics. This means drawing a Sprite with a width/height in meters. To scale up the graphics to make them visible, you should use a camera with a viewportWidth / viewportHeight also in meters. E.g: drawing a Sprite with a width of 2.0f (2 meters) and using a camera viewportWidth of 20.0f, the Sprite will fill 1/10th of the width on the window.
 
 
 
