@@ -1,10 +1,16 @@
 ![logo](http://libgdx.badlogicgames.com/img/logo.png)
 
-# **[[Looking for help?|Getting Help]]**
+
+
+Welcome to the Wiki, a place for comprehensive documentation on the LibGDX API and features.  This wiki is community driven, and can be edited by anyone. If you find information out of date, feel free to update yourself, or ask for clarification on the forums or the irc channel.
+
+# [Official documentation](https://libgdx.badlogicgames.com/documentation/)
+If you want to get started coding with LibGDX, head to the link above for official documentation on getting started working with LibGDX projects
+
+## **[[Looking for help?|Getting Help]]**
 
   * **[[Wiki Style Guide]]**
   * **Developer's Guide**
-    * [New to LibGDX?](https://libgdx.badlogicgames.com/documentation/)
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Modules Overview]]
