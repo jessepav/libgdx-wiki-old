@@ -4,6 +4,7 @@
 
   * **[[Wiki Style Guide]]**
   * **Developer's Guide**
+    * [New to LibGDX?](https://libgdx.badlogicgames.com/documentation/)
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Modules Overview]]
