@@ -43,6 +43,12 @@ To compile and run anything GWT related, you'll also need to install the Google 
 
 You are now ready to start the tests or run the demo games.
 
+## Importing to IntelliJ ##
+* Open up IntelliJ and select "Import project". 
+* In the wizard choose "Import project from external model" and "Maven".
+* Click next until you have to enter the project name. It will have "gdx-parent" filled in. That name is fine, but make sure it doesn't try to put it under a "IdeaProjects/gdx-parent" folder, but under the location where you cloned libgdx. In my case "IdeaProjects/libgdx".
+* Before you start editing anything, use the [Eclipse formatter](https://blog.jetbrains.com/idea/2014/01/intellij-idea-13-importing-code-formatter-settings-from-eclipse/).
+
 ## Running the Demos & Tests ##
 The test examples are contained in the gdx-tests project. This project only contains the source code. To actually start the tests on the desktop you have to run the LwjglTestStarter class, contained in the gdx-tests-lwjgl project. To run the tests on Android simply fire up the gdx-tests-android project in the emulator or on a connected device! To run the tests in your browser fire up the gdx-tests-gwt project.
 
