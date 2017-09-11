@@ -140,6 +140,14 @@ That completes the setup for the libgdx View. Next, we create the AdMob view and
 ```java
       AdView adView = new AdView(this, AdSize.BANNER, "xxxxxxxx"); // Put in your secret key here
       adView.loadAd(new AdRequest());
+
+
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 ```
 
 Now we have a Layout, and two Views. All that's left is to add both the Views to the Layout, and then tell Android to use the Layout as the thing to display for the Activity.
