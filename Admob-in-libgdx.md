@@ -138,13 +138,9 @@ You'll note that this time, the function didn't do anything about setting the Ac
 That completes the setup for the libgdx View. Next, we create the AdMob view and kick it off by calling `loadAd()`. This assumes that you want it to start fetching ads immediately. If you want more customized behavior, then you'll have to configure the AdView accordingly. I'm not going to cover that here.
 
 ```java
-      AdView adView = new AdView(this, AdSize.BANNER, "xxxxxxxx"); // Put in your secret key here
-      adView.loadAd(new AdRequest());
-
-
         AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        adView.setAdUnitId("xxxxxxxx"); // Put in your secret key here
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
