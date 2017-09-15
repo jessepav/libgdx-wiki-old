@@ -45,7 +45,7 @@
       * [[OpenGL ES Support]]
         * Configuration & Querying OpenGL ??
         * Direct Access ??
-        * [[Utility Classes]]
+        * Utility Classes
           * [[Rendering Shapes]]
           * [[Textures & TextureRegions]]
           * [[Meshes]]
