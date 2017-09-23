@@ -4,7 +4,7 @@ Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily ge
 This will create a gradle ready project, which can then be imported into your IDE (Android Studio, Eclipse..).
 
 1. Download [LibGDX Project setup tool "gdx-setup.jar"](https://bitly.com/1i3C7i3)
-2. Open you command line tool, go to the download folder and run <br>`java -jar ./gdx-setup.jar`
+2. Open your command line tool, go to the download folder and run <br>`java -jar ./gdx-setup.jar`
 
 This will open the following setup that will allow you to generate your project<br>
 
