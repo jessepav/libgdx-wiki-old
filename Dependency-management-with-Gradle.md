@@ -19,7 +19,7 @@
 ### Useful links
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
 * [Gradle's User Guide](http://www.gradle.org/docs/current/userguide/userguide.html)
-* [Gradle's Depedency Management Guide](http://www.gradle.org/docs/current/userguide/dependency_management.html)
+* [Gradle's Dependency Management Guide](http://www.gradle.org/docs/current/userguide/dependency_management.html)
 * [Declare your dependencies](http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
 
 ### Guide to build.gradle
