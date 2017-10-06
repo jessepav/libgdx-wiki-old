@@ -22,9 +22,6 @@ On Linux/OS X
 java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-freetype/gdx-freetype.jar:extensions/gdx-freetype/gdx-freetype-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.hiero.Hiero
 ```
 
-It can also be run via JWS, though this is an out of date version:
-[Hiero Java WebStart](http://wiki.libgdx.googlecode.com/git/jws/hiero.jnlp). This version cannot use FreeType and is not able to create [distant field fonts](https://github.com/libgdx/libgdx/wiki/Distance-field-fonts).
-
 ## Rasterization ##
 
 Hiero has multiple options for rasterizing fonts:
