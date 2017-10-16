@@ -288,7 +288,7 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
 ```
 **iOS Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
 Not compatible!
