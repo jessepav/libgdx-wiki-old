@@ -288,6 +288,10 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
 ```
 **iOS Dependency:**
 ```groovy
+compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
+```
+**iOS-MOE Dependency:**
+```groovy
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
