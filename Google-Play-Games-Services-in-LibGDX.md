@@ -1,7 +1,9 @@
 [Google Play Games Services](https://developers.google.com/games/services/) offers cross platform social leaderboards, achievements, and much more (realtime multiplayer, cloud saves, anti-piracy...)
 
 ## Using open-source libGDX Extension
-Google Play Games support for libGDX games on Android and Desktop is provided by [https://github.com/MrStahlfelge/gdx-gamesvcs]gdx-gamesvcs libGDX extension. The following article describes the manual integration in your project without using this lib.
+Google Play Games support for libGDX games on Android and Desktop is provided by [gdx-gamesvcs libGDX extension](https://github.com/MrStahlfelge/gdx-gamesvcs). The extension also provides implementations for other game services (Kongregate, Gamejolt and others). 
+
+The following article describes the manual integration in your project without using this lib.
 
 ## Android Integration example
 
