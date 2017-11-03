@@ -1,4 +1,7 @@
-[Google Play Game Services](https://developers.google.com/games/services/) offers cross platform social leaderboards, achievements, and much more (realtime multiplayer, cloud saves, anti-piracy...)
+[Google Play Games Services](https://developers.google.com/games/services/) offers cross platform social leaderboards, achievements, and much more (realtime multiplayer, cloud saves, anti-piracy...)
+
+## Using open-source libGDX Extension
+Google Play Games support for libGDX games on Android and Desktop is provided by [https://github.com/MrStahlfelge/gdx-gamesvcs]gdx-gamesvcs libGDX extension. The following article describes the manual integration in your project without using this lib.
 
 ## Android Integration example
 
@@ -66,6 +69,8 @@ Error:Execution failed for task ':android:processDebugManifest'.
 edit and set `minSdkVersion` to the version number in the message above (in this case '15')
 
 ## iOS integration
+
+**Google Play Games' iOS support is deprecated and shouldn't be implemented in new games.**
 
 There are two ways (called `Backend`) to integrate Google Play Games Services with iOS depending whether your are using the open source, community supported [Mobidevelop's RoboVM and its Robopods](https://github.com/MobiDevelop/robovm) or [Intel's Multi-OS Engine](https://software.intel.com/en-us/node/633261) 
 
