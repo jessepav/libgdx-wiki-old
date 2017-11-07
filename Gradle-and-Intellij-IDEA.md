@@ -3,7 +3,7 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 At the end of this section you will find a list of common issues with possible solutions to them.
 
 ## Importing Your Project
-Go to `Import Project (File -> New -> Project from Existing Sources)`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, uncheck `Create separate module per source set` and hit `OK` again. A final window will appear asking which modules to import, leave everything checked and click `OK`. It will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
+Go to `Import Project (File -> Open-> Open file or Project)`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, uncheck `Create separate module per source set` and hit `OK` again. A final window will appear asking which modules to import, leave everything checked and click `OK`. It will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
 
 
 
