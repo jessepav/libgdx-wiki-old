@@ -113,6 +113,8 @@ This will provide you with a stacktrace and give you a better idea of why gradle
 ### Common problems
 (Confirmed) AVG - When running gradlew desktop:dist antivirus will cause this to fail. Add an exception to your antivirus to allow access.
 ### Debugging Projects
+Start Gradle with the --debug-jvm parameter, and attach your debugger to the right port (5005 typically).
+```./gradlew desktop:run --debug-jvm```
 
 ## Tweaking
 
