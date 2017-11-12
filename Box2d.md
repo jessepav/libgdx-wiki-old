@@ -6,6 +6,8 @@ The Box2D implementation in libgdx is a thin Java wrapper around the C++ engine.
 
 For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libgdx specifically can best be asked on their forum.
 
+A basic implementation and code sample for Box2D with Scene2D is also avalaible on [LibGDX.info](https://libgdx.info/box2d-basic/)
+
 As of [libgdx 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an extension and is no longer included with libgdx by default. Thus a manual installation is required.
 
 ## Table of Contents ##
