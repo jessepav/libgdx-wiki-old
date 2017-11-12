@@ -506,6 +506,7 @@ Coming soon
 
 There are a lot of really good Box2D resources out there and most of the code can be easily converted to libgdx.
 
+  * A basic implementation and code sample for Box2D with Scene2D is also avalaible on [LibGDX.info](https://libgdx.info/box2d-basic/)
   * http://box2d.org Documentation and forums are a great place to find help.
   * http://www.iforce2d.net/b2dtut/ A really good tutorial series on Box2D. Covers a lot of different problems which you will more than likely run across in your game development
 
