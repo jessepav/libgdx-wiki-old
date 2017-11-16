@@ -238,9 +238,11 @@ The last bits that are missing are representations of our bucket and the raindro
   * A bucket/raindrop has a width and height, expressed in the units of our world.
   * A bucket/raindrop has a graphical representation, we already have those in form of the `Texture` instances we loaded.
 
-So, to describe both the bucket and raindrops we need to store their position and size. Libgdx provides a `Rectangle` class'import com.badlogic.gdx.math.Rectangle' which we can use for this purpose. Let's start by creating a `Rectangle` that represents our bucket. We add a new field:
+So, to describe both the bucket and raindrops we need to store their position and size. Libgdx provides a `Rectangle` class which we can use for this purpose. Let's start by creating a `Rectangle` that represents our bucket. We add a new field:
 
 ```java
+   //add this import and NOT the one in the standard library
+   import com.badlogic.gdx.math.Rectangle
    private Rectangle bucket;
 
 ```
