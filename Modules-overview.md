@@ -119,4 +119,4 @@ Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
 ```
 
 
-[[Prev|The life cycle]] | [[Next|Starter Classes & Configuration]]
+[[Prev|The life cycle]] | [Starter classes & configuration](https://github.com/libgdx/libgdx/wiki/Starter-Classes-&-Configuration)
