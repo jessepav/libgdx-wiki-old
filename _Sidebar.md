@@ -72,6 +72,7 @@
           * [[scene2d.ui]]
             * [[Table]]
           * [[Skin]]
+        * [[ImGui]]
       * [[3D Graphics]]
         * [[Quick Start]]
         * [[Models]]
