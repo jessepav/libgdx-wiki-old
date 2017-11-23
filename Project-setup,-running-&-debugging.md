@@ -79,8 +79,8 @@ All your application's assets should be stored in the Android project's assets f
       * Right click the HTML5 project, `Google -> GWT Compile`
       * Change the flags in "Advanced" to `-strict -draftCompile` and the "Output Style" to "detailed". This will produce very readable Javascript that you can map almost 1:1 to your Java code.
       * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
-      # Point your browser at an URL which will display the `.html` file.
-      # Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
+      * Point your browser at an URL which will display the `.html` file.
+      * Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
     * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libgdx and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
 
 ## Manual Project Setup ##
