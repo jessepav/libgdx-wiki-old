@@ -91,11 +91,20 @@ You might have noticed that some of the listener methods return a boolean. This 
 All listener methods will be called on the rendering thread, just like in case of a normal InputProcessor.
 
 # Mappings and Codes
-As stated above, different components have different codes. These codes are not standardized, so we have two options when dealing with controllers:
+As stated above, different components have different codes. These codes are not standardized in general.
 
-* Hardcode the codes for a specific controller, e.g. the Ouya controller
+On Android, there are standard Controller button codes available. See the [KEYCODE_BUTTON_xxx Constant definitions](https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_BUTTON_A). They are starting at 96 in opposite of the other platforms.
+
+On WebGL, there is also a standardized mapping available, buttons going from 0 to 15. [Try it](http://html5gamepad.com/).
+
+It is up to the Game Controller's manufacturer if these mappings are respected. 
+
+So we have two options when dealing with controllers:
+
+* Hardcode standard button mappings as a default, and hardcode the codes for a specific controller, e.g. the Ouya controller (but take care, they are different on different platforms in general)
 * Let the player configure the controller bindings, e.g. running through each action and asking the player to press the corresponding controller button, axis, POV, etc.
 
+## Hard coding button codes
 We currently have the [codes for the Ouya controller buttons and axes](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/mappings/Ouya.java). To check if a controller is an Ouya controller, you can do this:
 
 ```java
@@ -120,7 +129,12 @@ We’ll add more mappings in the future for popular controllers, e.g. the Xbox 3
 
 Note that those codes can be different for the same type of controller depending on the operating system. My cheap Logitech controller gets code 0 assigned for its x-axis on Windows, and code 1 on Linux and Mac OS X. For mappings and codes found in the com.badlogic.gdx.controllers.mappings package, like the Ouya class above, we’ll make sure the codes work on all operating systems.
 
-In the end its best to let the user decide how she wants to use her gamepad with your. Writting a simple config dialog that runs through actions and asks the user to press a button is easy to do. You can then save those mappings to a file, in combination with the controller name, and reload and reuse them for the next session of that user.
+## Configurable button mappings
+In the end its best to let the user decide how he wants to use the gamepad with your game. Writting a simple config dialog that runs through actions and asks the user to press a button is easy to do. You can then save those mappings to a file, in combination with the controller name, and reload and reuse them for the next session of that user.
+
+However, on closer inspection things get more complicated: When your game needs a D-Pad, there are controllers not reporting a D-Pad but four single buttons. Some even report their D-Pad as if it were an alog axis. Perhaps you also want your user to freely choose if he want to use an analog axis or a D-Pad.
+
+A ready-made library for handling all these cases on top of gdx-controllers can be found at the [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils).
 
 ## Controller (Dis-)connects
 Currently controller (dis-)connects are reported on desktop and Android. If your game supports gamepads, make sure to handle device disconnects and connects! E.g. if a controller disconnects during a game, pause the game and ask the user to reconnect the controller. Note that you will get a brand new Controller instance in that case, so make sure to wire up any listeners correctly. The old controller instance will be reported as disconnected.
