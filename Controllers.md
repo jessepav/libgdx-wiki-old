@@ -97,7 +97,7 @@ On Android, there are standard Controller button codes available. See the [KEYCO
 
 On WebGL, there is also a standardized mapping available, buttons going from 0 to 15. [Try it](http://html5gamepad.com/).
 
-It is up to the Game Controller's manufacturer if these mappings are respected. 
+But: It is up to the Game Controller's manufacturer if these mappings are respected - and they are normally not to the full extent.
 
 So we have two options when dealing with controllers:
 
