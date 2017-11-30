@@ -130,9 +130,9 @@ We’ll add more mappings in the future for popular controllers, e.g. the Xbox 3
 Note that those codes can be different for the same type of controller depending on the operating system. My cheap Logitech controller gets code 0 assigned for its x-axis on Windows, and code 1 on Linux and Mac OS X. For mappings and codes found in the com.badlogic.gdx.controllers.mappings package, like the Ouya class above, we’ll make sure the codes work on all operating systems.
 
 ## Configurable button mappings
-In the end its best to let the user decide how he wants to use the gamepad with your game. Writting a simple config dialog that runs through actions and asks the user to press a button is easy to do. You can then save those mappings to a file, in combination with the controller name, and reload and reuse them for the next session of that user.
+In the end its best to let the user decide how he wants to use the gamepad with your game. Writing a simple config dialog that runs through actions and asks the user to press a button is easy to do. You can then save those mappings to a file, in combination with the controller name, and reload and reuse them for the next session of that user.
 
-However, on closer inspection things get more complicated: When your game needs a D-Pad, there are controllers not reporting a D-Pad but four single buttons. Some even report their D-Pad as if it were an alog axis. Perhaps you also want your user to freely choose if he want to use an analog axis or a D-Pad.
+However, on closer inspection things get more complicated: When your game needs a D-Pad, there are controllers not reporting a D-Pad but four single buttons. Some even report their D-Pad as if it were an analog axis. Perhaps you also want your user to freely choose if he want to use an analog axis or a D-Pad.
 
 A ready-made library for handling all these cases on top of gdx-controllers can be found at the [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils).
 
