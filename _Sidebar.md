@@ -4,7 +4,7 @@
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Modules Overview]]
-      * [[Starter Classes & Configuration]]
+      * [[Starter Classes and Configuration]]
       * [[Querying]]
       * [[Logging]]
       * [[Threading]]
