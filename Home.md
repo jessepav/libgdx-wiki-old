@@ -12,7 +12,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Modules Overview]]
-      * [[Starter Classes & Configuration]]
+      * [[Starter Classes and Configuration]]
       * [[Querying]]
       * [[Logging]]
       * [[Threading]]
