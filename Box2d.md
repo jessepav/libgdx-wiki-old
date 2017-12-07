@@ -498,10 +498,6 @@ world.setContactListener(ListenerClass);
 We might get information about the bodies from the contact fixtures.
 Depending on the application design, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the Contact and make some changes (e.g. change the player health).
 
-## Code Snippets ##
-
-Coming soon
-
 ## Resources ##
 
 There are a lot of really good Box2D resources out there and most of the code can be easily converted to libgdx.
@@ -514,6 +510,13 @@ There are a lot of really good Box2D resources out there and most of the code ca
 
 The following is a list of tools for use with box2d and libgdx:
 
+### Free Open Source
+
+   * Obli's <a href="https://github.com/MovingBlocks/box2d-editor">Physics Body Editor</a>
+
+Code Sample available on [LibGDX.info](https://libgdx.info/box2d-importing-complex-bodies/)
+
+### Commercial
+
    * <a href="https://www.iforce2d.net/rube">RUBE</a> editor for creating box2d worlds.  Use <a href="https://github.com/tescott/RubeLoader">RubeLoader</a> for loading RUBE data into libgdx.
-   * Obli's <a href="http://www.aurelienribon.com/blog/projects/physics-body-editor/">Physics Body Editor</a>
    * <a href="https://www.codeandweb.com/physicseditor">PhysicsEditor</a>
