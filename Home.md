@@ -95,8 +95,8 @@ If you want to get started coding with LibGDX, head to the [Official documentati
     * [[Managing Your Assets]]
     * [[Internationalization and Localization]]
     * Utilities
-      * [[Reading & Writing JSON]]
-      * [[Reading & Writing XML]]
+      * [[Reading and Writing JSON]]
+      * [[Reading and Writing XML]]
       * [[Collections]]
       * [[Reflection]]
       * [[jnigen]]
@@ -104,7 +104,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Interpolation]]
       * [[Vectors, Matrices, Quaternions]]
       * [[Circles, Planes, Rays, etc.]]
-      * [[Path Interface & Splines]]
+      * [[Path Interface and Splines]]
       * Bounding Volumes ??
       * Intersection & Overlap Testing ??
     * Tools
