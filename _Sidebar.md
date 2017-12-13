@@ -88,8 +88,8 @@
     * [[Managing Your Assets]]
     * [[Internationalization and Localization]]
     * Utilities
-      * [[Reading & Writing JSON]]
-      * [[Reading & Writing XML]]
+      * [[Reading and Writing JSON]]
+      * [[Reading and Writing XML]]
       * [[Collections]]
       * [[Reflection]]
       * [[jnigen]]
