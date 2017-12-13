@@ -97,7 +97,7 @@
       * [[Interpolation]]
       * [[Vectors, Matrices, Quaternions]]
       * [[Circles, Planes, Rays, etc.]]
-      * [[Path Interface & Splines]]
+      * [[Path Interface and Splines]]
       * Bounding Volumes ??
       * Intersection & Overlap Testing ??
     * Tools
