@@ -145,4 +145,8 @@ Simply check the "Controllers" checkbox in the gdx-setup app. For LWJGL 3, repla
 ## Tests & Demos
 I wrote a new little test that lets you display the currently connected controllers and event data, called [ControllersTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/extensions/ControllersTest.java). I also augmented the gdx-invaders demo to support Ouya controllers. Note that the integration is a quick and dirty affair which doesn’t handle disconnects or provides any configuration options.
 
+#### Proguard settings ####
+-keep class com.badlogic.gdx.controllers.android.AndroidControllers { *; }
+
+
 [[Prev|Event Handling]] | [[Next|Gesture Detection]]
