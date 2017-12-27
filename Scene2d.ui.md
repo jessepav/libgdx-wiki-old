@@ -228,6 +228,8 @@ A [HorizontalGroup](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlo
 
 The labels that use the same font will be the same size, though they may have different colors. Bitmap fonts don't typical scale well, especially at small sizes. It is suggested to use a separate bitmap font for each font size. The bitmap font image should be packed into the skin's atlas to reduce texture binds.
 
+To create a label which contain text with different colors, the [BitmapFont](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.html) used to create the label should have markup enabled by setting it in the [BitmapFont.BitmapFontData](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.BitmapFontData.html) object passed via the constructor. If you're using the [AssetManager](https://github.com/libgdx/libgdx/wiki/Managing-your-assets), you can pass this data by passing an appropriate [BitmapFontParameter](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/BitmapFontLoader.BitmapFontParameter.html) object when you call [load](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load-java.lang.String-java.lang.Class-com.badlogic.gdx.assets.AssetLoaderParameters-).
+
 ### <a id="Image"></a>Image ###
 
 [Image](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Image.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Image.java)) simply displays a drawable. The drawable can be a texture, texture region, ninepatch, sprite, etc. The drawable may be scaled and aligned within the image widget bounds in various ways.
