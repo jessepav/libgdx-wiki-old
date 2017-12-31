@@ -164,7 +164,7 @@ If you look at the source of the default ubershader, then you'll probably notice
 public static class MyShaderProvider extends DefaultShaderProvider {
 	DefaultShader.Config albedoConfig;
 
-	public MyShaderProvder(DefaultShader.Config defaultConfig) {
+	public MyShaderProvider(DefaultShader.Config defaultConfig) {
 		super(defaultConfig);
 		albedoConfig = new DefaultShader.Config();
 		albedoConfig.vertexShader = Gdx.files.internal("data/albedo.vertex.glsl").readString();
