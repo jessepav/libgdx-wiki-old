@@ -4,8 +4,8 @@ For each new file added to LibGDX, it is necessary to add a new entry for the ne
 See for example [this PR](https://github.com/libgdx/libgdx/pull/5018/files#diff-13b547f0d1b0872d60d67db4ca0b266d).
 If the new file isn't added to `gdx/src/com/badlogic/gdx.gwt.xml`, an error similar to
 
-`    [ERROR] Errors in 'jar:file:/home/username/.m2/repository/com/badlogicgames/gdx/gdx/PointLightTestBuild/gdx-PointLightTestBuild-sources.jar!/com/badlogic/gdx/graphics/g3d/Environment.java'
-          [ERROR] Line 34: No source code is available for type com.badlogic.gdx.graphics.g3d.environment.PointShadowLight; did you forget to inherit a required module?
+`    [ERROR] Errors in 'jar:file:<...>'
+          [ERROR] Line <line num>: No source code is available for type com.badlogic.gdx.graphics.g3d.environment.PointShadowLight; did you forget to inherit a required module?
     [ERROR] Aborting compile due to errors in some input files`
 
 may be seen.
