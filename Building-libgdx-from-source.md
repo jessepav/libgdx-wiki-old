@@ -1,3 +1,5 @@
+https://libgdx.badlogicgames.com/documentation/hacking/Working%20from%20source.html is more up-to-date.
+
 Before trying to build libgdx from source yourself, you'll have to install [[Eclipse and all other related software|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. We currently don't support development with other IDEs.
 
 In addition you'll have to install [Ant](http://ant.apache.org/) and make sure its `bin/` directory is in your `PATH` environment variable so that you can execute Ant on the command line.
