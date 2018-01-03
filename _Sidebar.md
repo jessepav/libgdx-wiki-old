@@ -128,7 +128,7 @@
       * [[Airpush in libGDX]]
       * [[Swarm in libGDX]]
       * [[NextPeer in libGDX]]
-      * [[Google Play Game Services in libGDX]]
+      * [[Google Play Games Services in libGDX]]
       * [[ProGuard/DexGuard and libGDX]]
       * [[Excelsior JET and libGDX]]
   * Articles
