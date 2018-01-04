@@ -83,7 +83,7 @@ DisplayMode primaryDesktopMode = Lwjgl3ApplicationConfiguration.getDisplayMode()
 
 With a display mode in hand, you can set it on the `Lwjgl3ApplicationConfiguration`:
 ```java
-DisplayMode primaryMode = LWjgl3ApplicationConfiguration.getDisplayMode();
+DisplayMode primaryMode = Lwjgl3ApplicationConfiguration.getDisplayMode();
 Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 config.setFullscreenMode(primaryMode);
 new Lwjgl3ApplicationConfiguration(new MyAppListener(), config);
