@@ -202,7 +202,7 @@ The `create` method is called when we create a new instance of our ApplicationLi
 
 **#1** - Sets the current rotation speed to 0.5 degree.
 
-**#2** - Creates our `Sprite`, from a new Texture that uses the file: `sc_map.png` Download the file [here](https://user-images.githubusercontent.com/12996613/34653163-6a5c206c-f3e8-11e7-8913-87738e62bc81.png) and place it in the `assets/` directory.
+**#2** - Creates our `Sprite`, from a new Texture that uses the file: `sc_map.png` Download the file [here](https://user-images.githubusercontent.com/12996613/34653163-6a5c206c-f3e8-11e7-8913-87738e62bc81.png), rename it to `sc_map.png` and place it in the `assets/` directory.
 
 **#3** - We set the position of our `mapSprite` to `0,0`.  (This isn't strictly required as the Sprite has default x,y of `0,0` anyway.)
 
