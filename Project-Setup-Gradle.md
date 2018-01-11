@@ -1,3 +1,4 @@
+HOW DO I USE VSCODE WITH LIBGDX HELP
 # Creating a libgdx project
 
 Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily get started.
