@@ -80,7 +80,17 @@ This will create an unsigned APK file in the `android/build/outputs/apk` folder.
 ### Packaging for iOS
 `gradlew ios:createIPA`
 
-This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. 
+To upload your app you will need to use the application loader within XCode (Xode->Open Developer Tool->Application loader) 
+You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+
+Note: as of iOS 11 instead of simply adding your icons into your data folder within your iOS project you need to include an asset Catalog.
+If you do not include one, you can still submit your app but later you receive the following message:
+> Dear developer,
+
+> We have discovered one or more issues with your recent delivery for "". To process your delivery, the following issues must be corrected: Missing Info.plist value - A value for the Info.plist key CFBundleIconName is missing in the bundle ''. Apps that provide icons in the asset catalog must also provide this Info.plist key. For more information see http://help.apple.com/xcode/mac/current/#/dev10510b1f7. Once these issues have been corrected, you can then redeliver the corrected binary. Regards, The App Store team
+
+To fix this, follow these [instructions to include an asset catalog](https://github.com/MobiVM/robovm/wiki/Howto-Create-an-Asset-Catalog-for-XCode-9-Appstore-Submission%3F): 
 
 ### Packaging for the Web
 `gradlew html:dist`
