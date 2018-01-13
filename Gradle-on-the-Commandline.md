@@ -90,7 +90,7 @@ If you do not include one, you can still submit your app but later you receive t
 
 > We have discovered one or more issues with your recent delivery for "". To process your delivery, the following issues must be corrected: Missing Info.plist value - A value for the Info.plist key CFBundleIconName is missing in the bundle ''. Apps that provide icons in the asset catalog must also provide this Info.plist key. For more information see http://help.apple.com/xcode/mac/current/#/dev10510b1f7. Once these issues have been corrected, you can then redeliver the corrected binary. Regards, The App Store team
 
-To fix this, follow these [instructions to include an asset catalog](https://github.com/MobiVM/robovm/wiki/Howto-Create-an-Asset-Catalog-for-XCode-9-Appstore-Submission%3F): 
+To fix this, follow these [instructions to include an asset catalog](https://github.com/MobiVM/robovm/wiki/Howto-Create-an-Asset-Catalog-for-XCode-9-Appstore-Submission%3F)
 
 ### Packaging for the Web
 `gradlew html:dist`
