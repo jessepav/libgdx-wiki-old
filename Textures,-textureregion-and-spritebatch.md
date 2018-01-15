@@ -193,7 +193,7 @@ public class TextureFun implements ApplicationListener {
 
     The first parameter is the texture that holds the image we want to cut out, the 2nd and 3rd parameters are the X and Y coordinates in the texture (the origin is in the top left corner), while the 4th and 5th parameters are the `width` and `height` of the region in pixels that will be cut out.
 
-4. Cuts out a region from `texture` using normalized device coordinates. The parameters have the same meaning as at *3.* but use a different coordinate system. In _normalized device coordinate system_, the width of the texture is 1.0. 0.5 means the half of the width. In this case, 0.5 length means 64 pixels (width = 128 pixels).
+4. Cuts out a region from `texture` using normalized device coordinates. Using a different coordinate system, the 2nd and 3rd parameters are the X and Y coordinates of the top left point *but* the 4th and 5th parameters are the X and Y coordinates of the bottom right point. In _normalized device coordinate system_, the width of the texture is 1.0. 0.5 means the half of the width. In this case, 0.5 length means 64 pixels (width = 128 pixels).
 5. Cuts out the bottom left region.
 6. Cuts out the bottom right region.
 7. Draws the original `texture` scaled to 64 pixels wide and high at the bottom left corner. Remember that SpriteBatch’s default viewport’s coordinate system has the origin at `0,0`.
