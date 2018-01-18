@@ -69,7 +69,7 @@ It is also very useful for writing high scores or game state to files.
 
 The following example creates a Texture from a file present in the $APP_DIR/assets/textures directory.
 ```java
-Texture myTexture = new Texture(Gdx.files.internal("assets/texture/brick.png"));
+Texture myTexture = new Texture(Gdx.files.internal("assets/textures/brick.png"));
 ```
 This is a very powerful abstraction layer as it works on both Android and desktop. 
 
