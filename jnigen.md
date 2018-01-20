@@ -75,7 +75,7 @@ public class ExampleBuild {
 	}
 }
 ```
-You have to download [JNI-GEN.JAR] (https://jar-download.com/?detail_search=g%3A%22com.badlogicgames.gdx%22+AND+a%3A%22gdx-jnigen%22+AND+v%3A%221.9.8%22&a=gdx-jnigen) and add it as dependency in your Android Studio.
+You have to download [JNI-GEN.JAR](https://jar-download.com/?detail_search=g%3A%22com.badlogicgames.gdx%22+AND+a%3A%22gdx-jnigen%22+AND+v%3A%221.9.8%22&a=gdx-jnigen) and add it as dependency in your Android Studio.
 
 First, `NativeCodeGenerator` is used to generate the native source from the Java source. It needs to be told where to find the Java source, the class files for that source, the directory to output the native source, a list of glob patterns for what Java source files to process, and a list of glob patterns for what source files to exclude.
 
