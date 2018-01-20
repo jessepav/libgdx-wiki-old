@@ -8,7 +8,7 @@ Note that gdx-jnigen is a Java project. It has a blank AndroidManifest.xml becau
 
 ### Windows ###
 
-  * **MinGW 32 bit** Run [mingw-get-setup.exe](http://optimate.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe), install with the GUI, choose `mingw32-base` and `mingw32-gcc-g++` under "Basic Setup", then Installation -> Apply Changes.
+  * **MinGW 32 bit** Run [mingw-get-setup.exe](https://sourceforge.net/projects/mingw/files/Installer/), install with the GUI, choose `mingw32-base` and `mingw32-gcc-g++` under "Basic Setup", then Installation -> Apply Changes.
   * **MinGW 64 bit** Download the [MinGW 64 bit](http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/4.8.2/threads-win32/seh/x86_64-4.8.2-release-win32-seh-rt_v3-rev1.7z/download) binaries and unzip.
 
 ### Linux ###
