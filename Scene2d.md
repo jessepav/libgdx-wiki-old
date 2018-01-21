@@ -2,6 +2,8 @@
 
 scene2d is a 2D scene graph for building applications and UIs using a hierarchy of actors. If you're looking for the UI component of scene2d, see [[Scene2d.ui]]
 
+Check out [LibGDX.info](https://libgdx.info/basic_action/) for Scene2d examples (Image,Label etc...)
+
 It provides the following features:
 
  * Rotation and scale of a group is applied to all child actors. Child actors always work in their own coordinate system, parent transformations are applied transparently.
