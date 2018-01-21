@@ -410,9 +410,6 @@ WheelJoint joint = (WheelJoint) physics.createJoint(jointDef);
 joint.setMotorSpeed(1f);
 ```
 
-
-## Fixture Shapes ##
-
 ## Fixture Shapes ##
 
 As mentioned previously, a fixture has a shape, density, friction and restitution attached to it. 
@@ -422,16 +419,17 @@ You can programatically define more complex shapes using the following classes
 * ChainShape, 
 * EdgeShape, 
 * PolygonShape
+
 However using third party tools you can simply define your shapes and import them into your game.
 
 ### Importing Complex Shapes using box2d-editor ###
 
-box2d-editor is a free open source tool to define complex shapes and load them into your game.
-See the[Tools section](box2d#Tools) for more available  tools.
-
+[box2d-editor](https://github.com/julienvillegas/box2d-editor) is a free open source tool to define complex shapes and load them into your game.
 An example of how to import a shape into your game using box2d-editor is available on [Libgdx.info](https://libgdx.info/box2d-importing-complex-bodies/). 
 
-In a nutshell,
+Check out the [Tools section](box2d#Tools) for more tools.
+
+In a nutshell, if you are using Box2d-editor:
 * Create your shape within Box2d-editor.
 * Export your scene and copy the file into your asset folder.
 * Copy file BodyEditorLoader.java into your "core" module source folder.
