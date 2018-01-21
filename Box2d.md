@@ -512,7 +512,7 @@ The following is a list of tools for use with box2d and libgdx:
 
 ### Free Open Source
 
-   * Obli's <a href="https://github.com/MovingBlocks/box2d-editor">Physics Body Editor</a>
+   * <a href="https://github.com/julienvillegas/box2d-editor">Physics Body Editor</a>
 
 Code Sample available on [LibGDX.info](https://libgdx.info/box2d-importing-complex-bodies/)
 
