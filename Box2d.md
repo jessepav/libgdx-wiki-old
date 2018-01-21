@@ -413,7 +413,45 @@ joint.setMotorSpeed(1f);
 
 ## Fixture Shapes ##
 
-Coming soon
+## Fixture Shapes ##
+
+As mentioned previously, a fixture has a shape, density, friction and restitution attached to it. 
+Out of the box you can easily create boxes (as seen in the section [Static Bodies](box2d#static-bodies) section) and circle shapes (as seen in the [Dynamic Bodies](box2d#dynamic-bodies) section).
+
+You can programatically define more complex shapes using the following classes 
+* ChainShape, 
+* EdgeShape, 
+* PolygonShape
+However using third party tools you can simply define your shapes and import them into your game.
+
+### Importing Complex Shapes using box2d-editor ###
+
+box2d-editor is a free open source tool to define complex shapes and load them into your game.
+See the[Tools section](box2d#Tools) for more available  tools.
+
+An example of how to import a shape into your game using box2d-editor is available on [Libgdx.info](https://libgdx.info/box2d-importing-complex-bodies/). 
+
+In a nutshell,
+* Create your shape within Box2d-editor.
+* Export your scene and copy the file into your asset folder.
+* Copy file BodyEditorLoader.java into your "core" module source folder.
+
+Then in your game you can do:
+
+        `BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("box2d_scene.json"));`
+
+        `BodyDef bd = new BodyDef();`
+        `bd.type = BodyDef.BodyType.KinematicBody;`
+        `body = world.createBody(bd);`
+
+        `// 2. Create a FixtureDef, as usual.`
+        `FixtureDef fd = new FixtureDef();`
+        `fd.density = 1;`
+        `fd.friction = 0.5f;`
+        `fd.restitution = 0.3f;`
+
+        `// 3. Create a Body, as usual.`
+        `loader.attachFixture(body, "gear", fd, scale);`
 
 ## Sprites and Bodies ##
 
