@@ -10,11 +10,11 @@ OpenGL ES 2.0 has only one mandatory texture compression format on Android: ETC1
 - either in another texture which can be ETC1 compressed as well,
 - or in the same texture, putting the color part of your image in the top, and the alpha part in the bottom.
 
-The video memory savings will then drops from 6x to 4x, but are still worth the effort. An example is given in [KTXTest] (https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/KTXTest.java).
+The video memory savings will then drops from 6x to 4x, but are still worth the effort. An example is given in [KTXTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/KTXTest.java).
 
 ## ETC1 File Format ##
 
-ETC1 file format is a very simple format specific to LibGdx (see [this blog post] (http://www.badlogicgames.com/wordpress/?p=2104)). It gives a straight forward way to support 2D texture ETC1 compressed. The drawback is that it won't give you the ability to use mipmaps or cubemaps.
+ETC1 file format is a very simple format specific to LibGdx (see [this blog post](http://www.badlogicgames.com/wordpress/?p=2104)). It gives a straight forward way to support 2D texture ETC1 compressed. The drawback is that it won't give you the ability to use mipmaps or cubemaps.
 
 ### Compression ###
 Compressing a Pixmap loaded from a file and writing it to our custom ETC1 file format is pretty simple:
@@ -32,7 +32,7 @@ Texture texture = new Texture(Gdx.files.internal("image.etc1"));
 
 ## KTX/ZKTX Format ##
 
-KTX file format is a [standard] (https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/) dedicated to storing OpenGL textures. Its main advantage is that it supports most features of OpenGL Textures (all compression formats, with or without mipmaps, cubemaps, texture arrays,...).
+KTX file format is a [standard](https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/) dedicated to storing OpenGL textures. Its main advantage is that it supports most features of OpenGL Textures (all compression formats, with or without mipmaps, cubemaps, texture arrays,...).
 
 The ZKTX format is just a zipped KTX to limit the size of the file on disk.
 
@@ -58,8 +58,8 @@ usage : KTXProcessor input_file output_file [-etc1|-etc1a] [-mipmaps]
 ```
 
 There are also lots of third party tools to prepare KTX texture files:
-- [The OpenGL SDK] (https://www.khronos.org/opengles/sdk/tools/KTX/) provides tools to create KTX file,
-- [The Mali SDK] (http://malideveloper.arm.com/develop-for-mali/tools/software-tools/mali-gpu-texture-compression-tool/) provides tools to create KTX file including alpha channel processing.
+- [The OpenGL SDK](https://www.khronos.org/opengles/sdk/tools/KTX/) provides tools to create KTX file,
+- [The Mali SDK](http://malideveloper.arm.com/develop-for-mali/tools/software-tools/mali-gpu-texture-compression-tool/) provides tools to create KTX file including alpha channel processing.
 
 ### Loading ###
 Once you have your KTX or ZKTX compressed image in a file, you can easily load it like any other image file:
