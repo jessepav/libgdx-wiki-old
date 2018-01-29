@@ -1,7 +1,7 @@
 Contributing to libgdx is easy:
 
   * Fork libgdx on http://github.com/libgdx/libgdx
-  * Learn how to [[Work with the source | Running Demos & Tests]]
+  * Learn how to [Work with the source](https://libgdx.badlogicgames.com/documentation/hacking/Working%20from%20source.html)
   * Hack away and send a pull request on Github!
 
 ### API Changes & Additions ###
