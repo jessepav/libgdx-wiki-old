@@ -36,7 +36,7 @@ These two classes usually live in separate projects, e.g., a desktop and an Andr
 
 The actual code of the application is located in a class that implements the [ApplicationListener](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/ApplicationListener.java) interface (MyGame in the above example). An instance of this class is passed to the respective initialization methods of each back-end's Application implementation (see above). The application will then call into the methods of the ApplicationListener at appropriate times (see [[The Life-Cycle]]).
 
-See [Starter Classes & Configuration](https://github.com/libgdx/libgdx/wiki/Starter-classes-and-configuration) for details on starter classes.
+See [[Starter Classes & Configuration | Starter Classes and Configuration]] for details on starter classes.
 
 ## Accessing Modules
 The modules described earlier can be accessed via static fields of the [Gdx class](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Gdx.java). This is essentially a set of global variables that allows easy access to any module of libgdx. While generally viewed as very bad coding practice, we decided on using this mechanism to ease the pain usually associated with passing around references to things that are used often in all kinds of places within the code base.
