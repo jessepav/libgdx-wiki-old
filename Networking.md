@@ -69,6 +69,8 @@ There are different technique to flexibly receive response back from HTTP reques
       }
    }
 
+   ...
+
    // assume you hold instance of such class as variable namely `receiver`.
    // then you just pass it to `sendHttpRequest()` method
    Gdx.net.sendHttpRequest(req, receiver)
