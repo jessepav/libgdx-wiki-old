@@ -19,7 +19,7 @@ Class Explanation:
 * [HttpRequestBuilder](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpRequestBuilder.java) is a class to help with creating `HttpRequests`.
 
 To create a TCP client socket use this little piece of code:
-```
+```java
 Socket socket = Gdx.net.newClientSocket(Protocol protocol, String host, int port, SocketHints hints);
 ```
 
@@ -29,23 +29,69 @@ ServerSocket server = Gdx.net.newServerSocket(Protocol protocol, int port, Serve
 ```
 
 To send an HTTP Request use this:
-```
+```java
 HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
 HttpRequest httpRequest = requestBuilder.newRequest().method(HttpMethods.GET).url("http://www.google.de").build();
 Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
 ```
 
 To send a GET HTTP Request with arguments use this:
-```
+```java
 HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
 HttpRequest httpRequest = requestBuilder.newRequest().method(HttpMethods.GET).url("http://www.google.de").content("q=libgdx&example=example").build();
 Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
 ```
-
 To open the system browser use this:
 ```
 Gdx.net.openURI(String URI)
 ```
+
+## Receiving Response
+
+There are different technique to flexibly receive response back from HTTP request as shown above. Example in Kotlin as follows.
+
+1. Via class which implemented [HttpResponseListener](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Net.HttpResponseListener.html)
+
+   For this, you have to create a class and implements `HTTPResponseListener`, then supply a method parameter with instance of such class.
+
+   ```kotlin
+   class MyReceiverOfResult : HttpResponseListener {
+      override fun cancelled() {
+          // do something when request gets cancelled
+      }
+
+      override fun failed(t: Throwable?) {
+          // do something when it fails
+      }
+
+      override fun handleHttpResponse(httpResponse: Net.HttpResponse) {
+          // do something when gets result back
+      }
+   }
+
+   // assume you hold instance of such class as variable namely `receiver`.
+   // then you just pass it to `sendHttpRequest()` method
+   ```kotlin
+   Gdx.net.sendHttpRequest(req, receiver)
+   ```
+2. Anonymous object
+   ```kotlin
+   Gdx.net.sendHttpRequest(req, object: Net.HttpResponseListener {
+         override fun cancelled() {
+             // do something when request gets cancelled
+         }
+
+         override fun failed(t: Throwable?) {
+             // do something when it fails
+         }
+
+         override fun handleHttpResponse(httpResponse: Net.HttpResponse) {
+             // do something when gets result back
+         }
+      })
+   ```
+Depends on your use case and which way you find it more flexible to do so.
+
 ### Notes
 There are various notes needed when working with networking on different platforms.
 
