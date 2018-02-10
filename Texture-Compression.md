@@ -59,7 +59,7 @@ usage : KTXProcessor input_file output_file [-etc1|-etc1a] [-mipmaps]
 
 There are also lots of third party tools to prepare KTX texture files:
 - [The OpenGL SDK](https://www.khronos.org/opengles/sdk/tools/KTX/) provides tools to create KTX file,
-- [The Mali SDK](http://malideveloper.arm.com/develop-for-mali/tools/software-tools/mali-gpu-texture-compression-tool/) provides tools to create KTX file including alpha channel processing.
+- [The Mali SDK](https://developer.arm.com/products/software-development-tools/graphics-development-tools/mali-texture-compression-tool) provides tools to create KTX file including alpha channel processing.
 
 ### Loading ###
 Once you have your KTX or ZKTX compressed image in a file, you can easily load it like any other image file:
