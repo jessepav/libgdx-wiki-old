@@ -9,7 +9,6 @@ These are webpages where individuals or companies write about their experience w
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
  * LibGDX video tutorials 1 - https://www.youtube.com/playlist?list=PLXY8okVWvwZ0JOwHiH1TntAdq-UDPnC2L
  * LibGDX video tutorials 2 - https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C
- * GameFromScratch LibGDX Video Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Video-Tutorial-Series.aspx
  * bitowl's tutorials - http://bitowl.de/tag/tutorial/
  * Zombie Bird - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
  * Libgdx y Box2D Tutoriales (en español) - http://tutoriales.tiarsoft.com
