@@ -5,6 +5,8 @@
 
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
+ * Creating a simple game - https://github.com/libgdx/libgdx/wiki/A-simple-game
+ * Tutorial by Code and Web - https://www.codeandweb.com/texturepacker/tutorials/libgdx-physics
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
  * LibGDX code samples - http://libgdx.info/
  * Simple Game tutorial (Make Flappy Bird) - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
