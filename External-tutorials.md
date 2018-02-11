@@ -12,8 +12,6 @@ These are webpages where individuals or companies write about their experience w
  * LibGDX video tutorials 2 - https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C
  * LibGDX Video tutorials 3 - https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
  * bitowl's tutorials - https://bitowl.net/tag/tutorial/
- * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
-
  * Libgdx focused Game Development Blog - https://www.gamedevelopment.blog/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
 
@@ -100,7 +98,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
 # Open-Source projects #
 
 These are interesting open-source projects found on the web that use libGDX. This list is intentionally kept as clean and interesting as possible (you won't see repeated projects nor _Hello-World kind-of-games_ here).
-
+ * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
  * https://github.com/gunmetal313/gdx-skineditor (A skin editor for libGDX,fork by gunmetal)
  * https://github.com/antionio/Dodge-The-Cars
  * https://github.com/sandeel/Bushido-Blocks
