@@ -6,7 +6,6 @@
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
- * Gemserk's blog - http://blog.gemserk.com/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
  * Impaler's personal webpage - http://obviam.net
  * Group of students from Sweden - http://www.dagger.se/#home
