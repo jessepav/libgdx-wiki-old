@@ -16,7 +16,6 @@ These are webpages where individuals or companies write about their experience w
  * LibGdx en español (spanish) 
 http://libgdxspain.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
- * Xoppa's blog - http://blog.xoppa.com
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
  * 26 LibGDX tutorials to create a game from scratch: https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
  * Libgdx focused Game Development Blog - https://www.gamedevelopment.blog/
