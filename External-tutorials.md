@@ -7,7 +7,6 @@ These are webpages where individuals or companies write about their experience w
 
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
  * Gemserk's blog - http://blog.gemserk.com/
- * Gustavo Steigert's personal blog - http://steigert.blogspot.pt/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
  * Impaler's personal webpage - http://obviam.net
  * Group of students from Sweden - http://www.dagger.se/#home
