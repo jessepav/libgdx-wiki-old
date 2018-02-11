@@ -23,9 +23,6 @@ These are webpages where individuals or companies write about their experience w
 
  * http://www.badlogicgames.com/forum/viewtopic.php?f=17&t=14766
 
-## Integrating Google Play Game Services ##
-
- * http://helios.hud.ac.uk/u1070589/blog/?p=202
 
 ## AdMob integration for LibGDX Android projects ##
 
