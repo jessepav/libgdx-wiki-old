@@ -12,7 +12,6 @@ These are webpages where individuals or companies write about their experience w
  * LibGDX video tutorials 2 - https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C
  * LibGDX Video tutorials 3 - https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
  * bitowl's tutorials - https://bitowl.net/tag/tutorial/
- * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
 
  * Libgdx focused Game Development Blog - https://www.gamedevelopment.blog/
