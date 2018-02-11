@@ -6,7 +6,6 @@
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
- * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html (this blog only open to invited readers)
  * Gemserk's blog - http://blog.gemserk.com/
  * Gustavo Steigert's personal blog - http://steigert.blogspot.pt/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
