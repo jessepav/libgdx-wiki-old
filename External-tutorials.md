@@ -12,8 +12,6 @@ These are webpages where individuals or companies write about their experience w
  * bitowl's tutorials - https://bitowl.net/tag/tutorial/
  * Zombie Bird - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
  * Libgdx y Box2D Tutoriales (en español) - http://tutoriales.tiarsoft.com
- * LibGdx en español (spanish) 
-http://libgdxspain.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
  * 26 LibGDX tutorials to create a game from scratch: https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
