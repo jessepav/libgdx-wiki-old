@@ -6,16 +6,19 @@
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
- * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
+ * LibGDX code samples - http://libgdx.info/
  * LibGDX video tutorials 1 - https://www.youtube.com/playlist?list=PLXY8okVWvwZ0JOwHiH1TntAdq-UDPnC2L
  * LibGDX video tutorials 2 - https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C
+ * LibGDX Video tutorials 3 - https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
  * bitowl's tutorials - https://bitowl.net/tag/tutorial/
  * Zombie Bird - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
  * Libgdx y Box2D Tutoriales (en español) - http://tutoriales.tiarsoft.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
- * 26 LibGDX tutorials to create a game from scratch: https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
+
  * Libgdx focused Game Development Blog - https://www.gamedevelopment.blog/
+ * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
+
 
 # Topic Specific Tutorials #
 
