@@ -77,6 +77,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
 
  * http://glsl.heroku.com/
  * https://www.shadertoy.com/
+ * http://glslsandbox.com
 
 ## Tile based games ##
 
