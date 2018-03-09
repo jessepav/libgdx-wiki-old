@@ -10,6 +10,20 @@ Since switching over to the gradle based build system some users have been havin
 
 > [Project Setup Gradle](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle)
 
+## Gradle
+
+Open up the build.gradle file located in the root of your project directory in a text editor or your IDE. Make sure `mavenCentral()` is in `buildscript.repositories`
+
+1. Locate the section marked **project(":core")**
+2. In the **dependencies** section add the following line:
+  ```groovy
+  compile "org.mini2Dx:universal-tween-engine:6.3.3"
+  ```
+3. Refresh dependencies
+  ```
+  gradlew --refresh-dependencies
+  ```
+
 ## FileTree Dependency Method (Easiest)
 
 This method is the easiest to get up and running but if you end up with multiple projects that make use of the Universal Tween Engine you might want to consider [Using a Local Maven Repository](#using-your-local-maven-repository)
