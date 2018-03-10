@@ -32,7 +32,7 @@ public class AndroidStarter extends AndroidApplication {
 }
 ```
 
-These two classes usually live in separate projects, e.g., a desktop and an Android project. The [[Project Setup, Running & Debugging]] page describes the layout of these projects for Eclipse.
+These two classes usually live in separate projects, e.g., a desktop and an Android project. The [[Project setup, running & debugging]] page describes the layout of these projects for Eclipse.
 
 The actual code of the application is located in a class that implements the [ApplicationListener](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/ApplicationListener.java) interface (MyGame in the above example). An instance of this class is passed to the respective initialization methods of each back-end's Application implementation (see above). The application will then call into the methods of the ApplicationListener at appropriate times (see [[The Life-Cycle]]).
 
