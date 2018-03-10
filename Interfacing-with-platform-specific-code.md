@@ -17,7 +17,7 @@ public class LeaderboardServiceApi {
 
 The first step is to create an abstraction of the API in form of an interface.
 
-The interface is put into the core project (see [[Project Setup, Running & Debugging]]):
+The interface is put into the core project (see [Project Setup, Running & Debugging](https://github.com/libgdx/libgdx/wiki/Project-setup,-running-&-debugging)):
 
 ```java
 public interface Leaderboard {
@@ -81,7 +81,7 @@ public class MyGame implements ApplicationListener {
 }
 ```
 
-In each [[starter class | Starter classes & configuration]] we then simply instantiate `MyGame`, passing the corresponding Leaderboard implementation as an argument, e.g., on the desktop:
+In each [[starter class | Starter classes and configuration]] we then simply instantiate `MyGame`, passing the corresponding Leaderboard implementation as an argument, e.g., on the desktop:
 
 ```java
 public static void main(String[] argv) {
