@@ -436,20 +436,22 @@ In a nutshell, if you are using Box2d-editor:
 
 Then in your game you can do:
 
-        `BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("box2d_scene.json"));`
+```java
+BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("box2d_scene.json"));
 
-        `BodyDef bd = new BodyDef();`
-        `bd.type = BodyDef.BodyType.KinematicBody;`
-        `body = world.createBody(bd);`
+BodyDef bd = new BodyDef();
+bd.type = BodyDef.BodyType.KinematicBody;
+body = world.createBody(bd);
 
-        `// 2. Create a FixtureDef, as usual.`
-        `FixtureDef fd = new FixtureDef();`
-        `fd.density = 1;`
-        `fd.friction = 0.5f;`
-        `fd.restitution = 0.3f;`
+// 2. Create a FixtureDef, as usual.
+FixtureDef fd = new FixtureDef();
+fd.density = 1;
+fd.friction = 0.5f;
+fd.restitution = 0.3f;
 
-        `// 3. Create a Body, as usual.`
-        `loader.attachFixture(body, "gear", fd, scale);`
+// 3. Create a Body, as usual.
+loader.attachFixture(body, "gear", fd, scale);
+```
 
 ## Sprites and Bodies ##
 
