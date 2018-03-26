@@ -56,13 +56,13 @@ With all of these changes in-place you should be able to use Gradle exactly as y
 
 The standard tooling for working with Scala is quite different than what Java developers will be used to. There is a project, [libgdx-sbt-project](https://github.com/ajhager/libgdx-sbt-project.g8), that provides a simple path for getting started with libgdx and Scala using standard build tools and best practices.
 
-This tutorial assumes you have installed [g8](http://github.com/n8han/giter8) and [sbt](https://github.com/sbt/sbt) 0.12, which are used in the Scala community for generating and interacting with projects.
+This tutorial assumes you have installed [sbt](https://github.com/sbt/sbt) 0.13, which are used in the Scala community for generating and interacting with projects.
 
 ## Setting up a new project
 
 In your favourite shell type:
 
-    $ g8 ajhager/libgdx-sbt-project.g8
+    $ sbt new ajhager/libgdx-sbt-project.g8
 
 After filling in some information about your project, you can start placing your game's source files and assets in common/src/main/scala and common/src/main/resources, respectively.
 
