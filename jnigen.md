@@ -28,7 +28,7 @@ sudo pacman -S mingw-w64-gcc
   * Fedora, CentOS and RHEL-based systems
 
 ```bash
-sudo dnf install mingw32-gcc-c++ mingw64-gcc-c++
+sudo dnf install mingw32-gcc-c++ mingw64-gcc-c++ mingw32-winpthreads-static mingw64-winpthreads-static
 ```
 
 ## Quickstart ##
