@@ -25,6 +25,12 @@ sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64
 sudo pacman -S mingw-w64-gcc
 ```
 
+  * Fedora, CentOS and RHEL-based systems
+
+```bash
+sudo dnf install mingw32-gcc-c++ mingw64-gcc-c++
+```
+
 ## Quickstart ##
 
 Here is a barebones example, first the Java source with inline native code:
