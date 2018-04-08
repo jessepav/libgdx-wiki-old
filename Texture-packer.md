@@ -134,8 +134,8 @@ Below is a JSON example with every available setting and the default value for e
 	limitMemory: true,
 	grid: false,
 	scale: [ 1 ],
-	scaleSuffix: [ "" ]
-	scaleResampling: [ bicubic ],
+	scaleSuffix: [ "" ],
+	scaleResampling: [ bicubic ]
 }
 ```
 
