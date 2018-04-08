@@ -98,7 +98,7 @@ Each directory may contain a "pack.json" file, which is a JSON representation of
 
 Below is a JSON example with every available setting and the default value for each. All settings do not need to be specified, any or all may be omitted. If a setting is not specified for a directory or any parent directory, the default value is used.
 
-```json
+```
 {
 	pot: true,
 	paddingX: 2,
@@ -135,6 +135,7 @@ Below is a JSON example with every available setting and the default value for e
 	grid: false,
 	scale: [ 1 ],
 	scaleSuffix: [ "" ]
+	scaleResampling: [ bicubic ],
 }
 ```
 
@@ -177,9 +178,9 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `useIndexes` | If false, image names are used without stripping any image index suffix. | true |
 | `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but are only read once. | true |
 | `grid` | If true, images are packed in a uniform grid, in order. | false |
-| `scale` | For each scale, the images are scaled and an entire atlas is output. | `[1]` |
-| `scaleSuffix` | For each scale, the suffix to use for the output files. If omitted, files for multiple scales will be output with the same name to a subdirectory for each scale. | `[""]` |
-
+| `scale` | For each scale, the images are scaled and an entire atlas is output. | `[ 1 ]` |
+| `scaleSuffix` | For each scale, the suffix to use for the output files. If omitted, files for multiple scales will be output with the same name to a subdirectory for each scale. | `[ "" ]` |
+| `scaleResampling` | For each scale, the type of interpolation used for resampling the source to the scaled size. One of `nearest`, `bilinear` or `bicubic`. | `[ bicubic ]` |
 
 ## <a id="texture-filter-options"></a>Texture filter options ##
 
