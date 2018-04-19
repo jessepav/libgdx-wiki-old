@@ -8,7 +8,7 @@ The vibrator is only available on Android and needs a special permission in the 
 android.permission.VIBRATE
 ```
 
-See the [[application configuration |Starter Classes & Configuration]] section if you are unsure how to specify permissions in your Android manifest.
+See the [[application configuration |Starter classes and configuration]] section if you are unsure how to specify permissions in your Android manifest.
 
 Vibrating the phone works as follows:
 
