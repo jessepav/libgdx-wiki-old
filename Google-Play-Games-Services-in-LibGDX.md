@@ -3,6 +3,8 @@
 ## Using open-source libGDX Extension
 Google Play Games support for libGDX games on Android and Desktop is provided by [gdx-gamesvcs libGDX extension](https://github.com/MrStahlfelge/gdx-gamesvcs). The extension also provides implementations for other game services (Kongregate, Gamejolt and others). 
 
+Notice: this extension [may not be what you want](https://stackoverflow.com/questions/48121642/libgdx-how-to-implement-google-play-game-services).
+
 The following article describes the manual integration in your project without using this lib.
 
 ## Android Integration example
