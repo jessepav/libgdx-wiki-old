@@ -16,7 +16,7 @@
    * [[Preferences]]
    * [[Input Handling]]
      * [[Configuration & Querying]]
-     * [[Mouse, Touch & Keyboard]]
+     * [[Mouse, Touch and Keyboard]]
           * [[Polling]]
           * [[Event Handling]]
      * [[Controllers]]
