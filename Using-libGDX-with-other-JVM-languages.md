@@ -5,13 +5,13 @@ Some target platforms can’t run Java bytecodes directly, and so have more spec
 ## Language interoperability guides
 
 * [Clojure](http://clojure.org/java_interop)
-    * [Using libGDX with Clojure] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Clojure)
+    * [Using libGDX with Clojure](https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Clojure)
 * [Kotlin](http://confluence.jetbrains.com/display/Kotlin/Java+interoperability)
-    * [Using libGDX with Kotlin] (https://github.com/libgdx/libgdx/wiki/Using-libGDX-with-Kotlin)
+    * [Using libGDX with Kotlin](https://github.com/libgdx/libgdx/wiki/Using-libGDX-with-Kotlin)
 * [Scala](http://www.scala-lang.org/old/faq/4)
-    * [Using libGDX with Scala] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Scala)
+    * [Using libGDX with Scala](https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Scala)
 * [Python](http://www.jython.org/jythonbook/en/1.0/JythonAndJavaIntegration.html) (Jython)
-    * [Using libGDX with Python] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Python)
+    * [Using libGDX with Python](https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Python)
 * [Ruby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby) (JRuby)
 * [Ceylon](http://ceylon-lang.org/documentation/1.2/tour/interop/)
 
