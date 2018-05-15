@@ -295,10 +295,10 @@ The first line tells the `SpriteBatch` to use the coordinate system specified by
 
 Next we tell the `SpriteBatch` to start a new batch. Why do we need this and what is a batch? OpenGL hates nothing more than telling it about individual images. It wants to be told about as many images to render as possible at once. 
 
-The `SpriteBatch` class helps making OpenGL happy. It will record all drawing commands in between `SpriteBatch.begin()` and `SpriteBatch.end()`. Once we call `SpriteBatch.end()` it will submit all drawing requests we made at once, speeding up rendering quite a bit. This all might look cumbersome in the beginning, but it is what makes the difference between rendering 500 sprites at 60 frames per second and rendering 100 sprites at 20 frames per second.
+The `SpriteBatch` class helps make OpenGL happy. It will record all drawing commands in between `SpriteBatch.begin()` and `SpriteBatch.end()`. Once we call `SpriteBatch.end()` it will submit all drawing requests we made at once, speeding up rendering quite a bit. This all might look cumbersome in the beginning, but it is what makes the difference between rendering 500 sprites at 60 frames per second and rendering 100 sprites at 20 frames per second.
 
 ### Making the Bucket Move (Touch/Mouse) ###
-Time to let the user control the bucket. Earlier we said we'll allow the user to drag the bucket. Let's make things a little bit easier. If the user touches the screen (or presses a mouse button), we want the bucket to center around that position horizontally. Adding the following code to the bottom of the `render()` method will do this:
+Time to let the user control the bucket. Earlier we said we'd allow the user to drag the bucket. Let's make things a little bit easier. If the user touches the screen (or presses a mouse button), we want the bucket to center around that position horizontally. Adding the following code to the bottom of the `render()` method will do this:
 
 ```java
    if(Gdx.input.isTouched()) {
@@ -560,7 +560,7 @@ public class Drop extends ApplicationAdapter {
       if(TimeUtils.nanoTime() - lastDropTime > 1000000000) spawnRaindrop();
       
       // move the raindrops, remove any that are beneath the bottom edge of
-      // the screen or that hit the bucket. In the later case we play back
+      // the screen or that hit the bucket. In the latter case we play back
       // a sound effect as well.
       Iterator<Rectangle> iter = raindrops.iterator();
       while(iter.hasNext()) {
