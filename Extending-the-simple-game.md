@@ -313,7 +313,8 @@ Note that the `dispose()` method of the `GameScreen` class is not called automat
 
 That's it, you have the complete game finished. That is all there is to know about the Screen interface and Game abstract Class, and all there is to creating multifaceted games with multiple states.
 
-For the full code, please visit [this Github gist](https://gist.github.com/sinistersnare/6367829) 
+For the full Java code, please visit [this Github gist](https://gist.github.com/sinistersnare/6367829).
+For the full Kotlin code, please visit [this one](https://gist.github.com/dksmiffs/d921cc20ca6d96284266d13077929705).
 
 ## The Future ##
 
