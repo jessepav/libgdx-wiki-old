@@ -36,7 +36,7 @@ https://github.com/libgdx/packr
 ## OpenJDK ##
 
 OpenJDK builds can be found here:
-https://github.com/alexkasko/openjdk-unofficial-builds
+https://github.com/ojdkbuild/ojdkbuild
 
 For Windows you'll want 32 bit. Mac has 32 and 64 bit combined. For Linux you might want separate 32 and 64 bit JREs. You can get away with only 32 bit for Linux, but users may need to do:
 
