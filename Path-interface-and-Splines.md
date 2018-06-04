@@ -163,7 +163,7 @@ change to:
 
 ```java
     myCatmull.derivativeAt(out, current);
-    current += (Gdx.graphics.getDeltaTime() * speed) / out.len();
+    current += (Gdx.graphics.getDeltaTime() * speed / myCatmull.spanCount) / out.len();
 ```
 
-you should change the speed variable too, since it doesn't take a "percent per second" value anymore, but a "meter(pixel?) per second) now.
+You should change the speed variable too, since it doesn't take a "percent per second" value anymore, but a "meter(pixel?) per second") now. The spanCount is necessary since the derivativeAt method takes into account the current span only.
