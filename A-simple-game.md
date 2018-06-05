@@ -561,8 +561,7 @@ public class Drop extends ApplicationAdapter {
       // move the raindrops, remove any that are beneath the bottom edge of
       // the screen or that hit the bucket. In the latter case we play back
       // a sound effect as well.
-      Iterator<Rectangle> iter = raindrops.iterator();
-      while(iter.hasNext()) {
+      for (Iterator<Rectangle> iter = raindrops.iterator(); iter.hasNext(); ) {
          Rectangle raindrop = iter.next();
          raindrop.y -= 200 * Gdx.graphics.getDeltaTime();
          if(raindrop.y + 64 < 0) iter.remove();
