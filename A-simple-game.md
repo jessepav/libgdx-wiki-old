@@ -387,8 +387,7 @@ Next we add a few lines to the `render()` method that will check how much time h
 We also need to make our raindrops move, let's take the easy route and have them move at a constant speed of 200 pixels/units per second. If the raindrop is beneath the bottom edge of the screen, we remove it from the array.
 
 ```java
-   Iterator<Rectangle> iter = raindrops.iterator();
-   while(iter.hasNext()) {
+   for (Iterator<Rectangle> iter = raindrops.iterator(); iter.hasNext(); ) {
       Rectangle raindrop = iter.next();
       raindrop.y -= 200 * Gdx.graphics.getDeltaTime();
       if(raindrop.y + 64 < 0) iter.remove();
