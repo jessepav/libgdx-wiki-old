@@ -39,7 +39,7 @@ Libgdx offers official support for [[Internationalization and Localization]] sin
 
  * Normal Mapping - http://www.java-gaming.org/topics/glsl-using-normal-maps-to-illuminate-a-2d-texture-libgdx/27516/view.html
  * Ambient lighting - http://www.java-gaming.org/index.php?topic=28685.0
- * Pulsing fire light effect : http://www.alcove-games.com/new-tutorial-glsl-shaders-to-achieve-a-nice-fire-effect/
+
 
 ## Menus ##
 
