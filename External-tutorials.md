@@ -90,7 +90,9 @@ This websites will let you play with WebGL (provided your browser supports it) a
 # External Tools & Frameworks #
 
 
- * http://www.codeandweb.com/texturepacker (Texturepacker)
+ * https://www.codeandweb.com/texturepacker (TexturePacker: Texture atlas packer)
+ * https://www.codeandweb.com/physicseditor (PhysicsEditor: Physics shape editor)
+ * https://www.codeandweb.com/spriteilluminator (SpriteIlluminator: Normal map editor for sprites)
  * https://github.com/gemserk/animation4j (Animation 4J)
  * https://code.google.com/p/java-universal-tween-engine/ (Tween Engine)
  * https://github.com/cvayer/RubeLoader (Load RUBE scenes)
