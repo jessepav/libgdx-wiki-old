@@ -116,6 +116,7 @@ public class MyActor extends Actor {
 
 	public MyActor () {
 		region = new TextureRegion(...);
+                setSize(region.getWidth(), region.getHeight());
 	}
 
 	@Override
