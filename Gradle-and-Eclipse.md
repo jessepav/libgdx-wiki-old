@@ -3,7 +3,7 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 **Before you can import your project into Eclipse, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]!**
 
 ## Importing Your Project
-Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to the root folder of your project, then click `Build Model`. After a while, you'll see a root project and subprojects (android, core, desktop, html, ios). Select all the projects and click `Finish`. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
+Follow carefully the [Official Documentation](https://libgdx.badlogicgames.com/documentation/gettingstarted/Importing%20into%20IDE.html#eclipse) steps.
 
 ### Common Problems
 Your Eclipse workspace folder must not be the same as your project's root folder (see this [issue](https://github.com/libgdx/libgdx/issues/1537)).
