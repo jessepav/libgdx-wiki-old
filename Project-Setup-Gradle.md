@@ -1,6 +1,6 @@
 # Creating a libgdx project
 
-If you haven't done yet, make sure you've read the [Official Documentation](https://libgdx.badlogicgames.com/documentation/gettingstarted/Creating%20Projects.html) on how to create a libGDX project.
+*If you haven't done yet, make sure you've read the [Official Documentation](https://libgdx.badlogicgames.com/documentation/gettingstarted/Creating%20Projects.html) on how to create a libGDX project.*
 
 Libgdx provides a simple wizard tool (`gdx-setup.jar`) allowing you to easily get started.
 This will create a gradle ready project, which can then be imported into your IDE (Android Studio, Eclipse..).
