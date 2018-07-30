@@ -204,7 +204,7 @@ It is highly recommended to read the [Table documentation](Table) before buildin
 
 [ScrollPane](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java)) scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
 
-The ScrollPane preferred width 
+Note: ScrollPane doesn't support well children that dynamically change their size or move while dragging them. Having a children in your scrollpane that move while being dragged will make the ScrollPane flicker.
 
 ### <a id="SplitPane"></a>SplitPane ###
 
