@@ -1,1 +1,1 @@
-This page has been moved to [managing your assets](Managing-your-assets).
+This page has been moved to [[Managing your assets]].
