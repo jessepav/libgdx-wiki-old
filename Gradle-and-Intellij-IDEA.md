@@ -42,3 +42,6 @@ If you run into problems due to a missing validation-api:1.0.0.GA artifact, dele
 
 #### "Error:org.gradle.tooling.GradleConnectionException: Could not execute build using Gradle installation"
 If you run into "Error:org.gradle.tooling.GradleConnectionException: Could not execute build using Gradle installation" check project structure ( Ctrl + Alt + Shift + S ) and add your Java JDK to the Project SDK.
+
+#### "Warning: Class 'com.(your project package).desktop.DesktopLauncher' not found in module 'desktop'
+Switch `Use classpath of module` from `desktop` to `desktop_main`.
