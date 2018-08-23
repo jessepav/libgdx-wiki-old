@@ -15,7 +15,7 @@ In order to support Scala compilation you need to update the build with a couple
     - Increase the heap used by gradle (otherwise you might have trouble compiling for iOS).
 - <root>/build.gradle
     - Add the Scala plugin to the `project(":core")` section: `apply plugin: "scala"`
-    - In the dependencies include the scala library: `compile "org.scala-lang:scala-library:2.11.7"`
+    - In the dependencies include the scala library: `compile "org.scala-lang:scala-library:2.11.12"` (Scala 2.12.* requires java 8, but the majority of Android devices don't support it)
 - <root>/core/build.gradle
     - Apply the scala plugin at the top of this file.
     - **optional** Set the src directory for scala files: `sourceSets.main.scala.srcDirs = [ "src/" ]`
