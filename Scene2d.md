@@ -55,13 +55,14 @@ public void resize (int width, int height) {
 	stage.getViewport().update(width, height, true);
 }
 
-public void render (float delta) {
+public void render () {
+	float delta = Gdx.graphics.getDeltaTime();
 	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 	stage.act(delta);
 	stage.draw();
 }
 
-public void dispose() {
+public void dispose () {
 	stage.dispose();
 }
 ```
