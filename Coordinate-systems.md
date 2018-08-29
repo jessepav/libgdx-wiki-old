@@ -1,6 +1,6 @@
 When working with libGDX (or any other OpenGL based system), you will have to deal with various [coordinate systems](https://en.wikipedia.org/wiki/Coordinate_system). This is because OpenGL abstracts away device dependent units, making it more convenient to target multiple devices and to focus on game logic. Sometimes you may need to convert between coordinate systems for which libGDX offers various methods.
 
-**It is crucial to understand in which coordinate system you are working. Otherwise it can be easy get confused and to make assumptions which aren't correct.**
+**It is crucial to understand in which coordinate system you are working. Otherwise it can be easy to get confused and to make assumptions which aren't correct.**
 
 On this page the various coordinate systems are listed. It is highly recommended to first get familiar with the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), which is the most widely used coordinate system.
 
