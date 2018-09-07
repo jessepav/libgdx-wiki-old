@@ -101,3 +101,27 @@ These maps are identical to ObjectSet except they use primitive types for the ke
 ### [BinaryHeap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/BinaryHeap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/BinaryHeap.java) ###
 
 A [binary heap](http://en.wikipedia.org/wiki/Binary_heap). Can be a min-heap or a max-heap.
+
+# Benchmarks #
+If you've ever been curious as to when is it worth to start using `ObjectSet`/`ObjectMap` instead of `Array`/`ArrayMap`, here's your answer.
+You shouldn't care if you know your array won't have more than 1024 elements. However at 32k elements, doing single `.contains()` can take more than 100ms, which is very significant if you're doing it in a loop or in the render thread.
+```
+                  array.size         GdxArray.contains()     GdxObjectSet.contains()
+                           2                         0ms                         0ms
+                           4                         0ms                         0ms
+                           8                         0ms                         1ms
+                          16                         0ms                         1ms
+                          32                         0ms                         0ms
+                          64                         0ms                         0ms
+                         128                         0ms                         0ms
+                         256                         1ms                         0ms
+                         512                         1ms                         0ms
+                        1024                         2ms                         0ms
+                        2048                         4ms                         0ms
+                        4096                        11ms                         0ms
+                        8192                        22ms                         0ms
+                       16384                        80ms                         0ms
+                       32768                       112ms                         0ms
+                       65536                       403ms                         0ms
+                      131072                       615ms                         1ms
+```
