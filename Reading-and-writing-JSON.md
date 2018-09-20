@@ -48,7 +48,7 @@ person.setNumbers(numbers);
 
 The code to serialize this object graph:
 
-```
+```java
 Json json = new Json();
 System.out.println(json.toJson(person));
 
@@ -57,7 +57,7 @@ System.out.println(json.toJson(person));
 
 That is compact, but hardly legible. The `prettyPrint` method can be used:
 
-```
+```java
 Json json = new Json();
 System.out.println(json.prettyPrint(person));
 
@@ -81,7 +81,7 @@ age: 31
 
 Note that the class for the `PhoneNumber` objects in the `ArrayList numbers` field appears in the JSON. This is required to recreate the object graph from the JSON because `ArrayList` can hold any type of object. Class names are only output when they are required for deserialization. If the field was `ArrayList<PhoneNumber> numbers` then class names would only appear when an item in the list extends `PhoneNumber`. If you know the concrete type or aren't using generics, you can avoid class names being written by telling the `Json` class the types:
 
-```
+```java
 Json json = new Json();
 json.setElementType(Person.class, "numbers", PhoneNumber.class);
 System.out.println(json.prettyPrint(person));
@@ -104,7 +104,7 @@ age: 31
 
 When writing the class cannot be avoided, an alias can be given:
 
-```
+```java
 Json json = new Json();
 json.addClassTag("phoneNumber", PhoneNumber.class);
 System.out.println(json.prettyPrint(person));
@@ -129,7 +129,7 @@ age: 31
 
 The `Json` class can write and read both JSON and a couple JSON-like formats. It supports "JavaScript", where the object property names are only quoted when needed. It also supports a "minimal" format (the default), where both object property names and values are only quoted when needed.
 
-```
+```java
 Json json = new Json();
 json.setOutputType(OutputType.json);
 json.setElementType(Person.class, "numbers", PhoneNumber.class);
@@ -165,7 +165,7 @@ Person person2 = json.fromJson(Person.class, text);
 
 The type passed to `fromJson` is the type of the root of the object graph. From this, the `Json` class determines the types of all the fields and all other objects encountered, recursively. The "knownType" and "elementType" of the root can be passed to `toJson`. This is useful if the type of the root object is not known:
 
-```
+```java
 Json json = new Json();
 json.setOutputType(OutputType.minimal);
 String text = json.toJson(person, Object.class);
@@ -246,7 +246,7 @@ The class implementing `Json.Serializable` must have a zero argument constructor
 
 `Json.Serializer` provides more control over what is output, requiring `writeObjectStart` and `writeObjectEnd` to be called if you require a JSON object like `Json.Serializable`. Alternatively, a JSON array or a simple value (string, int, boolean) could be output instead of an object. `Json.Serializer` also allows the object creation to be customized:
 
-```
+```java
 Json json = new Json();
 json.setSerializer(PhoneNumber.class, new Json.Serializer<PhoneNumber>() {
    public void write (Json json, PhoneNumber number, Class knownType) {
@@ -274,7 +274,7 @@ Person person2 = json.fromJson(Person.class, text);
 
 `writeObjectStart` is used to start writing a JSON object, then values can be written using the write methods that take a name string. When the object is finished, `writeObjectEnd` must be called:
 
-```
+```java
 json.writeObjectStart();
 json.writeValue("name", "value");
 json.writeObjectEnd();
@@ -284,7 +284,7 @@ The `writeObjectStart` methods that take an actualType and a knownType will writ
 
 Writing arrays works in a similar manner, except the values should be written using the write methods that do not take a name string:
 
-```
+```java
 json.writeArrayStart();
 json.writeValue("value1");
 json.writeValue("value2");
@@ -293,7 +293,7 @@ json.writeArrayEnd();
 
 The `Json` class can automatically write Java object fields and values. `writeFields` writes all fields and values for the specified Java object to the current JSON object:
 
-```
+```java
 json.writeObjectStart();
 json.writeFields(someObject);
 json.writeObjectEnd();
@@ -301,7 +301,7 @@ json.writeObjectEnd();
 
 The `writeField` method writes the value for a single Java object field:
 
-```
+```java
 json.writeObjectStart();
 json.writeField(someObject, "javaFieldName", "jsonFieldName");
 json.writeObjectEnd();
@@ -309,7 +309,7 @@ json.writeObjectEnd();
 
 Many of the write methods take an "element type" parameter. This is used to specify the known type of objects in a collection. For example, for a list:
 
-```
+```java
 ArrayList list = new ArrayList();
 list.add(someObject1);
 list.add(someObject2);
@@ -332,7 +332,7 @@ json.writeObjectEnd();
 
 Here the known type of objects in the list is Object, so each object in the JSON for "items" has a class field that specifies Integer or String. By specifying the element type, Integer is used as the known type so only the last entry in the JSON for "items" has a class field:
 
-```
+```java
 json.writeObjectStart();
 json.writeValue("items", list, ArrayList.class, Integer.class);
 json.writeObjectEnd();
