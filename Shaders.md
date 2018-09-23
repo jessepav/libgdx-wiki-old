@@ -1,5 +1,5 @@
-If you want to work with OpenGL ES 2.0, you should know some shader basics. Libgdx comes with a standard shader that will take care of rendering things via SpriteBatch. However if you'd like to render a Mesh in Opengl ES 2.0 you will have to supply a valid shader yourself. Basically in Opengl ES 2.0, everything is rendered with shaders. That's why it's called a programmable pipeline.
-The thought of dabbling around in shaders might scare some people away from using ES 2.0, but it's well worth reading up on it as shaders allow you to do some pretty incredible things. And understanding the basics is actually quite straight forward.
+If you want to work with OpenGL ES 2.0, you should know some shader basics. Libgdx comes with a standard shader that will take care of rendering things via SpriteBatch. However, if you'd like to render a Mesh in OpenGL ES 2.0 you will have to supply a valid shader yourself. Basically, in OpenGL ES 2.0, everything is rendered with shaders. That's why it's called a programmable pipeline.
+The thought of dabbling around in shaders might scare some people away from using ES 2.0, but it's well worth reading up on it as shaders allow you to do some pretty incredible things. And understanding the basics is actually quite straightforward.
 
 ## What are shaders? ##
 
@@ -23,11 +23,11 @@ void main()
 } 
 ```
 
-That doesn't look to bad, now does it? First you have a vertex attribute called a_position. This attribute is a vec4 which means it's a vector with 4 dimensions. In this sample it holds the position information of the vertex.
+That doesn't look too bad, now does it? First, you have a vertex attribute called a_position. This attribute is a vec4 which means it's a vector with 4 dimensions. In this sample, it holds the position information of the vertex.
 
-Next you have the `u_projectionViewMatrix`. This is a 4x4 matrix that holds the view and projection transform data. If those terms sound fuzzy to you I'd recommend reading up on those topics (Here: http://blog.db-in.com/cameras-on-opengl-es-2-x/). It's incredibly useful to understand it.
+Next, you have the `u_projectionViewMatrix`. This is a 4x4 matrix that holds the view and projection transform data. If those terms sound fuzzy to you I'd recommend reading up on those topics (Here: http://blog.db-in.com/cameras-on-opengl-es-2-x/). It's incredibly useful to understand it.
 
-Inside the main method we execute the operations on the vertex. In this case all the shader does is multiply the vertex position with the matrix and assigns it to gl_Position. gl_Position is a predefined keyword by OpenGL and can't be used for anything else but passing through the processed vertex.
+Inside the main method, we execute the operations on the vertex. In this case, all the shader does is multiply the vertex position with the matrix and assigns it to gl_Position. gl_Position is a predefined keyword by OpenGL and can't be used for anything else but passing through the processed vertex.
 
 ## Fragment shaders ##
 A fragment shader functions in a very similar way to a vertex shader. But instead of processing it on a vertex it processes it once for each fragment. For simplicity's sake think of a fragment as one pixel. Now, you might notice that this is a very significant difference.
@@ -43,7 +43,7 @@ void main()
 }
 ```
 
-This fragment shader will simply render every fragment with solid red. gl_FragColor is another pre-defined keyword. It's used to output the final color for the fragment. Notice how we use `vec4(x,y,z,w)` to define a vector inside the shader. In this case the vector is used to define the color of the fragment.
+This fragment shader will simply render every fragment with solid red. gl_FragColor is another pre-defined keyword. It's used to output the final color for the fragment. Notice how we use `vec4(x,y,z,w)` to define a vector inside the shader. In this case, the vector is used to define the color of the fragment.
 
 ## A simple ShaderProgram ##
 
@@ -78,7 +78,7 @@ String fragmentShader = "#ifdef GL_ES\n" +
 
 This is fairly standard setup for a shader that uses a position attribute, a color attribute and a texture coordinate attribute. Notice the 2 varying. They are outputs that we pass through to the fragment shader.
 
-In the fragment shader we have a sampler2D; this is a special uniform used for textures. As you can see in the main function, we multiply the vertex color with the color from the texture lookup to produce the final output color.
+In the fragment shader, we have a sampler2D; this is a special uniform used for textures. As you can see in the main function, we multiply the vertex color with the color from the texture lookup to produce the final output color.
 
 Here is a list of attributes that are in libgdx's own library for those who wish to easily attach shaders to SpriteBatchs and other parts of libgdx:
 * a_position
