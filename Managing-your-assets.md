@@ -25,7 +25,7 @@ This sets up a standard AssetManager, with all the loaders libgdx has in store a
 public static AssetManager assets = new AssetManager();
 ```
 
-This will cause problems on Android, because the life-cycle of the static variable is not necessarily the same as the life-cycle of your application. Therefore the `AssetManager` instance of a previous instance of your application might be used for the next instance, while the resources are no longer valid. This typically would cause black/missing textures or incorrect assets.
+This will cause problems on Android because the life-cycle of the static variable is not necessarily the same as the life-cycle of your application. Therefore the `AssetManager` instance of a previous instance of your application might be used for the next instance, while the resources are no longer valid. This typically would cause black/missing textures or incorrect assets.
 
 On Android, it is even possible for multiple instances of your Activity to be active at the same time, so do not think you're safe even if you handle life-cycle methods properly! (See [this StackOverflow question](http://stackoverflow.com/q/4341600/14637) for details.)
 
@@ -159,7 +159,7 @@ manager.unload("data/myfont.fnt");
 
 If that font references a Texture that you loaded manually before, the texture won't get destroyed! It will be reference counted, getting one reference from the bitmap font and another from itself. As long as this count is not zero, the texture won't be disposed. 
 
-* Assets managed via the AssetManager shouldn't be disposed manually, instead call AssetManager.unload()!
+* Assets managed via the AssetManager shouldn't be disposed manually, instead, call AssetManager.unload()!
 
 If you want to get rid of all assets at once you can call:
 
@@ -207,7 +207,7 @@ manager.load("data/myasset.mas", MyAssetClass.class);
 ```
 
 ### Resuming with a Loading Screen ###
-On Android your app can be paused and resumed. Managed OpenGL resources like Textures need to be reloaded in that case, which can take a bit of time. If you want to display a loading screen on resume, you can do the following after you created your AssetManager.
+On Android, your app can be paused and resumed. Managed OpenGL resources like Textures need to be reloaded in that case, which can take a bit of time. If you want to display a loading screen on resume, you can do the following after you created your AssetManager.
 
 ```java
 Texture.setAssetManager(manager);
