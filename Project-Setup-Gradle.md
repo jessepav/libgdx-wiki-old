@@ -78,9 +78,9 @@ This will create a directory called `mygame`with the following layout:
 ```
 settings.gradle            <- definition of sub-modules. By default core, desktop, android, html, ios
 build.gradle               <- main Gradle build file, defines dependencies and plugins
-gradlew                    <- script that will run Gradle on Unix systems
+gradlew                    <- local gradle wrapper
 gradlew.bat                <- script that will run Gradle on Windows
-gradle                     <- local gradle wrapper
+gradle                     <- script that will run Gradle on Unix systems
 local.properties           <- Intellij only file, defines android sdk location
 
 core/
