@@ -3,7 +3,7 @@ A model represents a 3D asset consisting of a hierarchy of nodes, where each nod
 A model is not intended to be actual rendered. Instead you should create one or more ModelInstances of a Model, which are used for the actual rendering. The structure of a ModelInstance is roughly the same as a Model.
 
 ## Nodes
-A model is a hierarchical representation of nodes. In practice this means that a model contains an array of nodes and each node contains also an array of nodes. Nodes can be accessed using the public `nodes` array or using one of the the `getNode(...)` methods. Each node has a unique `id` within a model.
+A model is a hierarchical representation of nodes. In practice this means that a model contains an array of nodes and each node contains also an array of nodes. Nodes can be accessed using the public `nodes` array or using one of the `getNode(...)` methods. Each node has a unique `id` within a model.
 
 Each Node can belong to only one Model or one ModelInstance at a time and is never shared amongst multiple Models or ModelInstances. Modifications to a Node of a ModelInstance will therefore only affect that particular ModelInstance. Modifications to a Node of a Model will affect that Model and all ModelInstances created from it after the modifications, but previously created ModelInstances from that Model remain unchanged.
 
