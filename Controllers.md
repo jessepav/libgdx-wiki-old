@@ -137,7 +137,10 @@ However, on closer inspection things get more complicated: When your game needs 
 A ready-made library for handling all these cases on top of gdx-controllers can be found at the [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils).
 
 ## Controller (Dis-)connects
-Currently controller (dis-)connects are reported on desktop and Android. If your game supports gamepads, make sure to handle device disconnects and connects! E.g. if a controller disconnects during a game, pause the game and ask the user to reconnect the controller. Note that you will get a brand new Controller instance in that case, so make sure to wire up any listeners correctly. The old controller instance will be reported as disconnected.
+Currently controller (dis-)connects are reported on HTML5 and Android. On Desktop, they are working only on LWJGL3. 
+If your game supports gamepads, make sure to handle device disconnects and connects! E.g. if a controller disconnects during a game, pause the game and ask the user to reconnect the controller. Note that you will get a brand new Controller instance in that case, so make sure to wire up any listeners correctly. The old controller instance will be reported as disconnected.
+
+If you want to use LWJGL2, you might want to check the [libGDX Jamepad implementation](https://github.com/MrStahlfelge/gdx-controllerutils/wiki/Jamepad-controller-implementation) that can be used without any changes in your libGDX game.
 
 ## Integration into your project
 Simply check the "Controllers" checkbox in the gdx-setup app. For LWJGL 3, replace the dependency to `gdx-controllers-desktop` with `gdx-controllers-lwjgl3` and remove the `compile "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"` dependency in your desktop project.
