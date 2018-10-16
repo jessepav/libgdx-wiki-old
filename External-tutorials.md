@@ -14,7 +14,6 @@ These are webpages where individuals or companies write about their experience w
  * LibGDX video tutorials 1 - https://www.youtube.com/playlist?list=PLXY8okVWvwZ0JOwHiH1TntAdq-UDPnC2L
  * LibGDX video tutorials 2 - https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C
  * LibGDX Video tutorials 3 - https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO
- * bitowl's tutorials - https://bitowl.net/tag/tutorial/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
 
 
