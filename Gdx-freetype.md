@@ -89,6 +89,8 @@ public TextureFilter minFilter = TextureFilter.Nearest;
 public TextureFilter magFilter = TextureFilter.Nearest;
 ```
 
+If rendering large fonts, the default PixmapPacker page size may be too small. You can provide your own PixmapPacker or use `FreeTypeFontGenerator.setMaxTextureSize` to set the default page size.
+
 Examples:
 ```java
 parameter.borderColor = Color.BLACK;
