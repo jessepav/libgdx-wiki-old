@@ -102,7 +102,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
 
 These are interesting open-source projects found on the web that use libGDX. This list is intentionally kept as clean and interesting as possible (you won't see repeated projects nor _Hello-World kind-of-games_ here).
  * Guide to creating a Libgdx game, step by step [2016, Full Code Provided] http://tutorials.boondog.xyz/
- * https://github.com/gunmetal313/gdx-skineditor (A skin editor for libGDX,fork by gunmetal)
+ * https://github.com/raeleus/skin-composer (A skin editor created with Scene2D.UI)
  * https://github.com/antionio/Dodge-The-Cars
  * https://github.com/sandeel/Bushido-Blocks
  * https://github.com/bompo/mgcube
