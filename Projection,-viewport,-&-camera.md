@@ -10,7 +10,7 @@ In the [MyFirstTriangle](My-First-Triangle-(Example)) and [ColorMeshTexture](Mes
 
 # Creating a Square
 
-Create a new libgdx desktop project named `projection-viewport-camera`. Create a class called `ProjectionViewportCamera` that implements `ApplicationListener` and put it in the package `com.example.projectionviewportcamera`. For full instruction on how to set up a libgdx desktop (and Android) project, look at the [MyFirstTriangle](My-first-triangle) tutorial. Unlike in that tutorial, we're going to show a square instead of a rectangle. Here's the code for `ProjectionViewportCamera`:
+Create a new libgdx desktop project named `projection-viewport-camera`. Create a class called `ProjectionViewportCamera` that implements `ApplicationListener` and put it in the package `com.example.projectionviewportcamera`. For full instruction on how to set up a libgdx desktop (and Android) project, look at the [MyFirstTriangle](My-First-Triangle-(Example)) tutorial. Unlike in that tutorial, we're going to show a square instead of a rectangle. Here's the code for `ProjectionViewportCamera`:
 
 ```java
 package com.example.projectionviewportcamera;
