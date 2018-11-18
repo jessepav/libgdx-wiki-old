@@ -2,7 +2,7 @@ If you have been sent to this page it is because you have posted something on th
 
 ## What do I do now? ##
 
-If you need help, we have an extensive guide called [[Getting Help]]. Read it. If you have questions you need to ask, the fastest way to get help is the [libgdx chat room](irc://irc.freenode.net/libgdx), otherwise you may post on the [forum](http://www.badlogicgames.com/forum/).
+If you need help, we have an extensive guide called [[Getting Help]]. Read it. If you have questions you need to ask, the fastest way to get help is the [libgdx chat room](irc://irc.freenode.net/libgdx) or [libgdx discord](https://discord.gg/6pgDK9F), otherwise you may post on the [forum](http://www.badlogicgames.com/forum/).
 
 ## Why are you doing this to me? ##
 
