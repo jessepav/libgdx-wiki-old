@@ -56,7 +56,7 @@ Implementing the `Poolable` interface means you will have a `reset()` method in 
 Below is a minimal example of pooling a bullet object.
 
 ```java
-public class Bullet implements Poolable {
+public class Bullet implements Pool.Poolable {
 
     public Vector2 position;
     public boolean alive;
