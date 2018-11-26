@@ -86,7 +86,7 @@ Once you have done that, you must define them in your root build.gradle file, in
 
 ```
 project(":ios") {
-    apply plugin: "java"`
+    apply plugin: "java"
     apply plugin: "robovm"
 
     dependencies {
