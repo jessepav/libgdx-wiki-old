@@ -84,13 +84,12 @@ In order to upload the IPA to the app store, it must be signed with your distrib
 You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) to create provisioning profiles and certificates.
 Once you have done that, you must define them in your root build.gradle file, in your IOS Project
 
-`project(":ios") {`
+```
+project(":ios") {
+    apply plugin: "java"`
+    apply plugin: "robovm"
 
-`apply plugin: "java"`
-
-`apply plugin: "robovm"`
-
-  ` dependencies {`
+    dependencies {
 
         compile project(":core")
 
@@ -117,7 +116,8 @@ Once you have done that, you must define them in your root build.gradle file, in
         archs = "thumbv7:arm64"
 
     }
-`}`
+ }
+```
 
 - Your provisioning profile name is available in your developer portal (where you created your provisioning profile).
 - Your Signing identity name is available in your keychain, under "My Certificates"
