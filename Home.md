@@ -1,6 +1,5 @@
 ![logo](http://libgdx.badlogicgames.com/img/logo.png)
 
-Welcome to the editable Wiki!
 Welcome to the Wiki, a place for comprehensive documentation on the LibGDX API and features.  This wiki is community driven, and can be edited by anyone. If you find information out of date, feel free to update yourself, or ask for clarification on the forums or the irc channel.
 
 # [Official documentation](https://libgdx.badlogicgames.com/documentation/)
