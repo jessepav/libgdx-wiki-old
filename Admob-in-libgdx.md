@@ -198,8 +198,12 @@ public class HelloWorldAndroid extends AndroidApplication {
         View gameView = initializeForView(new HelloWorld(), false);
 
         // Create and setup the AdMob view
-        AdView adView = new AdView(this, AdSize.BANNER, "xxxxxxxx"); // Put in your secret key here
-        adView.loadAd(new AdRequest());
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("xxxxxxxx"); // Put in your secret key here
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         // Add the libgdx view
         layout.addView(gameView);
@@ -440,8 +444,12 @@ public class HelloWorldAndroid extends AndroidApplication implements IActivityRe
         View gameView = initializeForView(new HelloWorld(this), false);
 
         // Create and setup the AdMob view
-        adView = new AdView(this, AdSize.BANNER, "xxxxxxxx"); // Put in your secret key here
-        adView.loadAd(new AdRequest());
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("xxxxxxxx"); // Put in your secret key here
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         // Add the libgdx view
         layout.addView(gameView);
