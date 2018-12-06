@@ -63,6 +63,15 @@ int secondY = Gdx.input.getY(1);
 
 Here we get the touch coordinates at pointer index 0 (0 is default) and pointer index 1. Coordinates are reported in a coordinate system relative to the screen. The origin (0, 0) is in the upper left corner of the screen, the x-axis points to the right, the y-axis points *downwards*.
 
+
+### Pressure
+
+You can get the Pressure applied on a pointer using
+
+`Gdx.input.getPressure()`
+
+This returns a value between 0 and 1
+
 ## Mouse Buttons ##
 On the desktop you can also check which mouse buttons are currently pressed:
 
