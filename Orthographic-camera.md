@@ -11,8 +11,9 @@ The Camera class operates as a very simple real world camera. It is possible to
  * change the viewport, 
  * project/unproject points to and from window coordinate/ world space
 
-
 Using the camera is the easy way to move around a game world without having to manually operate on the matrices. All the projection and view matrix operations are hidden in the implementation.
+
+The position field referes to the position of the center of the camera.
 
 The following little app demonstrates the use of a simple `OrthographicCamera` to move around a flat world.  
 
