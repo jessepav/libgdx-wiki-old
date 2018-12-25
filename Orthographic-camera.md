@@ -14,6 +14,7 @@ The Camera class operates as a very simple real world camera. It is possible to
 Using the camera is the easy way to move around a game world without having to manually operate on the matrices. All the projection and view matrix operations are hidden in the implementation.
 
 The position field referes to the position of the center of the camera.
+The camera extends the selected viewport of the world so this matches the screen size of the device.
 
 The following little app demonstrates the use of a simple `OrthographicCamera` to move around a flat world.  
 
