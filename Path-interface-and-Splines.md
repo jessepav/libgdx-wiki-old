@@ -66,12 +66,12 @@ How to render the spline previously cached
     Vector2[] points = new Vector2[k];
     ShapeRenderer shapeRenderer;
 /*render()*/
-    shaper.begin(ShapeType.Line);
+    shapeRenderer.begin(ShapeType.Line);
     for(int i = 0; i < k-1; ++i)
     {
-        shaper.line(points[i], points[i+1]);
+        shapeRenderer.line(points[i], points[i+1]);
     }
-    shaper.end();
+    shapeRenderer.end();
 ```
 
 ### Calculating on the fly
@@ -85,12 +85,12 @@ Do everything at render stage
     Vector2 out = new Vector2();
     ShapeRenderer shapeRenderer;
 /*render()*/
-    shaper.begin(ShapeType.Line);
+    shapeRenderer.begin(ShapeType.Line);
     for(int i = 0; i < k-1; ++i)
     {
-        shaper.line(myCatmull.valueAt(points[i], ((float)i)/((float)k-1)), myCatmull.valueAt(points[i+1], ((float)(i+1))/((float)k-1)));
+        shapeRenderer.line(myCatmull.valueAt(points[i], ((float)i)/((float)k-1)), myCatmull.valueAt(points[i+1], ((float)(i+1))/((float)k-1)));
     }
-    shaper.end();
+    shapeRenderer.end();
 ```
 
 ### Make sprite traverse through the cached path
