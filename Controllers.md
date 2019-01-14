@@ -43,7 +43,7 @@ float axisValue = controller.getAxis(axisCode);
 ...
 ```
 
-Each component has its own code (analogous to key codes or scan codes for keyboad keys). This code is controller specific, e.g. the X button on an XBox controller likely has a different code than the X button on a PS3 controller. We’ll come back to this issue later.
+Each component has its own code (analogous to key codes or scan codes for keyboard keys). This code is controller specific, e.g. the X button on an XBox controller likely has a different code than the X button on a PS3 controller. We’ll come back to this issue later.
 
 # Event based Controller Input
 When polling a controller, you might lose some input events. For some tasks, event based input is also more suited than polling based input. We hence provide you a way to register listeners to receive controller events, either globally for all controllers, or for a specific controller. The interface you have to implement to listen for controller events is called [ControllerListener](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/ControllerListener.java):
