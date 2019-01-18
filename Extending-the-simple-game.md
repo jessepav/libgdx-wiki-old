@@ -124,7 +124,7 @@ public class MainMenuScreen implements Screen {
 
 ```
 
-The code here is fairly straightforward, except for the fact that we need to call game's SpriteBatch and BitmapFont instances instead of creating our own. `game.font.draw(SpriteBatch, String, float,float)`, is how text is rendered to the screen. LibGDX comes with a pre-made font, Arial, so that you can you use the default constructor and still get a font.
+The code here is fairly straightforward, except for the fact that we need to call game's SpriteBatch and BitmapFont instances instead of creating our own. `game.font.draw(SpriteBatch, String, float,float)`, is how text is rendered to the screen. LibGDX comes with a pre-made font, Arial, so that you can use the default constructor and still get a font.
 
 We then check to see if the screen has been touched, if it has, then we check to set the games screen to a GameScreen instance, and then dispose of the current instance of MainMenuScreen. The rest of the methods that are needed to implement in the MainMenuScreen are left empty, so I'll continue to omit them (there is nothing to dispose of in this class).
 
