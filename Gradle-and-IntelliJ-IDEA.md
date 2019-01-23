@@ -5,7 +5,7 @@ At the end of this section you will find a list of common issues with possible s
 ## Importing Your Project
 Follow carefully the [Official Documentation](https://libgdx.badlogicgames.com/documentation/gettingstarted/Importing%20into%20IDE.html#intellij) steps.
 
-Note for Intellij users: Gradle may not be turned on by default. See (https://stackoverflow.com/a/53124234/1411030) here for more details.
+Note for Intellij users: Gradle may not be turned on by default. See [here](https://stackoverflow.com/a/53124234/1411030) for more details.
 
 ## Running Your Project
 
