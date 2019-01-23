@@ -5,6 +5,8 @@ At the end of this section you will find a list of common issues with possible s
 ## Importing Your Project
 Follow carefully the [Official Documentation](https://libgdx.badlogicgames.com/documentation/gettingstarted/Importing%20into%20IDE.html#intellij) steps.
 
+Note for Intellij users: Gradle may not be turned on by default. See (https://stackoverflow.com/a/53124234/1411030) here for more details.
+
 ## Running Your Project
 
   * **Desktop**: `Run -> Edit Configurations...`, click the plus (+) button and select `Application`. Set the `Name` to `Desktop`. Set the field `Use classpath of module` to `desktop` (or `desktop_main`), then click on the button of the `Main class` field and select the `DesktopLauncher` class. Set the `Working directory` to your `android/assets/` (or `your_project_path/core/assets/`) folder! Click `Apply` and then `OK`. You have now created a run configuration for your desktop project. You can now select the configuration and run it.
