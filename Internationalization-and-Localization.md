@@ -1,12 +1,3 @@
- * [Overview](#overview)
- * [Creating Properties Files](#creating-properties-files)
- * [Creating a Bundle](#creating-a-bundle)
- * [Fetching Localized Strings](#fetching-localized-strings)
- * [Message Format](#message-format)
- * [Plural Forms](#plural-forms)
- * [GWT Limitations and Compatibility](#gwt-limitations-and-compatibility)
- * [Multiple Bundles](#multiple-bundles)
-
 ## Overview ##
 
 Technically speaking, _internationalization_ is the process of designing a software so that it can potentially be adapted to various languages and regions without engineering changes.
