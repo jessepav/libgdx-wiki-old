@@ -160,3 +160,14 @@ Of course you can use multiple bundles in your application. For example, you mig
    * Your code is easier to read and to maintain.
    * You'll avoid huge bundles, which may take somewhat long to load into memory.
    * You can reduce memory usage by loading each bundle only when needed.
+
+
+## iOS
+For iOS, you need to specify the supported language in the `Info.plist.xml` file. Add the following for supporting English, Spanish and German:
+
+    <key>CFBundleLocalizations</key>
+    <array>
+        <string>en</string>
+        <string>es</string>
+        <string>de</string>
+    </array>
