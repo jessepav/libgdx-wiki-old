@@ -1,6 +1,6 @@
 ## rendering super-smooth scalable bitmap fonts ##
 
-Signed distance field rendering is a technique used in Team Fortress 2, and documented by Chris Green of Valve in the SIGGRAPH 2007 paper [Improved Alpha-Tested Magniﬁcation for Vector Textures and Special Effects.](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf) It allows you to render bitmap fonts without jagged edges even at high magnifications. This article describes how to implement the technique in libgdx.
+Signed distance field rendering is a technique used in Team Fortress 2, and documented by Chris Green of Valve in the SIGGRAPH 2007 paper [Improved Alpha-Tested Magniﬁcation for Vector Textures and Special Effects.](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf) It allows you to render bitmap fonts without jagged edges even at high magnifications. This article describes how to implement the technique in libgdx.
 
 # Introduction #
 
