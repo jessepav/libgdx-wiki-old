@@ -83,7 +83,7 @@ controller.addListener(new ControllerAdapter() {
    public void disconnected(Controller controller) {
       ...
    }
-};
+});
 ```
 
 You might have noticed that some of the listener methods return a boolean. This is used if multiple listeners were registered globally or with a specific controller. If such a method returns false, the event will be handed to the next listener. If the method returns true, the event will not be propagated any further.
