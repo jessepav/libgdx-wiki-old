@@ -70,8 +70,8 @@ above about multiple viewports is good.  Here is some additonal information to t
 
 ```java
     //****RENDER****//
+    vp.apply();
     sb.setProjectedMatrix(vp.getCamera().combined);
-    sb.getViewport().apply();
     sb.begin();/*draw*/ sb.end();
     stage.getViewport().apply();
     stage.draw();
