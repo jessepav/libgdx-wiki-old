@@ -55,7 +55,7 @@ When using multiple Stages:
     stage2.getViewport().apply();
     stage2.draw();
 ```
-# Using Stage (with its own viewport) along side another Viewport (used to render your sprite) #
+#### Using Stage (with its own viewport) along side another Viewport (used to render your sprite) ####
 When using stage and at the same time using another SpriteBatch with its own viewport to render its sprites you
 may find some undesirable effects if you don't know exactly what to do.  First of all,  the information
 above about multiple viewports is good.  Here is some additonal information to that:
