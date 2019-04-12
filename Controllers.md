@@ -151,5 +151,8 @@ I wrote a new little test that lets you display the currently connected controll
 #### Proguard settings ####
 -keep class com.badlogic.gdx.controllers.android.AndroidControllers { *; }
 
+## iOS Support
+
+You'll find an extension for supporting MFI controllers on iOS at the [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils).
 
 [[Prev|Event Handling]] | [[Next|Gesture Detection]]
