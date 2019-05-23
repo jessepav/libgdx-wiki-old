@@ -167,11 +167,11 @@ If an application needs to be able to write to the external storage of a device 
 	<uses-permission android:name="android.permission.VIBRATE"/>
 ```
 
-Users are generally suspicious of applications with many permissions, so chose these wisely. 
+Users are generally suspicious of applications with many permissions, so choose these wisely. 
 
 For wake locking to work, `AndroidApplicationConfiguration.useWakeLock` needs to be set to true. 
 
-If a game doesn't need accelerometer or compass access it is advised to disable these by setting the 
+If a game doesn't need accelerometer or compass access, it is advised to disable these by setting the 
 `useAccelerometer` and `useCompass` fields of `AndroidApplicationConfiguration` to false.
  
 If your game needs the gyroscope sensor, you have to set `useGyroscope` to true in `AndroidApplicationConfiguration` (It's disabled by default, to save energy).
