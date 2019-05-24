@@ -9,4 +9,4 @@ Libgdx comes with a few demos that you can play around with to get a feeling for
 * [Vector Pinball - a Box2D-based pinball game](https://github.com/libgdx/libgdx-demo-vector-pinball)
 * [The Plane that couldn't fly good - a flappy bird's clone](https://github.com/badlogic/theplanethatcouldntflygood)
 
-####[You can try all these demos right in your WebGL-enabled browser! (Except IE, including IE 11)](http://libgdx.badlogicgames.com/demos/)
+#### [You can try all these demos right in your WebGL-enabled browser! (Except IE, including IE 11)](http://libgdx.badlogicgames.com/demos/)
