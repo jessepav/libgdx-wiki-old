@@ -400,49 +400,26 @@ This feature is experimental, use at your own risk.
 
 ### Loading Screen ###
 
-A libgdx HTML5 application preloads all assets found in the `gdx.assetpath`. During this loading process, a loading screen is displayed which is implemented via GWT widget. If you want to customize this loading screen, you can simply overwrite the `GwtApplication.getPreloaderCallback()` method (`GwtLauncher` in the above example). The following example draws a very simple, ugly loading screen using Canvas:
+A libgdx HTML5 application preloads all assets found in the `gdx.assetpath`. During this loading process, a loading screen is displayed which is implemented via GWT widget. If you want to customize this loading screen, you can simply overwrite the `GwtApplication.getPreloaderCallback()` method (`GwtLauncher` in the above example). 
 
-```java
-long loadStart = TimeUtils.nanoTime();
-public PreloaderCallback getPreloaderCallback () {
-  final Canvas canvas = Canvas.createIfSupported();
-  canvas.setWidth("" + (int)(config.width * 0.7f) + "px");
-  canvas.setHeight("70px");
-  getRootPanel().add(canvas);
-  final Context2d context = canvas.getContext2d();
-  context.setTextAlign(TextAlign.CENTER);
-  context.setTextBaseline(TextBaseline.MIDDLE);
-  context.setFont("18pt Calibri");
+From 1.9.10 on, the following code changes the colors of the progress bar and the displayed logo to a file placed within your webapp folder:
 
-  return new PreloaderCallback() {
-	 @Override
-	 public void done () {
-		context.fillRect(0, 0, 300, 40);
-	 }
+```
+@Override
+public Preloader.PreloaderCallback getPreloaderCallback() {
+    return createPreloaderPanel(GWT.getHostPageBaseURL() + "preloadlogo.png");
+}
 
-	 @Override
-	 public void loaded (String file, int loaded, int total) {
-		System.out.println("loaded " + file + "," + loaded + "/" + total);
-		String color = Pixmap.make(30, 30, 30, 1);
-		context.setFillStyle(color);
-		context.setStrokeStyle(color);
-		context.fillRect(0, 0, 300, 70);
-		color = Pixmap.make(200, 200, 200, (((TimeUtils.nanoTime() - loadStart) % 1000000000) / 1000000000f));
-		context.setFillStyle(color);
-		context.setStrokeStyle(color);
-		context.fillRect(0, 0, 300 * (loaded / (float)total) * 0.97f, 70);
-		
-		context.setFillStyle(Pixmap.make(50, 50, 50, 1));
-		context.fillText("loading", 300 / 2, 70 / 2);
-	 }
-
-	 @Override
-	 public void error (String file) {
-		System.out.println("error: " + file);
-	 }
-  };
+@Override
+protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
+    meterPanel.setStyleName("gdx-meter");
+    meterPanel.addStyleName("nostripes");
+    meterStyle.setProperty("backgroundColor", "#ffffff");
+    meterStyle.setProperty("backgroundImage", "none");
 }
 ```
+
+Prior 1.9.10, best is to copy all `getPreloaderCallback()` content from libGDX' sources and adjust it to your needs.
 
 Note that you can only use pure GWT facilities to display the loading screen, libgdx APIs will only be available after the preloading is complete.
 
