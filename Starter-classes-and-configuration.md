@@ -404,7 +404,7 @@ A libgdx HTML5 application preloads all assets found in the `gdx.assetpath`. Dur
 
 From 1.9.10 on, the following code changes the colors of the progress bar and the displayed logo to a file placed within your webapp folder:
 
-```
+```java
 @Override
 public Preloader.PreloaderCallback getPreloaderCallback() {
     return createPreloaderPanel(GWT.getHostPageBaseURL() + "preloadlogo.png");
