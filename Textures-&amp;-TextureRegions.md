@@ -12,7 +12,10 @@ private TextureRegion textureRegion = new TextureRegion();
 public void render(float deltaTime)
 {
   spriteBatch.begin();
-  if(textureRegion.getTexture() != null) { spriteBatch.draw(textureRegion, 0f, 0f, 1024f, 512f); }
+  if(textureRegion.getTexture() != null) 
+  { 
+    spriteBatch.draw(textureRegion, 0f, 0f, 1024f, 512f); 
+  }
   spriteBatch.end();
 }
 ```
