@@ -155,4 +155,9 @@ I wrote a new little test that lets you display the currently connected controll
 
 You'll find an extension for supporting MFI controllers on iOS at the [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils).
 
+## Rumbling/vibration
+
+If you want to use rumbling in your game, you might want to check the [libGDX Jamepad implementation](https://github.com/MrStahlfelge/gdx-controllerutils/wiki/Jamepad-controller-implementation) that can be used without any changes in your libGDX game.
+
+
 [[Prev|Event Handling]] | [[Next|Gesture Detection]]
