@@ -72,12 +72,12 @@ public class ExampleBuild {
 		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
 
 		new AntScriptGenerator().generate(new BuildConfig("my-native-lib"), win32, win64);
-		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean postcompile");
-		BuildExecutor.executeAnt("jni/build-windows64.xml", "-v -Dhas-compiler=true clean postcompile");
-		// BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean postcompile");
-		// BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean postcompile");
-		// BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true  clean postcompile");
-		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
+		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		BuildExecutor.executeAnt("jni/build-windows64.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-linux32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-linux64.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		BuildExecutor.executeAnt("jni/build.xml", "-v", "pack-natives");
 	}
 }
 ```
@@ -178,11 +178,11 @@ The generated Ant build scripts will compile the native libraries and package th
 
 ```java
 // Build natives:
-BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean postcompile");
-BuildExecutor.executeAnt("jni/build-windows64.xml", "-v -Dhas-compiler=true clean postcompile");
+BuildExecutor.executeAnt("jni/build-windows32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+BuildExecutor.executeAnt("jni/build-windows64.xml", "-v", "-Drelease=true", "clean", "postcompile");
 // etc
 // JAR natives:
-BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
+BuildExecutor.executeAnt("jni/build.xml", "-v", "pack-natives");
 ```
 
 ### More ###
