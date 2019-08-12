@@ -50,6 +50,27 @@ Don't forget to also set the fullscreen orientation for mobile in the getConfig(
 cfg.fullscreenOrientation = GwtGraphics.OrientationLockType.LANDSCAPE;
 ```
 
+## Changing the Load Screen Progress Bar
+
+As much as we love libGDX, the default loading progress bar when preparing the HTML game screams "newbie". Impress your friends and bring honor to your family name by making a custom progress bar! Add the following to your HtmlLauncher class in your HTML project:
+
+```java
+@Override
+public Preloader.PreloaderCallback getPreloaderCallback() {
+    return createPreloaderPanel(GWT.getHostPageBaseURL() + "preloadlogo.png");
+}
+
+@Override
+protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
+    meterPanel.setStyleName("gdx-meter");
+    meterPanel.addStyleName("nostripes");
+    meterStyle.setProperty("backgroundColor", "#ffffff");
+    meterStyle.setProperty("backgroundImage", "none");
+}
+```
+
+"preloadlogo.png" is an image you place in the "webapp" folder in the HTML project for DIST builds. Place the image in your "war" folder as well for your SUPERDEV builds. Adjust your color to fit the theme of your game. Enjoy yourself.
+
 ## Differences Between GWT and Desktop Java
 
 * When some number is very important and you want to make sure it is treated identically on desktop/Android and GWT, use a `long`.
