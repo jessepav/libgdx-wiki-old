@@ -8,9 +8,15 @@ That's right! You can make your very own libGDX games that run in an HTML5-capab
 
 So there are a few things that are fundamentally different about developing using GWT as opposed to running a desktop project. You'll want to get familiar with two Gradle tasks in particular; you can launch these tasks from your IDE if you aren't comfortable on the command line, but command-line Gradle tends to avoid problems when the IDE isn't working as well as we would like. `gradlew html:superDev` will be your main tool during development; it allows for a much-improved debugging experience and allows quickly reloading changes to the Java code. `gradlew html:dist` produces a fully-functioning web page that can be uploaded to a static web host (such as the free GitHub Pages service); it also optimizes the web page so the game in it will perform better, which makes `dist` take a little longer than `superDev`.
 
-## superDev Tips and Tricks
+## superDev
 
-Ask MisterStahlfelge on Discord.
+superDev allows you to debug your HTML5 application. This is not necessary in most cases: if there are problems in your core game, you can debug the desktop application. But sometimes, there are bugs only appearing when running on HTML5. You can debug the application with the following steps:
+
+* Run the `html:superdev` Gradle task. It compiles the game and sets up a local HTTP server. When it is done, it will idle to keep the server running.
+* Your game is available here: http://localhost:8080/index.html (current config) or http://localhost:8080/html/ (older Gradle configuration with Jetty plugin) - open the page with *Chrome* to debug
+* Hit the big reload button and hit compile. The game will recompile and source maps will be set up.
+* After the game restarted, open Chrome's dev console with F12 and navigate to the sources tab. Hit Ctrl-P and enter the name of the Java file you want to debug. The Java file will open within Chrome's dev console and you can set a break point. You are able to step through the Java code lines. However, debug variables will be generated JS names but you'll be able to make sense of it.
+* When you are done, you can stop the Gradle task with Ctrl-C.
 
 ## dist Information
 
@@ -24,7 +30,7 @@ Surprisingly, fullscreen functionality actually works on the HTML backend. To en
 Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 ```
 
-The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iPads. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following:
+The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iPads. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following ([PR pending](https://github.com/libgdx/libgdx/pull/5691)):
 
 ```java
 class ResizeListener implements ResizeHandler {
