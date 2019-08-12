@@ -4,7 +4,7 @@ Welcome to a place of magic and wonder, the World Wide Web! Even though some fol
 
 That's right! You can make your very own libGDX games that run in an HTML5-capable web browser, which I assume is some advanced form of Netscape Navigator. This is possible by GWT, or Google Web Toolkit! I know what you're thinking, Google? The guys who are trying to let people search the Internet with a form? What are they doing with libGDX? I have no idea either. If you want to make your own libGDX game deploy to the web using GWT, well, just make a project in the latest setup jar and make sure to check the `Html` checkbox. The rest should be straightforward!
 
-# BUT IT USUALLY ISN'T, AT FIRST.
+**BUT IT SOMETIMES ISN'T, AT FIRST** 
 
 So there are a few things that are fundamentally different about developing using GWT as opposed to running a desktop project. You'll want to get familiar with two Gradle tasks in particular; you can launch these tasks from your IDE if you aren't comfortable on the command line, but command-line Gradle tends to avoid problems when the IDE isn't working as well as we would like. `gradlew html:superDev` will be your main tool during development; it allows for a much-improved debugging experience and allows quickly reloading changes to the Java code. `gradlew html:dist` produces a fully-functioning web page that can be uploaded to a static web host (such as the free GitHub Pages service); it also optimizes the web page so the game in it will perform better, which makes `dist` take a little longer than `superDev`.
 
