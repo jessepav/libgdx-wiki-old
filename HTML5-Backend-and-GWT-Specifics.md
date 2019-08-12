@@ -16,6 +16,40 @@ Ask MisterStahlfelge on Discord.
 
 Should be pretty straightforward; the dist is generated in `html/build/dist/`. You can delete the sourcemap files if you feel you won't be debugging the dist; they're usually a few MB in size and are in `html/build/dist/WEB-INF/deploy/html/symbolMaps`.
 
+## Fullscreen Functionality
+
+Surprisingly, fullscreen functionality actually works on the HTML backend. To enable fullscreen, call the following method from within your core project:
+
+```java
+Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+```
+
+The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iPads. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following:
+
+```java
+class ResizeListener implements ResizeHandler {
+    @Override
+    public void onResize(ResizeEvent event) {
+        if (Gdx.graphics.isFullscreen()) {
+            Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+        } else {
+            int width = event.getWidth() - PADDING;
+            int height = event.getHeight() - PADDING;
+            getRootPanel().setWidth("" + width + "px");
+            getRootPanel().setHeight("" + height + "px");
+            getApplicationListener().resize(width, height);
+            Gdx.graphics.setWindowedMode(width, height);
+        }
+    }
+}
+```
+
+Don't forget to also set the fullscreen orientation for mobile in the getConfig():
+
+```java
+cfg.fullscreenOrientation = GwtGraphics.OrientationLockType.LANDSCAPE;
+```
+
 ## Differences Between GWT and Desktop Java
 
 * When some number is very important and you want to make sure it is treated identically on desktop/Android and GWT, use a `long`.
