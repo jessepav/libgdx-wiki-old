@@ -351,10 +351,6 @@ For maps, the element type is used for the values. The keys for maps are always 
 
 Note that the `Json` class uses generics on Java field declarations to determine the element type where possible.
 
-## <a id="event-based-parsing"></a>Event Based Parsing ##
-
-The `JsonReader` class reads JSON and has protected methods that are called as JSON objects, arrays, strings, floats, longs, and booleans are encountered. By default, these methods build a DOM out of `JsonValue` objects. These methods can be overridden to do your own event based JSON handling.
-
 ## <a id="supported-classes"></a>Supported Classes ##
 
 Note that when using GWT, not all classes are serializable. `Json` supports the following:
@@ -366,3 +362,23 @@ Note that when using GWT, not all classes are serializable. `Json` supports the 
 * Boolean
 
 Make sure to provide your own de/serializers or mark objects you don't intend to serialize with the 'transient' keyword.
+
+## <a id="event-based-parsing"></a>Manual and Event Based Parsing ##
+
+The `JsonReader` class reads JSON and has protected methods that are called as JSON objects, arrays, strings, floats, longs, and booleans are encountered. By default, these methods build a DOM out of `JsonValue` objects. These methods can be overridden to do your own event based JSON handling.
+
+```java
+// read something 
+JsonValue fromJson = new JsonReader().parse(jsonAsString);
+nickName = fromJson.getString("nickName");
+// ...
+
+// write something
+JsonValue toJson = new JsonValue(JsonValue.ValueType.object);
+toJson.addChild("name", new JsonValue("some name");
+toJson.addChild("age", 12);
+// ...
+toJson.toJson(JsonWriter.OutputType.json);
+```
+
+
