@@ -18,8 +18,11 @@ TexturePacker uses multiple packing algorithms but the most important is based o
 
 ## <a id="Running_TexturePacker"></a>Running TexturePacker ##
 
-(If you prefer to pack your textures using a GUI, check this tool: https://github.com/crashinvaders/gdx-texture-packer-gui)
+### GUIs
 
+If you prefer to pack your textures using a GUI, you can use [Texture Packer GUI](https://github.com/crashinvaders/gdx-texture-packer-gui). If you are using Scene2d Skins, you probably already use [Skin Composer](https://github.com/raeleus/skin-composer) and can use its user-friendly interface to add your textures to the Skin's atlas.
+
+### From source
 The `TexturePacker` class is in the gdx-tools project. It can be run from source via Eclipse:
 
 ```java
