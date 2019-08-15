@@ -81,6 +81,36 @@ protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
 
 "preloadlogo.png" is an image you place in the "webapp" folder in the HTML project for DIST builds. Place the image in your "war" folder as well for your SUPERDEV builds. Adjust your color to fit the theme of your game. Enjoy yourself.
 
+## Preventing Keys From Triggering Scrolling and Other Browser Functions
+
+On a normal web page, if you press the down arrow on your keyboard, it will scroll the page up. That's nice and all, but maybe you don't want that to happen when players are trying to move the character in your game. To prevent this, you have to add overriding functions to prevent the default actions of special keys. The following must be added to the script block of your index.html in the "html/webapp" folder (dist) and "html/war" folder (superDev):
+
+```javascript
+window.onkeydown =
+function(event) {
+    // prevent all navigation keys except the space key
+    if([33, 34, 35, 36, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
+        event.preventDefault();
+        return false;
+    }
+};
+```
+
+You can add any key code to that list to prevent it from activating its corresponding action in the browser. Get the keycodes by testing your keyboard on http://www.keycode.info/
+
+The space key needs to be handled in a special way. Add the following to the script block:
+
+```javascript
+window.onkeypress =
+function(event) {
+    // prevent the space key (page scroll)
+    if(event.keyCode == 32){
+        event.preventDefault();
+        return false;
+    }
+};
+```
+
 ## Differences Between GWT and Desktop Java
 
 * When some number is very important and you want to make sure it is treated identically on desktop/Android and GWT, use a `long`.
