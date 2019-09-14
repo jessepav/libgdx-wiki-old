@@ -5,7 +5,7 @@ Gdx.input.setCursorCatched(true);
 Gdx.input.setCursorPosition(x, y);
 ```
 
-Note that catching the cursor only works reliably in the Lwjgl back-end. The Jogl backend uses the AWT/Swing Robot class which has a few quirks.
+Note that catching the cursor only works reliably in the LWJGL/LWJGL3 back-ends.
 
 Cursor catching and positioning is only available on the desktop.
 
