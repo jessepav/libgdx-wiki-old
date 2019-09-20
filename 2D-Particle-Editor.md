@@ -43,7 +43,7 @@ Briefly, a particle effect consists of some images that are moved around. The im
 
 The first step to creating an effect is to choose an image. The default image is just a simple round gradient. Experiment with different images to create a wide variety of effects. Images will often combine for some surprising and sometimes very cool looking results.
 
-When you are configuring properties, you are actually configuring the particle emitter that will create and manage the particles. In code, the emitter is represented by the ParticleEmitter class. A particle effect is made up of one or more emitters, which is managed in the lower right of the particle editor. In code, the effect is represented by the ParticleEffect class, which has a list of ParticleEmitters. 
+When you are configuring properties, you are actually configuring the particle emitter that will create and manage the particles. In code, the emitter is represented by the ParticleEmitter class. A particle effect is made up of one or more emitters, which is managed in the lower left of the particle editor. In code, the effect is represented by the ParticleEffect class, which has a list of ParticleEmitters. 
 
 ### Properties Panel Elements ###
 
