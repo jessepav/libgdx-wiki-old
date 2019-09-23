@@ -40,7 +40,37 @@ Once the configuration object is set, an `LwjglApplication` is instantiated. The
 
 From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
 # Desktop (LWJGL3) #
-To come...
+
+LWJGL3 is the modern backend recommended for new projects. Unfortunately, it is not set as the default in the setup project. To enable it, you must change the following line in the build.gradle for your project:
+
+From:
+```groovy
+api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+```
+To:
+```groovy
+api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+```
+
+Make sure to refresh your Gradle dependencies in your IDE. You will have to make the following changes to your DesktopLauncher class as well:
+
+```java
+package com.me.mygdxgame;
+
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+
+public class Main {
+   public static void main(String[] args) {
+      Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
+      config.setTitle("my-gdx-game");
+      config.setWindowedMode(480, 320);
+		
+      new Lwjgl3Application(new MyGdxGame(), config);
+   }
+}
+```
+
 # Android #
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
 
