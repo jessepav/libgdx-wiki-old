@@ -633,43 +633,19 @@ For admob to work on IOS it's best to make sure you are doing the following thin
 
 * Make sure you are on the latest RoboVM
 
-* Make sure you are using the latest admob bindings found here [robovm-ios-bindings - admob](https://github.com/BlueRiverInteractive/robovm-ios-bindings/tree/master/admob)
+* Make sure you are using the latest admob bindings found here [robovm-ios-bindings - admob](https://github.com/MobiVM/robovm-robopods/tree/master/google-mobile-ads)
 
 * Admob needs a separate ad unit for iOS, so make sure you create a new app the key will be different than the one used for Android. 
 
 
 ***
 
-1. Once you have the robovm admob bindings go ahead and import that into your ide.
+1. Follow the AdMob RoboPod installation instructions https://github.com/MobiVM/robovm-robopods/tree/master/google-mobile-ads/ios.
 
-2. At this point you should have your xxxx-robovm project and also the imported admob robovm bindings project.
-
-3. Copy the libadmob.a file from the robovm bindings project into your libs/ios directory
-
-4. Open up your robovm.xml file in your xxxx-robovm project and add the lib like so:
-
-```xml
-	<libs>
-		<lib>libs/ios/libgdx.a</lib>
-		<lib>libs/ios/libObjectAL.a</lib>
-		<lib>libs/ios/libadmob.a</lib>
-	</libs>
-```
-
-5. Also in the robovm.xml add in the AdSupport weakFramework, your complete weakFrameworks should look similar to the following:
-
-```xml
-	<weakFrameworks>
-	  <framework>AdSupport</framework>
-	  <framework>StoreKit</framework>
-	</weakFrameworks>
-```
-
-6. Now you need to add a project reference to the robovm admob bindings project.  (This will vary depending on what IDE you are using)
+2. Now with the configuration complete you can make calls to the AdMob API from Java and configure ads as desired. The following is an example on how to integrate a Banners ad at the top of the screen:
 
 
-7. Now with the configuration complete please reference the code below to see how the ads can be configured.  Currently this example should place the ads at the top of the screen.
-
+_WARNING the following code may be a bit outdated for latest RoboPod version, use it as a reference_
 
 
 ```java
