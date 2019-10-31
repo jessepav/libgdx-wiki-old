@@ -214,3 +214,13 @@ It is very useful to tint regions various colors. For example, the regions for a
 ```
 
 This makes a copy of the drawable named "round", tints it green, and adds it to the skin as a drawable under the name "round-green".
+
+### <a id="Troubleshooting Skins"></a>Troubleshooting Skins ###
+
+Having issues with Skin files?
+
+An error saying `GdxRuntimeException: Couldn't load file: <yourSKinFile>.json` could mean that you need to find where com.badlogic.Gdx.utils is. This is where a font file sits that many skins rely on.There are a few ways to attempt to fix this issue:
+* Try to place the font file needed from utils into your assets folder, and then see if you get the same error (error after changing this can help you solve your issue)
+* Delete the com.badlogic.Gdx.utils package from your project, and use Gradle to rebuild your project
+* Update your LibGDX version to a newer version. ##WARNING - commit your work before doing this, as you will run into Gradle version conflicts. 
+* Generally, it helps to look inside of the JSON file associated with your skin, as well as the atlas file if there is one associated as well. This will give you a better idea of what file is needing to be retrieved, and is causing the runtime error.
