@@ -138,7 +138,6 @@
    * [[Deploying as an Applet]]
    * [[Getting ready for #libGDXJAM]]
    * [[Coordinate systems]]
-qwer
    * [[Updating Your libGDX Version|Updating libGDX]]
    * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
    * [[Publishing Your Own Extensions Via the Setup Application|Third Party Extension Support]] 
