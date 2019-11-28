@@ -126,4 +126,4 @@ Different strategies may be implemented by doing `CustomViewport extends Viewpor
 ### ScalingViewport ###
 The [`ScalingViewport`](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ScalingViewport.html) 
 ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ScalingViewport.java)) 
-works well when you want to adjust only the ratio of your X and Y values for zooming effects.  You still need to declare your beginning X and Y values, and [`Scaling.apply()`](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/utils/Scaling.html#apply-float-float-float-float-) will allow you to set your own custom ratios, like gradually zooming in and out.
+works well when you want to adjust only the ratio of your X and Y values for zooming effects.  You still need to declare your beginning X and Y values, and [`Scaling.apply()`](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/utils/Scaling.html#apply-float-float-float-float-) will allow you to set your own custom ratios, like for gradually zooming in and out.
