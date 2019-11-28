@@ -58,10 +58,12 @@ project.ext.texturePacker = [ "android/assets/input/path/", "android/assets/outp
 import com.badlogic.gdx.tools.texturepacker.TexturePacker
 
 // Add a new task that packs the textures for you
-task texturePacker << {
-  if (project.ext.has('texturePacker')) {
-    logger.info "Calling TexturePacker: "+texturePacker
-    TexturePacker.process(texturePacker[0], texturePacker[1], texturePacker[2])
+task texturePacker {
+  doLast {
+    if (project.ext.has('texturePacker')) {
+      logger.info "Calling TexturePacker: "+texturePacker
+      TexturePacker.process(texturePacker[0], texturePacker[1], texturePacker[2])
+    }
   }
 }
 ```
