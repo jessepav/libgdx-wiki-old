@@ -111,6 +111,15 @@ function(event) {
 };
 ```
 
+## Preventing Right Click Context Menu
+
+Similarly to keyboard keys, the right click context menu can be prevented from interrupting your game. You'll notice that there are already functions to prevent left click from doing anything unexpected. You just need to add an additional line to apply the fix to right click as well. The following must be added to the script block of your index.html in the "html/webapp" folder (dist) and "html/war" folder (superDev):
+
+```javascript
+// prevent right click
+document.getElementById('embed-html').addEventListener('contextmenu', handleMouseDown, false;
+```
+
 ## Differences Between GWT and Desktop Java
 
 * When some number is very important and you want to make sure it is treated identically on desktop/Android and GWT, use a `long`.
