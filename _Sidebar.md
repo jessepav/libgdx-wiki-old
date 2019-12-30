@@ -136,6 +136,7 @@
    * [[External Tutorials]]
    * [[Bundling a JRE]]
    * [[Deploying as an Applet]]
+   * [[HTML5 Backend and GWT Specifics]]
    * [[Getting ready for #libGDXJAM]]
    * [[Coordinate systems]]
    * [[Updating Your libGDX Version|Updating libGDX]]
