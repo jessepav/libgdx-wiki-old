@@ -117,7 +117,7 @@ Similarly to keyboard keys, the right click context menu can be prevented from i
 
 ```javascript
 // prevent right click
-document.getElementById('embed-html').addEventListener('contextmenu', handleMouseDown, false;
+document.getElementById('embed-html').addEventListener('contextmenu', handleMouseDown, false);
 ```
 
 ## Differences Between GWT and Desktop Java
