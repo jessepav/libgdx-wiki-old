@@ -150,9 +150,3 @@ If you want to get started coding with LibGDX, head to the [Official documentati
     * [[Publishing Your Own Extensions Via the Setup Application|Third Party Extension Support]] 
     * [[Improving Your Gradle Workflow|Improving-workflow-with-Gradle]]
     * [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]] 
-  * A list of apps that integrate with LibGDX
-    * [Minesweeper](https://play.google.com/store/apps/details?id=com.popoko.minesweeper)
-    * [Chess](https://play.google.com/store/apps/details?id=com.popoko.chessru)
-    * [Gomoku](https://play.google.com/store/apps/details?id=com.popoko.gomokukr)
-    * [Tic Tac Toe ⑤](https://play.google.com/store/apps/details?id=com.popoko.gomokuvn) 
-    * [Tic Tac Toe ⑤ for iOS](https://apps.apple.com/us/app/id1107349135)
