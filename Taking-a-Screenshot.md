@@ -1,3 +1,12 @@
+Compact and efficient way of taking a screenshot
+```java
+Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+PixmapIO.writePNG(fh, pixmap, Deflater.DEFAULT_COMPRESSION, true);
+pixmap.dispose();
+```
+
+
+As an alternative approach in case some processing is required
 ```java
 byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), true);
 
