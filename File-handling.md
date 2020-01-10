@@ -38,7 +38,7 @@ Assets are stored in your Android project's `assets` directory and will be packa
 
 Files can also be stored on what the Android documentation refers to as [internal storage](http://developer.android.com/guide/topics/data/data-storage.html#filesInternal) (accessible via `Gdx.files.local` in LibGDX), where they are readable and writable. Each installed application has a dedicated internal storage directory. This directory is again only accessible by that application. One can think of this storage as a private working area for the application.
 
-Finally, files can be stored on the [external storage](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal), such as an SD-card. External storage might not always be available, e.g. the user could pull out the SD-card. Files in this storage location should thus be considered volatile. You will need to add a permission to your AndroidManifest.xml file to be allowed to write to the external storage, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-%26-configuration#permissions)
+Finally, files can be stored on the [external storage](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal), such as an SD-card. External storage might not always be available, e.g. the user could pull out the SD-card. Files in this storage location should thus be considered volatile. You will need to add a permission to your AndroidManifest.xml file to be allowed to write to the external storage, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-and-configuration#permissions)
 
 ### iOS ###
 On iOS all file types are available. 
