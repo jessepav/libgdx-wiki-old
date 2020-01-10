@@ -122,6 +122,8 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
 
 ## Differences Between GWT and Desktop Java
 
+### Numbers
+
 * When some number is very important and you want to make sure it is treated identically on desktop/Android and GWT, use a `long`.
 * When you know a number will never be especially large (specifically, that it won't encounter numeric overflow by exceeding roughly 2 billion or negative 2 billion), feel free to use an `int`.
   * Math with `int`s is much faster than math with `long`s on GWT, because any `int` is represented by a JavaScript Number and web browsers are used to working with Numbers all the time. On the other hand, any `long` is represented by a specific type of JavaScript Object that stores three Numbers to help ensure precision.
@@ -129,3 +131,21 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
     * Because Numbers act like `double`s, they don't overflow, and can go higher than `Integer.MAX_VALUE` (2147483647) and lower than `Integer.MIN_VALUE` (-2147483648). Using any bitwise operation on them will bring any numbers that got too big back into the normal `int` range. If you encounter fishy numeric results that seem way too large for an int, try using this simple trick: `int fishy = Integer.MAX_VALUE * 5; int fixed = (Integer.MAX_VALUE * 5) | 0;` On desktop, adding `| 0` won't change anything, but it can correct numbers that got weird on GWT. Or, you can use a `long`.
 * The problem with `long` values on GWT is that they aren't visible to reflection, so libGDX's Json class won't automatically write them or read them. You can work around this with Json's handy custom serializer behavior, so it isn't a huge issue.
 * Floats can have more equality check problems than usually. Make sure you make all equality checks for floats by using `MathUtils.isEqual()`.
+
+### Other known limitations
+
+* Some java classes/feature are not supported: 
+  * System.nanoTime
+  * java reflection. You need to use only libgdx reflection utils, see [this wiki page](https://github.com/libgdx/libgdx/wiki/Reflection#gwt) for more details.
+  * Multithreading is not supported.
+* Audio:
+  * Sound pitch is not implemented by default backend. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and support it.
+  * Your game need a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games in a browser.
+* TiledMaps should be saved with Base64 encoding.
+* Most of Pixmap methods are not supported.
+* All assets are downloaded at launch time.
+* WebGL 1.0 is used and have its own limitations compared to OpenGL or GLES, among them: 
+  * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enable it in shaders
+* Some libGDX extensions are not supported or require additional libraries : 
+  * Bullet
+  * Freetype require https://github.com/intrigus/gdx-freetype-gwt
