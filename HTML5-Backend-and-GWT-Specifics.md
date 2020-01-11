@@ -128,7 +128,7 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
 * The problem with `long` values on GWT is that they aren't visible to reflection, so libGDX's Json class won't automatically write them or read them. You can work around this with Json's handy custom serializer behavior, so it isn't a huge issue.
 * Floats can have more equality check problems than usual. Make sure you make all equality checks for floats by using `MathUtils.isEqual()`.
 
-### Other known limitations
+### Other Known Limitations
 
 * Some java classes/features that are not supported: 
   * System.nanoTime
@@ -145,3 +145,11 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
 * Some libGDX extensions are not supported or require additional libraries : 
   * Bullet
   * Freetype requires https://github.com/intrigus/gdx-freetype-gwt
+
+## Further Reading
+
+[The original Super Dev Instructions from Mario](https://www.badlogicgames.com/wordpress/?p=3073)
+
+[How to speed up GWT compilation](https://www.gamefromscratch.com/post/2013/10/07/Speeding-up-GWT-compilation-speeds-in-a-LibGDX-project.aspx)
+
+[Building LibGDX from source and adding new files to gdx.gwt.xml](https://github.com/libgdx/libgdx/wiki/Local-LibGDX-package-use-with-GWT)
