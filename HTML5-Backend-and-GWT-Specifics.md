@@ -22,10 +22,6 @@ superDev allows you to debug your HTML5 application. This is not necessary in mo
 
 Should be pretty straightforward; the dist is generated in `html/build/dist/`. You can delete the sourcemap files if you feel you won't be debugging the dist; they're usually a few MB in size and are in `html/build/dist/WEB-INF/deploy/html/symbolMaps`.
 
-## Reflection
-
-See the [Reflection article](https://github.com/libgdx/libgdx/wiki/Reflection#gwt).
-
 ## Fullscreen Functionality
 
 Surprisingly, fullscreen functionality actually works on the HTML backend. To enable fullscreen, call the following method from within your core project:
@@ -130,22 +126,22 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
   * A JavaScript Number, so an `int`, is almost the same as a `double` in Java, but it also allows bitwise operations to be used on it.
     * Because Numbers act like `double`s, they don't overflow, and can go higher than `Integer.MAX_VALUE` (2147483647) and lower than `Integer.MIN_VALUE` (-2147483648). Using any bitwise operation on them will bring any numbers that got too big back into the normal `int` range. If you encounter fishy numeric results that seem way too large for an int, try using this simple trick: `int fishy = Integer.MAX_VALUE * 5; int fixed = (Integer.MAX_VALUE * 5) | 0;` On desktop, adding `| 0` won't change anything, but it can correct numbers that got weird on GWT. Or, you can use a `long`.
 * The problem with `long` values on GWT is that they aren't visible to reflection, so libGDX's Json class won't automatically write them or read them. You can work around this with Json's handy custom serializer behavior, so it isn't a huge issue.
-* Floats can have more equality check problems than usually. Make sure you make all equality checks for floats by using `MathUtils.isEqual()`.
+* Floats can have more equality check problems than usual. Make sure you make all equality checks for floats by using `MathUtils.isEqual()`.
 
 ### Other known limitations
 
-* Some java classes/feature are not supported: 
+* Some java classes/features that are not supported: 
   * System.nanoTime
-  * java reflection. You need to use only libgdx reflection utils, see [this wiki page](https://github.com/libgdx/libgdx/wiki/Reflection#gwt) for more details.
+  * Java reflection. You must only use libGDX reflection utils, see [this wiki page](https://github.com/libgdx/libgdx/wiki/Reflection#gwt) for more details.
   * Multithreading is not supported.
 * Audio:
-  * Sound pitch is not implemented by default backend. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and support it.
-  * Your game need a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games in a browser.
+  * Sound pitch is not implemented by the default backend. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and supports it.
+  * Your game needs a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games played in a browser.
 * TiledMaps should be saved with Base64 encoding.
-* Most of Pixmap methods are not supported.
+* Most Pixmap methods are not supported.
 * All assets are downloaded at launch time.
-* WebGL 1.0 is used and have its own limitations compared to OpenGL or GLES, among them: 
-  * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enable it in shaders
+* WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them: 
+  * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
 * Some libGDX extensions are not supported or require additional libraries : 
   * Bullet
-  * Freetype require https://github.com/intrigus/gdx-freetype-gwt
+  * Freetype requires https://github.com/intrigus/gdx-freetype-gwt
