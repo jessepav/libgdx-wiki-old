@@ -139,7 +139,7 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
   * Your game needs a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games played in a browser.
 * TiledMaps should be saved with Base64 encoding.
 * Most Pixmap methods are not supported.
-* All assets are downloaded at launch time.
+* All assets are downloaded at launch time. This can lead to a long startup time. If you use AssetManager to load assets on level launch or something similar, you can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) that supports [lazy loading of assets](https://github.com/libgdx/libgdx/pull/5677) via AssetManager.
 * WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them: 
   * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
 * Some libGDX extensions are not supported or require additional libraries : 
