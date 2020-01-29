@@ -94,10 +94,8 @@ This websites will let you play with WebGL (provided your browser supports it) a
  * https://www.codeandweb.com/spriteilluminator (SpriteIlluminator: Normal map editor for sprites)
  * https://github.com/gemserk/animation4j (Animation 4J)
  * https://code.google.com/p/java-universal-tween-engine/ (Tween Engine)
- * http://www.mapeditor.org/ (Tiled)
-
-_**Note:**_  Kryonet should never be used for any wireless connections ever, including all Mobile devices.  If you want multi-player support for Android, then look at both Open Match and Firebase available from Google.  Kryonet is not actively maintained and uses technology from before Mobile devices.  Instead, you should use REST practices with JSON data.  This is very optimized for wireless.  Android mostly takes care of that for you, unless you prefer making your own server software with a framework, like Spring.  _(Hint:  If you want to learn Spring Boot, start with the annotations first.)_
  * https://github.com/EsotericSoftware/kryonet (Kryonet)
+ * http://www.mapeditor.org/ (Tiled)
 
 
 # Open-Source projects #
