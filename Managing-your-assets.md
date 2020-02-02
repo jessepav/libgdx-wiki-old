@@ -93,7 +93,7 @@ myBigFont.fontParameters.size = 20;
 manager.load("georgia.ttf", BitmapFont.class, myBigFont);
 ```
 
-Neat! Now we've got two different fonts, `mySmallFont` and `myBigFont`, that we can use to display different text. 
+Neat! Now we've got two different fonts, `mySmallFont` and `myBigFont`, that we can use to display different text.
 
 We're not quite done yet. Now that the fonts have been `.load`ed, we still need to set them. We can do this like so:
 
@@ -102,7 +102,27 @@ BitmapFont mySmallFont = manager.get("arial.ttf", BitmapFont.class);
 BitmapFont myBigFont = manager.get("georgia.ttf", BitmapFont.class);
 ```
 
+The name you give the manager doesn't have to match the name of the font, like in the above example. If you want to use the same font for different sizes, just make sure the name you give the asset manager when loading the font is unique. For example, here's how you could load the Arial font in both 10pt and 20pt:
 
+```java
+FreeTypeFontLoaderParameter arial10 = new FreeTypeFontLoaderParameter();
+
+// This is the file that needs to exist in the assets directory.
+arial10.fontFileName = "arial.ttf";
+arial10.fontParameters.size = 10;
+
+// There is no file named arial10.ttf. This is just an identifier for the asset manager.
+// The .ttf extension is important, because it tells the asset manager which loader to use.
+manager.load("arial10.ttf", BitmapFont.class, arial10);
+
+// Now just change the font size, but use the same font.
+FreeTypeFontLoaderParameter arial20 = new FreeTypeFontLoaderParameter();
+arial20.fontFileName = "arial.ttf";
+arial20.fontParameters.size = 20;
+
+// And create a new BitmapFont in 20pt.
+manager.load("arial20.ttf", BitmapFont.class, arial20);
+```
 
 -----
 
