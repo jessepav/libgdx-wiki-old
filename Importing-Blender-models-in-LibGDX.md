@@ -1,4 +1,5 @@
 **Note:** _while this page uses Blender for practical examples, most of it applies to **other modeling applications** as well._
+Warning: This article is not finished. It does not specify how to load the model into LibGdx, do not follow the tutorial or you'll endup wasting time like I did.
 
 Blender is an open source modeling application you can use to create 3D models, scenes and animations. You can get Blender at [blender.org](http://www.blender.org/). If you are new to creating 3D models using Blender, you can checkout the [blender tutorials](http://www.blender.org/education-help/tutorials/). This page provides practical tips on preparing and converting your Blender model for use in LibGDX.
 
