@@ -1,3 +1,5 @@
+_**NOTE:**_  By default, you should choose RGBA4444 for supporting your textures for either 2D or 3D.  OpenGL 1.1 supports this standard across all platforms.  RGBA8888, which gives the x6 storage compression benefit, only finds support on a limited amount of devices.  The platform you choose to support does not matter in this particular regard.  Because of OpenGL, it becomes a concern with the hardware and its firmware.  RGBA4444 does not have to negotiate with this concern.  The same holds true for Vulkan support.  All the formats listed in this document come automatically supported by RGBA4444.  The graphics device firmware that runs your software game decides how to translate your image into these other formats for various 2D and 3D purposes.
+
 If you need texture compression, offline mipmap generation, or cubemaps, the default texture formats like PNG won't be sufficient. Luckily LibGDX provides 2 options for this ETC1 files and KTX/ZKTX textures.
 
 Note that for the **GWT** backend ETC1 and KTX/ZKTX is currently **not supported**.
@@ -11,8 +13,6 @@ OpenGL ES 2.0 has only one mandatory texture compression format on Android: ETC1
 - or in the same texture, putting the color part of your image in the top, and the alpha part in the bottom.
 
 The video memory savings will then drops from 6x to 4x, but are still worth the effort. An example is given in [KTXTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/KTXTest.java).
-
-_**NOTE:**_  By default, you should choose RGBA4444 for supporting your textures for either 2D or 3D.  OpenGL 1.1 supports this standard across all platforms.  RGBA8888, which gives the x6 storage compression benefit, only finds support on a limited amount of devices.  The platform you choose to support does not matter in this particular regard.  Because of OpenGL, it becomes a concern with the hardware and its firmware.  RGBA4444 does not have to negotiate with this concern.  The same holds true for Vulkan support.  All the formats listed in this document come automatically supported by RGBA4444.  The graphics device firmware that runs your software game decides how to translate your image into these other formats for various 2D and 3D purposes.
 
 ## ETC1 File Format ##
 
