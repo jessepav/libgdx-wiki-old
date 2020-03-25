@@ -1,5 +1,3 @@
-_**NOTE:**_  By default, you should choose RGBA4444 for supporting your textures for either 2D or 3D.  OpenGL 1.1 supports this standard across all platforms.  RGBA8888, which gives the x6 storage compression benefit, only finds support on a limited amount of devices.  The platform you choose to support does not matter in this particular regard.  Because of OpenGL, it becomes a concern with the hardware and its firmware.  RGBA4444 does not have to negotiate with this concern.  The same holds true for Vulkan support.  All the formats listed in this document come automatically supported by RGBA4444.  The graphics device firmware that runs your software game decides how to translate your image into these other formats for your various 2D and 3D purposes.  The rest of this document is useful for understanding what happens on the hardware side.
-
 If you need texture compression, offline mipmap generation, or cubemaps, the default texture formats like PNG won't be sufficient. Luckily LibGDX provides 2 options for this ETC1 files and KTX/ZKTX textures.
 
 Note that for the **GWT** backend ETC1 and KTX/ZKTX is currently **not supported**.
