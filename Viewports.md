@@ -122,8 +122,3 @@ A maximum set of dimensions can be supplied to `ExtendViewport`, in which case, 
 Different strategies may be implemented by doing `CustomViewport extends Viewport` and overriding `update(width, height, centerCamera)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
 
 [[images/8F697TX.png]]
-
-### ScalingViewport ###
-The [`ScalingViewport`](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ScalingViewport.html) 
-([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ScalingViewport.java)) 
-works well when you want to adjust only the ratio of your X and Y values for zooming effects.  You still need to declare your beginning X and Y values, and [`Scaling.apply()`](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/utils/Scaling.html#apply-float-float-float-float-) will allow you to set your own custom ratios, like for gradually zooming in and out.
