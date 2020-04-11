@@ -46,8 +46,8 @@ I took the assets from the following sources:
 
   * water drop sound by junggle, see http://www.freesound.org/people/junggle/sounds/30341/
   * rain by acclivity, see http://www.freesound.org/people/acclivity/sounds/28283/
-  * droplet sprite by mvdv, see https://www.box.com/s/peqrdkwjl6guhpm48nit
-  * bucket sprite by mvdv, see https://www.box.com/s/605bvdlwuqubtutbyf4x
+  * droplet sprite by mvdv, see [link](https://github.com/Quillraven/SimpleKtxGame/blob/01-app/android/assets/images/bucket.png?raw=true)
+  * bucket sprite by mvdv, see [link](https://github.com/Quillraven/SimpleKtxGame/blob/01-app/android/assets/images/drop.png?raw=true)
 
 To make the assets available to the game, we have to place them in the Android `assets` folder. I named the 4 files: drop.wav, rain.mp3, droplet.png and bucket.png and put them in `android/assets/`. We only need to store the assets once, as both the desktop and HTML5 projects are configured to 'see' this folder through different means. After that, depending on your IDE you may have to refresh the project tree to make the new files known (in Eclipse, right click -> Refresh), otherwise you may get a 'file not found' runtime exception.
 
