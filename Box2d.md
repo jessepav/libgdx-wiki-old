@@ -169,7 +169,7 @@ BodyDef groundBodyDef = new BodyDef();
 // Set its world position
 groundBodyDef.position.set(new Vector2(0, 10));  
 
-// Create a body from the defintion and add it to the world
+// Create a body from the definition and add it to the world
 Body groundBody = world.createBody(groundBodyDef);  
 
 // Create a polygon shape
