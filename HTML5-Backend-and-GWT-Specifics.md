@@ -154,3 +154,5 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
 [How to speed up GWT compilation](https://www.gamefromscratch.com/post/2013/10/07/Speeding-up-GWT-compilation-speeds-in-a-LibGDX-project.aspx)
 
 [Building libGDX from source and adding new files to gdx.gwt.xml](https://github.com/libgdx/libgdx/wiki/Local-LibGDX-package-use-with-GWT)
+
+[HTML5 - GWT Explained on YouTube](https://youtu.be/I_85usDvJvQ)
