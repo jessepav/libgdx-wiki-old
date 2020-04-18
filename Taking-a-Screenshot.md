@@ -1,4 +1,4 @@
-Compact and efficient way of taking a screenshot:
+If you have no layered transparency, here's a compact and efficient way of taking a screenshot:
 
 ```java
 Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -6,7 +6,7 @@ PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap, Deflater.DEFAULT_C
 pixmap.dispose();
 ```
 
-An alternative approach in case some post-processing is required, for example when you are rendering a Stage with transparency over other textures this can result in artifacts if each pixel is not opaque:
+If you are seeing artifacts in your screenshots where you have transparency, here is an alternative approach that corrects for this in post-processing.
 
 ```java
 byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), true);
