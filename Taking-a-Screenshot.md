@@ -1,12 +1,8 @@
-If you have no layered transparency, here's a compact and efficient way of taking a screenshot:
+Screenshots are easy in LibGDX!
 
-```java
-Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap, Deflater.DEFAULT_COMPRESSION, true);
-pixmap.dispose();
-```
+## Post processing to guarantee clarity
 
-If you are seeing artifacts in your screenshots where you have transparency, here is an alternative approach that corrects for this in post-processing.
+This will guarantee your screenshots look like just like what the user expects (```LibGDX 1.9.6```):
 
 ```java
 byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), true);
@@ -18,6 +14,16 @@ for(int i = 4; i < pixels.length; i += 4) {
 
 Pixmap pixmap = new Pixmap(Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), Pixmap.Format.RGBA8888);
 BufferUtils.copy(pixels, 0, pixmap.getPixels(), pixels.length);
+PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap);
+pixmap.dispose();
+```
+
+## No post-processing
+
+If you have no layered transparency, here's a more compact and efficient way (```LibGDX 1.9.6```):
+
+```java
+Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap);
 pixmap.dispose();
 ```
