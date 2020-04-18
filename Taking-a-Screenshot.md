@@ -1,12 +1,13 @@
-Compact and efficient way of taking a screenshot
+Compact and efficient way of taking a screenshot:
+
 ```java
 Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap, Deflater.DEFAULT_COMPRESSION, true);
 pixmap.dispose();
 ```
 
+An alternative approach in case some post-processing is required, for example when you are rendering a Stage with transparency over other textures this can result in artifacts if each pixel is not opaque:
 
-As an alternative approach in case some processing is required
 ```java
 byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), true);
 
