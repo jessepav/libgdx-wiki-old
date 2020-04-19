@@ -40,6 +40,10 @@ Open _libgdx-nightly-latest.zip/extensions/gdx-freetype_ and do the following:
   * copy armeabi/libgdx-freetype.so to your android project's libs/armeabi folder
   * copy armeabi-v7a/libgdx-freetype.so to your android project's libs/armeabi-v7a folder
 
+**HTML5**
+
+GDX Freetype is not compatible with HTML5. However, you may use the gdx-freetype-gwt lib by Intrigus to enable HTML5 functionality. Please follow the instructions here: https://github.com/intrigus/gdx-freetype-gwt
+
 You're ready to go.
 
 ## How to use gdx-freetype in code ##
