@@ -117,8 +117,8 @@ public class MyActor extends Actor {
 
 	public MyActor () {
 		region = new TextureRegion(...);
-                setBounds(region.getX(), region.getY(), 
-			region.getWidth(), region.getHeight());
+                setBounds(region.getRegionX(), region.getRegionY(),
+			region.getRegionWidth(), region.getRegionHeight());
 	}
 
 	@Override
