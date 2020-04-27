@@ -39,6 +39,9 @@ First an [LwjglApplicationConfiguration](https://github.com/libgdx/libgdx/tree/m
 Once the configuration object is set, an `LwjglApplication` is instantiated. The `MyGdxGame()` class is the ApplicationListener implementing the game logic. 
 
 From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
+
+When using a JDK of version 8 or later, an "illegal reflective access" warning is shown. This is nothing to be worried about. If it bothers you, downgrade the used JDK or switch to the LWJGL 3 backend.
+
 # Desktop (LWJGL3) #
 
 LWJGL3 is the modern backend recommended for new projects. Unfortunately, it is not set as the default in the setup project. To enable it, you must change the following line in the build.gradle for your project:
@@ -70,6 +73,8 @@ public class Main {
    }
 }
 ```
+
+On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the "-XstartOnFirstThread" argument.
 
 # Android #
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
