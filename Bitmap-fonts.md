@@ -50,3 +50,6 @@ Examples
 [[Distance field fonts]] - useful for scaling/rotating fonts without ugly artifacts
 
 [gdx-smart-font](https://github.com/jrenner/gdx-smart-font) - unofficial libgdx addon for automatically generating and caching bitmap fonts based on screen size. (Uses FreeTypeFontGenerator)
+
+## Fonts in 3D space
+While libGDX does not support placing text in 3D space directly, it is still possible to do so relatively easily. Check [this gist](https://gist.github.com/Darkyenus/e9427b0655816d2a521227cb9313d303) for an example. Note that such text won't be occluded by objects in front of it, as `SpriteBatch` draws with constant `z`, but it would not be hard to fix that with a custom shader, that would set the appropriate 'z' from an uniform.
