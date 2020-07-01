@@ -20,3 +20,12 @@ ant
 ```
 
 The jar will be generated at libgdx/gdx/libs.
+
+To only generate .C/.H files, use:
+
+```
+mvn install
+
+cd gdx
+mvn clean compile exec:java -Dexec.mainClass="com.badlogic.gdx.utils.GdxBuild"
+```
