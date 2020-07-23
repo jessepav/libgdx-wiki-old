@@ -75,6 +75,10 @@ public class Main {
 ```
 
 On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the "-XstartOnFirstThread" argument.
+To do that, add this line to `run` task of desktop gradle file (works with gradle 5.4.1):
+```
+    jvmArgs = ['-XstartOnFirstThread']
+```
 
 # Android #
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
