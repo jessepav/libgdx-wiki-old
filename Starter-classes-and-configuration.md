@@ -74,8 +74,9 @@ public class Main {
 }
 ```
 
-On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the "-XstartOnFirstThread" argument.
-To do that, add this line to `run` task of desktop gradle file (works with gradle 5.4.1):
+On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the "-XstartOnFirstThread" argument. This can typically be done in the Launch/Run Configurations.
+
+If you're starting your project via gradle, add this line to `run` task of the desktop gradle file (works with gradle 5.4.1):
 ```
     jvmArgs = ['-XstartOnFirstThread']
 ```
