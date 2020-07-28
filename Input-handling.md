@@ -11,4 +11,7 @@ All of the input facilities are accessed via the [Input](https://github.com/libg
    boolean isPressed = Gdx.input.isKeyPressed(Keys.A);
 ```
 
+
+`lol`
+
 [[Next|https://github.com/libgdx/libgdx/wiki/Configuration-&-querying]]
