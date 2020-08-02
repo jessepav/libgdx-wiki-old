@@ -40,7 +40,11 @@ Once the configuration object is set, an `LwjglApplication` is instantiated. The
 
 From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
 
-When using a JDK of version 8 or later, an "illegal reflective access" warning is shown. This is nothing to be worried about. If it bothers you, downgrade the used JDK or switch to the LWJGL 3 backend.
+#### Common issues:
+
+- When using a JDK of version 8 or later, an **"illegal reflective access"** warning is shown. This is nothing to be worried about. If it bothers you, downgrade the used JDK or switch to the LWJGL 3 backend.
+
+- If an error like **`Process 'command 'C:/.../java.exe'' finished with non-zero exit value -1`** is shown, this can safely be ignored. A workaround is disabling forceExit: `config.forceExit = false;`.
 
 # Desktop (LWJGL3) #
 
@@ -73,9 +77,9 @@ public class Main {
    }
 }
 ```
+#### Common issues:
 
-On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the "-XstartOnFirstThread" argument. This can typically be done in the Launch/Run Configurations.
-
+- On Mac OS X the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations.
 If you're starting your project via gradle, add this line to `run` task of the desktop gradle file (works with gradle 5.4.1):
 ```
     jvmArgs = ['-XstartOnFirstThread']
@@ -460,7 +464,7 @@ protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
 }
 ```
 
-Prior 1.9.10, best is to copy all `getPreloaderCallback()` content from libGDX' sources and adjust it to your needs.
+Prior to 1.9.10, it is best to copy all `getPreloaderCallback()` content from libGDX' sources and adjust it to your needs.
 
 Note that you can only use pure GWT facilities to display the loading screen, libgdx APIs will only be available after the preloading is complete.
 
