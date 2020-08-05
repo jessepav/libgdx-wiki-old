@@ -151,3 +151,7 @@ You must implement your own subclass of `Pool<>` because the `newObject` method 
 ### Pool Caveats
 
 Beware of leaking references to Pooled objects.  Just because you invoke "free" on the Pool does not invalidate any outstanding references.  This can lead to subtle bugs if you're not careful.  You can also create subtle bugs if the state of your objects is not fully reset when the object is put in the pool.
+
+### Profiling Memory leaks
+
+If you're encountering memory leaks, tools like [VisualVM](https://visualvm.github.io/) (free) and [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html) (trial/paid) prove useful in tracking down the issue. These memory profilers will tell you what type of object is eating up the memory. From there on you can start tracking down the leak.
