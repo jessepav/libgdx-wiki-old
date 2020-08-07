@@ -103,8 +103,9 @@ These maps are identical to ObjectSet except they use primitive types for the ke
 A [binary heap](http://en.wikipedia.org/wiki/Binary_heap). Can be a min-heap or a max-heap.
 
 # Benchmarks #
-If you've ever been curious as to when is it worth to start using `ObjectSet`/`ObjectMap` instead of `Array`/`ArrayMap`, here's your answer.
-You shouldn't care if you know your array won't have more than 1024 elements. However at 32k elements, doing single `.contains()` can take more than 100ms, which is very significant if you're doing it in a loop or in the render thread.
+The benchmark below shows the difference between array and hashtable lookup (`.contains()` or `.get()`) using LibGDX collection methods.
+If you have less than 1024 elements in a list, you shouldn't bother whether you're using arrays or hashtables (Maps or Sets). Mind the fact that hashtables have significantly slower iteration than arrays and cannot be ordered.
+
 ```
                   array.size         GdxArray.contains()     GdxObjectSet.contains()
                            2                         0ms                         0ms
