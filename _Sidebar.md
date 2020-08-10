@@ -1,5 +1,5 @@
 # Table of Contents
- * [[Wiki Style Guide]]
+[[Wiki Style Guide]]
 
 ## Developer's Guide
 <details><summary>The Application Framework</summary>
@@ -78,67 +78,6 @@
      -[[Meshes]]  
      -[[Shaders]]  
      -[[Frame Buffer Objects]]
-     * 2D Graphics  
-     [[SpriteBatch, TextureRegions, and Sprites]]  
-     [[2D Animation]]  
-     [[Clipping, With the Use of ScissorStack]]  
-     [[Orthographic Camera]]  
-     Mapping Touch Coordinates ??  
-     [[NinePatches]]  
-     [[Bitmap Fonts]]  
-     -[[Distance Field Fonts]]  
-     -[[Color Markup Language]]  
-     [[Using TextureAtlases]]  
-     [[Pixmaps]]  
-     [[Packing Atlases Offline]]  
-     [[Packing Atlases at Runtime]]  
-     [[Texture Compression]]  
-     [[2D ParticleEffects]]  
-     [[Tile Maps]]  
-     [[scene2d]]  
-     -[[scene2d.ui]]  
-     -[[Table]]  
-     -[[Skin]]  
-     -[[ImGui]]
-     * [[3D Graphics]]  
-     [[Quick Start]]  
-     [[Models]]  
-     [[Material and Environment]]  
-     [[ModelBatch]]  
-     [[ModelCache]]  
-     [[ModelBuilder, MeshBuilder and MeshPartBuilder]]  
-     [[3D Animations and Skinning]]  
-     [[Importing Blender Models in libGDX]]  
-     [[3D Particle Effects]]  
-     Perspective Camera ??  
-     Picking ??
-   * [[Managing Your Assets]]
-   * [[Internationalization and Localization]]
-   * Utilities
-     * [[Reading and Writing JSON]]
-     * [[Reading and Writing XML]]
-     * [[Collections]]
-     * [[Reflection]]
-     * [[jnigen]]
-   * [[Math Utilities]]
-     * [[Interpolation]]
-     * [[Vectors, Matrices, Quaternions]]
-     * [[Circles, Planes, Rays, etc.]]
-     * [[Path Interface and Splines]]
-     * Bounding Volumes ??
-     * Intersection & Overlap Testing ??
-   * Tools
-     * [[Texture Packer]]
-     * [[Hiero]]
-     * [[2D Particle Editor]]
-     * [[Path Editor]]
-   * Extensions
-     * [[Artificial Intelligence]]
-     * [[gdx-freetype]]
-     * [[gdx-pay]]: cross-platform In-App-Purchasing API
-     * [[Physics]]  
-     [[Box2D]]  
-     [[Bullet Physics]]  
 
 &nbsp;&nbsp;&nbsp; **2D Graphics**  
 * [[SpriteBatch, TextureRegions, and Sprites]]  
@@ -228,20 +167,6 @@
      -[[Contact Callbacks|Bullet Wrapper Contact callbacks]]  
      -[[Custom Classes|Bullet Wrapper Custom classes]]  
      -[[Debugging|Bullet Wrapper Debugging]]
-   * [[Using libGDX With Other JVM Languages]]
-     * [[Using libGDX With Clojure]]
-     * [[Using libGDX With Kotlin]]
-     * [[Using libGDX With Python]]
-     * [[Using libGDX With Scala]]
-   * [[Third Party Services]]
-     * [[AdMob in libGDX]]
-     * [[Airpush in libGDX]]
-     * [[Swarm in libGDX]]
-     * [[NextPeer in libGDX]]
-     * [[Google Play Games Services in libGDX]]
-     * [[ProGuard/DexGuard and libGDX]]
-     * [[Excelsior JET and libGDX]]
- * Articles
 
 </details>
 
