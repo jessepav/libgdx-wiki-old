@@ -144,8 +144,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
   * **Articles**
     * [[Getting Help]]
     * [[External Tutorials]]
-    * [[Bundling a JRE]]
-    * [[Deploying as an Applet]]
+    * [[Deploying your application]]
     * [[Coordinate systems]]
     * [[Updating Your libGDX Version|Updating libGDX]]
     * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
