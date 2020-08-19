@@ -145,6 +145,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
     * [[Getting Help]]
     * [[External Tutorials]]
     * [[Deploying your application]]
+    * [[HTML5 Backend and GWT Specifics]]
     * [[Coordinate systems]]
     * [[Updating Your libGDX Version|Updating libGDX]]
     * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
