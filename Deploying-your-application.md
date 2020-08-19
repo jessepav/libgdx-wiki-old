@@ -1,62 +1,99 @@
 ###  ###
 
-* [Forward](#forward)
+The mechanism to deploy your game differs between platforms. This article aims to articulate, what is necessary to deploy to each platform that libGDX officially supports:
+
 * [Deploy to Windows/Linux/Mac](#deploy-to-windowslinuxmac-os-x)
- * [Users Java (JRE) is not installed or out of date](#users-java-jre-is-not-installed-or-out-of-date)
 * [Deploy to Android](#deploy-to-android)
 * [Deploy to iOS](#deploy-to-ios)
-* [Deploy to HTML/JS](#deploy-to-htmljs)
-    + [Deploy to HTML/JS Eclipse method](#deploy-to-htmljs-eclipse-method)
-    + [Deploy to HTML/JS Other IDEs / Gradle method](#deploy-to-htmljs-other-ides--gradle-method)
+* [Deploy Web](#deploy-to-htmljs)
 
-### <a id="Forward"></a>Forward ###
-The mechanism to deploy your game differs between platforms. This article aims to articulate what is necessary to deploy to each platform that Libgdx officially supports.
+# <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X ##
+The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libgdx and any extensions, and your assets. 
 
-**_Note: if you are using gradle (recommended) you may prefer following the guidelines provided on [this page](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#packaging-the-project)._**
+### As JAR file (via gradle)
+`gradlew desktop:dist`
 
-## <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X ##
-The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libgdx and any extensions, and your assets. To create a runnable JAR:
+This will create a runnable JAR file located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
+
+### As JAR file (via Eclipse)
+To create a runnable JAR:
 
   1. Right click your desktop project, select "Export"
   2. In the next dialog, select "Java -> Runnable Jar", click "Next"
-
-<img src="http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202013-08-23%20at%2011.12.45-xTDyPTSMu2.png" width="400"></img>
   3. In the next dialog, specify the launch configuration you use to start the game on the desktop from within Eclipse, and select the output JAR file name
 
-<img src="http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202013-08-23%20at%2011.16.10-0STXrLHoAH.png" width="400"></img>
+### Alternative (modern) ways of deployment
+Distributing java applications as JAR file can be very unhandy and prone to issues, as not every user can be expected to have the right JRE (or even any JRE) installed. Other ways of deployment are for example:
 
-This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she/he has Java (the JRE) installed and their version satisfies your target java byte code version. See below.
+* A very convenient way to distribute java application is to just bundle an JRE. See this [[entry|Bundling a JRE]] on how to do this. (**This is the recommended way to distribute an application!**)
+* Via electron, HTML5 applications can be deployed to desktop. See [here](https://medium.com/@bschulte19e/how-to-deploy-a-libgdx-game-with-electron-3f1b37f0c26e).
+* Games can also be deployed as an [Applet](https://github.com/libgdx/libgdx/wiki/Deploying-as-an-Applet) (outdated, not recommended!)
 
-### Users Java (JRE) is not installed or out of date
+# <a id="Deploy_to_Android"></a>Deploy to Android ##
+### Via Gradle 
+`gradlew android:assembleRelease`
 
-Some users may not have the right version of JRE installed and would encounter issues/be unable to even launch your game. Additionally, perhaps you want to use Java 8 features, but some of your users only have JRE 7 or JRE 6, or not at all. One may also want to "hide" the fact that it's a Java app.
+This will create an unsigned APK file in the `android/build/outputs/apk` folder. Before you can install or publish this APK, you must [sign it](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you only need to follow the steps for keytool and jarsigner. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources). 
 
-In such cases, a JRE can be bundled with your application, all in one. This will enable a single file to include everything any system can use to run the game.
-
-See: [Bundling a JRE](https://github.com/libgdx/libgdx/wiki/Bundling-a-JRE)
-
-## <a id="Deploy_to_Android"></a>Deploy to Android ##
+### Via Eclipse
 Deploying to Android takes some extra steps. This tutorial is done using Eclipse and the Android ADT plugin.
 - Right click your Android project and select "Export"
 - Select "Android -> Export Android Application"
 - Make sure the project you want to export is your project, select next
 - Select or create your keystore. If you are new to Android development, a keystore is used to sign your applications **and is required for putting your application on the market.** More information is available at: http://developer.android.com/tools/publishing/app-signing.html
 - Select your alias to sign with and enter the password. If you don't have an alias or want to create a new alias, select create new key and select next.
-- Now select the destination of where you want your app being exported to. This will export an .apk file in the selected directory capable of being uploaded to Google Play (formerly Android Market) and alternative app stores.
-- Select finish and your .apk will be built! 
+- Now select the destination of where you want your app being exported to. This will export an .apk file in the selected directory capable of being uploaded to Google Play  and alternative app stores.
+- Select finish
 
-**Notes**
-- The .apk file can be used to install on devices directly such as via an email attachment or download. This requires the devices to have the 'Allow Unknown Sources' option enabled in settings. Some carriers unfortunately disable this setting.
-- LibGDX is only capable of *officially* exporting to devices running Android 2.2 or higher. If you are using LibGDX 0.9.9, you can export to Android 1.5+ Note that features supported by devices can vary, such as OpenGL ES 2 may not be supported on certain devices. 
-- OpenGL ES 2 requires Android 2.2 or higher and a graphics card supporting it.
-- Features that are incompatible with the device such as trying to use immersive mode on a pre-kitkat device will simply not do anything on unsupported devices.
-- If you want to upload to google play, here is a helpful link: http://developer.android.com/distribute/googleplay/publish/register.html
-- LibGDX supports x86 Android devices starting with 0.9.9 and up. Make sure the x86 folder with libraries is in your project. Gdx-setup-ui should now generate your project with these. 
-
-## <a id="Deploy_to_iOS"></a>Deploy to iOS ##
+# <a id="Deploy_to_iOS"></a>Deploy to iOS ##
 *This section assumes you're familiar with the basic deployment steps for iOS apps.*
 
-Prerequisites:
+### Via gradle
+
+**Prerequisites:**
+In order to upload the IPA to the app store, it must be signed with your distribution signature and linked to your provisioning profile. 
+You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) to create provisioning profiles and certificates.
+Once you have done that, you must define them in your root build.gradle file, in your IOS Project
+
+```
+project(":ios") {
+    apply plugin: "java"
+    apply plugin: "robovm"
+
+    dependencies {
+        // ...
+    }
+
+    robovm {
+        iosSignIdentity = "[Signing identity name]"
+        iosProvisioningProfile = "[provisioning profile name]"
+        iosSkipSigning = false
+        archs = "thumbv7:arm64"
+    }
+ }
+```
+
+- Your provisioning profile name is available in your developer portal (where you created your provisioning profile).
+- Your Signing identity name is available in your keychain, under "My Certificates"
+
+**Packaging:**
+To create your IPA, run 
+
+`gradlew ios:createIPA`
+ 
+This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. 
+To upload your app you will need to use the application loader within XCode (Xode->Open Developer Tool->Application loader) 
+
+Note: as of iOS 11 instead of simply adding your icons into your data folder within your iOS project you need to include an asset Catalog.
+If you do not include one, you can still submit your app but later you receive the following message:
+> Dear developer,
+
+> We have discovered one or more issues with your recent delivery for "". To process your delivery, the following issues must be corrected: Missing Info.plist value - A value for the Info.plist key CFBundleIconName is missing in the bundle ''. Apps that provide icons in the asset catalog must also provide this Info.plist key. For more information see http://help.apple.com/xcode/mac/current/#/dev10510b1f7. Once these issues have been corrected, you can then redeliver the corrected binary. Regards, The App Store team
+
+To fix this, follow these [instructions to include an asset catalog](https://github.com/MobiVM/robovm/wiki/Howto-Create-an-Asset-Catalog-for-XCode-9-Appstore-Submission%3F)
+
+### Via Eclipse
+**Prerequisites:**
  * An OSX machine with Xcode installed (or the equivalent Hackintosh) and an Apple developer license account all established and paid for
  * Your app is configured in `itunesconnect.apple.com` with a version number that matches your `ios/robovm.properties` file
  * You have a matching distribution certificate set up at `developer.apple.com` per usual
@@ -65,13 +102,40 @@ On your build machine, open Xcode, go to `Preferences -> Accounts`, provide your
 
 > *Insert more here about tweaking the files: info.plist.xml, robovm.properties and robovm.xml.*
 
+**Packaging:**
 Go into Eclipse, right click on your `projectname-ios` and choose `RoboVM Tools -> Package for App-Store/Adhoc Distribution`.  In the resulting dialog, pick a directory where you wish the IPA and associated files to be placed, choose your signing identity (usually your company, not your machine's identifier), and the provisioning profile for this app (from `developer.apple.com`).
 
 This will generate the `projectname.IPA` file. Now you are able to use the `Application Loader` to locate your IPA and submit it to iTunesConnect. It will appear under the Prerelease tab for your app, per usual. Then you can distribute to your TestFlight testers etc., per the usual Apple procedure.
 
+### Additional guides
 
-## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS##
-#### <a id="Deploy_to_HTML/JS_Eclipse"></a>Deploy to HTML/JS Eclipse method
+Deploying to iOS is relatively straight forward, see [here](https://medium.com/@bschulte19e/deploying-your-libgdx-game-to-ios-in-2020-4ddce8fff26c) if you're having difficulties. Take a look at [this post](https://medium.com/dev-genius/deploying-your-libgdx-game-to-ios-testflight-163cada0696b), if you want to deploy your iOS application to TestFlight.
+
+# <a id="Deploy_to_HTML/JS"></a>Deploy Web
+### Via Gradle
+`gradlew html:dist`
+
+This will compile your app to Javascript and place the resulting Javascript, HTML and asset files in the `html/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
+
+When running the result, you might encounter errors like `Couldn't find Type for class ...`. To fix this, please see our wiki page [Reflection](https://github.com/libgdx/libgdx/wiki/Reflection) and include the needed classes/packages.
+
+With Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
+
+**Python 2.x**
+
+`python -m SimpleHTTPServer`
+
+**Python 3.x**
+
+`python -m http.server 8000`
+
+You can then open a browser to [http://localhost:8000](http://localhost:8000) and see your project in action.
+
+With Node.js `npm install http-server -g` then `http-server html/build/dist` and browse at <http://localhost:8080>. [docs](https://github.com/indexzero/http-server)
+
+With PHP you may type `php -S localhost:8000` and browse at <http://localhost:8080>. [docs](http://php.net/manual/en/features.commandline.webserver.php)
+
+### Deploy to HTML/JS (via Eclipse)
 Deploying to HTML/JS is straightforward for most cases.
   1. Right click your HTML project and select "Google -> GWT Compile"
   2. Keep the default settings and click compile
@@ -84,14 +148,3 @@ Once the compile is complete everything you need to run your game on the web wil
 
 Notes:
   * If you are using server-side operations in your code, you will need to install Tomcat or similar software on your web server and place the full contents of your project's WAR directory in the "webapp" directory. More details [here.](https://tomcat.apache.org/tomcat-6.0-doc/appdev/deployment.html)  
-
-#### <a id="Deploy_to_HTML/JS_Gradle"></a>Deploy to HTML/JS Other IDEs / Gradle method
-In your project root, run the command `./gradlew html:dist` (Unix) or `gradlew.bat html:dist` (Windows) to build.
-
-The result will be placed in the `html/build/dist` folder. You can symlink your webroot to this directory, or just copy/paste all the files into your webroot instead.
-
-When running the result, you might encounter errors like `Couldn't find Type for class ...`. To fix this, please see our wiki page [Reflection](https://github.com/libgdx/libgdx/wiki/Reflection) and include the needed classes/packages.
-
-Make sure you only add classes/packages you really need, because the more packages you include, the slower the build process gets. 
-
-See more at [Gradle on the Commandline](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#packaging-for-the-web)
