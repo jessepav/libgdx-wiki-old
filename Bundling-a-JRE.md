@@ -1,50 +1,33 @@
-Java apps need a Java Runtime Environment to run. Typically this is installed by the user and hopefully already available when they go to run your app. Unfortunately users may not have Java installed and there are differences between JREs that can cause problems with your app, especially between Java 6 and 7 on Mac. These can be difficult for users to explain and worse, difficult for them to fix themselves. Also, you may require, as a minimum, a certain JRE version.
+Java apps need a Java Runtime Environment to run. Typically this is installed by the user and hopefully already available when they go to run your app. Unfortunately users may not have Java installed and there are differences between JREs that can cause problems with your app. These can be difficult for users to explain and worse, difficult for them to fix themselves. Also, you may require, as a minimum, a certain JRE version.
 
 The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems and they will not have to install a JVM. 
 
-This however will come at the expense of about 23-30mb bigger download sizes per platform. This may improve when the modularity of the runtime improves, with JRE 9 (slated for march 2017 [countdown ] (http://www.java9countdown.xyz/))
-
-## Contents
-
-* [**Packaging**](#packaging) 
- * [**launch4j**](#launch4j) 
- * [**Parcl**](#parcl) 
- * [**packr**](#packr) 
-* [**Manually, using the OpenJDK**](#openjdk) 
-
 ## Packaging ##
-There are a few tools/plugins for helping the process of bundling a JRE, in no specific order... 
+There are a number of tools available for bundling a JRE:
 
-### Launch4J
+### [jpackage](https://openjdk.java.net/jeps/343)
 
-[launch4j](http://launch4j.sourceforge.net/)
+Jpackage is a modern solution for providing native packaging options on Windows, MacOS and Linux introduced with [JEP-343](https://openjdk.java.net/jeps/343). It can be used to create an EXE that starts your bundled application via an embedded JRE. 
 
-On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
+See [this guide](https://github.com/raeleus/skin-composer/wiki/libGDX-and-JPackage) for more information. A video version can be found [here](https://www.youtube.com/watch?v=R7CMXeQ11GM).
 
-Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
+### [launch4j](http://launch4j.sourceforge.net/)
 
-Linux uses a shell script.
+_-- seems to be no longer maintained --_
 
-### Parcl
+* On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
+* Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
+* Linux uses a shell script.
+
+### [Parcl](https://github.com/mini2Dx/parcl)
 A gradle plugin that performs similar actions as launch4j:
-https://github.com/mini2Dx/parcl
 
-### Packr
+### [Packr](https://github.com/libgdx/packr)
 Tool created/maintained by the libgdx team.
-https://github.com/libgdx/packr
 
-## OpenJDK ##
+## MacOS Specifics
 
-OpenJDK builds can be found here:
-https://github.com/ojdkbuild/ojdkbuild
-
-For Windows you'll want 32 bit. Mac has 32 and 64 bit combined. For Linux you might want separate 32 and 64 bit JREs. You can get away with only 32 bit for Linux, but users may need to do:
-
-```java
-sudo apt-get install ia32-libs
-```
-
-You can combine 32 and 64 bit for Linux since the JREs share many of the same files. This makes the JRE about 4MB larger but simplifies things by only having a single download. You would use a shell script to choose which to run, but note there are differences in rt.jar which you'll need to separate, eg into rt32.jar and rt64.jar then use -Xbootclasspath for the appropriate one.
+If you're planning to deploy to MacOS as well, [notarization](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution) (MacOS 10.15+) can be an issue. See [here](https://www.joelotter.com/2020/08/14/macos-java-notarization.html) on how to notarize your libGDX app.
 
 ## Reducing Size ##
 
