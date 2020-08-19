@@ -140,7 +140,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Excelsior JET and libGDX]]
   * **Game Jams**
     * [[Regular libGDX Jams]]
-    * [[The #libGDXJAM|Getting ready for #libGDXJAM]]
+    * [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
   * **Articles**
     * [[Getting Help]]
     * [[External Tutorials]]
