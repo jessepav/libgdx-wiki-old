@@ -197,8 +197,7 @@
 
    * [[Getting Help]]
    * [[External Tutorials]]
-   * [[Bundling a JRE]]
-   * [[Deploying as an Applet]]
+   * [[Deploying your application]]
    * [[HTML5 Backend and GWT Specifics]]
    * [[Regular libGDX Jams]]
    * [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
