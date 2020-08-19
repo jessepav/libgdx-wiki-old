@@ -138,12 +138,14 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Google Play Games Services in libGDX]]
       * [[ProGuard/DexGuard and libGDX]]
       * [[Excelsior JET and libGDX]]
-  * Articles
+  * **Game Jams**
+    * [[Regular libGDX Jams]]
+    * [[The #libGDXJAM|Getting ready for #libGDXJAM]]
+  * **Articles**
     * [[Getting Help]]
     * [[External Tutorials]]
     * [[Bundling a JRE]]
     * [[Deploying as an Applet]]
-    * [[Getting ready for #libGDXJAM]]
     * [[Coordinate systems]]
     * [[Updating Your libGDX Version|Updating libGDX]]
     * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
