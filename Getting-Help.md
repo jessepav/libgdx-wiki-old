@@ -27,14 +27,14 @@ Please go through this short checklist to be sure you haven't missed an easy to 
   * Have you [searched the forum](http://www.badlogicgames.com/forum/search.php) for your problem?
   * Have you [searched the issue tracker](https://github.com/libgdx/libgdx/issues) for your problem? Be sure to search "All issues", not just "Open issues".
 
-If you still have a problem, often the fastest way to get help is the libgdx chat room. Usually it has ~100 people, any one of which could answer your question right now. The chat room is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx).
+**If you still have a problem, often the fastest way to get help is the [libgdx discord](https://discord.gg/6pgDK9F). There are a lot of active users, any one of which could answer your question right now.**
 
-Another way of getting help is the [libgdx discord](https://discord.gg/6pgDK9F).
+Another way of getting help is the libgdx chat room ([#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx)).
 
-Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or [post a new issue](https://github.com/libgdx/libgdx/blob/master/CONTRIBUTING.md) on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
+Otherwise, if you wish to [post a new issue](https://github.com/libgdx/libgdx/blob/master/CONTRIBUTING.md) on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
 ## <a id="Help_us_help_you"></a>Help Us Help You ##
-If you believe your issue, error, or suspected bug is related to a specific backend, please present the following information with your issue. If you are on IRC have the following information on hand.
+If you believe your issue, error, or suspected bug is related to a specific backend, please present the following information with your issue. If you are on the Discord/IRC have the following information on hand.
 
 **For Android backend issues**
  - **Note:** Android issues can sometimes be more difficult due to device manufactures breaking things or buggy drivers.
@@ -55,9 +55,9 @@ If you believe your issue, error, or suspected bug is related to a specific back
  - Please list the browser and browser version
 Listing this information can greatly reduce the workload on us and can greatly increase the chances your issue will be resolved or an available fix or workaround implemented.
 
-## <a id="Topic_Title"></a>Topic Title ##
+## <a id="Topic_Title"></a>Title ##
 
-Write a clear and short topic title. Titles that do not describe the topic (such as "please help") or contain all caps, exclamation marks, etc make it much less likely that your post will be read.
+Write a clear and short title. Titles that do not describe the issue (such as "please help") or contain all caps, exclamation marks, etc. make it much less likely that your post will be read.
 
 ## <a id="Context"></a>Context ##
 
