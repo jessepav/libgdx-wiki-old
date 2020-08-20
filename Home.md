@@ -112,6 +112,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Hiero]]
       * [[2D Particle Editor]]
       * [[Skin Composer]]
+      * [[Overlap2D]]
     * Extensions
       * [[Artificial Intelligence]]
       * [[gdx-freetype]]
@@ -138,6 +139,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[NextPeer in libGDX]]
       * [[Google Play Games Services in libGDX]]
       * [[ProGuard/DexGuard and libGDX]]
+      * [[Pollfish in libGDX]]
   * **Game Jams**
     * [[Regular libGDX Jams]]
     * [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
