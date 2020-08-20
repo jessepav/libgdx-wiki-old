@@ -150,6 +150,7 @@
 * [[Hiero]]
 * [[2D Particle Editor]]
 * [[Skin Composer]]
+* [[Overlap2D]]
 
 </details>
 
@@ -188,6 +189,7 @@
 * [[Swarm in libGDX]]
 * [[NextPeer in libGDX]]
 * [[Google Play Games Services in libGDX]]
+* [[Pollfish in libGDX]]
 * [[ProGuard/DexGuard and libGDX]]
 
 </details>
