@@ -149,7 +149,7 @@
 * [[Texture Packer]]
 * [[Hiero]]
 * [[2D Particle Editor]]
-* [[Path Editor]]
+* [[Skin Composer]]
 
 </details>
 
@@ -167,7 +167,7 @@
      -[[Contact Callbacks|Bullet Wrapper Contact callbacks]]  
      -[[Custom Classes|Bullet Wrapper Custom classes]]  
      -[[Debugging|Bullet Wrapper Debugging]]
-
+* [[Publishing Your Own Extensions|Third Party Extension Support]] 
 </details>
 
 <details><summary>Using libGDX With Other JVM Languages</summary>
@@ -189,7 +189,13 @@
 * [[NextPeer in libGDX]]
 * [[Google Play Games Services in libGDX]]
 * [[ProGuard/DexGuard and libGDX]]
-* [[Excelsior JET and libGDX]]
+
+</details>
+
+<details><summary>Game Jams</summary>
+
+* [[Regular libGDX Jams]]
+* [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
 
 </details>
 
@@ -199,11 +205,9 @@
    * [[External Tutorials]]
    * [[Deploying your application]]
    * [[HTML5 Backend and GWT Specifics]]
-   * [[Regular libGDX Jams]]
-   * [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
+   * [[Games built with libgdx]]
    * [[Coordinate systems]]
    * [[Updating Your libGDX Version|Updating libGDX]]
-   * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
-   * [[Publishing Your Own Extensions Via the Setup Application|Third Party Extension Support]] 
+   * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]] 
    * [[Improving Your Gradle Workflow|Improving-workflow-with-Gradle]]
    * [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]]
