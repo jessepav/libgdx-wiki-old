@@ -6,7 +6,7 @@ The libGDX community is regularly hosting game jams for libgdx.
    * Theme Suggestions: 6th - 12th
    * Theme Voting: 13th - 19th
    * Jam: 20th - 26th
-* **Dezember 2020:**
+* **December 2020:**
    * Theme Suggestions: 6th - 12th
    * Theme Voting: 13th - 19th
    * Jam: 20th - 26th
