@@ -2,7 +2,6 @@
 
 Welcome to the Wiki, a place for comprehensive documentation on the LibGDX API and features.  This wiki is community driven, and can be edited by anyone. If you find information out of date, feel free to update yourself, or ask for clarification on the official discord or the irc channel.
 
-# [Official documentation](https://libgdx.badlogicgames.com/documentation/)
 If you want to get started coding with LibGDX, head to the [Official documentation - here - ](https://libgdx.badlogicgames.com/documentation/) to learn how to setup your environment and create/import your project.
 
 ## **[[Looking for help?|Getting Help]]**
@@ -50,7 +49,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Taking a Screenshot]]
       * [[Profiling]]
       * [[Viewports]]
-      * [[OpenGL ES Support]]
+      * [[OpenGL (ES) Support]]
         * Configuration & Querying OpenGL ??
         * Direct Access ??
         * Utility Classes
