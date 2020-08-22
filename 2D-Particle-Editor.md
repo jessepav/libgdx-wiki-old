@@ -24,11 +24,6 @@ Ensure that you have gdx-tools listed as a dependency in the desktop section of 
 
 Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
-Here is a download link for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
-
-~~[Download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)~~(link not work?)
-
-
 ## Using the Particle Editor ##
 
 Video:
