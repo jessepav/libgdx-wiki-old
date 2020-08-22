@@ -69,7 +69,7 @@
 * [[Taking a Screenshot]]
 * [[Profiling]]
 * [[Viewports]]
-* [[OpenGL ES Support]]  
+* [[OpenGL (ES) Support]]  
   * Configuration & Querying OpenGL ??  
   * Direct Access ??  
   * Utility Classes  
