@@ -33,6 +33,8 @@ The versioning is somewhat confusing.
 | 4.5 | 450 |
 | 4.6 | 460 |
 
+For some advice on porting shaders from version 120 to 330+, see [here](https://github.com/mattdesl/lwjgl-basics/wiki/GLSL-Versions#version-330).
+
 #### GLSL ES:
 
 | OpenGL ES Version | GLSL EL Version | Based on GLSL Version (OpenGL) |
