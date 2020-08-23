@@ -30,7 +30,7 @@ Surprisingly, fullscreen functionality actually works on the HTML backend. To en
 Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 ```
 
-The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iPads. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following ([PR pending](https://github.com/libgdx/libgdx/pull/5691)):
+The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iOS. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following ([PR pending](https://github.com/libgdx/libgdx/pull/5691)):
 
 ```java
 class ResizeListener implements ResizeHandler {
@@ -56,6 +56,10 @@ Don't forget to also set the fullscreen orientation for mobile in the getConfig(
 cfg.fullscreenOrientation = GwtGraphics.OrientationLockType.LANDSCAPE;
 ```
 
+## Resolution on mobiles
+
+If your game is run in an iframe, or if you switch to full screen, you will notice that your game looks pixelated. That is because the reported screen size of mobiles is not the real screen size. [Check out this PR](https://github.com/libgdx/libgdx/pull/5691) for help.
+
 ## Changing the Load Screen Progress Bar
 
 As much as we love libGDX, the default loading progress bar when preparing the HTML game screams "newbie". Impress your friends and bring honor to your family name by making a custom progress bar! Add the following to your HtmlLauncher class in your HTML project:
@@ -76,6 +80,12 @@ protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
 ```
 
 "preloadlogo.png" is an image you place in the "webapp" folder in the HTML project for DIST builds. Place the image in your "war" folder as well for your SUPERDEV builds. Adjust your color to fit the theme of your game. Enjoy yourself.
+
+## Speeding up preload process
+
+Speaking of the preloader: The HTML5 preloader is necessary, because usual gdx games rely on all assets being ready to access when needed. It prefetches every file in your asset directory. This may take some time and is not necessary if your game is a game that does not need all assets for presenting the startup screen. Think of all the people out there not having high speed internet connections.
+
+You can increase your preload time a lot if you use asset manager to load your assets. [Check out this PR](https://github.com/libgdx/libgdx/pull/5677) to see how.
 
 ## Preventing Keys From Triggering Scrolling and Other Browser Functions
 
@@ -115,6 +125,12 @@ Similarly to keyboard keys, the right click context menu can be prevented from i
 // prevent right click
 document.getElementById('embed-html').addEventListener('contextmenu', handleMouseDown, false);
 ```
+
+## Sound and Music
+
+You will probably face some problems with sounds and music, especially on mobile platforms. It is not recommended to play sounds immediately on startup of the game as browsers probably will block this. 
+
+The implementation the official HTML5 backend uses has some other restrictions, too. Pitch will not work and you will experience a lag on playing the sounds the first time. If you want to improve the situation, [check out this PR](https://github.com/libgdx/libgdx/pull/5659)
 
 ## Differences Between GWT and Desktop Java
 
