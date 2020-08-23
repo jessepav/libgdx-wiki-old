@@ -1,11 +1,15 @@
-[Google Play Games Services](https://developers.google.com/games/services/) offers cross platform social leaderboards, achievements, and much more (realtime multiplayer, cloud saves, anti-piracy...)
+[Google Play Games Services](https://developers.google.com/games/services/) offers social leaderboards, achievements, and much more (realtime multiplayer, cloud saves, anti-piracy...)
+
+Cross-platform features are deprecated, for new projects it is recommended to use on Android only.
 
 ## Using open-source libGDX Extension
-Google Play Games support for libGDX games on Android and Desktop is provided by [gdx-gamesvcs libGDX extension](https://github.com/MrStahlfelge/gdx-gamesvcs). The extension also provides implementations for other game services (Kongregate, Gamejolt and others). 
+Google Play Games support for libGDX games on Android and Desktop is provided by [gdx-gamesvcs libGDX extension](https://github.com/MrStahlfelge/gdx-gamesvcs). The extension also provides implementations for other game services (Apple Game Center, GameJolt and others).
 
-The following article describes the manual integration in your project without using this lib.
+Follow the readme and the project's wiki to integrate GPGS and other game services in your project.
 
-## Android Integration example
+## Manual integration in your project
+
+The following article describes the manual integration in your project without using the library.
 
 A [Super Jumper](https://github.com/libgdx/libgdx-demo-superjumper) based example that makes use of Leaderboards and Achievements is available to download from [Google Play](https://play.google.com/store/apps/details?id=com.theinvader360.tutorial.libgdx.gameservices).
 
