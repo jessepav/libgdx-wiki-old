@@ -63,7 +63,7 @@
 <details><summary>Graphics</summary>
 
 * [[Graphics]]
-* [[Querying & configuring graphics (monitors, display modes, vsync)]]
+* [[Querying & configuring graphics (monitors, display modes, vsync, display cutouts)]]
 * [[Continuous & Non-Continuous Rendering]]
 * [[Clearing the Screen]]
 * [[Taking a Screenshot]]
