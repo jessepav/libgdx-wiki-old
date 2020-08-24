@@ -20,6 +20,7 @@ Distributing java applications as JAR file can be very unhandy and prone to issu
 
 * A very convenient way to distribute java application is to just bundle an JRE. See this [[entry|Bundling a JRE]] on how to do this. (**This is the recommended way to distribute an application!**)
 * Via electron, HTML5 applications can be deployed to desktop. See [here](https://medium.com/@bschulte19e/how-to-deploy-a-libgdx-game-with-electron-3f1b37f0c26e).
+* GWT applications can also be bundled as UWP Apps, see [here](http://www.badlogicgames.com/forum/viewtopic.php?f=17&t=14766).
 * Games can also be deployed as an [Applet](https://github.com/libgdx/libgdx/wiki/Deploying-as-an-Applet) (outdated, not recommended!)
 
 # <a id="Deploy_to_Android"></a>Deploy to Android
