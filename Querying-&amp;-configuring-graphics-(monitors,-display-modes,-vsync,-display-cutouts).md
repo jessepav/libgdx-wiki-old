@@ -179,6 +179,9 @@ Gdx.graphics.setWindowedMode(800, 600);
 
 This will set the window to windowed mode, centering it on the monitor it was on before the call to this method.
 
+## Querying display cutouts on mobile
+On Android and iOS, displays don't have to be a perfect rectangle but might have cutouts, round edges or overlaying status bars. You can query the areas that are not safe to use for your important game content with the `Gdx.graphics.getSafeInsetLeft()`, `Gdx.graphics.getSafeInsetRight()`, `Gdx.graphics.getSafeInsetTop()` and `Gdx.graphics.getSafeInsetBottom()` methods.
+
 ## Desktop & multi-window API of the LWJGL 3 backend
 Some applications like editors or other desktop-only tools can benefit from multi-window setups. The LWJGL 3 backend provides an additional, non-cross-platform API to create multiple windows.
 
