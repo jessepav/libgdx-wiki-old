@@ -11,7 +11,7 @@ This list of games gives some good examples of what libGDX is capable of:
 ![](https://steamcdn-a.akamaihd.net/steam/apps/253150/header.jpg?t=1593431340)
 
 #### [Mindustry](https://github.com/Anuken/Mindustry) by AnukenDev, using the [Arc](https://github.com/Anuken/Arc) fork
-! [](https://steamcdn-a.akamaihd.net/steam/apps/1127400/header.jpg?t=1586887170)
+![](https://steamcdn-a.akamaihd.net/steam/apps/1127400/header.jpg?t=1586887170)
 
 ##### [Mirage Realms](http://www.miragerealms.co.uk/devblog/) by Liam Stewart
 ![](https://lh3.googleusercontent.com/Vkaw_v_I5YoSnz8ODNAjLAqY787ExDnufAnD-bYzgo1ID-ki0RytX32j0aQxmKpLgQ=s180-rw)
