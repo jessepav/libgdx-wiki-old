@@ -4,7 +4,7 @@ Hiero is a bitmap font packing tool. It saves in the [Angel Code font](http://ww
 
 ## Running Hiero ##
 
-You can download the .jar file [here](https://libgdx.badlogicgames.com/tools.html). Make it executable (if you are on a UNIX-like operating system) and then run it.
+You can download the .jar file [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-hiero.jar). Make it executable (if you are on a UNIX-like operating system) and then run it.
 
 If you are using Gradle and you added "Tools" extension to your project, you can easily run Hiero from your IDE, otherwise look at Downloading Hiero.
 
