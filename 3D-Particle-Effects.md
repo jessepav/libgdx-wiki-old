@@ -16,6 +16,8 @@ Windows:
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.flame.FlameMain
 ```
 
+Alternatively, you can download it [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-3D-particles.jar).
+
 ### Particle Effect Types
 There are 3 different kinds of 3D particle effects:
 * Billboards
