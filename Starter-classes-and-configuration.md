@@ -167,7 +167,7 @@ public class AndroidLauncher extends FragmentActivity implements AndroidFragment
 }
 ```
 
-### Manifest configuration ###
+## Manifest configuration ##
 Besides the `AndroidApplicationConfiguration`, an Android application is also configured via the `AndroidManifest.xml` file, found in the root directory of the Android project. This might look something like this:
 
 ```xml
