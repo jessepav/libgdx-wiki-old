@@ -222,7 +222,7 @@ Please refer to the [Android Developer's Guide](http://developer.android.com/gui
 
 ## Live Wallpapers ##
 A libGDX core application can also be used as an Android [Live Wallpaper](http://android-developers.blogspot.co.at/2010/02/live-wallpapers.html). 
-The project setup is very similar to an Android game, but `AndroidLiveWallpaperService` or `AndroidDaydream` are used in 
+The project setup is very similar to an Android game, but `AndroidLiveWallpaperService` is used in 
 place of `AndroidApplication`. Live Wallpapers are Android [Services](https://developer.android.com/guide/components/services), 
 not Activities.
 
