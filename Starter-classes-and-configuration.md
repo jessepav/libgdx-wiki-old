@@ -302,7 +302,7 @@ Activity. Let's call this file `livewallpaper.xml`.
     xmlns:android="http://schemas.android.com/apk/res/android"  
     android:thumbnail="@drawable/ic_launcher"
     android:description="@string/description"
-    android:settingsActivity="com.mypackage.LiveWallpaperSettings"/>
+    android:settingsActivity="com.mypackage.MyLiveWallpaperSettingsActivity"/>
 ```
 
 Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for a Live Wallpaper with a simple 
@@ -316,7 +316,7 @@ with `exported` true so they can be accessed by the Live Wallpaper picker.
         package="com.mypackage">
     <uses-feature android:name="android.software.live_wallpaper" />
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".LiveWallpaperSettings" 
+        <activity android:name=".MyLiveWallpaperSettingsActivity" 
             android:label="@string/app_name"
             android:exported="true" />
         <service android:name=".LiveWallpaper"
@@ -368,7 +368,7 @@ the only Screensaver setting: an optional settings Activity. Let's call this fil
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <dream xmlns:android="http://schemas.android.com/apk/res/android"
-    android:settingsActivity="com.badlogic.gdx.tests.android/.ScreenSaverSettings" />
+    android:settingsActivity="com.badlogic.gdx.tests.android/.MyScreenSaverSettingsActivity" />
 ```
 
 Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for a Screen Saver with a simple 
@@ -380,7 +380,7 @@ and the Screen Saver service must both be set with `exported` true so they can b
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.mypackage">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".ScreenSaverSettings" 
+        <activity android:name=".MyScreenSaverSettingsActivity" 
             android:label="@string/app_name"
             android:exported="true" />
         <service android:name=".MyScreensaver"
