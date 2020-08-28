@@ -1,9 +1,10 @@
 * [Desktop (LWJGL)](#desktop-lwjgl)
 * [Desktop (LWJGL3)](#desktop-lwjgl3)
 * [Android](#android)
-  - [Fragment based libgdx](#fragment-based-libgdx)
+  - [Game Activity](#game-activity)
+  - [Fragment-based libGDX](#fragment-based-libgdx)
   - [Live Wallpapers](#live-wallpapers)
-  - [Daydreams](#daydreams)
+  - [Screen Savers (aka Daydreams)](#screen-savers-aka-daydreams)
 * [iOS/Robovm](#iosrobovm)
 * [HTML5/GWT](#html5gwt)
 
@@ -86,6 +87,9 @@ If you're starting your project via gradle, add this line to `run` task of the d
 ```
 
 # Android #
+
+## Game Activity ##
+
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
 
 ```java
@@ -112,7 +116,7 @@ The main entry-point method is the Activity's `onCreate()` method. Note that `Ma
 
 Android applications can have multiple activities. Libgdx games should usually only consist of a single activity. Different screens of the game are implemented within libgdx, not as separate activities. The reason for this is that creating a new `Activity` also implies creating a new OpenGL context, which is time consuming and also means that all graphical resources have to be reloaded.
 
-## Fragment based libgdx ##
+## Fragment based libGDX ##
 
 The Android SDK has introduced an API to create controllers for specific parts of a screen, that can be easily re-used on multiple screens. This API is called the [Fragments API](http://developer.android.com/guide/components/fragments.html). Libgdx can now also be used as a part of a larger screen, inside a Fragment. To create a Libgdx fragment, subclass `AndroidFragmentApplication` and implement the `onCreateView()` with the following initialization:
 ```java
@@ -226,68 +230,109 @@ If your game needs the gyroscope sensor, you have to set `useGyroscope` to true 
 Please refer to the [Android Developer's Guide](http://developer.android.com/guide/index.html) for more information on how to set other attributes like icons for your application.
 
 ## Live Wallpapers ##
-Libgdx features a simple to use way to create [Live Wallpapers](http://android-developers.blogspot.co.at/2010/02/live-wallpapers.html) for Android. The starter class for a live wallpaper is called `AndroidLiveWallpaperService`, here's an example:
+A libGDX core application can also be used as an Android [Live Wallpaper](http://android-developers.blogspot.co.at/2010/02/live-wallpapers.html). 
+The project setup is very similar to an Android game, but `AndroidLiveWallpaperService` or `AndroidDaydream` are used in 
+place of `AndroidApplication`. Live Wallpapers are Android [Services](https://developer.android.com/guide/components/services), 
+not Activities.
+
+**Note: Due to synchronization issues, you cannot combine games and live wallpapers in the same app. However, Live
+Wallpapers and Screen Savers can safely coexist in the same app.**
+
+First, extend `AndroidLiveWallpaperService` and override `onCreateApplication()` (instead of `onCreate()`
+like you would do with a game `Activity`):
 
 ```java
-package com.mypackage;
-
-// imports snipped for brevity 
-
-public class LiveWallpaper extends AndroidLiveWallpaperService {
-	@Override
-	public ApplicationListener createListener () {
-		return new MyApplicationListener();
-	}
-
-	@Override
-	public AndroidApplicationConfiguration createConfig () {
-		return new AndroidApplicationConfiguration();
-	}
-
-	@Override
-	public void offsetChange (ApplicationListener listener, float xOffset, float yOffset, float xOffsetStep, float yOffsetStep,
-		int xPixelOffset, int yPixelOffset) {
-		Gdx.app.log("LiveWallpaper", "offset changed: " + xOffset + ", " + yOffset);
-	}
+public class MyLiveWallpaper extends AndroidLiveWallpaperService {
+    @Override
+    public void onCreateApplication() {
+        AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
+                
+        initialize(new MyGdxGame(), cfg);
+    }
 }
 ```
 
-The methods `createListener()` and `createConfig()` will be called when your live wallpaper is shown in the picker or when it is created to be displayed on the home screen.
+You can optionally subscribe to Live Wallpaper-specific events by implementing `AndroidWallpaperListener` with your
+`ApplicationListener` class. `AndroidWallpaperListener` is not available from the `core` module, so you can either 
+follow the strategy outlined in [[Interfacing With Platform-Specific Code]], or you can manage it just from the `android`
+module by subclassing your `ApplicationListener` like this:
 
-The `offsetChange()` method is scaled when the user swipes through screens on the home screen and tells you by how much the screen is offset from the center screen. This method will be called on the rendering thread, so you don't have to synchronize anything.
+```java
+public class MyLiveWallpaper extends AndroidLiveWallpaperService {
 
-In addition to a starter class, you also have to create an XML file describing your wallpaper. Let's call that livewallpaper.xml. Create a folder called `xml/` in your Android project's `res/` folder and put the file in there (`res/xml/livewallpaper.xml`). Here's what to put into that file:
+    static class MyLiveWallpaperListener extends MyGdxGame implements AndroidWallpaperListener {
+        @Override
+        public void offsetChange (float xOffset, float yOffset, float xOffsetStep,
+                                  float yOffsetStep, int xPixelOffset, int yPixelOffset) {
+            // Called when the home screen is scrolled. Not all launchers support this.
+        }
+
+        @Override
+        public void previewStateChange (boolean isPreview) {
+            // Called when switched between being previewed and running as the wallpaper.
+        }
+
+        @Override
+        public void iconDropped (int x, int y) {
+            // Called when an icon is dropped on the home screen.
+        }
+    }
+
+    @Override
+    public void onCreateApplication() {
+        AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
+                
+        initialize(new MyLiveWallpaperListener(), cfg);
+    }
+}
+```
+
+Coming in libGDX 1.9.12, or available from -SNAPSHOT now, you can also report the dominant colors of the wallpaper to 
+the OS. Starting with Android 8.1, this is used by some Android launchers and lock screens for styling, such as changing 
+the text color of the clock. You can create a method like this to report the colors, and access it from the core module
+using the strategy from [[Interfacing With Platform-Specific Code]]:
+
+```java
+public void notifyColorsChanged (Color primaryColor, Color secondaryColor, Color tertiaryColor) {
+    Application app = Gdx.app;
+    if (Build.VERSION.SDK_INT >= 27 && app instanceof AndroidLiveWallpaper2) {
+        AndroidLiveWallpaper2 liveWallpaper = (AndroidLiveWallpaper2) app;
+        liveWallpaper.notifyColorsChanged(primaryColor, secondaryColor, tertiaryColor);
+    }
+}
+```
+
+In additional to the service class, you must also create an `xml` file in the Android `res/xml` directory to define 
+some Live Wallpaper properties: its thumbnail and description shown in the wallpaper picker, and an optional settings 
+Activity. Let's call this file `livewallpaper.xml`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <wallpaper
-       xmlns:android="http://schemas.android.com/apk/res/android"  
-       android:thumbnail="@drawable/ic_launcher"
-       android:description="@string/description"
-       android:settingsActivity="com.mypackage.LivewallpaperSettings"/>
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:thumbnail="@drawable/ic_launcher"
+    android:description="@string/description"
+    android:settingsActivity="com.mypackage.LiveWallpaperSettings"/>
 ```
 
-This defines the thumbnail to be displayed for your LWP in the picker, the description and an Activity that will be displayed when the user hits "Settings" in the LWP picker. This should be just a standard Activity that has a few widgets to change settings such as the background color and similar things. You can store those settings in SharedPreferences and load them later in your LWPs ApplicationListener via `Gdx.app.getPreferences()`.
-
-Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for an LWP with a simple settings Activity:
+Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for a Live Wallpaper with a simple 
+settings Activity. The key elements here are the `uses-feature` and `service` blocks. The label and icon set on the 
+service appear in the Android application settings. The settings Activity and the Live Wallpaper service must both be set
+with `exported` true so they can be accessed by the Live Wallpaper picker.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.mypackage"
-      android:versionCode="1"
-      android:versionName="1.0"
-      android:installLocation="preferExternal">
-	<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="14"/>	
-	<uses-feature android:name="android.software.live_wallpaper" />
-		
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".LivewallpaperSettings" 
-				  android:label="Livewallpaper Settings"/>
-		
-		<service android:name=".LiveWallpaper"
+        package="com.mypackage">
+    <uses-feature android:name="android.software.live_wallpaper" />
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".LiveWallpaperSettings" 
+            android:label="@string/app_name"
+            android:exported="true" />
+        <service android:name=".LiveWallpaper"
             android:label="@string/app_name"
             android:icon="@drawable/icon"
+            android:exported="true"
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
@@ -295,87 +340,74 @@ Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's a
             <meta-data android:name="android.service.wallpaper"
                 android:resource="@xml/livewallpaper" />
         </service>				  	
-	</application>
+    </application>
 </manifest> 
 ```
 
-The manifest defines:
+Live Wallpapers have some limitations concerning touch input. In general only one pointer will be reported. If you want 
+full multi-touch events you can set the `AndroidApplicationConfiguration.getTouchEventsForLiveWallpaper` field to true.
 
-  * it uses the live wallpaper feature, see `<uses-feature>`.
-  * a permission to be allowed to bind the wallpaper, see `android:permission`
-  * the settings activity
-  * the livewallpaper service, pointing at the livewallpaper.xml file, see `meta-data`
+## Screen Savers (aka Daydreams) ##
+A libGDX core application can also be used as an Android [Screen Saver](http://developer.android.com/about/versions/android-4.2.html#Daydream).
+Screensavers were once known as Daydreams, so many of the related classes have the term "Daydream" in their names. Screen
+Savers have no relation to Google's Daydream VR platform.
 
-Note that live wallpapers are only supported starting from Android 2.1 (SDK level 7).
+The project setup is very similar to an Android game, but `AndroidDaydream` is used in  place of `AndroidApplication`. 
+Screen Savers are Android [Services](https://developer.android.com/guide/components/services), not Activities.
 
-LWPs have some limitations concerning touch input. In general only tap/drop will be reported. If you want full touch you can see the `AndroidApplicationConfiguration#getTouchEventsForLiveWallpaper` flag to true to receive full multi-touch events.
-
-## Daydreams ##
-Since Android 4.2, users can set [Daydreams](http://developer.android.com/about/versions/android-4.2.html#Daydream) that will get displayed if the device is idle or docked. These daydreams are similar to screensavers and can display things like photo albums etc. Libgdx let's you write such daydreams easily.
-
-The starter class for a Daydream is called AndroidDaydream. Here's an example:
+First, extend `AndroidDaydream` and override `onAttachedToWindow()` (instead of `onCreate()` like you 
+would do with a game `Activity`). It must call through to `super`. You can also call `setInteractive()` from this method
+to enable/disable touch. A non-interactive screensaver immediately closes when the screen is touched.
 
 ```java
-package com.badlogic.gdx.tests.android;
+public class MyScreensaver extends AndroidDaydream {
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setInteractive(true);
 
-import android.annotation.TargetApi;
-import android.util.Log;
-
-import com.badlogic.gdx.ApplicationListener;
-import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.badlogic.gdx.backends.android.AndroidDaydream;
-import com.badlogic.gdx.tests.MeshShaderTest;
-
-@TargetApi(17)
-public class Daydream extends AndroidDaydream {
-   @Override
-   public void onAttachedToWindow() {
-      super.onAttachedToWindow();      
-      setInteractive(false);
-
-      AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-      ApplicationListener app = new MeshShaderTest();
-      initialize(app, cfg);
-   }
+        AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
+        initialize(new MyGdxGame(), cfg);
+    }
 }
 ```
 
-Simply derive from AndroidDaydream, override onAttachedToWindow, setup your configuration and ApplicationListener and initialize your daydream.
-
-In addition to the daydream itself you can provide a settings activity that lets the user configure your daydream. This can be a normal activity, or a libgdx `AndroidApplication`. An empty activity as an example: 
-
-```java
-package com.badlogic.gdx.tests.android;
-
-import android.app.Activity;
-
-public class DaydreamSettings extends Activity {
-
-}
-```
-
-This settings activity must be specified as metadata to the Daydream service. Create an xml file in the res/xml folder of your Android project and specify the activity like this:
+In additional to the service class, you must also create an `xml` file in the Android `res/xml` directory to define 
+the only Screensaver setting: an optional settings Activity. Let's call this file `screensaver.xml`.
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <dream xmlns:android="http://schemas.android.com/apk/res/android"
- android:settingsActivity="com.badlogic.gdx.tests.android/.DaydreamSettings" />
+    android:settingsActivity="com.badlogic.gdx.tests.android/.ScreenSaverSettings" />
 ```
 
-Finally, add a section for the settings activity in the AndroidManifest.xml as usual, and a service description for the daydream, like this:
+Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for a Screen Saver with a simple 
+settings Activity. Note that a settings Activity is optional. The key element is the `service` block. The settings Activity 
+and the Screen Saver service must both be set with `exported` true so they can be accessed by the Screen Saver picker.
 
 ```xml
-<service android:name=".Daydream"
-   android:label="@string/app_name"
-   android:icon="@drawable/icon"
-   android:exported="true">
-   <intent-filter>
-	   <action android:name="android.service.dreams.DreamService" />
-	   <category android:name="android.intent.category.DEFAULT" />
-   </intent-filter>
-   <meta-data android:name="android.service.dream"
-	   android:resource="@xml/daydream" />
-</service>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.mypackage">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".ScreenSaverSettings" 
+            android:label="@string/app_name"
+            android:exported="true" />
+        <service android:name=".MyScreensaver"
+            android:label="@string/app_name"
+            android:icon="@drawable/icon"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.service.dream"
+                android:resource="@xml/screensaver" />
+        </service>			  	
+    </application>
+</manifest> 
 ```
+
 # iOS/Robovm #
 To come..
 # HTML5/GWT #
