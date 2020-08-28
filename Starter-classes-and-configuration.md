@@ -339,7 +339,7 @@ full multi-touch events you can set the `AndroidApplicationConfiguration.getTouc
 
 ## Screen Savers (aka Daydreams) ##
 A libGDX core application can also be used as an Android [Screen Saver](http://developer.android.com/about/versions/android-4.2.html#Daydream).
-Screensavers were once known as Daydreams, so many of the related classes have the term "Daydream" in their names. Screen
+Screen Savers were once known as Daydreams, so many of the related classes have the term "Daydream" in their names. Screen
 Savers have no relation to Google's Daydream VR platform.
 
 The project setup is very similar to an Android game, but `AndroidDaydream` is used in  place of `AndroidApplication`. 
@@ -347,10 +347,10 @@ Screen Savers are Android [Services](https://developer.android.com/guide/compone
 
 First, extend `AndroidDaydream` and override `onAttachedToWindow()` (instead of `onCreate()` like you 
 would do with a game `Activity`). It must call through to `super`. You can also call `setInteractive()` from this method
-to enable/disable touch. A non-interactive screensaver immediately closes when the screen is touched.
+to enable/disable touch. A non-interactive Screen Saver immediately closes when the screen is touched.
 
 ```java
-public class MyScreensaver extends AndroidDaydream {
+public class MyScreenSaver extends AndroidDaydream {
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -383,7 +383,7 @@ and the Screen Saver service must both be set with `exported` true so they can b
         <activity android:name=".MyScreenSaverSettingsActivity" 
             android:label="@string/app_name"
             android:exported="true" />
-        <service android:name=".MyScreensaver"
+        <service android:name=".MyScreenSaver"
             android:label="@string/app_name"
             android:icon="@drawable/icon"
             android:exported="true" >
