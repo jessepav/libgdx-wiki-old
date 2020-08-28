@@ -2,7 +2,8 @@
 * [Desktop (LWJGL3)](#desktop-lwjgl3)
 * [Android](#android)
   - [Game Activity](#game-activity)
-  - [Fragment-based libGDX](#fragment-based-libgdx)
+  - [Game Fragment](#game-fragment)
+  - [Manifest configuration](#manifest-configuration)
   - [Live Wallpapers](#live-wallpapers)
   - [Screen Savers (aka Daydreams)](#screen-savers-aka-daydreams)
 * [iOS/Robovm](#iosrobovm)
@@ -116,9 +117,9 @@ The main entry-point method is the Activity's `onCreate()` method. Note that `Ma
 
 Android applications can have multiple activities. Libgdx games should usually only consist of a single activity. Different screens of the game are implemented within libgdx, not as separate activities. The reason for this is that creating a new `Activity` also implies creating a new OpenGL context, which is time consuming and also means that all graphical resources have to be reloaded.
 
-## Fragment based libGDX ##
+## Game Fragment ##
 
-The Android SDK has introduced an API to create controllers for specific parts of a screen, that can be easily re-used on multiple screens. This API is called the [Fragments API](http://developer.android.com/guide/components/fragments.html). Libgdx can now also be used as a part of a larger screen, inside a Fragment. To create a Libgdx fragment, subclass `AndroidFragmentApplication` and implement the `onCreateView()` with the following initialization:
+A libGDX game can be hosted in an Android [Fragment](http://developer.android.com/guide/components/fragments.html) instead of using a complete Activity.  This allows it to take up a portion of the screen in an Activity or be moved between layouts. To create a Libgdx fragment, subclass `AndroidFragmentApplication` and implement the `onCreateView()` with the following initialization:
 ```java
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -127,12 +128,12 @@ The Android SDK has introduced an API to create controllers for specific parts o
 ```
 
 That code depends on some other changes to the -android project:
-1. [Add AndroidX Fragment Library to the -android project and its build path](https://developer.android.com/jetpack/androidx/releases/fragment) if you haven't already added it. This is needed in order to Extend FragmentActivity later
-2. Change AndroidLauncher activity to extend FragmentActivity, not AndroidApplication
-3. Implement AndroidFragmentApplication.Callbacks on the AndroidLauncher activity
-4. Create a Class that extends AndroidFragmentApplication which is the Fragment implementation for Libgdx.
-5. Add the initializeForView() code in the Fragment's onCreateView method.
-6. Finally, replace the AndroidLauncher activity content with the Libgdx Fragment.
+1. [Add AndroidX Fragment Library to the -android project and its build path](https://developer.android.com/jetpack/androidx/releases/fragment) if you haven't already added it. This is needed in order to extend FragmentActivity later.
+2. Change the AndroidLauncher Activity to extend FragmentActivity, not AndroidApplication.
+3. Implement AndroidFragmentApplication.Callbacks on the AndroidLauncher Activity.
+4. Create a class that extends AndroidFragmentApplication which is the Fragment implementation for libGDX.
+5. Add the `initializeForView()` code in the Fragment's `onCreateView` method.
+6. Finally, replace the AndroidLauncher activity content with the libGDX Fragment.
 
 For example:
 ```java
@@ -161,23 +162,18 @@ public class AndroidLauncher extends FragmentActivity implements AndroidFragment
       {  return initializeForView(new MyGdxGame());   }
    }
 
-
    @Override
    public void exit() {}
 }
 ```
 
-### The AndroidManifest.xml File ###
+### Manifest configuration ###
 Besides the `AndroidApplicationConfiguration`, an Android application is also configured via the `AndroidManifest.xml` file, found in the root directory of the Android project. This might look something like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.me.mygdxgame"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
+    package="com.me.mygdxgame">
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -196,9 +192,6 @@ Besides the `AndroidApplicationConfiguration`, an Android application is also co
 
 </manifest>
 ```
-
-#### Target Sdk Version ####
-Set this to the version of Android you want to target.
 
 #### Screen Orientation & Configuration Changes ####
 In addition to the targetSdkVersion, the `screenOrientation` and `configChanges` attributes of the activity element should always be set.
@@ -224,8 +217,6 @@ If a game doesn't need accelerometer or compass access, it is advised to disable
 `useAccelerometer` and `useCompass` fields of `AndroidApplicationConfiguration` to false.
  
 If your game needs the gyroscope sensor, you have to set `useGyroscope` to true in `AndroidApplicationConfiguration` (It's disabled by default, to save energy).
-
-
 
 Please refer to the [Android Developer's Guide](http://developer.android.com/guide/index.html) for more information on how to set other attributes like icons for your application.
 
