@@ -286,9 +286,8 @@ using the strategy from [[Interfacing With Platform-Specific Code]]:
 ```java
 public void notifyColorsChanged (Color primaryColor, Color secondaryColor, Color tertiaryColor) {
     Application app = Gdx.app;
-    if (Build.VERSION.SDK_INT >= 27 && app instanceof AndroidLiveWallpaper2) {
-        AndroidLiveWallpaper2 liveWallpaper = (AndroidLiveWallpaper2) app;
-        liveWallpaper.notifyColorsChanged(primaryColor, secondaryColor, tertiaryColor);
+    if (Build.VERSION.SDK_INT >= 27 && app instanceof AndroidLiveWallpaper) {
+        ((AndroidLiveWallpaper) app).notifyColorsChanged(primaryColor, secondaryColor, tertiaryColor);
     }
 }
 ```
