@@ -42,6 +42,7 @@ Check out [LibGDX.info](https://libgdx.info/) for examples showcasing Scene2d ac
    * [Dialog](#dialog)
  * [Widgets without scene2d.ui](#widgets-without-scene2dui)
  * [Drag and Drop](#drag-and-drop-draganddrop-class)
+ * [Usage without touch or mouse](#Keycontrol)
  * [Examples](#examples)
 
 # <a id="Widget_and_WidgetGroup"></a>Widget and WidgetGroup #
@@ -313,6 +314,11 @@ Some widgets, such as Table, don't have a default size after construction becaus
 
 ## <a id="DragAndDrop"></a>Drag and Drop (DragAndDrop class) ##
 It should be noted that to make a drag start/source actor, a table and to have that table and all of its contents trigger a drag, one must enable Table.setTouchable(Enabled). It is set to ChildrenOnly by default. 
+
+## <a id="Keycontrol"></a>Usage without touch or mouse ##
+
+Scene2d.ui is mainly designed with touch or mouse control in mind. Stage has a `setKeyboardFocus` and a `setScrollFocus` methods to set the Actor receiving scroll and key events. However, it does not support a full type focus and is therefore not operable with keys only.
+A focusing system is needed for games designed with controller-only or keyboard-only interface. [gdx-controllerutils project](https://github.com/MrStahlfelge/gdx-controllerutils)'s scene2d module includes a `ControllerMenuStage` adding this to scene2d.ui. [View the documentation](https://github.com/MrStahlfelge/gdx-controllerutils/wiki/Button-operable-Scene2d).
 
 ## <a id="Examples"></a>Examples ##
 
