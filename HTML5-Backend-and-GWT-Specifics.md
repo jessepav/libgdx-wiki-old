@@ -58,7 +58,7 @@ cfg.fullscreenOrientation = GwtGraphics.OrientationLockType.LANDSCAPE;
 
 ## Resolution on mobiles
 
-If your game is run in an iframe, or if you switch to full screen, you will notice that your game looks pixelated. That is because the reported screen size of mobiles is not the real screen size. [Check out this PR](https://github.com/libgdx/libgdx/pull/5691) for help.
+On mobile, if your game is run in an iframe, or if you switch to full screen, you will notice that your game looks pixelated. That is because the reported screen size of mobiles is not the real screen size. You can enable using the real screen size with `config.usePhysicalPixels = true;`. This will also affect HDPI and Retina screens on desktop, so maybe you want to use `usePhysicalPixels = GwtApplication.isMobileDevice()`. [Check out this PR](https://github.com/libgdx/libgdx/pull/5691) for detailed information.
 
 ## Changing the Load Screen Progress Bar
 
