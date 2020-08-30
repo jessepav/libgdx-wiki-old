@@ -27,6 +27,11 @@ The next step is dependent on your IDE:
 
 You need to replace additional files for some releases. They are listed here:
 
+#### Update to release 1.9.12
+
+* HTML: You can delete the soundmanager files for HTML Project and the references in index.html
+* HTML: You should update code in HTMLLauncher according to setup template
+
 #### Update to release 1.9.6
 * Replace soundmanager files for HTML project, otherwise Web Application might not start. See [#2246](https://github.com/libgdx/libgdx/pull/4426)
 
