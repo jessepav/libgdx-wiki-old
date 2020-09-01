@@ -168,6 +168,8 @@ Note that order is important. A resource must be declared in the JSON above wher
 
 Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets/data) can be used as a starting point: uiskin.png, uiskin.atlas, uiskin.json, and default.fnt.
 
+Loading and configuring a freetype font via the skin json file requires some additional steps. Either use [Scene Composer](https://github.com/raeleus/skin-composer/wiki/Creating-FreeType-Fonts#using-a-custom-serializer) or a library like [freetype-skin](https://github.com/acanthite/freetype-skin).
+
 ### <a id="Color"></a>Color ###
 
 Colors are defined in JSON as shown above. If the `r`, `g`, or `b` properties are omitted, 0 is used. If `a` is omitted, 1 is used.
