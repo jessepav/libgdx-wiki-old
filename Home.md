@@ -17,7 +17,6 @@ Welcome to the Wiki, a place for comprehensive documentation on the libGDX API a
       * [[Threading]]
       * [[Interfacing With Platform-Specific Code]]
     * Getting Started
-      * [Setting Up libGDX](https://libgdx.com/dev/setup/) 
       * [[A Simple Game]]
       * [[Extending the Simple Game]]
     * [[File Handling]]
