@@ -1,6 +1,6 @@
-Before diving into the APIs provided by libgdx, let's create a very simple "game" that touches each module a little bit to get a feeling for things. We'll introduce a few concepts without going into too much detail.
+Before diving into the APIs provided by libGDX, let's create a very simple "game" that touches each module a little bit to get a feeling for things. We'll introduce a few concepts without going into too much detail.
 
-We'll look at:
+In the following, we'll look at:
 
   * Basic file access
   * Clearing the screen
@@ -8,8 +8,6 @@ We'll look at:
   * Using a camera
   * Basic input processing
   * Playing sound effects
-
-Visual examples of such concepts are also available on [LibGDX.info](https://libgdx.info/)
 
 ## Project Setup ##
 Follow the steps in [[Project Setup Gradle]]. I used the following names:
