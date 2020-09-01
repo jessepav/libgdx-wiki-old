@@ -17,6 +17,7 @@
 
 <details><summary>A Simple Game</summary>
 
+* [Setting up libGDX](https://libgdx.com/dev/setup/) 
 * [[A Simple Game]]  
 * [[Extending the Simple Game]]
 
@@ -31,7 +32,7 @@
 <details><summary>Input Handling</summary>
 
 * [[Input Handling]]
-* [[Configuration & Querying]]
+* [[Configuration and Querying]]
 * [[Mouse, Touch and Keyboard]]  
   * [[Polling]]  
   * [[Event Handling]]
@@ -42,7 +43,7 @@
 * [[Compass]]
 * [[Gyroscope]]
 * [[Vibrator]]
-* [[Cursor Visibility & Catching]]
+* [[Cursor Visibility and Catching]]
 * [[Back and Menu Key Catching]]
 * [[On-Screen Keyboard]]
 
@@ -63,18 +64,18 @@
 <details><summary>Graphics</summary>
 
 * [[Graphics]]
-* [[Querying & configuring graphics (monitors, display modes, vsync, display cutouts)]]
-* [[Continuous & Non-Continuous Rendering]]
+* [[Querying and configuring graphics (monitors, display modes, vsync, display cutouts)]]
+* [[Continuous and Non-Continuous Rendering]]
 * [[Clearing the Screen]]
 * [[Taking a Screenshot]]
 * [[Profiling]]
 * [[Viewports]]
 * [[OpenGL (ES) Support]]  
-  * Configuration & Querying OpenGL ??  
+  * Configuration and Querying OpenGL ??  
   * Direct Access ??  
   * Utility Classes  
      -[[Rendering Shapes]]  
-     -[[Textures & TextureRegions]]  
+     -[[Textures and TextureRegions]]  
      -[[Meshes]]  
      -[[Shaders]]  
      -[[Frame Buffer Objects]]
@@ -140,7 +141,7 @@
 * [[Circles, Planes, Rays, etc.]]
 * [[Path Interface and Splines]]
 * Bounding Volumes ??
-* Intersection & Overlap Testing ??
+* Intersection and Overlap Testing ??
 
 </details>
 
@@ -194,10 +195,7 @@
 
 </details>
 
-<details><summary>Game Jams</summary>
-
-* [[Regular libGDX Jams]]
-* [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
+[Game Jams](https://libgdx.com/community/jams/)
 
 </details>
 
@@ -207,7 +205,7 @@
    * [[External Tutorials]]
    * [[Deploying your application]]
    * [[HTML5 Backend and GWT Specifics]]
-   * [[Games built with libgdx]]
+   * [Games Built With libGDX](https://libgdx.com/showcase/)
    * [[Coordinate systems]]
    * [[Updating Your libGDX Version|Updating libGDX]]
    * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]] 
