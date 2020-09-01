@@ -1,8 +1,8 @@
-![logo](http://libgdx.badlogicgames.com/img/logo.png)
+![logo](http://libgdx.com/assets/images/logo.png)
 
-Welcome to the Wiki, a place for comprehensive documentation on the LibGDX API and features.  This wiki is community driven, and can be edited by anyone. If you find information out of date, feel free to update yourself, or ask for clarification on the official discord or the irc channel.
+Welcome to the Wiki, a place for comprehensive documentation on the libGDX API and features.  This wiki is community driven, and can be edited by anyone. If you find information out of date, feel free to update yourself, or ask for clarification on the official discord or the irc channel.
 
-If you want to get started coding with LibGDX, head to the [Official documentation - here - ](https://libgdx.badlogicgames.com/documentation/) to learn how to setup your environment and create/import your project.
+#### If you want to get started coding with libGDX, head to the [Official documentation - here - ](http://libgdx.com/dev/setup/) to learn how to setup your environment and create/import your project.
 
 ## **[[Looking for help?|Getting Help]]**
 
@@ -16,13 +16,15 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Logging]]
       * [[Threading]]
       * [[Interfacing With Platform-Specific Code]]
-    * [[A Simple Game]]
+    * Getting Started
+      * [Setting Up libGDX](https://libgdx.com/dev/setup/) 
+      * [[A Simple Game]]
       * [[Extending the Simple Game]]
     * [[File Handling]]
     * [[Networking]]
     * [[Preferences]]
     * [[Input Handling]]
-      * [[Configuration & Querying]]
+      * [[Configuration and Querying]]
       * [[Mouse, Touch and Keyboard]]
         * [[Polling]]
         * [[Event Handling]]
@@ -33,7 +35,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Compass]]
       * [[Gyroscope]]
       * [[Vibrator]]
-      * [[Cursor Visibility & Catching]]
+      * [[Cursor Visibility and Catching]]
       * [[Back and Menu Key Catching]]
       * [[On-Screen Keyboard]]
     * [[Memory Management]]
@@ -43,18 +45,18 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Playing PCM Audio]]
       * [[Recording PCM Audio]]
     * [[Graphics]]
-      * [[Querying & configuring graphics (monitors, display modes, vsync, display cutouts)]]
-      * [[Continuous & Non-Continuous Rendering]]
+      * [[Querying and Configuring Graphics (monitors, display modes, vsync, display cutouts)]]
+      * [[Continuous and Non-Continuous Rendering]]
       * [[Clearing the Screen]]
       * [[Taking a Screenshot]]
       * [[Profiling]]
       * [[Viewports]]
       * [[OpenGL (ES) Support]]
-        * Configuration & Querying OpenGL ??
+        * Configuration and Querying OpenGL ??
         * Direct Access ??
         * Utility Classes
           * [[Rendering Shapes]]
-          * [[Textures & TextureRegions]]
+          * [[Textures and TextureRegions]]
           * [[Meshes]]
           * [[Shaders]]
           * [[Frame Buffer Objects]]
@@ -105,7 +107,7 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Circles, Planes, Rays, etc.]]
       * [[Path Interface and Splines]]
       * Bounding Volumes ??
-      * Intersection & Overlap Testing ??
+      * Intersection and Overlap Testing ??
     * Tools
       * [[Texture Packer]]
       * [[Hiero]]
@@ -139,15 +141,13 @@ If you want to get started coding with LibGDX, head to the [Official documentati
       * [[Google Play Games Services in libGDX]]
       * [[ProGuard/DexGuard and libGDX]]
       * [[Pollfish in libGDX]]
-  * **Game Jams**
-    * [[Regular libGDX Jams]]
-    * [[The historic #libGDXJAM|Getting ready for #libGDXJAM]]
+  * **[Game Jams](https://libgdx.com/community/jams/)**
   * **Articles**
     * [[Getting Help]]
     * [[External Tutorials]]
-    * [[Deploying your application]]
+    * [[Deploying Your Application]]
     * [[HTML5 Backend and GWT Specifics]]
-    * [[Games built with libgdx]]
+    * [Games Built With libGDX](https://libgdx.com/showcase/)
     * [[Coordinate systems]]
     * [[Updating Your libGDX Version|Updating libGDX]]
     * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
