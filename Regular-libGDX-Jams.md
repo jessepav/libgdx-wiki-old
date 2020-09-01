@@ -2,10 +2,11 @@ The libGDX community is regularly hosting game jams for libgdx.
 
 ## Upcoming Jams
 
-* **September 2020:**
+* **[September 2020](https://itch.io/jam/libgdx-jam-september-2020):**
    * Theme Suggestions: 6th - 12th
    * Theme Voting: 13th - 19th
    * Jam: 20th - 26th
+
 * **December 2020:**
    * Theme Suggestions: 6th - 12th
    * Theme Voting: 13th - 19th
