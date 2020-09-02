@@ -102,6 +102,8 @@ For compile process to pick up this asset filter instead of your own, add the fo
 
 ([See game source commit using the feature](https://github.com/MrStahlfelge/SMC-libgdx/commit/b8d595376fe98a0ac55c1cf63f5f18c83c9afdfe))
 
+Prior 1.9.12, you can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends).
+
 ## Preventing Keys From Triggering Scrolling and Other Browser Functions
 
 On a normal web page, if you press the down arrow on your keyboard, it will scroll the page up. That's nice and all, but maybe you don't want that to happen when players are trying to move the character in your game. To prevent this, you have to add overriding functions to prevent the default actions of special keys. The following must be added to the script block of your index.html in the "html/webapp" folder (dist) and "html/war" folder (superDev):
@@ -166,11 +168,10 @@ The implementation the official HTML5 backend uses has some other restrictions, 
   * Java reflection. You must only use libGDX reflection utils, see [this wiki page](https://github.com/libgdx/libgdx/wiki/Reflection#gwt) for more details.
   * Multithreading is not supported.
 * Audio:
-  * Sound pitch is not implemented by the default backend. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and supports it.
+  * Sound pitch is not implemented prior 1.9.12. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and supports it.
   * Your game needs a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games played in a browser.
 * TiledMaps should be saved with Base64 encoding.
 * Most Pixmap methods are not supported.
-* All assets are downloaded at launch time. This can lead to a long startup time. If you use AssetManager to load assets on level launch or something similar, you can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) that supports [lazy loading of assets](https://github.com/libgdx/libgdx/pull/5677) via AssetManager.
 * WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them: 
   * NPOT (non power of two) textures are not supported with MipMap filters and/or Repeat wrapping.
   * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
