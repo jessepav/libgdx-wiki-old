@@ -10,7 +10,7 @@ The MyFirstTriangle tutorial showed us how to create a new project and use the M
 
 ## Setting up a Project ##
 
-Follow the instructions in the MyFirstTriangle tutorial to create a new libgdx desktop project. We'll call the desktop project `mesh-color-texture` and we'll defer creating the Android project until later. Remember to include the libgdx library JAR files. In the project, create a package and name it `com.test.meshcolortexture`. In that package, create a class named `MeshColorTexture` which implements the `ApplicationListener` interfrace. Inside, we'll just copy most of what we created from the MyFirstTriangle tutorial:
+Follow the instructions in the MyFirstTriangle tutorial to create a new libGDX desktop project. We'll call the desktop project `mesh-color-texture` and we'll defer creating the Android project until later. Remember to include the libGDX library JAR files. In the project, create a package and name it `com.test.meshcolortexture`. In that package, create a class named `MeshColorTexture` which implements the `ApplicationListener` interfrace. Inside, we'll just copy most of what we created from the MyFirstTriangle tutorial:
 
 ```java
 package com.test.meshcolortexture;
@@ -209,7 +209,7 @@ Finally, when rendering, we enable textures, set the texture we created as the a
 To run this example on an Android device or simulator, we just need to follow steps similiar to those in the MyFirstTriangle tutorial. Here's a quick summary:
 
   - Create an Android project
-  - Copy the libgdx libraries into the workspace and reference to them in the project settings
+  - Copy the libGDX libraries into the workspace and reference to them in the project settings
   - Reference the desktop project in the project settings
   - Modify the main `Activity` so that it extends `AndroidApplication` instead of `Activity`
   - Inside `onCreate()`, initialize the application with a new instance of the `MeshColorTexture` class

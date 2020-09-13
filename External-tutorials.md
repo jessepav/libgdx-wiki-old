@@ -8,7 +8,7 @@ These are webpages where individuals or companies write about their experience w
 **Some one-page tutorials for beginners:**
 - [Simple breakout game – focused on beginners with no prior game dev experience](http://tann.space/HelloLibgdx/)
 - [Sprite Sheets & Physics with Box2d – Tutorial by Code and Web](https://www.codeandweb.com/texturepacker/tutorials/libgdx-physics)
-- [LibGDX code samples (see the sidebar)](http://libgdx.info/)
+- [libGDX code samples (see the sidebar)](http://libgdx.info/)
 - [Some blog posts regarding libGDX – by Rotating Canvas](http://rotatingcanvas.com/category/tutorials/)
 
 **Complete tutorial series:**
@@ -22,7 +22,7 @@ These are webpages where individuals or companies write about their experience w
 - [By Coldwild Games – 27 parts](https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO) (2017)
 
 # Topic Specific Tutorials #
-### AdMob integration for LibGDX Android projects ###
+### AdMob integration for libGDX Android projects ###
 * [norakomi.com](http://norakomi.com/tutorial_admob_introduction.php)
 
 ### Lighting ###
@@ -40,7 +40,7 @@ These are webpages where individuals or companies write about their experience w
 * [Showing a splash screen while doing heavy processing](http://duckseason.mobi/heavy-background-processes-libgdxwhile-showing-splash-screen/)
 
 ### Shaders ###
-* [Matt DesLauriers has a very nice introduction to GLSL shaders](https://github.com/mattdesl/lwjgl-basics/wiki/Shaders) (both libgdx specific and in general)
+* [Matt DesLauriers has a very nice introduction to GLSL shaders](https://github.com/mattdesl/lwjgl-basics/wiki/Shaders) (both libGDX specific and in general)
 * [Video series by dermetfan](https://www.youtube.com/playlist?list=PLXY8okVWvwZ1_aaMnBU5HF4UP3hHL60Vy)
 * Online Shader Tools, which let you play with WebGL (provided your browser supports it) and see the code behind it:
    * https://www.shadertoy.com/

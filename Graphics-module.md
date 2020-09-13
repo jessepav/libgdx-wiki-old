@@ -37,7 +37,7 @@ It facilitates 2D and 3D graphics programming through the multitude of both high
   * Texture packing (TexturePacker)
 
 
-LibGDX renders everything through OpenGL ES on all platforms. It supports versions 1.0, 1.1 and 2.0. 
+libGDX renders everything through OpenGL ES on all platforms. It supports versions 1.0, 1.1 and 2.0. 
 For Android versions 2.0 - 2.2, OpenGL ES version 2.0 is supported through [custom JNI bindings](http://code.google.com/p/gl2-android/). Android 2.3 comes with a complete set of GLES20 bindings which is compatible with the custom one.
 
 To learn about 2D and 3D graphics fundamentals and how to set up the screen in libGDX, go to [[2D & 3D Graphics Fundamentals and Setup | Screen & Viewport]].

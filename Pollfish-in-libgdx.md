@@ -1,6 +1,6 @@
 # **Introduction**
 
-This is a simple tutorial that will help you integrate Pollfish surveys in your libgdx Android app.
+This is a simple tutorial that will help you integrate Pollfish surveys in your libGDX Android app.
 
 Integration of Pollfish in an Android application is simple, and is described in detail in the official guide here: [Pollfish Android Documentation](https://www.pollfish.com/docs/android)
 

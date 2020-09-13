@@ -7,8 +7,8 @@
 * [**Removing Gradle integration from your IDE**](#how-to-remove-gradle-ide-integration-from-your-project)
  * [**Intellij IDEA**](#creating-your-idea-project)
  * [**Eclipse**](#creating-your-eclipse-project)
-* [**LibGDX without Gradle**](#libgdx-without-gradle)
-* [**Why does LibGDX recommend Gradle**](#why-does-libgdx-recommend-gradle)
+* [**libGDX without Gradle**](#libgdx-without-gradle)
+* [**Why does libGDX recommend Gradle**](#why-does-libgdx-recommend-gradle)
 
 
 ## Introduction
@@ -68,7 +68,7 @@ gradlew eclipse
 In Eclipse:
 File > Import > Existing project into workspace > Locate the .project file and import
 
-## Libgdx without Gradle
+## libGDX without Gradle
 
 You are **never** forced to use Gradle, it is just recommended. If you want clarification on why it is recommended, check [here](#why-does-libgdx-recommend-gradle).
 
@@ -85,10 +85,10 @@ Doing any of the above will have the following consequences:
 * You manually update your dependencies from now on, don't forget the platform specific natives too!
 
   
-## Why does LibGDX recommend Gradle
+## Why does libGDX recommend Gradle
 
 #### Support
-* Using Gradle, LibGDX is supported regardless of what IDE you use, even if you don't use one.  Your development environment doesn't support Android/RoboVM/HTML/Java? Don't worry, Gradle can compile/build/run/package your project no matter what you use to code with.
+* Using Gradle, libGDX is supported regardless of what IDE you use, even if you don't use one.  Your development environment doesn't support Android/RoboVM/HTML/Java? Don't worry, Gradle can compile/build/run/package your project no matter what you use to code with.
 * Having one unified system of managing your project makes it easy to get support from other users. The more people that are using the same approach, the larger the support user base grows.
 
 #### Dependency Management
@@ -106,13 +106,13 @@ Gradle is built with Ant and Maven very much in mind, and aims to combine the tw
 * The Gradle Wrapper allows you to be free of installing Gradle!
 
 #### Maintainability
-As LibGDX grows, extensions are created from scratch or by removing them from core where appropriate, making LibGDX more modular to avoid bloat when you don't need those extensions. (This happened with Box2D). This means **more** dependencies for you to add and therefore more jars to add.  If you are using a minimalist project with no extensions, if you were to manually manage your dependencies that would mean 1 core dependency, 1 desktop dependency, 4 android dependencies, 4 ios dependencies and 3 gwt dependencies.   
+As libGDX grows, extensions are created from scratch or by removing them from core where appropriate, making libGDX more modular to avoid bloat when you don't need those extensions. (This happened with Box2D). This means **more** dependencies for you to add and therefore more jars to add.  If you are using a minimalist project with no extensions, if you were to manually manage your dependencies that would mean 1 core dependency, 1 desktop dependency, 4 android dependencies, 4 ios dependencies and 3 gwt dependencies.   
 
-That is 13 jars you need to track down every time you want to update to the latest LibGDX with all the greatest new features.  If you use Box2D, Box2D lights, FreeType, etc. you are looking at a lot of dependencies which will quickly become very annoying to update and you will probably put off doing it. The setup has been built with this in mind, and makes it very quick to add these to your project and painless to update by changing one line with the power of Gradle.    
+That is 13 jars you need to track down every time you want to update to the latest libGDX with all the greatest new features.  If you use Box2D, Box2D lights, FreeType, etc. you are looking at a lot of dependencies which will quickly become very annoying to update and you will probably put off doing it. The setup has been built with this in mind, and makes it very quick to add these to your project and painless to update by changing one line with the power of Gradle.    
 
-The setup itself is very simple, very transparent and maintainable by developers who didn't create it.  This lowers the bus factor for LibGDX and reduces strain when the setup requires an update/alteration.
+The setup itself is very simple, very transparent and maintainable by developers who didn't create it.  This lowers the bus factor for libGDX and reduces strain when the setup requires an update/alteration.
 
-As previously mentioned, the Gradle project that is created by **gdx-setup.jar** includes tasks to run and package/distribute each project.  This allows LibGDX to have a unified way of packaging your project, rather than x number of ways for y number of IDE's.  This saves a lot of time in terms of writing documentation, following what every IDE is doing, and providing support on the forums; this gives developers more time to work on great features for LibGDX to help make your project awesome.
+As previously mentioned, the Gradle project that is created by **gdx-setup.jar** includes tasks to run and package/distribute each project.  This allows libGDX to have a unified way of packaging your project, rather than x number of ways for y number of IDE's.  This saves a lot of time in terms of writing documentation, following what every IDE is doing, and providing support on the forums; this gives developers more time to work on great features for libGDX to help make your project awesome.
 
 #### It revolutionizes everything
 Look down. Now look back up. Look down again. You're sitting on a chair. Look back up. You aren't using Gradle, your life is OK but it could be better. You read this article and you decide you want to use Gradle. You use the **gdx-setup.jar** to generate your project and you get tinkering with it.  You use the power of Gradle to create 500 flappy clones from the same source code. Look down again. Your chair is now made of gold and there are an infinite number of monkeys with keyboards coding for you. Your life is now better and you can concentrate on the things that matter.

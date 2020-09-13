@@ -1,4 +1,4 @@
-### Libgdx scene2d actions ###
+### libGDX scene2d actions ###
 
 **credits**
 All credits for this goes to Ludevik. He wrote up a wonderful tutorial over at stack overflow  http://stackoverflow.com/questions/9131554/actions-of-actors-in-libgdx
@@ -7,10 +7,10 @@ I though it would be better to have on the official wiki
 
 ## DEPRECATED ##
 **OBSOLETE**
-This page is no longer valid for the current LibGDX build, see [Scene2d Actions section](https://github.com/libgdx/libgdx/wiki/Scene2d#actions) instead.
+This page is no longer valid for the current libGDX build, see [Scene2d Actions section](https://github.com/libgdx/libgdx/wiki/Scene2d#actions) instead.
 
 ## Actions Overview ##
-There are various available actions in LibGDX ready for you. They are in com.badlogic.gdx.scenes.scene2d.actions package. I would say that there are 3 kinds of actions:
+There are various available actions in libGDX ready for you. They are in com.badlogic.gdx.scenes.scene2d.actions package. I would say that there are 3 kinds of actions:
 
 ### Animation actions ###
 Animation actions modify various properties of your actor, such as location, rotation, scale and alpha. They are:

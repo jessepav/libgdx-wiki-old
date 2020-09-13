@@ -1,22 +1,22 @@
 # No Op: Not Translating
 
 
-= Creating and texturizing 3d models in Blender for libgdx =
+= Creating and texturizing 3d models in Blender for libGDX =
 ==Intro:==
 *_You have a beautiful 3d scene pictured in your mind_*. You think you have a pretty good idea of how to code it, the interactions, the flow, but what about the models? What about the assets that are going to ‘Wow’ your users when they see them? Arguably the most important part of a 3d scene, the models are the stars of the show. Unfortunately, a lot of developers can code but don’t know how to create assets. This blog post is meant to introduce you to the answer.
 
 Developer, this is Blender, Blender this is developer.
 
-Libgdx easily lets you load blender exported .obj models in about 3 lines of code.
+libGDX easily lets you load blender exported .obj models in about 3 lines of code.
 
 ==Scope:==
-This tutorial will guide you through the steps required to create, texturize and export a model from blender that can be loaded with libgdx or other frameworks.
+This tutorial will guide you through the steps required to create, texturize and export a model from blender that can be loaded with libGDX or other frameworks.
 
 ==The Goods:==
 Prereqs:
 * Blender version 2.5
 * Light knowledge of using blender interface, at least the Hello World
-* A little prior knowledge of libgdx meshes and textures (Check this wiki)
+* A little prior knowledge of libGDX meshes and textures (Check this wiki)
 * 20 minutes.
 
 
@@ -70,6 +70,6 @@ http://mobteklabs-wp.nfshost.com/wp-content/uploads/Screen-shot-2011-06-08-at-11
 Click on open, navigate to where you saved the image above.
 Click on the ‘Mapping’ tab down below
 For ‘Coordinates’ select UV.
-Now you should be able to export to .obj file and load with your favorite framework .obj loader method. Libgdx makes this as easy as can be. NOTE: Make sure your texture you use is in your ‘data’ directory like other libgdx image assets!
+Now you should be able to export to .obj file and load with your favorite framework .obj loader method. libGDX makes this as easy as can be. NOTE: Make sure your texture you use is in your ‘data’ directory like other libGDX image assets!
 
 Link to original blog post: http://www.mobteklabs.com/2011/06/how-to-create-3d-models-in-blender-for-libgdx-android-iphone-etc/

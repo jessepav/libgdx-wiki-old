@@ -2,12 +2,12 @@ Note: The following article is outdated and no longer works due to the exclusion
 
 # Summary
 
-* Create a libgdx project from scratch
+* Create a libGDX project from scratch
 * Create your first triangle
 
 # Introduction
 
-The HelloWorld tutorial demonstrated how a libgdx application is structured by importing an existing project. Lets now go one step further and create project from scratch. This tutorial is more verbose in case the reader is also a novice with Eclipse. Future tutorials will have more concise instructions.
+The HelloWorld tutorial demonstrated how a libGDX application is structured by importing an existing project. Lets now go one step further and create project from scratch. This tutorial is more verbose in case the reader is also a novice with Eclipse. Future tutorials will have more concise instructions.
 
 The source files for this guide is contained within `MyFirstTriangle_<data>.zip` in the [http://code.google.com/p/libgdx/downloads/list Downloads] page.
 
@@ -17,20 +17,20 @@ Download the latest [http://libgdx.l33tlabs.org/ nightly zip] and uncompress it 
 
 Most of the code, including all of the game logic, will reside in a regular Java project. In Eclipse, click File -> New -> Java Project. Use `my-first-triangle` as the project name. In the JRE section, select `JavaSE-1.6` or something similar, then click Finish.
 
-Lets copy libraries contain all the necessary libgdx classes and methods into our workspace. In the Package Explorer view, right-click on the my-first-triangle folder, select New -> Folder, and name the new folder `libs`. From the `libgdx-nightly` directory, copy the following files into `libs`:
+Lets copy libraries contain all the necessary libGDX classes and methods into our workspace. In the Package Explorer view, right-click on the my-first-triangle folder, select New -> Folder, and name the new folder `libs`. From the `libgdx-nightly` directory, copy the following files into `libs`:
   * gdx-backend-jogl.jar
   * gdx-backend-jogl-natives.jar
   * gdx-sources.jar
   * gdx-natives.jar
   * gdx.jar
 
-Now we'll add the libraries to our project so that our Java code  can reference the classes in the libgdx libraries. Right click on the `my-first-triangle` folder again and select Properties. Go to the Java Build Path section, select the Libraries tab, click Add JARs..., navigate to the `my-first-triangle/libs` directory and select the files:
+Now we'll add the libraries to our project so that our Java code  can reference the classes in the libGDX libraries. Right click on the `my-first-triangle` folder again and select Properties. Go to the Java Build Path section, select the Libraries tab, click Add JARs..., navigate to the `my-first-triangle/libs` directory and select the files:
   * gdx-backend-jogl.jar
   * gdx-backend-jogl-natives.jar
   * gdx-natives.jar
   * gdx.jar
 
-Eclipse can also show you the javadoc documention for the libgdx classes and methods you use. While still in the Libraries tab, expand the `gdx.jar` listing and double click on the entry named Source attachment. Click Workspace and navigate to the my-first-triangle/libs directory again, this time selecting `gdx-sources.jar`.
+Eclipse can also show you the javadoc documention for the libGDX classes and methods you use. While still in the Libraries tab, expand the `gdx.jar` listing and double click on the entry named Source attachment. Click Workspace and navigate to the my-first-triangle/libs directory again, this time selecting `gdx-sources.jar`.
 
 Now we can create a class that will draw our triangle. Expand the my-first-triangle folder, right-click on the `src` source directory and select New -> Package. Name it anything you want, in this example we'll use `com.test.myfirsttriangle`. Right-click on the new package, and select New -> Class, use the name `MyFirstTriangle`. In the Interfaces section, add the `com.badlogic.gdx.ApplicationListener` interface. Your new class should look something like this:
 
@@ -162,7 +162,7 @@ For simplicity, we've skipped over many details of how different parameters chan
 
 Testing the application on Android only requires setting up a small Android project that refers to the desktop project we just created. In Eclipse, click File -> New -> Other.... Under the Android section, select Android Project and click Next. Name the project anything you want, for our example we'll use `my-first-triangle-android`. Under the Build Target section, select the Android platform version you're targetting. Different platform version have different support for OpenGL ES, but for our simple example, selecting Android 1.5 is fine. Enter any application name, we'll use `my-first-triangle-android` again. For package name, use the same package from the desktop project, enter `com.test.myfirsttriangle`. Check the Create Activity checkbox and give the activity a name, we'll use `MyFirstTriangleAndroid`. For Min SDK Version, type in the API Level of the platform version you chose earlier. That means for Android 1.5, enter `3` as the Min SDK Version. Click Finish.
 
-Similar to the desktop project, we'll copy some libgdx libraries into our workspace. In the Package Explorer view, right-click on the my-first-triangle-android folder and select New -> Folder. Name the folder `libs`. Go back to the `libgdx-nightly` directory that stores all the libgdx library files and copy the following folders and files into the new `libs` directory:
+Similar to the desktop project, we'll copy some libGDX libraries into our workspace. In the Package Explorer view, right-click on the my-first-triangle-android folder and select New -> Folder. Name the folder `libs`. Go back to the `libgdx-nightly` directory that stores all the libGDX library files and copy the following folders and files into the new `libs` directory:
   * armeabi/
   * armeabi-v7a/
   * gdx-backend-android.jar
@@ -170,7 +170,7 @@ Similar to the desktop project, we'll copy some libgdx libraries into our worksp
   
 Again, we'll have to reference these files in our project settings. Right-click on the my-first-triangle-android folder and select Properties. Under the Java Build Path section, go to the Libraries tab. Click Add JARs... and navigate to my-first-triangle-android/libs and select `gdx-backend-android.jar` and `gdx.jar`.
 
-We need to be able to reference the libgdx classes and also our previous project. While still in the Java Build Path screen, go to the Projects tab and click Add... and add the `my-first-triangle` project we created earlier.
+We need to be able to reference the libGDX classes and also our previous project. While still in the Java Build Path screen, go to the Projects tab and click Add... and add the `my-first-triangle` project we created earlier.
 
 The last task remaining is to modify our Activity to act as the Android entry point into the game code we wrote earlier. In the Package Explorer view, go into the `MyFirstTriangleAndroid` class and replace the contents with the following:
 
@@ -196,7 +196,7 @@ Similar to our desktop entry point in the `MyFirstTirangleDesktop` class, all th
 
 # What's Next
 
-That's it for your first triangle. To learn more about the fundamentals of the libgdx framework, check out the MeshColorTexture guide.
+That's it for your first triangle. To learn more about the fundamentals of the libGDX framework, check out the MeshColorTexture guide.
 
 # Updates 
 ## Feb 22 2011

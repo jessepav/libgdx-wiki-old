@@ -139,7 +139,7 @@ public class OrthographicCameraExample implements ApplicationListener {
 
 ```
 
-The above class is the LibGDX application that will use the orthographic camera to move around the world. Our world size is in arbitrary units that we can define however we want to. In this specific case, our world is 100x100 units.  
+The above class is the libGDX application that will use the orthographic camera to move around the world. Our world size is in arbitrary units that we can define however we want to. In this specific case, our world is 100x100 units.  
 
 ```java
     static final int WORLD_WIDTH = 100;

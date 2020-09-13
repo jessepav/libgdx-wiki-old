@@ -1,4 +1,4 @@
-The libgdx community is glad to help you when you get stuck or encounter a bug, but first you must make it as easy to help you as possible.
+The [libGDX community](https://libgdx.com/community/) is glad to help you when you get stuck or encounter a bug, but we need your help to it as easy to help you as possible.
 
 ## Contents
 
@@ -27,9 +27,9 @@ Please go through this short checklist to be sure you haven't missed an easy to 
   * Have you [searched the forum](http://www.badlogicgames.com/forum/search.php) for your problem?
   * Have you [searched the issue tracker](https://github.com/libgdx/libgdx/issues) for your problem? Be sure to search "All issues", not just "Open issues".
 
-**If you still have a problem, often the fastest way to get help is the [libgdx discord](https://discord.gg/6pgDK9F). There are a lot of active users, any one of which could answer your question right now.**
+**If you still have a problem, often the fastest way to get help is the [libGDX Discord](https://libgdx.com/community/discord/). There are a lot of active users, any one of which could answer your question right now.**
 
-Another way of getting help is the libgdx chat room ([#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx)).
+Another way of getting help is the libGDX chat room ([#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx)).
 
 Otherwise, if you wish to [post a new issue](https://github.com/libgdx/libgdx/blob/master/CONTRIBUTING.md) on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
@@ -39,7 +39,7 @@ If you believe your issue, error, or suspected bug is related to a specific back
 **For Android backend issues**
  - **Note:** Android issues can sometimes be more difficult due to device manufactures breaking things or buggy drivers.
 
-- **Note 2:** LibGDX only works completely on the Android Runtime (ART) on devices running the Android L developer preview and higher. Some functions will not work on the ART builds in 4.4.x due to an issue in ART that was fixed and included in the L developer preview.
+- **Note 2:** libGDX only works completely on the Android Runtime (ART) on devices running the Android L developer preview and higher. Some functions will not work on the ART builds in 4.4.x due to an issue in ART that was fixed and included in the L developer preview.
 
 - Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
 
@@ -203,7 +203,7 @@ public class BarebonesStage extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		stage.draw();
 	}
-	
+
 	public void resize (int width, int height) {
 		// Pass false to not modify the camera position.
 		stage.getViewport().update(width, height, true);

@@ -1,4 +1,4 @@
-The number one ad service being used by Android and LibGdx developers at the moment is Google AdMob.
+The number one ad service being used by Android and libGDX developers at the moment is Google AdMob.
 
 If you've not updated your app recently you should consider doing so soon. Google says:
 
@@ -11,7 +11,7 @@ Ok, so we want to migrate to the new Google Play Services way of doing things - 
 
 **Barebones Sample App**
 
-I created a new libgdx project using gdx-setup-ui.jar, added a .gitignore file, and made my initial commit.
+I created a new libGDX project using gdx-setup-ui.jar, added a .gitignore file, and made my initial commit.
 
 
 **Eclipse Setup**
@@ -20,7 +20,7 @@ In eclipse, import the barebones sample app (file > import > existing projects i
 
 Open the Android SDK Manager, download the latest SDK Platform and Google APIs (at time of writing: 4.4.2/API19), the 2.3.1/API9 SDK Platform, and from Extras - Google Play Services.
 
-Locate the <android-sdk>/extras/google/google_play_services/libproject/google-play-services_lib/ directory on your machine (on my windows machine - C:\Program Files (x86)\Android\android-sdk\extras\google\google_play_services\libproject\google-play-services_lib) and copy into your working directory alongside the existing libgdx projects.
+Locate the <android-sdk>/extras/google/google_play_services/libproject/google-play-services_lib/ directory on your machine (on my windows machine - C:\Program Files (x86)\Android\android-sdk\extras\google\google_play_services\libproject\google-play-services_lib) and copy into your working directory alongside the existing libGDX projects.
 
 File > Import > Android > Existing Android Code, Next, Browse, navigate to the local copy of google-play-services_lib in your working directory, Ok, Finish.
 
@@ -53,7 +53,7 @@ Save changes, then refresh and clean in eclipse for good luck...
 
 **Interstitial Ad**
 
-[This diff shows an interstitial ad implementation](https://github.com/TheInvader360/tutorial-libgdx-google-ads/commit/0a5ea376d4eb92b8e87c13a03245adb40b53e811) (ActionResolver interface lets us trigger interstitial actions from the core project while retaining the invaluable LibGdx cross-platform functionality).
+[This diff shows an interstitial ad implementation](https://github.com/TheInvader360/tutorial-libgdx-google-ads/commit/0a5ea376d4eb92b8e87c13a03245adb40b53e811) (ActionResolver interface lets us trigger interstitial actions from the core project while retaining the invaluable libGDX cross-platform functionality).
 
 ***
 

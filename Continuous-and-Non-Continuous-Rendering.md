@@ -26,4 +26,4 @@ Stage.setActionsRequestRendering(false);
 
 Good article about this topic: http://bitiotic.com/blog/2012/10/01/enabling-non-continuous-rendering-in-libgdx
 
-Official libgdx blog post: http://www.badlogicgames.com/wordpress/?p=2289
+Official libGDX blog post: http://www.badlogicgames.com/wordpress/?p=2289

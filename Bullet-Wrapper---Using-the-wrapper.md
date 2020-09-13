@@ -75,7 +75,7 @@ The upcast methods are not present because of a [issue](https://code.google.com/
 You can compare wrapper classes using the `equals()` method, which checks if the classes both wrap the same native class. To get the pointer to the underlying C++ class you can use the `getCPointer` method of the specific object. You can also compare these pointers to check whether the Java classes wrap the same C++ class.
 
 ## <a id="Common_classes"></a>Common classes ##
-Bullet uses some classes also available in the libgdx core. While these bullet classes are available for you to use, the wrapper tries to use the libgdx class where possible. Currently these are implemented for:
+Bullet uses some classes also available in the libGDX core. While these bullet classes are available for you to use, the wrapper tries to use the libGDX class where possible. Currently these are implemented for:
 
 | *Bullet* | *Libgdx* |
 |:--------:|:--------:|

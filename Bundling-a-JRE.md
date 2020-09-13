@@ -23,7 +23,7 @@ _-- seems to be no longer maintained --_
 A gradle plugin that performs similar actions as launch4j:
 
 ### [Packr](https://github.com/libgdx/packr)
-Tool created/maintained by the libgdx team.
+Tool created/maintained by the libGDX team.
 
 ## MacOS Specifics
 

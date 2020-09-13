@@ -98,7 +98,7 @@ When a string has no arguments, you might think that the methods `get` and `form
 
 As we have seen, the strings in a properties file can contain parameters. These strings are commonly called patterns and follow the syntax specified by the `java.text.MessageFormat` API. In short, a pattern can contain zero or more formats of the form `{index, type, style}` where the type and the style are optional. Refer to the [official JavaDoc of the `MessageFormat` class](https://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html) to learn all its features.
 
-**Important**: There is one change that LibGDX makes to `MessageFormat`'s syntax, because the default escaping rules have proved to be somewhat confusing to localizers. If you want to use a literal `{` in your string, normally you would need to escape it using single quotes (`'`). In LibGDX however, you just double it; for example, `{{0}` is interpreted as the literal string `{0}`, without any format elements. As a result, single quotes never need to be escaped!
+**Important**: There is one change that libGDX makes to `MessageFormat`'s syntax, because the default escaping rules have proved to be somewhat confusing to localizers. If you want to use a literal `{` in your string, normally you would need to escape it using single quotes (`'`). In libGDX however, you just double it; for example, `{{0}` is interpreted as the literal string `{0}`, without any format elements. As a result, single quotes never need to be escaped!
 
 Note that formats are localizable. This means that typed data like numbers, dates and times will be automatically expressed in the typical form of the specific locale. For example, the float number `3.14` becomes `3,14` for the Italian locale; notice the comma in place of the decimal point. (If you're using GWT, there are [some limitations](#gwt-limitations-and-compatibility) to this.)
 
@@ -134,7 +134,7 @@ It's worth noting that the choice format can properly handle nested formats as w
 
 ## GWT Limitations and Compatibility ##
 
-As said before, the I18N system provided by LibGdx is cross-platform. However there are some limitations when it comes to the GWT back-end.
+As said before, the I18N system provided by libGDX is cross-platform. However there are some limitations when it comes to the GWT back-end.
 In particular:
 - **Simple format:** The format syntax of `java.text.MessageFormat` is not fully supported. You'll have to stick to a simplified syntax where formats are made only by their index, i.e. `{index}`.
 Format's type and style are not supported and cannot be used; otherwise an `IllegalArgumentException` is thrown.

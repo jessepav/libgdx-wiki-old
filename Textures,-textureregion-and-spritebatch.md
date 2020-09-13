@@ -2,7 +2,7 @@ This article introduces the basics of 2D graphics, namely the use of **Texture**
 
 ## Texture, TextureRegion and SpriteBatch
 
-LibGdx uses OpenGL exclusively thus every image, or part of it that gets used in a game and displayed, first needs to be transformed into a texture. 
+libGDX uses OpenGL exclusively thus every image, or part of it that gets used in a game and displayed, first needs to be transformed into a texture. 
 
 ## Texture
 
@@ -17,7 +17,7 @@ In a software application, the wall is the canvas (window), the paper is the rec
 
 ## SpriteBatch
 
-LibGdx comes with **`SpriteBatch`** which takes care of all the steps needed to achieve texture mapping and displaying texture mapped rectangles on the screen. It is a convenience class which makes drawing onto the screen extremely easy and it is also optimised.
+libGDX comes with **`SpriteBatch`** which takes care of all the steps needed to achieve texture mapping and displaying texture mapped rectangles on the screen. It is a convenience class which makes drawing onto the screen extremely easy and it is also optimised.
 
 It works with screen coordinates and uses pixel perfect screen resolution. The lower left corner is the origin (coordinate 0,0) with the X axis pointing right and the Y axis pointing up.
 
@@ -50,7 +50,7 @@ public class TextureFun implements ApplicationListener {
 
 1. The `druidTexture` is declared. This will be the decoded image from the hard disk or SD card.
 2. The `SpriteBatch` which will be used to display the `druidTexture` onto the screen.
-3. The texture is created. The file `druid.png` found in the asset (see [FileModule internal file]) directory is loaded, decoded and uploaded to the GPU and is ready to be used by OpenGL. Note that image format needs to be supported (.jpg, .png or .bmp). On OpenGL 1.0 the width and height of a texture had to always be power of two (POT), they didn't have to be equal though, so 64x32 pixels is fine. Even though LibGDX now uses OpenGL ES 2.0, it's still a good practice to use POT textures, for some features (e.g. texture wrapping) might not be supported for non-POT texture sizes. Also, in practice, a non-POT sized texture will use the same amount of memory as the nearest bigger POT size.
+3. The texture is created. The file `druid.png` found in the asset (see [FileModule internal file]) directory is loaded, decoded and uploaded to the GPU and is ready to be used by OpenGL. Note that image format needs to be supported (.jpg, .png or .bmp). On OpenGL 1.0 the width and height of a texture had to always be power of two (POT), they didn't have to be equal though, so 64x32 pixels is fine. Even though libGDX now uses OpenGL ES 2.0, it's still a good practice to use POT textures, for some features (e.g. texture wrapping) might not be supported for non-POT texture sizes. Also, in practice, a non-POT sized texture will use the same amount of memory as the nearest bigger POT size.
 5. As pointed out earlier, the `SpriteBatch` is instructed to receive commands.
 6. The first command is issued. It tells `SpriteBatch` to draw the the texture (`druidTexture`) to the position X=100, Y=100.
 7. The `SpriteBatch` is notified that no more commands will be issued and can proceed to process the batch of commands it received, which currently consists of the single draw instruction.

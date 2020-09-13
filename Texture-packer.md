@@ -12,7 +12,7 @@
 
 # <a id="TexturePacker"></a>TexturePacker #
 
-In OpenGL, a texture is bound, some drawing is done, another texture is bound, more drawing is done, etc. Binding the texture is relatively expensive, so it is ideal to store many smaller images on a larger image, bind the larger texture once, then draw portions of it many times. libgdx has a `TexturePacker` class which is a command line application that packs many smaller images on to larger images. It stores the locations of the smaller images so they are easily referenced by name in your application using the `TextureAtlas` class.
+In OpenGL, a texture is bound, some drawing is done, another texture is bound, more drawing is done, etc. Binding the texture is relatively expensive, so it is ideal to store many smaller images on a larger image, bind the larger texture once, then draw portions of it many times. libGDX has a `TexturePacker` class which is a command line application that packs many smaller images on to larger images. It stores the locations of the smaller images so they are easily referenced by name in your application using the `TextureAtlas` class.
 
 TexturePacker uses multiple packing algorithms but the most important is based on [the maximal rectangles algorithm](http://clb.demon.fi/projects/even-more-rectangle-bin-packing). It also uses brute force, packing with numerous heuristics at various sizes and then choosing the most efficient result.
 
@@ -218,7 +218,7 @@ java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacke
 java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir outputDir packFileName
 ```
 
-TexturePacker can also be run from the [standalone nightly](https://libgdx.badlogicgames.com/nightlies/runnables/) without gdx.jar (i.e. without the rest of libgdx at all), just substitute `runnable-texturepacker.jar` for `gdx.jar;gdx-tools.jar` in the above.
+TexturePacker can also be run from the [standalone nightly](https://libgdx.badlogicgames.com/nightlies/runnables/) without gdx.jar (i.e. without the rest of libGDX at all), just substitute `runnable-texturepacker.jar` for `gdx.jar;gdx-tools.jar` in the above.
 
 `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name of the pack file and the prefix used for the output packed image files.
 

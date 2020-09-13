@@ -1,29 +1,29 @@
-This article shows how to integrate the Android device camera with your Libgdx application. 
+This article shows how to integrate the Android device camera with your libGDX application. 
 This functionality can be used in order to let the user see what going on behind the device while playing and walking on the street, or even have some interaction between  the game and the real world (FPS game using the face detection mechanism?)
 
 
 #A Quick Outline#
-  * Create the Libgdx view with alpha channel (this is not the default), so that the camera preview will be shown behind it.
+  * Create the libGDX view with alpha channel (this is not the default), so that the camera preview will be shown behind it.
   * Create the DeviceCameraController object responsible for the Camera surface where the preview is drawn.
   * Interact with the DeviceCameraController from your application code, most of the camera functionality is called asynchronously according to: https://code.google.com/p/libgdx-users/wiki/IntegratingAndroidNativeUiElements3TierProjectSetup
   * Take a picture
     * For taking a picture the Camera has a specific state machine that should be followed.
-    * After getting the picture date from the camera, merge it with the Libgdx screen-shot and write the result, this process is quite slow and can be done in a separate thread.
+    * After getting the picture date from the camera, merge it with the libGDX screen-shot and write the result, this process is quite slow and can be done in a separate thread.
   * Continue with the preview (The picture taken is frozen on the screen until the preview is explicitly restarted) or hide the CameraSurface all together.
 
 The sample application does the following:
-  * draws a cube with the Libgdx splash screen as its faces' texture
+  * draws a cube with the libGDX splash screen as its faces' texture
   * upon the user touching the screen the Camera preview is started and drawn behind the cube
   * when the user untouch the screen:
     * the Camera starts auto-focusing ;
     * take a picture if succeeded to focus ;
-    * take a screen-shot of the Libgdx scene according to: https://code.google.com/p/libgdx-users/wiki/Screenshots ;
+    * take a screen-shot of the libGDX scene according to: https://code.google.com/p/libgdx-users/wiki/Screenshots ;
     * saves the merged picture to the storage ;
     * and remove the Preview.
 
 # The Gory Details #
 
-## Creating the Libgdx application ##
+## Creating the libGDX application ##
 Initialize your Application in the !MainActivity class in the Android project, but modify the AndroidApplicationConfiguration object before passing it to the initialize method:
 ```java
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
@@ -142,7 +142,7 @@ Now back to the AndroidDeviceCameraController Class. In the next method we prepa
 		activity.addContentView( cameraSurface, new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT ) );
 	}
 ```
-This method should be called asynchronous from the Libgdx rendering thread so we actually call the `prepareCameraAsync()` method
+This method should be called asynchronous from the libGDX rendering thread so we actually call the `prepareCameraAsync()` method
 ```java
 	@Override
 	public void prepareCameraAsync() {
@@ -240,7 +240,7 @@ When reaching a Focus, we call the actual Camera takePicture() method, with only
 	}
 ```
 
-## Taking the libgdx screenshot ##
+## Taking the libGDX screenshot ##
 In the render() method we wait until the pictureData object contains the Jpeg image and then create a Pixmap object out of this data:
 ```java
 	if (deviceCameraControl.getPictureData() != null) { // camera picture was actually taken
@@ -278,7 +278,7 @@ and take the screenshot:
 The next two operations are CPU and time consuming tasks so they should probably done in a separate thread with some kind of progress bar. In the code sample they are done directly in the rendering thread, so the screen is frozen during this processing. 
 
 ## Merging the screenshot and the Camera picture together ##
-We now have to merge the two Pixmap object. The Libgdx Pixmap object can do this for us, but since the camera picture may have different aspect ratio we first need to fix it manually.
+We now have to merge the two Pixmap object. The libGDX Pixmap object can do this for us, but since the camera picture may have different aspect ratio we first need to fix it manually.
 ```java
 	private void merge2Pixmaps(Pixmap mainPixmap, Pixmap overlayedPixmap) {
 		// merge to data and Gdx screen shot - but fix Aspect Ratio issues between the screen and the camera
@@ -316,7 +316,7 @@ We now have to merge the two Pixmap object. The Libgdx Pixmap object can do this
 ## Saving the resulting image as a Jpeg ##
 In order to save the resulting image we can save it to the storage using the PixmapIO class. however, the CIM format is not interoperable, and the PNG format will probably result in huge files. 
 One way is to save the resulting image as a Jpeg using the Android Bitmap class. This function is implemented inside the AndroidDeviceCameraController, since it is Android specific. 
-However, the Libgdx pixel format is RGBA and the Bitmap pixel format is ARGB so we need to shuffle some bits around to get the colors right. 
+However, the libGDX pixel format is RGBA and the Bitmap pixel format is ARGB so we need to shuffle some bits around to get the colors right. 
 ```java
 	@Override
 	public void saveAsJpeg(FileHandle jpgfile, Pixmap pixmap) {
@@ -325,7 +325,7 @@ However, the Libgdx pixel format is RGBA and the Bitmap pixel format is ARGB so 
 		int xl=0,yl=0;
 		try {
 			Bitmap bmp = Bitmap.createBitmap(pixmap.getWidth(), pixmap.getHeight(), Bitmap.Config.ARGB_8888);
-			// we need to switch between LibGDX RGBA format to Android ARGB format
+			// we need to switch between libGDX RGBA format to Android ARGB format
 			for (x=0,xl=pixmap.getWidth(); x<xl;x++) {
 				for (y=0,yl=pixmap.getHeight(); y<yl;y++) {
 					int color = pixmap.getPixel(x, y);
@@ -381,7 +381,7 @@ After finishing to save the picture, we stop the preview and remove the !CameraS
 ```
 
 ## Fixing Screen and Camera resolution discrepancies ##
-There is still one problem in our Pixmaps merging process. The resolution of the Camera and our screenshot maybe very different (e.g. in my test on Sumsung Galaxy Ace, I was streaching a 480x320 screenshot to a 2560x1920 picture). one way around it is to enlarge the Libgdx view size to a larger size than the actual physical device screen size.
+There is still one problem in our Pixmaps merging process. The resolution of the Camera and our screenshot maybe very different (e.g. in my test on Sumsung Galaxy Ace, I was streaching a 480x320 screenshot to a 2560x1920 picture). one way around it is to enlarge the libGDX view size to a larger size than the actual physical device screen size.
 This is done using the setFixedSize() function. The actual screen size that can be defined depends on the memory allocated to the GPU and again your mileage may vary.
 I found that if I do it once during the initialization I can set the virtual screen size to 1920x1280, but this will results with a slower rendering.
 Other way to do it is to call the setFixedSize() function only during the takingPicture procedure and returning it to its orignal afterwards. However, in this case I managed to set the virtual screen size to 960x640 (probably because some of the GPU memory is already allocated for the screen with the original size)
@@ -410,7 +410,7 @@ Other way to do it is to call the setFixedSize() function only during the taking
 This code is Android specific, and will not work with the generic cross platform code, but I guess one can provide similar functionality, at least for the desktop application.
 
 ### Another note ###
-The process of merging and writing the merge image to the storage, takes quite a lot of time due to the format mismatch between libgdx color scheme (RGBA) and the Bitmap class used here (ARGB), if someone find a quicker way, I'd be happy to hear about it.
+The process of merging and writing the merge image to the storage, takes quite a lot of time due to the format mismatch between libGDX color scheme (RGBA) and the Bitmap class used here (ARGB), if someone find a quicker way, I'd be happy to hear about it.
 
 ### Last note ###
 I tested this only with a handful of Android devices, and experienced different behaviors probably due to the different GPU implementations. The Samsung GSIII even managed to XOR white elements with the camera image instead of simply overlaying them (Other colors didn't showed this effects). So your mileage may vary depending on the actual phone used.
@@ -758,7 +758,7 @@ public class AndroidDeviceCameraController implements DeviceCameraControl, Camer
 		int xl=0,yl=0;
 		try {
 			Bitmap bmp = Bitmap.createBitmap(pixmap.getWidth(), pixmap.getHeight(), Bitmap.Config.ARGB_8888);
-			// we need to switch between LibGDX RGBA format to Android ARGB format
+			// we need to switch between libGDX RGBA format to Android ARGB format
 			for (x=0,xl=pixmap.getWidth(); x<xl;x++) {
 				for (y=0,yl=pixmap.getHeight(); y<yl;y++) {
 					int color = pixmap.getPixel(x, y);
@@ -956,7 +956,7 @@ public class CameraDemo implements ApplicationListener {
 	@Override
 	public void create() {		
 		
-		// Load the Libgdx splash screen texture
+		// Load the libGDX splash screen texture
 		texture = new Texture(Gdx.files.internal("data/libgdx.png"));
 		texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 	

@@ -103,7 +103,7 @@ These maps are identical to ObjectSet except they use primitive types for the ke
 A [binary heap](http://en.wikipedia.org/wiki/Binary_heap). Can be a min-heap or a max-heap.
 
 # Benchmarks #
-The benchmark below shows the difference between array and hashtable lookup (`.contains()` or `.get()`) using LibGDX collection methods.
+The benchmark below shows the difference between array and hashtable lookup (`.contains()` or `.get()`) using libGDX collection methods.
 If you have less than 1024 elements in a list, you shouldn't bother whether you're using arrays or hashtables (Maps or Sets). Mind the fact that hashtables have significantly slower iteration than arrays and cannot be ordered.
 
 ```

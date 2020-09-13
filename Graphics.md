@@ -17,7 +17,7 @@ Gdx.gl20.glClearColor( 0, 0, 0, 1 );
 Gdx.gl20.glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
 ```
 
-Note the use of `getWidth()` / `getHeight()` to access the current application window dimensions in setting the viewport as well as the use of constants from the `GL20` class just as one would do in a regular OpenGL program. A key advantage in Libgdx is the ability to access low level functionality whenever higher level abstraction does not suffice.
+Note the use of `getWidth()` / `getHeight()` to access the current application window dimensions in setting the viewport as well as the use of constants from the `GL20` class just as one would do in a regular OpenGL program. A key advantage in libGDX is the ability to access low level functionality whenever higher level abstraction does not suffice.
 
 Each version of OpenGL ES is available through its own respective interface as well as a [GLCommon](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/GLCommon.html) interface for version agnostic commands. Note that use of [GL20](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/GL20.html) requires instructing the application to use OpenGL ES2 upon start-up.
 

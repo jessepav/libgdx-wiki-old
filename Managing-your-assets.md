@@ -17,7 +17,7 @@ This part is rather simple:
 AssetManager manager = new AssetManager();
 ```
 
-This sets up a standard AssetManager, with all the loaders libgdx has in store at the moment. Let's see how the loading mechanism works.
+This sets up a standard AssetManager, with all the loaders libGDX has in store at the moment. Let's see how the loading mechanism works.
 
 **Caution:** don't make your `AssetManager` or any other resources (like `Texture`, etc.) `static`, unless you properly manage them. E.g. the following code will cause issues:
 

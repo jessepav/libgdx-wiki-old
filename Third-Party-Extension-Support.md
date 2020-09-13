@@ -1,22 +1,22 @@
-# Third Party Extension Support in the LibGDX setup
+# Third Party Extension Support in the libGDX setup
 ---
   
   
-The LibGDX setup includes a section for 3rd party extensions, these are extensions made by members of the community that aren't managed by the LibGDX development team.  This gives users an easy way to generate projects that depend on these 3rd party extensions without having to edit build scripts themselves. (Not that that is terribly difficult). 
+The libGDX setup includes a section for 3rd party extensions, these are extensions made by members of the community that aren't managed by the libGDX development team.  This gives users an easy way to generate projects that depend on these 3rd party extensions without having to edit build scripts themselves. (Not that that is terribly difficult). 
 
-## How to get your extension in the LibGDX setup
+## How to get your extension in the libGDX setup
 ### Requirements
 * [A living breathing extension](#am-i-an-extension)
-* [Approval by the LibGDX core development team](#approval)
-* [Extension definition in the LibGDX setup repository](#extension-definition)
+* [Approval by the libGDX core development team](#approval)
+* [Extension definition in the libGDX setup repository](#extension-definition)
   
 ----
   
 ### Am I an extension?
 As much as you may try... no you are not (Unless you are an advanced AI extension, in which case, citation needed), but you may be developing one! 
 
-Does your project aim to extend LibGDX with a specific goal in mind?  
-Is your project useful to LibGDX users?  
+Does your project aim to extend libGDX with a specific goal in mind?  
+Is your project useful to libGDX users?  
 Is your project well established?  
 Is your project being pushed to Maven central?  
 
@@ -24,14 +24,14 @@ Congratulations! It's an extension!
 
  
 ### Approval
-To get your beautiful extension in the setup, you must sneak past/bribe/bewitch the LibGDX developers into thinking that your extension belongs in the setup. To do this, make sure:
+To get your beautiful extension in the setup, you must sneak past/bribe/bewitch the libGDX developers into thinking that your extension belongs in the setup. To do this, make sure:
 
 * Your project is open source, for security issues
 * Your project is well established
 * Your project is well maintained, (we will remove it if it becomes unsupported/not maintained!)
 
 ### Extension definition
-We use a simple xml file in the LibGDX core repository to define external extensions.  
+We use a simple xml file in the libGDX core repository to define external extensions.  
 
 The file can be found [here](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-setup/src/com/badlogic/gdx/setup/data/extensions.xml)
 
@@ -44,7 +44,7 @@ An example of this file:
        <description>What my extension does</description> <!-- Short description of your extension-->
        <package>my.package.cheeky</package> <!-- Package name-->
        <version>0.0.1</version>             <!-- Current release version of your extension-->
-       <compatibility>1.5.3</compatibility> <!-- Latest version of LibGDX your extension is compatible with-->
+       <compatibility>1.5.3</compatibility> <!-- Latest version of libGDX your extension is compatible with-->
        <website>http://mywebsite.com</website>  <!-- Url of your extension, either your extension website/github-->
        <gwtInherits>
               <inherit>cheeky</inherit>     <!-- GWT module of your extension, for the HTML project -->
@@ -67,7 +67,7 @@ An example of this file:
 ```  
 
 ### How dependencies are declared in the extensions.xml file
-Under the <projects> tag are all the LibGDX supported platforms. Core/Desktop/ios/Android/HTML.  In each of these project tags, you can include the dependency deceleration/s for each platform.  
+Under the <projects> tag are all the libGDX supported platforms. Core/Desktop/ios/Android/HTML.  In each of these project tags, you can include the dependency deceleration/s for each platform.  
 
 ----
 In the above example, there is a dependency for the core project on the artifact: `groupId:artifactId`

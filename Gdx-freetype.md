@@ -18,7 +18,7 @@ Tutorial available on [LibGDX.info](https://libgdx.info/basic-label/)
 
 # Details #
 
-Since this is an extension, it is not included in your LibGDX project by default. How you add the extension differs based on the setup of your project.
+Since this is an extension, it is not included in your libGDX project by default. How you add the extension differs based on the setup of your project.
 
 ## How to put gdx-freetype in your project ##
 

@@ -1,1 +1,0 @@
-Exception in thread "main" com.badlogic.gdx.utils.GdxRuntimeException: Unable to extract LWJGL natives.

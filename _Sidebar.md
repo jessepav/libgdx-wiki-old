@@ -1,6 +1,12 @@
 # Table of Contents
 [[Wiki Style Guide]]
 
+## Getting Started
+* [Creating Your First libGDX Project](https://libgdx.com/dev/setup/)
+* [Getting It Running](https://libgdx.com/dev/running/)
+* [A Simple Game](https://libgdx.com/dev/simple_game/)
+* [Extending the Simple Game](https://libgdx.com/dev/simple_game_extended/)
+
 ## Developer's Guide
 <details><summary>The Application Framework</summary>
 
@@ -12,14 +18,6 @@
 * [[Logging]]  
 * [[Threading]]  
 * [[Interfacing With Platform-Specific Code]]
-
-</details>
-
-<details><summary>A Simple Game</summary>
-
-* [Setting up libGDX](https://libgdx.com/dev/setup/) 
-* [[A Simple Game]]  
-* [[Extending the Simple Game]]
 
 </details>
 
@@ -121,6 +119,8 @@
 
 [[Managing Your Assets]]
 
+[[HTML5 Backend and GWT Specifics]]
+
 [[Internationalization and Localization]]
 
 <details><summary>Utilities</summary>
@@ -169,7 +169,7 @@
      -[[Contact Callbacks|Bullet Wrapper Contact callbacks]]  
      -[[Custom Classes|Bullet Wrapper Custom classes]]  
      -[[Debugging|Bullet Wrapper Debugging]]
-* [[Publishing Your Own Extensions|Third Party Extension Support]] 
+* [[Publishing Your Own Extensions|Third Party Extension Support]]
 </details>
 
 <details><summary>Using libGDX With Other JVM Languages</summary>
@@ -184,30 +184,20 @@
 
 <details><summary>Third Party Services</summary>
 
-* [[Third Party Services]]
 * [[AdMob in libGDX]]
 * [[Airpush in libGDX]]
-* [[Swarm in libGDX]]
-* [[NextPeer in libGDX]]
 * [[Google Play Games Services in libGDX]]
 * [[Pollfish in libGDX]]
 * [[ProGuard/DexGuard and libGDX]]
 
 </details>
 
-[Game Jams](https://libgdx.com/community/jams/)
-
-</details>
-
 ## Articles
-
-   * [[Getting Help]]
-   * [[External Tutorials]]
-   * [[Deploying your application]]
-   * [[HTML5 Backend and GWT Specifics]]
-   * [Games Built With libGDX](https://libgdx.com/showcase/)
-   * [[Coordinate systems]]
-   * [[Updating Your libGDX Version|Updating libGDX]]
-   * [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]] 
-   * [[Improving Your Gradle Workflow|Improving-workflow-with-Gradle]]
-   * [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]]
+* [[Getting Help]]
+* [[External Tutorials]]
+* [[Deploying your application]]
+* [[Coordinate systems]]
+* [[Updating Your libGDX Version|Updating libGDX]]
+* [[Adding Extensions and 3rd Party Libraries|Dependency management with Gradle]]
+* [[Improving Your Gradle Workflow|Improving-workflow-with-Gradle]]
+* [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]]

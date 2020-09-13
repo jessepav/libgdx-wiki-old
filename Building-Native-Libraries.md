@@ -8,7 +8,7 @@ Step 1: Installing needed packages
 sudo dnf install glibc-devel.i686 mingw32-gcc-c++ mingw64-gcc-c++ mingw32-winpthreads-static mingw64-winpthreads-static
 ```
 
-Step 2: Clone libgdx repository
+Step 2: Clone libGDX repository
 ```bash
 git clone https://github.com/libgdx/libgdx.git
 ```

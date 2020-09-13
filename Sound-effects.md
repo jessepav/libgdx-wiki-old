@@ -1,6 +1,6 @@
 Sound effects are small audio samples, usually no longer than a few seconds, that are played back on specific game events such as a character jumping or shooting a gun.
 
-Sound effects can be stored in various formats. Libgdx supports MP3, OGG and WAV files.
+Sound effects can be stored in various formats. libGDX supports MP3, OGG and WAV files.
 RoboVM (iOS) currently does not support OGG files.
 
 ***note:*** On Android, a Sound instance can not be over 1mb in size (uncompressed raw PCM size, not the file size). If you have a bigger file, use  [[Music|Streaming music]]

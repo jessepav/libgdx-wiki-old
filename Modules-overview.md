@@ -1,6 +1,6 @@
 ## Introduction ##
 
-LibGDX comprises several modules that provide services for each step of a typical game architecture. 
+libGDX comprises several modules that provide services for each step of a typical game architecture. 
 
  * *[[Input | Input Handling]]* - Provides a unified input model and handler for all platforms. Supports keyboard, touchscreen, accelerometer and mouse where available. 
  * *[[Graphics | Graphics]]* - Enables the drawing of images to the screen using the hardware provided OpenGL ES implementation.

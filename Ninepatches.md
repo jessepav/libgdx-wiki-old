@@ -1,5 +1,5 @@
 This article introduce NinePatch images, how they can be created and how they
-are used in a Libgdx context.
+are used in a libGDX context.
 
 ## Before you start ##
 
@@ -11,7 +11,7 @@ A NinePatch image is an image with defined "stretchable" areas. With this
 property one can create images that repeats either to very small
 regions, or scale to very big regions. Since the areas are pre-defined,
 the image won't look stretched (given that it has been created with
-scaling in mind). The corresponding NinePatch class in libgdx is located [here](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/NinePatch.html)
+scaling in mind). The corresponding NinePatch class in libGDX is located [here](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/NinePatch.html)
 [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/g2d/NinePatch.java).
 
 A NinePatch is used in various of the Scene2d components of Libgdx,
@@ -20,7 +20,7 @@ including:
   * ScrollPanes
   * Textfields
 
-In Libgdx there are several ways to load resources, which also counts for NinePatches. When manually creating and instantiating a ninepatch, we are specifying the patch regions in code. When loading a NinePatch using Skins (and the SkinPacker to create them) the process is a bit different. This will also be covered on this page.
+In libGDX there are several ways to load resources, which also counts for NinePatches. When manually creating and instantiating a ninepatch, we are specifying the patch regions in code. When loading a NinePatch using Skins (and the SkinPacker to create them) the process is a bit different. This will also be covered on this page.
 
 ## Creating and instantiating a NinePatch manually  ##
 
@@ -117,7 +117,7 @@ screenshot).
 [[images/ninepatches5.png]]
 
 Now save the image as _image.9.png_. This can't be underlined enough,
-since libgdx won't recognize the file as a NinePatch otherwise. Below is
+since libGDX won't recognize the file as a NinePatch otherwise. Below is
 the finished image in all its NinePatch glamour, and ready to be used in
 code.
 

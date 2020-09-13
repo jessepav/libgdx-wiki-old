@@ -1,4 +1,4 @@
-2D Animation is a technique used to create the illusion of movement using static images. This article describes how to create animations with libGdx using its [Animation Class](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html).
+2D Animation is a technique used to create the illusion of movement using static images. This article describes how to create animations with libGDX using its [Animation Class](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html).
 
 ## Background ##
 
@@ -22,7 +22,7 @@ Animation has a generic type parameter for the type of class that represents the
 
 ## TextureAtlas example ##
 
-LibGDX's [TextureAtlas](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/TextureAtlas.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java) class is typically used for combining many separate TextureRegions into a smaller set of Textures to reduce expensive draw calls. ([details here](https://github.com/libgdx/libgdx/wiki/Texture-packer#textureatlas)).
+libGDX's [TextureAtlas](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/TextureAtlas.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java) class is typically used for combining many separate TextureRegions into a smaller set of Textures to reduce expensive draw calls. ([details here](https://github.com/libgdx/libgdx/wiki/Texture-packer#textureatlas)).
 
 TexturePacker and TextureAtlas provide a convenient way to generate animations. All the source images of an animation should be named with an underscore and frame number at the end, such as `running_0.png`, `running_1.png`, `running_2.png`, etc. TexturePacker will automatically use these numbers as frame numbers (so long as the packing parameter `useIndexes` is left true).
 
@@ -33,13 +33,13 @@ public Animation<TextureRegion> runningAnimation;
 
 //...
 
-runningAnimation = 
+runningAnimation =
     new Animation<TextureRegion>(0.033f, atlas.findRegions("running"), PlayMode.LOOP);
 ```
 
 ## Sprite sheet example ##
 
-The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen. 
+The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen.
 
 ```java
 public class Animator implements ApplicationListener {
@@ -61,14 +61,14 @@ public class Animator implements ApplicationListener {
 		// Load the sprite sheet as a Texture
 		walkSheet = new Texture(Gdx.files.internal("animation_sheet.png"));
 
-		// Use the split utility method to create a 2D array of TextureRegions. This is 
-		// possible because this sprite sheet contains frames of equal size and they are 
+		// Use the split utility method to create a 2D array of TextureRegions. This is
+		// possible because this sprite sheet contains frames of equal size and they are
 		// all aligned.
-		TextureRegion[][] tmp = TextureRegion.split(walkSheet, 
+		TextureRegion[][] tmp = TextureRegion.split(walkSheet,
 				walkSheet.getWidth() / FRAME_COLS,
 				walkSheet.getHeight() / FRAME_ROWS);
 
-		// Place the regions into a 1D array in the correct order, starting from the top 
+		// Place the regions into a 1D array in the correct order, starting from the top
 		// left, going across first. The Animation constructor requires a 1D array.
 		TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
 		int index = 0;
@@ -91,7 +91,7 @@ public class Animator implements ApplicationListener {
 	public void render() {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear screen
 		stateTime += Gdx.graphics.getDeltaTime(); // Accumulate elapsed animation time
-		
+
 		// Get current frame of animation for the current stateTime
 		TextureRegion currentFrame = walkAnimation.getKeyFrame(stateTime, true);
 		spriteBatch.begin();

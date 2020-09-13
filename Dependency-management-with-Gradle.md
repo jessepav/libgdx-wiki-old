@@ -2,8 +2,8 @@
 
 * [**Useful links**](#useful-links)
 * [**Guide to build.gradle**](#guide-to-buildgradle)
-* [**Libgdx Dependencies**](#libgdx-dependencies)
- * [Available libgdx extensions](#libgdx-extensions)
+* [**libGDX Dependencies**](#libgdx-dependencies)
+ * [Available libGDX extensions](#libgdx-extensions)
 * [**External Dependencies**](#external-dependencies)
  * [Adding Repositories](#adding-external-repositories)
  * [Mavenizing Local Dependencies](#mavenizing-local-dependencies)
@@ -13,7 +13,7 @@
    * [Jar example](#universal-tween-engine-by-jar)
     * [Mavenize locally](universal-tween-engine-by-locally-mavenizing-maven)
 * [**Declaring Dependencies with HTML**](#gwt-inheritance)
- * [Libgdx Extension Inherits](#libgdx-extension-inherits)
+ * [libGDX Extension Inherits](#libgdx-extension-inherits)
 * [**Step by Step Universal Tween Engine guide**](#step-by-step-universal-tween-engine-guide)
 
 ### Useful links
@@ -23,7 +23,7 @@ Dependency management with Gradle is easy to understand, and has many different 
 * [Declare your dependencies](http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
 
 ### Guide to build.gradle
-Gradle projects are managed by `build.gradle` files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
+Gradle projects are managed by `build.gradle` files in their root directory. If you have used the gdx-setup.jar to build your libGDX project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
 
 The root directory, and each sub directory contains a `build.gradle` file, for clarity we will define the dependencies in the root directory's `build.gradle` file. (Note it can be done in each of the `build.gradle` scripts in the sub directories, it is just cleaner and easier to follow when it is handled all in one place)
 
@@ -61,7 +61,7 @@ allprojects {
     //Defines 'extra' (custom) properties for all projects
     ext {
         appName = "the-name-of-your-game"
-        //Versions of the libgdx dependencies (used further below on those 'compile' lines)
+        //Versions of the libGDX dependencies (used further below on those 'compile' lines)
         gdxVersion = "1.9.3"
         roboVMVersion = '2.1.0'
         box2DLightsVersion = '1.4'
@@ -127,11 +127,11 @@ project(":core") {
 
 ```
 
-### Libgdx Dependencies
+### libGDX Dependencies
 Dependencies are configured in the **root** `build.gradle` file as shown in the build.gradle guide above.
 In order to add an external dependency to a project, you must declare the dependency correctly under the correct part of the build.script.
 
-(Some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the `build.gradle` file.  You can see in the list [below](#libgdx-extensions) of the format that these dependencies take. 
+(Some) libGDX extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the `build.gradle` file.  You can see in the list [below](#libgdx-extensions) of the format that these dependencies take. 
 If you are familiar with maven, notice the format:
 ```groovy
 compile '<groupId>:<artifactId>:<version>:<classifier>'
@@ -199,8 +199,8 @@ project(":android") {
 And we are done, our android project now has the freetype dependency.
 After this you will need to refresh your dependencies. Easy eh.
 
-#### Libgdx Extensions
-Mavenized libgdx extensions ready to import from the `build.gradle` script include:
+#### libGDX Extensions
+Mavenized libGDX extensions ready to import from the `build.gradle` script include:
 * [Box2D](#box2d-gradle)
 * [Bullet](#bullet-gradle)
 * [FreeTypeFont](#freetypefont-gradle)
@@ -616,12 +616,12 @@ This is done in the `gwt.xml` files in the gwt sub directory. You will need to m
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
 ```
-We depend on the libgdx gwt backend, as well as the core project, so we have them defined in a <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
+We depend on the libGDX gwt backend, as well as the core project, so we have them defined in a <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
 
-#### Libgdx Extension Inherits
-These are the libgdx extensions that are supported in gwt
+#### libGDX Extension Inherits
+These are the libGDX extensions that are supported in gwt
 
-* Libgdx Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
+* libGDX Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
 * Box2d       - `<inherits name='com.badlogic.gdx.physics.box2d.box2d-gwt' />`
 * Box2dLights - `<inherits name='Box2DLights' />`
 * Controllers - `<inherits name='com.badlogic.gdx.controllers.controllers-gwt' />`

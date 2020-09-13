@@ -7,7 +7,7 @@ When using fbx-conv to convert your model from FBX to G3DB/G3DJ, animations are 
 
 You can check the converted animations by converting to the G3DJ file format and opening the resulting file in your favorite text editor. The animations are located at the bottom of the file. Be aware that animations (keyframes) can bloat the file, so it's advised to use the smaller G3DB file format on production.
 
-LibGDX does not support custom interpolation between keyframes. If you use an interpolation other than linear, fbx-conv will generate additional keyframes to compensate this. This compensation is done according to the target FPS. While the target FPS is customizable in FBX, not all modeling applications allow you to change this value (the default is 30 FPS). To avoid bloating the file with additional keyframes, make sure to use linear interpolation whenever possible.
+libGDX does not support custom interpolation between keyframes. If you use an interpolation other than linear, fbx-conv will generate additional keyframes to compensate this. This compensation is done according to the target FPS. While the target FPS is customizable in FBX, not all modeling applications allow you to change this value (the default is 30 FPS). To avoid bloating the file with additional keyframes, make sure to use linear interpolation whenever possible.
 
 When you load the G3DB/G3DJ file in your application using G3dModelLoader or AssetManager, the animations are also loaded. When you create a ModelInstance from the Model, the Animations are also copied to the ModelInstance. If you specify specific nodes while creating the ModelInstance, only the animations that are applied to those nodes (and child nodes) are copied to the new ModelInstance.
 
@@ -70,7 +70,7 @@ So in practice, when using skinning, your model has an invisible skeleton part (
 This is accomplished by using blend weights (also called bone weights) which are vertex attributes of the visible nodes. Each blend weight has an index (of the specific bone/node) and a weight (how much it is influenced by that bone/node). Each visible node (NodePart) has a reference to it's bones (nodes of the skeleton).
 
 ## Loading skinning
-LibGDX only supports shader skinning, which requires at least Open GL ES 2.0. If you created your skinned model using a modeling application, exported it to FBX and converted it to G3DB/G3DJ, then skinning should seamlessly work. Just keep in mind that you need to export both the visible and invisible (skeleton) nodes along with the animations themselves.
+libGDX only supports shader skinning, which requires at least Open GL ES 2.0. If you created your skinned model using a modeling application, exported it to FBX and converted it to G3DB/G3DJ, then skinning should seamlessly work. Just keep in mind that you need to export both the visible and invisible (skeleton) nodes along with the animations themselves.
 
 Skinning can require some tweaking to get the best and optimal result. By default fbx-conv will include 4 bone weights per vertex (each vertex can be influenced by at most four nodes). Also by default, fbx-conv will group vertices that share the same bones and split the mesh into multiple parts when the total number of bones influencing the vertices is more than 12.
 

@@ -8,7 +8,7 @@
 
 ## <a id="overview"></a>Overview ##
 
-libgdx can perform automatic object to JSON serialization and JSON to object deserialization. Four small classes make up the API:
+libGDX can perform automatic object to JSON serialization and JSON to object deserialization. Four small classes make up the API:
 
   * `JsonWriter`: A builder style API for emitting JSON.
   * `JsonReader`: Parses JSON and builds a DOM of `JsonValue` objects.

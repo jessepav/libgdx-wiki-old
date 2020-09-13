@@ -11,7 +11,7 @@
 
 
 ## Introduction ##
-Libgdx applications run on four different platforms: desktop systems (Windows, Linux, Mac OS X, headless), Android, iOS, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
+libGDX applications run on four different platforms: desktop systems (Windows, Linux, Mac OS X, headless), Android, iOS, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
 
 Libgdx's [Files](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Files.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java) module provides the ability to:
 
@@ -26,13 +26,13 @@ Libgdx's [Files](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic
 Before we can dive into that aspect of Libgdx, we have to first review the different notions of filesystems for all supported platforms.
 
 ## Platform Filesystems ##
-Here we review the filesystem paradigms of the platforms Libgdx supports
+Here we review the filesystem paradigms of the platforms libGDX supports
 
 ### Desktop (Windows, Linux, Mac OS X, Headless) ###
 On a desktop OS, the filesystem is one big chunk of memory. Files can be referenced with paths relative to the current working directory (the directory the application was executed in) or absolute paths. Ignoring file permissions, files and directories are usually readable and writable by all applications.
 
 ### Android
-On Android the situation is a little bit more complex. Files can be stored inside the application's [APK](http://en.wikipedia.org/wiki/APK_(file_format)) either as resources or as assets. These files are read-only. Libgdx only uses the [assets mechanism](http://developer.android.com/reference/android/content/res/AssetManager.html), as it provides raw access to the byte streams and more closely resembles a traditional filesystem. [Resources](http://developer.android.com/guide/topics/resources/index.html) better lend themselves to normal Android applications but introduce problems when used in games. Android manipulates them at load time, e.g. it automatically resizes images.
+On Android the situation is a little bit more complex. Files can be stored inside the application's [APK](http://en.wikipedia.org/wiki/APK_(file_format)) either as resources or as assets. These files are read-only. libGDX only uses the [assets mechanism](http://developer.android.com/reference/android/content/res/AssetManager.html), as it provides raw access to the byte streams and more closely resembles a traditional filesystem. [Resources](http://developer.android.com/guide/topics/resources/index.html) better lend themselves to normal Android applications but introduce problems when used in games. Android manipulates them at load time, e.g. it automatically resizes images.
 
 Assets are stored in your Android project's `assets` directory and will be packaged with your APK automatically when you deploy your application and are accessible via `Gdx.files.internal`, a read-only directory not to be confused with what the Android documentation refers to as "internal". No other application on the Android system can access these files. 
 
@@ -40,8 +40,8 @@ Files can also be stored on what the Android documentation refers to as [interna
 
 Finally, files can be stored on the external storage, accessible via `Gdx.files.external` in LibGDX. The behaviour regarding external files was changed in Android over the times, hence in LibGDX: 
 
-* LibGDX up to 1.9.11 uses the Android external storage directory. That is up to Android 4.3 the sd card directory, which might not always be available, and a virtual emulated sd card directory on later versions. For accessing these files, you need to add a permission to your AndroidManifest.xml file, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-and-configuration#permissions). From Android 6 on, even a runtime permission is needed to use the directory and starting from Android 11, access is forbidden completely for normal apps (if you want to publish on the Play Store).
-* LibGDX 1.9.12 or later uses the App external storage directory. This directory (located at Android/data/data/your_package_id/) is readable and writable from your app without any further permission and changes, but other apps (like file managers) can access the files from here. Note: If the user uninstalls the app, the data saved here will be deleted if not copied to another location before by the user. 
+* libGDX up to 1.9.11 uses the Android external storage directory. That is up to Android 4.3 the sd card directory, which might not always be available, and a virtual emulated sd card directory on later versions. For accessing these files, you need to add a permission to your AndroidManifest.xml file, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-and-configuration#permissions). From Android 6 on, even a runtime permission is needed to use the directory and starting from Android 11, access is forbidden completely for normal apps (if you want to publish on the Play Store).
+* libGDX 1.9.12 or later uses the App external storage directory. This directory (located at Android/data/data/your_package_id/) is readable and writable from your app without any further permission and changes, but other apps (like file managers) can access the files from here. Note: If the user uninstalls the app, the data saved here will be deleted if not copied to another location before by the user. 
 
 ### iOS ###
 On iOS all file types are available. 
@@ -49,10 +49,10 @@ On iOS all file types are available.
 ### Javascript/WebGL ###
 A raw Javascript/WebGL application doesn't have a traditional filesystem concept. Instead, assets like images are referenced by URLs pointing to files on one or more servers. Modern browsers also support [Local Storage](http://diveintohtml5.info/storage.html) which comes close to a traditional read/write filesystem. The problem with local storage is that the storage amount available by default is fairly small, not standardized, and there no (good) way to accurately query the quota. For this reason, the preferences API is currently the only way to write local data persistently on the JS platform.  
 
-Libgdx does some magic under the hood to provide you with a read-only filesystem abstraction.
+libGDX does some magic under the hood to provide you with a read-only filesystem abstraction.
 
 ## File (Storage) Types ##
-A file in libgdx is represented by an instance of the [FileHandle](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/files/FileHandle.java) class. A FileHandle has a type which defines where the file is located. The following table illustrates the availability and location of each file type for each platform.
+A file in libGDX is represented by an instance of the [FileHandle](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/files/FileHandle.java) class. A FileHandle has a type which defines where the file is located. The following table illustrates the availability and location of each file type for each platform.
 
 | *Type* | *Description, file path and features* | *Desktop* | *Android* | *HTML5* | *iOS* |
 |:------:|:--------------------------------------|:---------:|:---------:|:-------:|:-----:|
@@ -91,7 +91,7 @@ The following code obtains a handle for the internal myfile.txt file.
 FileHandle handle = Gdx.files.internal("data/myfile.txt");
 ```
 
-If you used the [Libgdx Setup application](https://github.com/libgdx/libgdx/wiki/Project-setup,-running-&-debugging#using-libgdx-setup), this file will be contained in your Android project's `assets` folder, `$ANDROID_PROJECT/assets/data` to be exact. Your desktop and html projects link to this folder in Eclipse, and will pick it up automatically when executed from within Eclipse.
+If you used the [libGDX Setup application](https://github.com/libgdx/libgdx/wiki/Project-setup,-running-&-debugging#using-libgdx-setup), this file will be contained in your Android project's `assets` folder, `$ANDROID_PROJECT/assets/data` to be exact. Your desktop and html projects link to this folder in Eclipse, and will pick it up automatically when executed from within Eclipse.
 
 ```java
 FileHandle handle = Gdx.files.classpath("myfile.txt");

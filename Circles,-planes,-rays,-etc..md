@@ -1,6 +1,6 @@
 # Introduction #
 
-Libgdx has several geometric classes for dealing with shapes, areas, and volumes. These include:
+libGDX has several geometric classes for dealing with shapes, areas, and volumes. These include:
 
   * *[Circle](http://en.wikipedia.org/wiki/Circle)*
   * *[Frustum](http://en.wikipedia.org/wiki/Frustum)* (sometimes written _frustrum_)
@@ -30,7 +30,7 @@ A simple class which describes a circle with a center point and a radius. Provid
 
 A frustum is a four-sided pyramid with the top cut off. It can be used to describe the volume visible to a rectangular view into a space with a perspective projection such as the case with a 3D scene projected onto a 2D monitor.
 
-Frustums can be useful for simplifying a scene by culling objects which do not intersect its volume and are therefore outside of the user's view. Simply pass the combined view-projection matrix of your camera to a frustum instance to create a frustum describing the viewing volume of the screen. Libgdx then provides methods for testing points and simple collision volumes such as [bounding boxes](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/collision/BoundingBox.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/math/collision/BoundingBox.java) and [Spheres](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/collision/Sphere.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/math/collision/Sphere.java) against the volume of the frustum to determine visibility of scene objects. This is known as "frustum culling," a very common scene optimization technique.
+Frustums can be useful for simplifying a scene by culling objects which do not intersect its volume and are therefore outside of the user's view. Simply pass the combined view-projection matrix of your camera to a frustum instance to create a frustum describing the viewing volume of the screen. libGDX then provides methods for testing points and simple collision volumes such as [bounding boxes](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/collision/BoundingBox.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/math/collision/BoundingBox.java) and [Spheres](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/collision/Sphere.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/math/collision/Sphere.java) against the volume of the frustum to determine visibility of scene objects. This is known as "frustum culling," a very common scene optimization technique.
 
 ----
 

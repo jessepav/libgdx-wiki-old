@@ -9,16 +9,16 @@
 
 # Introduction #
 
-This article shows you how to set up AdMob with a libgdx app. This is current roughly with AdMob 4.0.4 and libgdx 0.9.1. The same instructions will work with Mobclix as well (and probably others), the only changes being the differences between the AdMob and Mobclix APIs. In the code snippets, I'm going to leave out the package and import lines for brevity. If you're working in Eclipse, Ctrl-1 on any line showing an error will auto-fill-in the required imports.
+This article shows you how to set up AdMob with a libGDX app. This is current roughly with AdMob 4.0.4 and libGDX 0.9.1. The same instructions will work with Mobclix as well (and probably others), the only changes being the differences between the AdMob and Mobclix APIs. In the code snippets, I'm going to leave out the package and import lines for brevity. If you're working in Eclipse, Ctrl-1 on any line showing an error will auto-fill-in the required imports.
 
 I should note that this isn't the only way to make this work. But it's one approach that worked for me, so I decided to share it in the hopes that others might find it useful as well.
 
-Please note that Google have deprecated 6.4.1 and earlier SDKs. For notes on how to use the new Google Mobile Ads approach, please see [[Google Mobile Ads | Google Mobile Ads in Libgdx (replaces deprecated AdMob)]]. Thankfully the changes are very minimal from a developer/implementation point of view.
+Please note that Google have deprecated 6.4.1 and earlier SDKs. For notes on how to use the new Google Mobile Ads approach, please see [[Google Mobile Ads | Google Mobile Ads in libGDX (replaces deprecated AdMob)]]. Thankfully the changes are very minimal from a developer/implementation point of view.
 
 
 # Background #
 
-Let's look at the libgdx HelloWorld example and understand what it's doing. There's a HelloWorld class (in HelloWorld.java) that does all the libgdx stuff. There's a HelloWorldDesktop class that creates and runs a HelloWorld on the desktop. And finally, there's a HelloWorldAndroid class that creates and runs a HelloWorld on Android. Here's what they look like:
+Let's look at the libGDX HelloWorld example and understand what it's doing. There's a HelloWorld class (in HelloWorld.java) that does all the libGDX stuff. There's a HelloWorldDesktop class that creates and runs a HelloWorld on the desktop. And finally, there's a HelloWorldAndroid class that creates and runs a HelloWorld on Android. Here's what they look like:
 
 HelloWorldDesktop:
 
@@ -81,7 +81,7 @@ Let's see what it's doing:
  * Specify that the window is fullscreen
  * Call `setContentView()` with a View from the AndroidGraphics object, and some layout parameters
 
-The last step hooks everything together, and sets up the Activity to use the libgdx view as its main (and only) View. I'm not going to explain what an Android Activity and View is, you can find that information easily enough with a Google search.
+The last step hooks everything together, and sets up the Activity to use the libGDX view as its main (and only) View. I'm not going to explain what an Android Activity and View is, you can find that information easily enough with a Google search.
 
 With that background, let's look at what needs to be changed to add AdMob to the application.
 
@@ -91,14 +91,14 @@ To start out, follow the AdMob setup instructions as normal. Sign up, get your a
 
 # Initialization #
 
-The main thing to understand is that AdMob uses its own View. And we know that libgdx creates a View. If we call `setContentView()` with the libgdx View, then that's what gets hooked up to the application, and there's no place to add the AdMob view. So here's what we need to do:
+The main thing to understand is that AdMob uses its own View. And we know that libGDX creates a View. If we call `setContentView()` with the libGDX View, then that's what gets hooked up to the application, and there's no place to add the AdMob view. So here's what we need to do:
 
  * Create a Layout that can contain multiple views
- * Create the libgdx View, add that to the Layout
+ * Create the libGDX View, add that to the Layout
  * Create the AdMob view, add that to the Layout as well
  * Call `setContentView()` with the Layout
 
-Let's dive into some code. This example uses the RelativeLayout class, because I found it easy to get multiple overlapping Views on the screen using that. This assumes that you want your libgdx View to be full-screen, and the AdMob view to be overlaid on top. If you want some other layout, like the AdMob view sitting next to a partial-screen libgdx View, then you'll probably have to use a different Layout and set it up accordingly.
+Let's dive into some code. This example uses the RelativeLayout class, because I found it easy to get multiple overlapping Views on the screen using that. This assumes that you want your libGDX View to be full-screen, and the AdMob view to be overlaid on top. If you want some other layout, like the AdMob view sitting next to a partial-screen libGDX View, then you'll probably have to use a different Layout and set it up accordingly.
 
 First, create a RelativeLayout:
 
@@ -106,7 +106,7 @@ First, create a RelativeLayout:
         RelativeLayout layout = new RelativeLayout(this);
 ```
 
-Easy enough. Then, we need to create the libgdx View. There's a different initialization function, `initializeForView()`, that does this. It is similar to `initialize()`, but instead of calling `setContentView()` with the libgdx View, it returns the View to you so you can use it. The way you call it is identical to calling `initialize()`:
+Easy enough. Then, we need to create the libGDX View. There's a different initialization function, `initializeForView()`, that does this. It is similar to `initialize()`, but instead of calling `setContentView()` with the libGDX View, it returns the View to you so you can use it. The way you call it is identical to calling `initialize()`:
 
 ```java
         View gameView = initializeForView(new HelloWorld(), false);
@@ -135,7 +135,7 @@ You'll note that this time, the function didn't do anything about setting the Ac
         View gameView = initializeForView(new HelloWorld(), false);
 ```
 
-That completes the setup for the libgdx View. Next, we create the AdMob view and kick it off by calling `loadAd()`. This assumes that you want it to start fetching ads immediately. If you want more customized behavior, then you'll have to configure the AdView accordingly. I'm not going to cover that here.
+That completes the setup for the libGDX View. Next, we create the AdMob view and kick it off by calling `loadAd()`. This assumes that you want it to start fetching ads immediately. If you want more customized behavior, then you'll have to configure the AdView accordingly. I'm not going to cover that here.
 
 ```java
         AdView adView = new AdView(this);
@@ -148,9 +148,9 @@ That completes the setup for the libgdx View. Next, we create the AdMob view and
 
 Now we have a Layout, and two Views. All that's left is to add both the Views to the Layout, and then tell Android to use the Layout as the thing to display for the Activity.
 
-Views get stacked in the sequence in which you add them, so make sure you add the libgdx View first, since you want that under the AdMob View. If you do the reverse, the full-screen libgdx View will hide the AdMob View, and you'll be left wondering why your ads aren't showing up.
+Views get stacked in the sequence in which you add them, so make sure you add the libGDX View first, since you want that under the AdMob View. If you do the reverse, the full-screen libGDX View will hide the AdMob View, and you'll be left wondering why your ads aren't showing up.
 
-Add the libgdx View. You can use the simpler form of `addView()`, because the libgdx View is full-screen, so there's no positioning information needed.
+Add the libGDX View. You can use the simpler form of `addView()`, because the libGDX View is full-screen, so there's no positioning information needed.
 
 ```java
         layout.addView(gameView);
@@ -194,7 +194,7 @@ public class HelloWorldAndroid extends AndroidApplication {
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 
-        // Create the libgdx View
+        // Create the libGDX View
         View gameView = initializeForView(new HelloWorld(), false);
 
         // Create and setup the AdMob view
@@ -205,7 +205,7 @@ public class HelloWorldAndroid extends AndroidApplication {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        // Add the libgdx view
+        // Add the libGDX view
         layout.addView(gameView);
 
         // Add the AdMob view
@@ -222,11 +222,11 @@ public class HelloWorldAndroid extends AndroidApplication {
     }
 ```
 
-And that's it. Now you should have ads showing on top of your libgdx app. If you want the ads to be visible all the time, this should be all you need to do. If you want to control when the ads are visible from within your libgdx app, then there's a little more work left.
+And that's it. Now you should have ads showing on top of your libGDX app. If you want the ads to be visible all the time, this should be all you need to do. If you want to control when the ads are visible from within your libGDX app, then there's a little more work left.
 
 # Control #
 
-This example will show you how to turn the AdMob View's visibility on and off from within your libgdx app. Note that this is probably not the best way to control AdMob. If your ad View is invisible, but still fetching ads in the background, then you're wasting ad impressions, and that will negatively impact your ad revenue. I'm not going to talk about the best way to control the AdMob view - that varies from application to application. Also, there are things you can do on the website, and things you can do in your app. So look through the AdMob documentation for more information on that.
+This example will show you how to turn the AdMob View's visibility on and off from within your libGDX app. Note that this is probably not the best way to control AdMob. If your ad View is invisible, but still fetching ads in the background, then you're wasting ad impressions, and that will negatively impact your ad revenue. I'm not going to talk about the best way to control the AdMob view - that varies from application to application. Also, there are things you can do on the website, and things you can do in your app. So look through the AdMob documentation for more information on that.
 
 The first thing you need to do is to make the AdView a member of your AndroidApplication, because you'll need to refer to it later.
 
@@ -274,7 +274,7 @@ That's the part that will process the message. You've defined two constants - `S
 That leaves two things:
 
  * Some code to send a message containing the `SHOW_ADS` or `HIDE_ADS` command
- * Some way to call that code from within the libgdx app's game thread
+ * Some way to call that code from within the libGDX app's game thread
 
 There are multiple ways to solve that problem. One solution is to use an interface that defines functionality that the AndroidApplication can provide, like the ability to show and hide ads. Here's the definition of such an interface. Note that this should go in its own Java file:
 
@@ -350,7 +350,7 @@ public class HelloWorldDesktop implements IActivityRequestHandler {
 }
 ```
 
-That's it. Now you can show and hide AdMob ads from within your libgdx app.
+That's it. Now you can show and hide AdMob ads from within your libGDX app.
 
 # Code #
 
@@ -440,7 +440,7 @@ public class HelloWorldAndroid extends AndroidApplication implements IActivityRe
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 
-        // Create the libgdx View
+        // Create the libGDX View
         View gameView = initializeForView(new HelloWorld(this), false);
 
         // Create and setup the AdMob view
@@ -451,7 +451,7 @@ public class HelloWorldAndroid extends AndroidApplication implements IActivityRe
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        // Add the libgdx view
+        // Add the libGDX view
         layout.addView(gameView);
 
         // Add the AdMob view
@@ -629,7 +629,7 @@ public class HelloWorld implements ApplicationListener {
 
 For admob to work on IOS it's best to make sure you are doing the following things:
 
-* Make sure you project is using the latest libgdx version
+* Make sure you project is using the latest libGDX version
 
 * Make sure you are on the latest RoboVM
 

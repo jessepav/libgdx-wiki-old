@@ -12,7 +12,7 @@ Using a distance field font lets you render text that remains crisp even under r
 
 The same technique can also be used to draw symbols, logos, anything. The major drawback is that it works only for monochrome images; it is not possible to use this technique for arbitrary color images.
 
-There is an example of rendering in the libgdx source code. Check out `com.badlogic.gdx.tests.BitmapFontDistanceFieldTest` in the `gdx-tests` project. It was used to produce the above screenshot. There's also [`com.badlogic.gdx.graphics.g2d.DistanceFieldFont.java`](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/BitmapFontDistanceFieldTest.java) class if you want to jump directly to usage.
+There is an example of rendering in the libGDX source code. Check out `com.badlogic.gdx.tests.BitmapFontDistanceFieldTest` in the `gdx-tests` project. It was used to produce the above screenshot. There's also [`com.badlogic.gdx.graphics.g2d.DistanceFieldFont.java`](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/BitmapFontDistanceFieldTest.java) class if you want to jump directly to usage.
 
 # How does it work? #
 
@@ -170,7 +170,7 @@ void main() {
 
 # Using distance fields for arbitrary images #
 
-The generator used by Hiero can also be used as a stand-alone command line tool, to process pre-existing black and white images. Run it from an unzipped libgdx distribution directory as follows:
+The generator used by Hiero can also be used as a stand-alone command line tool, to process pre-existing black and white images. Run it from an unzipped libGDX distribution directory as follows:
 
 Windows:
 ```shell

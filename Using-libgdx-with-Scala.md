@@ -54,7 +54,7 @@ With all of these changes in-place you should be able to use Gradle exactly as y
 
 # Using libGDX and Scala with SBT
 
-The standard tooling for working with Scala is quite different than what Java developers will be used to. There is a project, [libgdx-sbt-project](https://github.com/ajhager/libgdx-sbt-project.g8), that provides a simple path for getting started with libgdx and Scala using standard build tools and best practices.
+The standard tooling for working with Scala is quite different than what Java developers will be used to. There is a project, [libgdx-sbt-project](https://github.com/ajhager/libgdx-sbt-project.g8), that provides a simple path for getting started with libGDX and Scala using standard build tools and best practices.
 
 This tutorial assumes you have installed [sbt](https://github.com/sbt/sbt) 0.13, which are used in the Scala community for generating and interacting with projects.
 

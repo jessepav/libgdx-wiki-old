@@ -1,4 +1,4 @@
-Libgdx is currently published to the SonaType snapshot repository. This will continue to happen until the Maven integration is complete. The repository only contains the latest snapshot release for now. Eventually we will publish release builds to SonaType as well.
+libGDX is currently published to the SonaType snapshot repository. This will continue to happen until the Maven integration is complete. The repository only contains the latest snapshot release for now. Eventually we will publish release builds to SonaType as well.
 
 Add the following to your settings.xml or your project's pom.xml:
 
@@ -13,13 +13,13 @@ Add the following to your settings.xml or your project's pom.xml:
 
 If you use the archetype you do not need to add the repository to your Maven settings.
 
-Setting up libgdx with Maven is non trivial as it
+Setting up libGDX with Maven is non trivial as it
 
   * contains native libraries
   * deploys to GWT
   * deploys to Android
 
-To handle these issues, libgdx relies on the following Maven plugins:
+To handle these issues, libGDX relies on the following Maven plugins:
 
   * [GWT Maven plugin, version 2.5.0](http://mojo.codehaus.org/gwt-maven-plugin/), to compile and package the GWT project.
   * [Maven native dependencies plugin](http://code.google.com/p/mavennatives/), to copy the native libraries to the appropriate place
@@ -113,9 +113,9 @@ mvn -Phtml install
 And browse to http://127.0.0.1:8080/index.html
 
 ## IDE Integration ##
-Eclipse, Intellij Idea and NetBeans all support Maven projects in some form. The archetype goes to great lengths to make your libgdx project usable within Eclipse and Intellij Idea. NetBeans is unsupported at the time of writing.
+Eclipse, Intellij Idea and NetBeans all support Maven projects in some form. The archetype goes to great lengths to make your libGDX project usable within Eclipse and Intellij Idea. NetBeans is unsupported at the time of writing.
 
-While Maven is IDE agnostic, the plugins for GWT and Android are not. Plugins for Eclipse differ in how the interpret the Maven configuration for GWT and Android projects from those in Intellij. The following sections describe how to import a project into both IDE's after creating it using the libgdx archetype.
+While Maven is IDE agnostic, the plugins for GWT and Android are not. Plugins for Eclipse differ in how the interpret the Maven configuration for GWT and Android projects from those in Intellij. The following sections describe how to import a project into both IDE's after creating it using the libGDX archetype.
 
 ### Eclipse ###
 Before you can import your project, you need to install the following Eclipse plugins:
@@ -124,7 +124,7 @@ Before you can import your project, you need to install the following Eclipse pl
   * [m2e-android](http://rgladwell.github.com/m2e-android/) provides Maven integration for Android projects in Eclipse.
   * [Google Web Toolkit](https://developers.google.com/web-toolkit/), the Eclipse plugin that allows you to develop GWT projects.
 
-Once the plugins are installed, you can import your Maven libgdx projects by going to *File -> Import... -> Maven -> Existing Maven Projects*. This will import the parent pom as project along with the core, desktop, android and html project.
+Once the plugins are installed, you can import your Maven libGDX projects by going to *File -> Import... -> Maven -> Existing Maven Projects*. This will import the parent pom as project along with the core, desktop, android and html project.
 
 *Note* that the HTML project might not be recognized as a GWT project by Eclipse. To fix this, right click the project, go to *Properties -> Google -> Web Toolkit*. Check "Use Google Web Toolkit". Then go to *Properties -> Google -> Web Application*, check "This project has a WAR directory", specify `target/webapp` and finally check "Launch and deploy from this directory".
 

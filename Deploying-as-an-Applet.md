@@ -110,7 +110,7 @@ Also, statics have been known to persist between page refreshes, so be warned (a
 
 ### HTML ###
 
-Let's create a html file that can embed your JARs into a web page.  Thotep's HTML won't work anymore because 'Unable to read file for extraction: gdx.dll'.  Unfortunately this is due to a [libgdx bug](https://github.com/libgdx/libgdx/issues/1165) that was closed because 'Death to applets.'  Sigh.  
+Let's create a html file that can embed your JARs into a web page.  Thotep's HTML won't work anymore because 'Unable to read file for extraction: gdx.dll'.  Unfortunately this is due to a [libGDX bug](https://github.com/libgdx/libgdx/issues/1165) that was closed because 'Death to applets.'  Sigh.  
 
 Fortunately, there's a workaround, at least for v1.2.0.  If you move your gdx-natives into the jars declaration, then everything will be happy.  Unfortunately that means users downloading gdx libs for platforms they're not on, but at least it runs.
 

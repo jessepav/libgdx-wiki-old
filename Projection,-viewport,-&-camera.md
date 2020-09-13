@@ -10,7 +10,7 @@ In the [MyFirstTriangle](My-First-Triangle-(Example)) and [ColorMeshTexture](Mes
 
 # Creating a Square
 
-Create a new libgdx desktop project named `projection-viewport-camera`. Create a class called `ProjectionViewportCamera` that implements `ApplicationListener` and put it in the package `com.example.projectionviewportcamera`. For full instruction on how to set up a libgdx desktop (and Android) project, look at the [MyFirstTriangle](My-First-Triangle-(Example)) tutorial. Unlike in that tutorial, we're going to show a square instead of a rectangle. Here's the code for `ProjectionViewportCamera`:
+Create a new libGDX desktop project named `projection-viewport-camera`. Create a class called `ProjectionViewportCamera` that implements `ApplicationListener` and put it in the package `com.example.projectionviewportcamera`. For full instruction on how to set up a libGDX desktop (and Android) project, look at the [MyFirstTriangle](My-First-Triangle-(Example)) tutorial. Unlike in that tutorial, we're going to show a square instead of a rectangle. Here's the code for `ProjectionViewportCamera`:
 
 ```java
 package com.example.projectionviewportcamera;
@@ -432,7 +432,7 @@ We use the camera's `rotate()` and `translate()` methods to move the camera arou
 
 # Running it on Android
 
-Follow the steps of the MyFirstTriangle tutorial and set up the Android portion of this libgdx app. Remember to reference the necessary libraries, reference the desktop project, and add the necessary assets. When you run the app, however, you'll notice that everything appears very big:
+Follow the steps of the MyFirstTriangle tutorial and set up the Android portion of this libGDX app. Remember to reference the necessary libraries, reference the desktop project, and add the necessary assets. When you run the app, however, you'll notice that everything appears very big:
 
 [[images/projection_viewport_camera_portrait.png]]
 
@@ -458,4 +458,4 @@ Since Android devices have so many different screen sizes, locking the screen is
 
 # Conclusion
 
-You should now have enough knowledge about meshes, sprites, and cameras to start constructing any basic scene you want. For more examples, look at the libgdx [demos](https://github.com/libgdx/libgdx/tree/master/demos) and [tests](https://github.com/libgdx/libgdx/tree/master/tests). You can grab the source files for this project in our [download page](http://libgdx.badlogicgames.com/download.html).
+You should now have enough knowledge about meshes, sprites, and cameras to start constructing any basic scene you want. For more examples, look at the libGDX [demos](https://github.com/libgdx/libgdx/tree/master/demos) and [tests](https://github.com/libgdx/libgdx/tree/master/tests). You can grab the source files for this project in our [download page](http://libgdx.badlogicgames.com/download.html).

@@ -1,14 +1,14 @@
-# Setting up Box2D with libgdx #
+# Setting up Box2D with libGDX #
 
 Box2D is a 2D physics library. It is one of the most popular physics libraries for 2D games and has been ported to many languages and many different engines, including libgdx.
 
-The Box2D implementation in libgdx is a thin Java wrapper around the C++ engine. Therefore, the excellent [official Box2D manual (PDF)](http://box2d.org/manual.pdf) may also come in handy.
+The Box2D implementation in libGDX is a thin Java wrapper around the C++ engine. Therefore, the excellent [official Box2D manual (PDF)](http://box2d.org/manual.pdf) may also come in handy.
 
-For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libgdx specifically can best be asked on their forum.
+For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libGDX specifically can best be asked on their forum.
 
 A basic implementation and code sample for Box2D with Scene2D is also avalaible on [LibGDX.info](https://libgdx.info/box2d-basic/)
 
-As of [libgdx 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an extension and is no longer included with libgdx by default. Thus a manual installation is required.
+As of [libGDX 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an extension and is no longer included with libGDX by default. Thus a manual installation is required.
 
 ## Table of Contents ##
 
@@ -37,7 +37,7 @@ To initialize Box2D it is necessary to call `Box2D.init()`. For backwards compat
 
 ## Creating a World ##
 
-When setting up Box2D the first thing we need is a world. The world object is basically what holds all your physics objects/bodies and simulates the reactions between them. It does not however render the objects for you; for that you will use libgdx graphics functions. That said, libgdx does come with a Box2D debug renderer which is extremely handy for debugging your physics simulations, or even for testing your game-play before writing any rendering code.
+When setting up Box2D the first thing we need is a world. The world object is basically what holds all your physics objects/bodies and simulates the reactions between them. It does not however render the objects for you; for that you will use libGDX graphics functions. That said, libGDX does come with a Box2D debug renderer which is extremely handy for debugging your physics simulations, or even for testing your game-play before writing any rendering code.
 
 To create the world we use the following code:
 
@@ -71,7 +71,7 @@ To update our simulation we need to tell our world to step. Stepping basically u
 world.step(1/60f, 6, 2);
 ```
 
-The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libgdx recommends using a value between `1/45f` (which is 1/45th of a second) and `1/300f` (1/300th of a second). 
+The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libGDX recommends using a value between `1/45f` (which is 1/45th of a second) and `1/300f` (1/300th of a second). 
 
 The other two arguments are `velocityIterations` and `positionIterations`. For now we will leave these at `6` and `2`, but you can read more about them in the Box2D documentation.
 
@@ -102,7 +102,7 @@ It is recommended that you render all your graphics before you do your physics s
 debugRenderer.render(world, camera.combined);
 ```
 
-The first argument is our Box2D world and the second argument is our libgdx camera.
+The first argument is our Box2D world and the second argument is our libGDX camera.
 
 
 
@@ -494,7 +494,7 @@ for (Body b : bodies) {
 }
 ```
 
-Then render your sprites using a libgdx `SpriteBatch` as usual.
+Then render your sprites using a libGDX `SpriteBatch` as usual.
 
 ## Sensors ##
 Sensors are Bodies that do not produce automatic responses during a collision (such as applying force). This is useful when one needs to be in complete control of what happens when two shapes collide.

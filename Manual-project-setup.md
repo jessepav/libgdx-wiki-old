@@ -3,7 +3,7 @@
 *Note: Java 1.7 currently causes problems with Android. Please make sure your project uses Java 1.6*
 *Note: use of setup-ui is highly recommended if you want to deploy to iOS*
 
-This page describes how to configure Eclipse to develop and run libgdx applications on both the desktop and Android.
+This page describes how to configure Eclipse to develop and run libGDX applications on both the desktop and Android.
 
 ## Main project setup ##
 
@@ -111,9 +111,9 @@ This code is an Android activity that calls initialize, passing an instance of y
 
 To run the game on Android, right click the project -> Debug As -> Android Application. The screen will turn black, since the game doesn't yet do anything. If any errors occur running the application, they show up in the Logcat view, which can be seen by clicking Window -> Show View -> Other -> Android -> Logcat.
 
-## Updating libgdx ##
+## Updating libGDX ##
 
-At some point you may want to update libgdx to the latest. To do this, download the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/) again and update these files in your projects:
+At some point you may want to update libGDX to the latest. To do this, download the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/) again and update these files in your projects:
 
 | Project | Files |
 | ------- | :------: |

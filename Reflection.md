@@ -1,7 +1,7 @@
 # Reflection #
-<sub>Available since LibGDX version 0.9.9.</sub>
+<sub>Available since libGDX version 0.9.9.</sub>
 
-In order to utilize reflection in a cross-platform way, LibGDX provides a small wrapper around Java's reflection api. The wrapper consists mainly of two classes containing the static methods you will use to perform reflection operations:
+In order to utilize reflection in a cross-platform way, libGDX provides a small wrapper around Java's reflection api. The wrapper consists mainly of two classes containing the static methods you will use to perform reflection operations:
 
 
   * `ArrayReflection` - encapsulates access to java.lang.reflect.Array
@@ -24,7 +24,7 @@ Examples:
 
 ## GWT ##
 
-Because GWT does not allow for reflection in the same way as Java, extra steps are required to make reflection information available to your GWT application. In short, you must specify which classes you plan to use with reflection. When compiling the HTML project, LibGDX takes that information and generates a reflection cache containing information about and providing access to the constructors, fields and methods of the specified classes. LibGDX then uses this reflection cache to implement the reflection api.
+Because GWT does not allow for reflection in the same way as Java, extra steps are required to make reflection information available to your GWT application. In short, you must specify which classes you plan to use with reflection. When compiling the HTML project, libGDX takes that information and generates a reflection cache containing information about and providing access to the constructors, fields and methods of the specified classes. libGDX then uses this reflection cache to implement the reflection api.
 
 Classes are specified by including a special configuration property in your GWT module definition (`*`.gwt.xml).
 

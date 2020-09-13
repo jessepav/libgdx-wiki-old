@@ -54,4 +54,4 @@ HdpiUtils.setMode(HdpiMode.Logical);
 ```
 
 ## Further resources
-- [A LWJGL tutorial regarding framebuffers (has a libgdx version of the used code as well)](https://github.com/mattdesl/lwjgl-basics/wiki/FrameBufferObjects)
+- [A LWJGL tutorial regarding framebuffers (has a libGDX version of the used code as well)](https://github.com/mattdesl/lwjgl-basics/wiki/FrameBufferObjects)

@@ -4,7 +4,7 @@ Because of issues with perspective and depth, the 2D particle effects are not su
 
 ### Flame - 3D Particle Editor
 Much like their 2D cousins, 3D particle effects can be edited with a GUI editor included in libgdx.
-The editor is called Flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libgdx repo, you can run the editor by using the following command from the **dist** directory:
+The editor is called Flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libGDX repo, you can run the editor by using the following command from the **dist** directory:
 
 Linux/Mac:
 ```
@@ -24,7 +24,7 @@ There are 3 different kinds of 3D particle effects:
 * PointSprites
 * ModelInstance
 
-**Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard).
+**Billboards** are sprites that always face the camera (the Decal class in libGDX is essentially a billboard).
 
 **PointSprites** draw a sprite to a single 3d point.  They are simpler than billboards, but more efficient. The dust and explosion effects in the following video are done with PointSprites: [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78). More information about point sprites in OpenGL: http://www.informit.com/articles/article.aspx?p=770639&seqNum=7
 
@@ -72,7 +72,7 @@ effect.start();  // optional: particle will begin playing immediately
 particleSystem.add(effect);
 ```
 
-If you scroll back up and watch the 3D Tank Battle video, you will see that each tank has its own dust effects.  That means each tank has it's own copy of the effect inside the system.  You really don't want to make a new copy of the particle effect each time you create an object or graphical effect that needs it.  Instead, you should use Pool the effects to avoid new object creation. You can read more about Pooling in this wiki or the libgdx Pool class documentation.
+If you scroll back up and watch the 3D Tank Battle video, you will see that each tank has its own dust effects.  That means each tank has it's own copy of the effect inside the system.  You really don't want to make a new copy of the particle effect each time you create an object or graphical effect that needs it.  Instead, you should use Pool the effects to avoid new object creation. You can read more about Pooling in this wiki or the libGDX Pool class documentation.
 
 Here is an example of a Pool:
 ```java

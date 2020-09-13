@@ -1,8 +1,8 @@
-* [**Switching libgdx Versions**](#switching-libgdx-versions)
+* [**Switching libGDX Versions**](#switching-libgdx-versions)
 * [**Gradle Wrapper and Updating it**](#gradle-wrapper-and-updating-it)
 * [**Gradle Versions Plugin and Updating Your Dependencies**](#gradle-versions-plugin-and-updating-your-dependencies)
 
-# Switching libgdx Versions
+# Switching libGDX Versions
 libGDX's Gradle based projects make it very easy to switch between libGDX versions. In general you'll be interested in two types of libGDX builds:
 
 * Release builds: these are considered stable. You can see the available release versions on [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.badlogicgames.gdx%22%20AND%20a%3A%22gdx%22).

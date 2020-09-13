@@ -4,7 +4,7 @@ A [Pixmap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/g
 [Texture](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html)
 [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/Texture.java) instance. There are also methods for image saving/loading through the 
 [PixmapIO](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/PixmapIO.html)
-[(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/PixmapIO.java) class. PixmapIO supports uncompressed [PNG](http://en.wikipedia.org/wiki/Portable_Network_Graphics) as well as _CIM_, a compression format peculiar to Libgdx which is useful for quick storage access such as during state saving/loading between application focus changes.
+[(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/PixmapIO.java) class. PixmapIO supports uncompressed [PNG](http://en.wikipedia.org/wiki/Portable_Network_Graphics) as well as _CIM_, a compression format peculiar to libGDX which is useful for quick storage access such as during state saving/loading between application focus changes.
 
 *As a Pixmap resides in native heap memory it must be disposed of by calling `dispose()` when no longer needed to prevent memory leaks.*
 

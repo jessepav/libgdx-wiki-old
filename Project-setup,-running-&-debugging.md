@@ -1,6 +1,6 @@
 ### Attention: this is extremely outdated and NOT supported anymore! Please use the [Gradle-based setup](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle) instead
 
-Libgdx is very Eclipse centric due to its Android and HTML5/GWT back-ends. This article discusses how to setup libgdx projects for Eclipse. Check out this [[Using libgdx with IntelliJ IDEA]] if you use IntelliJ. If you prefer to use a different IDE, please refer to the bottom of this page which outlines the dependencies in detail.
+libGDX is very Eclipse centric due to its Android and HTML5/GWT back-ends. This article discusses how to setup libGDX projects for Eclipse. Check out this [[Using libGDX with IntelliJ IDEA]] if you use IntelliJ. If you prefer to use a different IDE, please refer to the bottom of this page which outlines the dependencies in detail.
 
 ## Prerequisites ##
 To target **Windows, Linux, Mac OS X, Android and HTML5** you will need:
@@ -26,13 +26,13 @@ Follow this if you don't want to read a lot of text. Otherwise continue below.
 alt="Libgdx setup video" width="480" height="360" border="10" /></a>
 
 
-## Using "Libgdx Setup" ##
-As of version 0.9.3, libgdx comes with an easy to use application called "Libgdx Setup" by [Aurelien Ribon](http://www.aurelienribon.com/blog/). The following steps will create everything needed to develop for the desktop, android, ios and html5.
+## Using "libGDX Setup" ##
+As of version 0.9.3, libGDX comes with an easy to use application called "libGDX Setup" by [Aurelien Ribon](http://www.aurelienribon.com/blog/). The following steps will create everything needed to develop for the desktop, android, ios and html5.
 
   * Download the gdx-setup.jar from http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar. The jar is also contained in all stable and nightly releases.
   * Execute the jar by double clicking it or from the command line via `java -jar gdx-setup.jar`
     * Specify your project's configuration (Configuration Panel)
-    * Specify the libgdx stable/nightly release zip file or press one of the buttons to download the latest stable/nightly release (Library Selection Panel).
+    * Specify the libGDX stable/nightly release zip file or press one of the buttons to download the latest stable/nightly release (Library Selection Panel).
     * Hit the "Generate projects" button (Generation Panel)
   * Open Eclipse and import the generated projects into your workspace 
     * `File -> Import -> Existing Projects into Workspace`
@@ -81,7 +81,7 @@ All your application's assets should be stored in the Android project's assets f
       * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       * Point your browser at an URL which will display the `.html` file.
       * Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
-    * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libgdx and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
+    * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libGDX and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
 
 ## Manual Project Setup ##
 Please refer to [Manual Project Setup](https://github.com/libgdx/libgdx/wiki/Manual-project-setup)

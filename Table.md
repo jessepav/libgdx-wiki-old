@@ -2,7 +2,7 @@
 
 Table is a WidgetGroup that sets the position and size of its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
 
-Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout) for libgdx (by the same author). TableLayout provides the same functionality as Table but for other UI toolkits (Swing, Android, etc).
+Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout) for libGDX (by the same author). TableLayout provides the same functionality as Table but for other UI toolkits (Swing, Android, etc).
 
 - [Quickstart](#quickstart)
 - [Root table](#root-table)

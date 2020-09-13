@@ -9,7 +9,7 @@ The following tasks are supported
 
 # Details #
 
-LibGDX defines 4 file types:
+libGDX defines 4 file types:
 
 | *Type* | *Description, file path and features* | *Dsktp.* | *And.* |
 |:------:|:--------------------------------------|:--------:|:------:|

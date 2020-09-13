@@ -1,7 +1,7 @@
-If you want to work with OpenGL ES 2.0, you should know some shader basics. Libgdx comes with a standard shader that will take care of rendering things via SpriteBatch. However, if you'd like to render a Mesh in OpenGL ES 2.0 you will have to supply a valid shader yourself. Basically, in OpenGL ES 2.0, everything is rendered with shaders. That's why it's called a programmable pipeline.
+If you want to work with OpenGL ES 2.0, you should know some shader basics. libGDX comes with a standard shader that will take care of rendering things via SpriteBatch. However, if you'd like to render a Mesh in OpenGL ES 2.0 you will have to supply a valid shader yourself. Basically, in OpenGL ES 2.0, everything is rendered with shaders. That's why it's called a programmable pipeline.
 The thought of dabbling around in shaders might scare some people away from using ES 2.0, but it's well worth reading up on it as shaders allow you to do some pretty incredible things. And understanding the basics is actually quite straightforward.
 
-A simple demo of using Shaders with LibGDX is available on [LibGDX.info](https://libgdx.info/shaders/)
+A simple demo of using Shaders with libGDX is available on [LibGDX.info](https://libgdx.info/shaders/)
 
 ## What are shaders? ##
 
@@ -125,4 +125,4 @@ And that's it!
 
 The good thing about shaders in OpenGL ES 2.0 is that you have a huge library of shaders available to you. Pretty much anything that's done in WebGL can be easily ported over to run on mobiles. Go and experiment!
 
-A simple demo of a ShockWave effect Shaders with LibGDX is available on [LibGDX.info](https://libgdx.info/shaders/)
+A simple demo of a ShockWave effect Shaders with libGDX is available on [LibGDX.info](https://libgdx.info/shaders/)

@@ -104,9 +104,9 @@ Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Jav
 
 That’s it. You successfully enabled Kotlin in your libGDX application. Build and run your project to verify that everything works.
 
-## Kotlin LibGDX extensions
+## Kotlin libGDX extensions
 
-- [KTX](https://github.com/libktx/ktx) is a set of libraries that aim to make most aspects of LibGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, Box2D, coroutines, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more. 
+- [KTX](https://github.com/libktx/ktx) is a set of libraries that aim to make most aspects of libGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, Box2D, coroutines, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more. 
 
 # Examples of libGDX projects using Kotlin
 

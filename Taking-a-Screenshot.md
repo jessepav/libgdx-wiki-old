@@ -2,7 +2,7 @@ Screenshots are easy in LibGDX!
 
 ## Post processing to guarantee clarity
 
-This will guarantee your screenshots look like just like what the user expects (```LibGDX 1.9.6```):
+This will guarantee your screenshots look like just like what the user expects:
 
 ```java
 byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), true);
@@ -20,7 +20,7 @@ pixmap.dispose();
 
 ## No post-processing
 
-If you have no layered transparency, here's a more compact and efficient way (```LibGDX 1.9.6```):
+If you have no layered transparency, here's a more compact and efficient way:
 
 ```java
 Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

@@ -8,7 +8,7 @@ The mechanism to deploy your game differs between platforms. This article aims t
 * [Deploy Web](#deploy-web)
 
 # <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X
-The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libgdx and any extensions, and your assets. 
+The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libGDX and any extensions, and your assets. 
 
 ### As JAR file
 `gradlew desktop:dist`

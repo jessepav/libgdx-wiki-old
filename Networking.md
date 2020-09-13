@@ -1,4 +1,4 @@
-LibGDX includes some classes for cross-platform network operations. These classes are more commonly known as [Gdx.net](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Net.html) [(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Net.java)
+libGDX includes some classes for cross-platform network operations. These classes are more commonly known as [Gdx.net](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Net.html) [(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Net.java)
 
 # Features
 
@@ -100,7 +100,7 @@ There are various notes needed when working with networking on different platfor
 2. Opening the browser is not supported on the headless backend, Android Daydreams, or Android Live Wallpapers. This is due to the limitations with the implementation and/or platform.
 3. On Android: You must have the following permission declared in the AndroidManifest.xml file to access the network: `<uses-permission android:name="android.permission.INTERNET" /> `
 4. On Android: You **cannot** access the network on the main thread without disabling strict mode. This is done to prevent network operations from hanging the main thread. See [here](http://developer.android.com/reference/android/os/StrictMode.html)
-5. When targeting mobile devices: Be careful about how you implement networking. The wireless radios themselves are a big power drain when on. Also be careful about data limits that could be imposed on a 1G/2G/3G/4G LTE network. LibGDX has configuration optimizations done to allow low-latency, but still have the benefits of TCP.
+5. When targeting mobile devices: Be careful about how you implement networking. The wireless radios themselves are a big power drain when on. Also be careful about data limits that could be imposed on a 1G/2G/3G/4G LTE network. libGDX has configuration optimizations done to allow low-latency, but still have the benefits of TCP.
 6. Supported networking configurations vary between backend and java implementation.
 7. Battery drain is more common when data is being sent and received due to the power needed by the radios.
 8. Be sure to set the `Content-Type` header for `POST` requests. Not all backends default to the same value (due to differences in the underlying implementations). The most common value for this header is `application/x-www-form-urlencoded`; however, depending on the type of data you are sending, you may need a different value (such as `application/xml` or `application/json`).

@@ -1,10 +1,10 @@
-The libgdx 2D Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest for typical usage. Improvements to particles is planned, but will be some time until we can get to it.
+The libGDX 2D Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest for typical usage. Improvements to particles is planned, but will be some time until we can get to it.
 
 [[images/particle-editor.png]]
 
 ## Running the 2D Particle Editor ##
 
-To run the editor, you can check out libgdx and run it [[from source | Running Demos & Tests]]. The editor is in the gdx-tools project. Alternatively, download the editor [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-2D-particles.jar). Thirdly, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
+To run the editor, you can check out libGDX and run it [[from source | Running Demos & Tests]]. The editor is in the gdx-tools project. Alternatively, download the editor [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-2D-particles.jar). Thirdly, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
 
 ### ...on Windows ###
 
@@ -20,7 +20,7 @@ java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives
 
 ### ...in IntelliJ ###
 
-Ensure that you have gdx-tools listed as a dependency in the desktop section of your libgdx project. Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file.
+Ensure that you have gdx-tools listed as a dependency in the desktop section of your libGDX project. Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file.
 
 Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
@@ -29,7 +29,7 @@ Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the ru
 Video:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=w8xkf3O4nho
-" target="_blank"><img src="http://img.youtube.com/vi/w8xkf3O4nho/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/w8xkf3O4nho/0.jpg"
 alt="Particle Editor Usage" width="480" height="360" border="10" /></a>
 
 Also see this [tutorial on JGO](http://www.java-gaming.org/topics/particle-effects-in-libgdx/29484/view.html).
@@ -38,7 +38,7 @@ Briefly, a particle effect consists of some images that are moved around. The im
 
 The first step to creating an effect is to choose an image. The default image is just a simple round gradient. Experiment with different images to create a wide variety of effects. Images will often combine for some surprising and sometimes very cool looking results.
 
-When you are configuring properties, you are actually configuring the particle emitter that will create and manage the particles. In code, the emitter is represented by the ParticleEmitter class. A particle effect is made up of one or more emitters, which is managed in the lower left of the particle editor. In code, the effect is represented by the ParticleEffect class, which has a list of ParticleEmitters. 
+When you are configuring properties, you are actually configuring the particle emitter that will create and manage the particles. In code, the emitter is represented by the ParticleEmitter class. A particle effect is made up of one or more emitters, which is managed in the lower left of the particle editor. In code, the effect is represented by the ParticleEffect class, which has a list of ParticleEmitters.
 
 ### Properties Panel Elements ###
 
@@ -54,7 +54,7 @@ Some of the number fields have a `>` button beside them. Clicking this button ch
 
 #### Chart ####
 
-A chart is used to control the value of a property over time. The word "Duration" or "Life" in the middle of the chart indicates whether the horizontal timeline of the chart is relative to the duration of the emitter, or the lifetime of each single particle. 
+A chart is used to control the value of a property over time. The word "Duration" or "Life" in the middle of the chart indicates whether the horizontal timeline of the chart is relative to the duration of the emitter, or the lifetime of each single particle.
 
 The "High" and "Low" number fields indicate the values that correspond with the top and bottom of the chart. Like other number fields, they can be expanded into a range with the `>` button. The random number in the range is chosen when the effect starts for a “Duration” chart, and when a particle is spawned for a “Life” chart.
 
@@ -87,7 +87,7 @@ Finally, the "Independent" checkbox. Some properties allow switching how the cha
 
 **Spawn:** The shape used to spawn particles: point, line, square, or ellipse. Ellipse has additional settings.
 
-**Spawn Width and Spawn Height:** Controls the size of the spawn shape. 
+**Spawn Width and Spawn Height:** Controls the size of the spawn shape.
 
 **Size:** The size of the particle.
 
@@ -115,4 +115,3 @@ In the upper left of the particle editor, “Count” shows how many particles e
 Effect settings saved with the particle editor are written to a text file, which can be loaded into a ParticleEffect instance in your game. The ParticleEffect can load images from a directory, or a SpriteSheet. Of course, a SpriteSheet is recommended and can easily be made with the SpriteSheetPacker.
 
 Most effects can be simplified to use just a few images. My most complex effects that use 4 or more emitters typically only need 15 or so total particles alive at once. See ParticleEmitterTest in gdx-tests if you'd like to test how many particles your device can handle. However, the performance varies greatly with the particle image size.
-
