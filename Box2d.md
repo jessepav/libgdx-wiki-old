@@ -6,7 +6,7 @@ The Box2D implementation in libGDX is a thin Java wrapper around the C++ engine.
 
 For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libGDX specifically can best be asked on their forum.
 
-A basic implementation and code sample for Box2D with Scene2D is also avalaible on [LibGDX.info](https://libgdx.info/box2d-basic/)
+A basic implementation and code sample for Box2D with Scene2D is also available on [libGDX.info](https://libgdx.info/box2d-basic/)
 
 As of [libGDX 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an extension and is no longer included with libGDX by default. Thus a manual installation is required.
 
@@ -45,7 +45,7 @@ To create the world we use the following code:
 World world = new World(new Vector2(0, -10), true); 
 ```
 
-The first argument we supply is a 2D vector containing the gravity: `0` to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 meter.
+The first argument we supply is a 2D vector containing the gravity: 0 to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 meter.
 
 The second value in the world creation is a boolean value which tells the world if we want objects to sleep or not. Generally we want objects to sleep as this conserves CPU usage, but there are situations where you might not want your objects to sleep.
 
