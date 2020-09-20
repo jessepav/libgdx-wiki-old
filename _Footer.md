@@ -1,1 +1,1 @@
-[If you need additional help, check out the extremely helpful discord community here: https://discord.gg/PcZyHQB](https://discord.gg/PcZyHQB)
+If you need additional help, check out the extremely helpful [libGDX Discord community](https://discord.gg/PcZyHQB)
