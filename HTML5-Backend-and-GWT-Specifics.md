@@ -18,11 +18,11 @@ superDev allows you to debug your HTML5 application. This is not necessary in mo
 * After the game restarted, open Chrome's dev console with F12 and navigate to the sources tab. Hit Ctrl-P and enter the name of the Java file you want to debug. The Java file will open within Chrome's dev console and you can set a break point. You are able to step through the Java code lines. However, debug variables will be generated JS names but you'll be able to make sense of it.
 * When you are done, you can stop the Gradle task with Ctrl-C.
 
-If your bug does not show up on Chrome, but only on Firefox or Safari, you are in bad luck. No debugging is available. But you can work with debug logging and, in case of thrown Exceptions, can turn off the Obfuscation in `build.gradle` file by adding this line:
+If your bug does not show up on Chrome, but only on Firefox or Safari, you are in bad luck. No debugging is available. But you can work with debug logging and, to avoid unreadable stack traces, you can turn off the obfuscation by adding this line to HTML project's `build.gradle`:
 
 ```
 gwt {
-  // right belog compiler.strict = true
+  // right below compiler.strict = true
   compiler.style = org.wisepersist.gradle.plugins.gwt.Style.DETAILED
 }
 ```
