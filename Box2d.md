@@ -27,7 +27,6 @@ As of [libGDX 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an 
   * [Sprites and Bodies](box2d#sprites-and-bodies)
   * [Sensors](box2d#sensors)
   * [Contact Listeners](box2d#contact-listeners)
-  * [Code Snippets](box2d#code-snippets)
   * [Resources](box2d#resources)
   * [Tools](box2d#tools)
 
