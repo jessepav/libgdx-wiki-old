@@ -135,6 +135,7 @@
 * Third Party Services
   * [[AdMob in libGDX]]
   * [[Airpush in libGDX]]
+  * [[Smaato in libGDX]]
   * [[Google Play Games Services in libGDX]]
   * [[ProGuard/DexGuard and libGDX]]
   * [[Pollfish in libGDX]]
