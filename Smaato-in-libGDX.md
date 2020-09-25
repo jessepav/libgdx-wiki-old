@@ -10,7 +10,8 @@
 
 # Introduction #
 
-This article will show you how to add Smaato adds in your libGDX Android Games. You will be able to monetize your game with Banner, Interstitial and Rewarded Ads. This tutorial implies that you are already familiar with libGDX basics and how Android Views are handled. But there will be a short recap.
+This article will show you how to add Smaato ads to your libGDX Android projects. You will be able to monetize your games with Banner, Interstitial and Rewarded Ads. This tutorial implies that you are already familiar with libGDX basics and how Android Views are handled. But there will be a short recap.
+
 Just for a reference, the latest documentation is available on Smaato official [website](https://developers.smaato.com/publishers/nextgen-sdk-android-integration).
 
 You will need:
@@ -56,17 +57,7 @@ android {
 
 Add required dependencies to your application module `build.gradle` file under project(":android") --> dependencies.
 
-If you want to add all Ad Types, then use:
 `implementation 'com.smaato.android.sdk:smaato-sdk:21.5.3`
-
-For Banner ads only:
-`implementation 'com.smaato.android.sdk:smaato-sdk-banner:21.5.3'`
-
-For Interstitial ads only:
-`implementation 'com.smaato.android.sdk:smaato-sdk-interstitial:21.5.3'`
-
-For Rewarded ads only:
-`implementation 'com.smaato.android.sdk:smaato-sdk-rewarded-ads:21.5.3'`
 
 If you’re using Proguard in your project, please add the following lines to your Proguard config file:
 ```java
@@ -114,7 +105,7 @@ public class AndroidLauncher extends AndroidApplication {
     }
 }
 ```
-The only missing piece here is the `createAdView` method that will be created in the next step.
+The only missing piece here is the `createAdView` method that will be created in the next section.
 
 # Banner #
 In order to add Banner ads we will use `com.smaato.sdk.banner.widget.BannerView`. As mentioned previously, the Banner view will reside in the same Relative Layout as the Game view. 
@@ -176,14 +167,14 @@ public class AndroidLauncher extends AndroidApplication {
 }
 ```
 Let me walk you through this code snippet:
-* `BannerView smaatoBanner` is kept as an instance variable, so the ad can be shown and hidden depending on the game lifecycle
+* `BannerView smaatoBanner` is kept as an instance variable, so an ad can be shown and hidden depending on the game lifecycle
 * `BannerView` should be always destroyed in order to release resources properly
-*  The banner will be placed according to `RelativeLayout.LayoutParams params` rules
+*  The banner will be placed according to `RelativeLayout.LayoutParams` rules
 * `showBannerAds`/`hideBannerAds` are supposed to be called as per the game lifecycle
-* `PUBLISHER_ID` and `BANNER_AD_SPACE_ID` can be used during testing. Please, refer to [Test Ads](#test-ads) section for all available test ads configurations. Just don't forget to change it to your production ones before release
+* `PUBLISHER_ID` and `BANNER_AD_SPACE_ID` can be used during testing. Please, refer to [Test Ads](#test-ads) section for all available test ads configurations.
 
 # Interstitial #
-Unlike Banner ads, Interstitial ads are not displayed on the screen constantly. Such ads should be only shown at natural transition points in the flow of an app, like finishing/failing of a level or switching between the screens. Hence there is no need to have an additional view for Interstitial ads as they will typically occupy the whole screen and will be destroyed upon closing.
+Unlike Banners, Interstitial ads are not constantly displayed on the screen. Such ads should be only shown at natural transition points in the flow of an app, like finishing/failing of a level or switching between the screens. Hence there is no need to have an additional view for Interstitial ads as they will typically occupy the whole screen and will be destroyed upon closing.
 
 ```java
 public class AndroidLauncher extends AndroidApplication {
@@ -199,11 +190,11 @@ public class AndroidLauncher extends AndroidApplication {
         RelativeLayout layout = new RelativeLayout(this);
         layout.setLayoutParams(new RelativeLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         layout.addView(createGameView());
-        createAdView();
+        createAd();
         setContentView(layout);
     }
 
-    private void createAdView() {
+    private void createAd() {
         SmaatoSdk.init(getApplication(), PUBLISHER_ID);
         requestSmaatoInterstitialAd();
     }
@@ -259,14 +250,14 @@ public class AndroidLauncher extends AndroidApplication {
 }
 ```
 Let me walk you through this code snippet:
-* `InterstitialAd smaatoInterstitial` is kept as an instance variable, so the ad can be shown depending on the game lifecycle
+* `InterstitialAd smaatoInterstitial` is kept as an instance variable, so an ad can be shown depending on the game lifecycle
 * It is recommended to call `requestSmaatoInterstitialAd` on a game load, in order to have an ad preloaded from the start
-* There are multiple useful callbacks of `Interstitial.loadAd` that you can use depending on your use case
+* There are multiple useful callbacks of `Interstitial.loadAd` that can be used depending on your use case
 * `showInterstitial` is supposed to be called as per the game lifecycle
 
 # Rewarded #
 Rewarded ads are visually similar to Interstitial ads as they typically occupy the whole screen. 
-But workflow-wise such ads are completely different - such ads encourage users to interact with the ad content in exchange for in-app rewards, like extra lives, free coins or energy.
+But workflow-wise they are completely different - such ads encourage users to interact with the ad content in exchange for in-app rewards, like extra lives, free coins or energy.
 
 ```java
 public class AndroidLauncher extends AndroidApplication {
@@ -282,11 +273,11 @@ public class AndroidLauncher extends AndroidApplication {
         RelativeLayout layout = new RelativeLayout(this);
         layout.setLayoutParams(new RelativeLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         layout.addView(createGameView());
-        createAdView();
+        createAd();
         setContentView(layout);
     }
 
-    private void createAdView() {
+    private void createAd() {
         SmaatoSdk.init(getApplication(), PUBLISHER_ID);
         requestSmaatoRewardedInterstitialAd();
     }
@@ -343,7 +334,7 @@ public class AndroidLauncher extends AndroidApplication {
 One more time, let me walk you through this code snippet:
 * `RewardedInterstitialAd smaatoRewardedInterstitial` is kept as an instance variable, so an ad can be shown whenever a user initiates a rewarded ad flow in your game
 * It is recommended to call `requestSmaatoRewardedInterstitialAd` on a game load, in order to have an ad preloaded from the start
-* There are multiple useful callbacks of `RewardedInterstitial.loadAd` that you can use depending on your use case
+* There are multiple useful callbacks of `RewardedInterstitial.loadAd` that you can be used depending on your use case
 * `showRewarded` is supposed to be called whenever a user initiates a rewarded ad flow in your game
 
 # Test Ads #
@@ -357,4 +348,5 @@ One more time, let me walk you through this code snippet:
 | 130626428     | Rewarded           |
 
 Please, use Publisher Id 1100042525 with each of those adspaces.
+
 Don't forget to change the values to the production ones before the release!
