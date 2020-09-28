@@ -7,7 +7,8 @@ This will create a gradle ready project, which can then be imported into your ID
 
 Let's start:
 
-1. Download the [libGDX Project setup tool "gdx-setup.jar"](https://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar)
+<!-- https://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar -->
+1. Download the [libGDX Project setup tool "gdx-setup.jar"](https://libgdx.com/assets/gdx-setup.jar)
 2. Open your command line tool, go to the download folder and run <br>`java -jar ./gdx-setup.jar`
 
 This will open the following setup that will allow you to generate your project<br>
