@@ -77,6 +77,27 @@ If your application targets Android 5.0 (API level 21) or higher, then you need 
 <uses-feature android:name="android.hardware.location.network" />
 ```
 
+The latest version of Smaato NextGenSDK has been validated against `com.android.tools.build:gradle:3.5.4` and gradle-wrapper `gradle-5.6.3-bin`
+
+Main build.gradle:
+```java
+buildscript {
+    ...
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+    }
+}
+```
+
+The gradle-wrapper.properties:
+```xml
+distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.3-bin.zip
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStorePath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+```
+
 # Recap #
 LibGDX Android game is created as a [View](https://developer.android.com/reference/android/view/View). In order to add ads that are constantly displayed (like Banners) another view holding that should be used. In other words, a Relative Layout having both views should be created.
 You can see that in the following code snippet:
