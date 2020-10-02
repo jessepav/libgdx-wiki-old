@@ -180,7 +180,9 @@ The implementation the official HTML5 backend uses has some other restrictions, 
   * Sound pitch is not implemented prior 1.9.12. You can use [an alternative backend](https://github.com/MrStahlfelge/gdx-backends) which is based on WebAudioAPI and supports it.
   * Your game needs a user interaction (eg. click on a button) before playing any music or sounds. This is a limitation for any games played in a browser.
 * TiledMaps should be saved with Base64 encoding.
-* Most Pixmap methods are not supported.
+* Pixmap
+  * Some Pixmap methods are not supported (eg. loading from binary data).
+  * Some drawings (eg. lines) are antialiased which is not always wanted. If you need non-antialiased lines, you can [draw it pixel by pixel](https://github.com/libgdx/libgdx/issues/6019#issuecomment-702916344) or use FrameBuffer with a ShapeRenderer to achieve it.
 * WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them: 
   * NPOT (non power of two) textures are not supported with MipMap filters and/or Repeat wrapping.
   * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
