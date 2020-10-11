@@ -32,6 +32,11 @@ textureRegion.flip(false, true);
 
 As you can see above, the texture is flipped via use of a TextureRegion. This is done, because the framebuffer textures are generally upside-down.
 
+If you just want to draw the framebuffer's texture on screen, you can also use this to flip the texture:
+```java
+batch.draw(fbo.getColorTexture(), x, y, w, h, 0, 0, 1, 1)
+```
+
 ## Common Issues
 ### Nesting
 Please note, that the default framebuffers of libGDX cannot be nested (i.e. used _inside_ of each other). This is due to `FrameBuffer.end()` always binding the back buffer, even if it wasn't the previously bound buffer. A detailed description of this can be found [here](https://github.com/crykn/libgdx-screenmanager/wiki/Custom-FrameBuffer-implementation#the-problem). To work around this problem, FrameBuffer can be extended and the `end()` method overridden. If you don't want to implement this yourself, there are some community options.
