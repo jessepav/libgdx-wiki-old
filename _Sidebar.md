@@ -2,8 +2,9 @@
 [[Wiki Style Guide]]
 
 ## Getting Started
-* [Creating Your First libGDX Project](https://libgdx.com/dev/setup/)
-* [Getting It Running](https://libgdx.com/dev/running/)
+* [Setting Up a Dev Environment](https://libgdx.com/dev/setup/)
+* [Creating Your First libGDX Project](https://libgdx.com/dev/project_generation/)
+* [Importing & Running It](https://libgdx.com/dev/import_and_running/)
 * [A Simple Game](https://libgdx.com/dev/simple_game/)
 * [Extending the Simple Game](https://libgdx.com/dev/simple_game_extended/)
 
