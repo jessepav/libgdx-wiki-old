@@ -25,4 +25,4 @@ public boolean keyDown(int keycode) {
 }
 ```
  
-[[Prev|Cursor Visibility & Catching]] | [[Next|On-Screen Keyboard]]
+[[Prev|Cursor Visibility and Catching]] | [[Next|On-Screen Keyboard]]
