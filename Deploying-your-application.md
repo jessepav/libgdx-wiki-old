@@ -8,12 +8,11 @@ The mechanism to deploy your game differs between platforms. This article aims t
 * [Deploy Web](#deploy-web)
 
 # <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X
-The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libGDX and any extensions, and your assets. 
-
 ### As JAR file
+The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR file. This can be done via the following console command:
 `gradlew desktop:dist`
 
-This will create a runnable JAR file located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
+The generated JAR file will be located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
 
 ### Alternative (modern) ways of deployment
 Distributing java applications as JAR file can be very unhandy and prone to issues, as not every user can be expected to have the right JRE (or even any JRE) installed. Other ways of deployment are for example:
