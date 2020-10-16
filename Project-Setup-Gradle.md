@@ -44,12 +44,7 @@ When ready, click "Generate".
 
 Note: You may get a message indicating that you have a more recent version of android build tools or android API than the recommended. This is not a blocking message and you may continue.
 
-**Now you are ready to import the project into your IDE, run, debug and package it!**
-
-  * [[Eclipse|Gradle and Eclipse]]
-  * [[Intellij IDEA and Android studio|Gradle and Intellij IDEA]]
-  * [[NetBeans|Gradle and NetBeans]]
-  * [[Commandline|Gradle on the Commandline]]
+**Now you are ready to import the project into your IDE, [run](https://libgdx.com/dev/import_and_running/#getting-it-running), debug and [[package|Deploying your application]] it!**
 
 # Additional reading on libGDX projects
 
