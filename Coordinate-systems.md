@@ -8,7 +8,7 @@ On this page the various coordinate systems are listed. It is highly recommended
  * [Screen or image coordinates](#screen-or-image-coordinates)
   * [Pixmap and texture coordinates](#pixmap-and-texture-coordinates)
  * [Normalized render coordinates](#normalized-render-coordinates)
- * [Normalized texture (UV) coordinates](#normalized-texture-(UV)-coordinates)
+ * [Normalized texture (UV) coordinates](#normalized-texture-UV-coordinates)
  * [World coordinates](#world-coordinates)
   * [GUI/HUD coordinates](#guihud-coordinates)
   * [Game coordinates](#game-coordinates)
@@ -29,7 +29,7 @@ Each coordinate is an index in the 2D array of this grid, representing a physica
 
 This coordinate system is based on the classic representation of the display, which is usually also closest to the device/OS specific implementation. If you're familiar with canvas graphics or basic image editors, then you are probably already familiar with these coordinates. You might even lean towards using these as your default/favorite, which you shouldn't.
 
-Whenever working with [mouse or touch](https://github.com/libgdx/libgdx/wiki/Mouse%2C-touch-%26-keyboard#mouse--touch) coordinates, you'll be using this coordinate system. You typically want to convert these coordinates as soon as possible to a more convenient coordinate system. E.g. the `camera.unproject` or `viewport.unproject` method let's you convert them to world coordinates (see below).
+Whenever working with [mouse or touch](https://github.com/libgdx/libgdx/wiki/Mouse%2C-Touch-and-Keyboard#mouse--touch) coordinates, you'll be using this coordinate system. You typically want to convert these coordinates as soon as possible to a more convenient coordinate system. E.g. the `camera.unproject` or `viewport.unproject` method let's you convert them to world coordinates (see below).
 
 ## Screen or image coordinates
  * Units: pixels
