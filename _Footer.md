@@ -1,8 +1,11 @@
-OBOE AUDIO!!!
-Usage
-Package
-You can use jcenter repository to resolve this library and use it as a dependency:
+## OBOE AUDIO!!!
+## Usage
 
+### Package
+
+You can use *jcenter* repository to resolve this library and use it as a dependency:
+
+```groovy
 ext {
     libgdxoboe_version = "0.2.4"
 }
@@ -15,13 +18,16 @@ repositories {
 dependencies {
     implementation "com.github.barsoosayque:libgdxoboe:$libgdxoboe_version"
 }
-Note natives configuration. This is libGDX specific configuration for native libraries, it's used by copyAndroidNatives task.
+```
 
-Launcher
-Simply override createAudio method in your android launcher class to create an instance of OboeAudio:
+Note *natives* configuration. This is libGDX specific configuration for native libraries, it's used by `copyAndroidNatives` task.
+
+### Launcher
+
+Simply override *createAudio* method in your android launcher class to create an instance of *OboeAudio*:
 
 Java:
-
+```java
 public class AndroidLauncher extends AndroidApplication {
     // Magic happens here:
     @Override
@@ -37,8 +43,10 @@ public class AndroidLauncher extends AndroidApplication {
         initialize(new SomeApp(), config);
     }
 }
-Kotlin:
+```
 
+Kotlin:
+```kotlin
 class AndroidLauncher : AndroidApplication() {
     // Magic happens here:
     override fun createAudio(context: Context, config: AndroidApplicationConfiguration): AndroidAudio =
@@ -52,4 +60,6 @@ class AndroidLauncher : AndroidApplication() {
         initialize(SomeApp(), config)
     }
 }
-And that's basically it. All Sound and Music instances are "patched" with libGDX Oboe now.
+```
+
+And that's basically it. All *Sound* and *Music* instances are "patched" with **libGDX Oboe** now.
