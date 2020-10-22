@@ -29,7 +29,7 @@ public class SimplerTouchTest extends ApplicationAdapter implements InputProcess
 	// we will use 32px/unit in world
 	public final static float SCALE = 32f;
 	public final static float INV_SCALE = 1.f/SCALE;
-	// this is our "target" resolution, not that the window can be any size, it is not bound to this one
+	// this is our "target" resolution, note that the window can be any size, it is not bound to this one
 	public final static float VP_WIDTH = 1280 * INV_SCALE;
 	public final static float VP_HEIGHT = 720 * INV_SCALE;
 
