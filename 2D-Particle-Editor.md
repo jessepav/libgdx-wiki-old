@@ -32,7 +32,7 @@ Video:
 " target="_blank"><img src="http://img.youtube.com/vi/w8xkf3O4nho/0.jpg"
 alt="Particle Editor Usage" width="480" height="360" border="10" /></a>
 
-Also see this [tutorial on JGO](http://www.java-gaming.org/topics/particle-effects-in-libgdx/29484/view.html).
+Also see this [tutorial on JGO](https://jvm-gaming.org/t/particle-effects-in-libgdx/41758).
 
 Briefly, a particle effect consists of some images that are moved around. The images usually use additive blending and some pretty stunning results can be produced with only a few images. Particle effects are good for fire, explosions, smoke, etc. Each particle has many properties that control how it behaves: life, velocity, rotation, scale, etc. The particle editor allows you to manipulate these properties and observe the result in real time. You can also create effects programmatically, but it is much more difficult and time consuming to create great effects.
 
