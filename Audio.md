@@ -18,9 +18,9 @@ libGDX Android backend uses the `SoundPool` API to play `Sound`s and the `MediaP
 
 ```java
 @Override
-	public AndroidAudio createAudio(Context context, AndroidApplicationConfiguration config) {
-		return new AsynchronousAndroidAudio(context, config);
-	}
+public AndroidAudio createAudio(Context context, AndroidApplicationConfiguration config) {
+	return new AsynchronousAndroidAudio(context, config);
+}
 ```
 
 - `setPosition()` on `Music` is not always reliable, especially after pausing/resume.
