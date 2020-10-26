@@ -27,5 +27,5 @@ libGDX Android backend uses the `SoundPool` API to play `Sound`s and the `MediaP
 
 Generally speaking, Audio on Android is problematic and there may be other scenarios or device especific issues. 
 
-In an attempt to fix those issues Google created [Oboe](https://github.com/google/oboe) that can be used on libGDX projects thanks to [libGDX Oboe](https://github.com/barsoosayque/libgdx-oboe).
+In an attempt to fix come of these issues Google created [Oboe](https://github.com/google/oboe) that can be used on libGDX projects thanks to [libGDX Oboe](https://github.com/barsoosayque/libgdx-oboe).
 
