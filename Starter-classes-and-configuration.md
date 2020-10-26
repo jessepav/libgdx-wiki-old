@@ -23,7 +23,7 @@ package com.me.mygdxgame;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-public class Main {
+public class DesktopLauncher {
    public static void main(String[] args) {
       LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
       cfg.title = "my-gdx-game";
@@ -69,7 +69,7 @@ package com.me.mygdxgame;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
-public class Main {
+public class DesktopLauncher {
    public static void main(String[] args) {
       Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
       config.setTitle("my-gdx-game");
