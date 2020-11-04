@@ -1,0 +1,1 @@
+This page [moved](https://github.com/libgdx/libgdx/wiki/Deploying-your-application).
