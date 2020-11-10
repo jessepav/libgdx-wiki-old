@@ -1,4 +1,4 @@
-The [libGDX community](https://libgdx.com/community/) is glad to help you when you get stuck or encounter a bug, but we need your help to it as easy to help you as possible.
+The [libGDX community](https://libgdx.com/community/) is glad to help you when you get stuck or encounter a bug, but we need your help to make it as easy to help you as possible.
 
 ## Contents
 
@@ -23,13 +23,11 @@ The [libGDX community](https://libgdx.com/community/) is glad to help you when y
 Please go through this short checklist to be sure you haven't missed an easy to find solution.
 
   * Are you using the latest [nightly build](http://libgdx.badlogicgames.com/download.html)? Please try that first, as issues are being fixed every single day.
-  * Have you read the documentation on the [[Table of Contents | Home]])? It can also be very helpful to look at the [Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/) and [source code](https://github.com/libgdx/libgdx) (don't be shy!). Search the [tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) for a specific class to find example code.
+  * Have you read the documentation on the [[Table of Contents | Home]]? It can also be very helpful to look at the [Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/) and [source code](https://github.com/libgdx/libgdx) (don't be shy!). Search the [tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) for a specific class to find example code.
   * Have you [searched the forum](http://www.badlogicgames.com/forum/search.php) for your problem?
   * Have you [searched the issue tracker](https://github.com/libgdx/libgdx/issues) for your problem? Be sure to search "All issues", not just "Open issues".
 
-**If you still have a problem, often the fastest way to get help is the [libGDX Discord](https://libgdx.com/community/discord/). There are a lot of active users, any one of which could answer your question right now.**
-
-Another way of getting help is the libGDX chat room ([#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx)).
+**If you still have a problem, the way to get help is the [libGDX Discord](https://libgdx.com/community/discord/). There are a lot of active users, any one of which could answer your question right now.**
 
 Otherwise, if you wish to [post a new issue](https://github.com/libgdx/libgdx/blob/master/CONTRIBUTING.md) on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
@@ -43,7 +41,7 @@ If you believe your issue, error, or suspected bug is related to a specific back
 
 - Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
 
-**For Desktop backend issues (jglfw, lwjgl)**
+**For Desktop backend issues (LWJGL 2 & 3)**
  - Please list the operating system and version, architecture, and if necessary OpenGL version.
  - Also mark specifically which of those backends have this issue.
 
@@ -57,7 +55,7 @@ Listing this information can greatly reduce the workload on us and can greatly i
 
 ## <a id="Topic_Title"></a>Title ##
 
-Write a clear and short title. Titles that do not describe the issue (such as "please help") or contain all caps, exclamation marks, etc. make it much less likely that your post will be read.
+Write a clear and short title. Titles that do not describe the issue (such as "please help") or contain all caps, exclamation marks, etc. make it much less likely that your issue will be read.
 
 ## <a id="Context"></a>Context ##
 
@@ -73,7 +71,7 @@ If you fail to do this, likely you will be ignored. No one wants to guess what y
 
 ## <a id="Exceptions"></a>Exceptions ##
 
-If an exception occurred, include the full exception message and stack-trace.
+If an exception occurred, include the _full_ exception message and stack-trace.
 
 Often the first line number just after the deepest (nearest to the bottom) exception message is most relevant. If this line is in your code, along with the full exception message and stack-trace you should include your code for this line and 1-2 surrounding lines.
 
@@ -91,7 +89,7 @@ Caused by: java.lang.NullPointerException
 
 ## <a id="Code_Snippets"></a>Code Snippets ##
 
-Code snippets are most often not very useful. Unless you are blatantly misusing the API, most problems cannot be solved just by looking at a code snippet. Code snippets mostly lead to vague guesses at what might be wrong instead of a real answer to your question. Instead, include executable example code.
+Code snippets are most often not very useful. Unless you are blatantly misusing the API, most problems cannot be solved just by looking at a code snippet. Code snippets mostly lead to vague guesses at what might be wrong instead of a real answer to your question. Instead, include **executable example code**.
 
 ## <a id="Executable_Example_Code"></a>Executable Example Code ##
 
