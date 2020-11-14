@@ -94,7 +94,7 @@ protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
 
 Speaking of the preloader: The HTML5 preloader is necessary, because usual gdx games rely on all assets being ready to access when needed. It prefetches every file in your asset directory. This may take some time and is not necessary if your game is a game that does not need all assets for presenting the startup screen. Think of all the people out there not having high speed internet connections.
 
-From 1.9.12 on, you can increase your preload time a lot if you use asset manager to load your assets later. You can override a predefined `AssetFilter` with your own AssetFilter on GWT and return `false` for all asset files that are not needed before game start. Make sure these files are only loaded via AssetManager, otherwise your game will freeze when using such assets.
+From 1.9.12 on, you can decrease your preload time a lot if you use asset manager to load your assets later. You can override a predefined `AssetFilter` with your own AssetFilter on GWT and return `false` for all asset files that are not needed before game start. Make sure these files are only loaded via AssetManager, otherwise your game will freeze when using such assets.
 
 ```
 public class AssetFilter extends DefaultAssetFilter {
