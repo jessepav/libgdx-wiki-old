@@ -32,7 +32,7 @@
 
 * [[Input Handling]]
 * [[Configuration and Querying]]
-* [[Mouse, Touch and Keyboard]]  
+* [[Mouse, Touch and Keyboard]]
   * [[Polling]]  
   * [[Event Handling]]
 * [[Controllers]]
@@ -45,6 +45,7 @@
 * [[Cursor Visibility and Catching]]
 * [[Back and Menu Key Catching]]
 * [[On-Screen Keyboard]]
+* [[Adding new Keycodes]]
 
 </details>
 
