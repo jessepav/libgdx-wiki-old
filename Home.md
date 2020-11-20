@@ -37,6 +37,7 @@
   * [[Cursor Visibility and Catching]]
   * [[Back and Menu Key Catching]]
   * [[On-Screen Keyboard]]
+  * [[Adding new Keycodes]]
 * [[Memory Management]]
 * [[Audio]]
   * [[Sound Effects]]
