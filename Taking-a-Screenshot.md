@@ -24,6 +24,6 @@ If you have no layered transparency, here's a more compact and efficient way:
 
 ```java
 Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap);
+PixmapIO.writePNG(Gdx.files.external("mypixmap.png"), pixmap, Deflater.DEFAULT_COMPRESSION, true);
 pixmap.dispose();
 ```
