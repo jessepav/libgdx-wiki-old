@@ -43,8 +43,7 @@ For a more in depth look at how to use 3d particles programmatically, [take a lo
 
 ### Step 1: Create Batches and ParticleSystem
 ```java
-// ParticleSystem is a singleton class, we get the instance instead of creating a new object:
-ParticleSystem particleSystem = ParticleSystem.get();
+ParticleSystem particleSystem = new ParticleSystem();
 // Since our particle effects are PointSprites, we create a PointSpriteParticleBatch
 PointSpriteParticleBatch pointSpriteBatch = new PointSpriteParticleBatch();
 pointSpriteBatch.setCamera(cam);
