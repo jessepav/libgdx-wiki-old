@@ -71,7 +71,7 @@ effect.start();  // optional: particle will begin playing immediately
 particleSystem.add(effect);
 ```
 
-Your game most likely will have many particle effects, either at once or over time during game play. You really don't want to make a new copy of the particle effect each time you create an object or graphical effect that needs it.  Instead, you should use Pool the effects to avoid new object creation. You can read more about Pooling in this wiki or the libGDX Pool class documentation.
+Your game most likely will have many particle effects, either at once or over time during game play. You really don't want to make a new copy of the particle effect each time you create an object or graphical effect that needs it.  Instead, you should pool the effects to avoid new object creation. You can read more about Pooling [in this wiki](https://github.com/libgdx/libgdx/wiki/Memory-management#object-pooling) or the libGDX Pool class documentation.
 
 Here is an example of a Pool:
 ```java
