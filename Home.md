@@ -4,7 +4,6 @@
 
 ## Getting Started
 #### If you want to get started coding with libGDX, head to the [Official documentation - here - ](https://libgdx.com/dev/setup/) to learn how to setup your environment and create/import your project.
-* [[Java Development Kit - Selection]]
 * [Setting Up a Dev Environment](https://libgdx.com/dev/setup/)
 * [Creating Your First libGDX Project](https://libgdx.com/dev/project_generation/)
 * [Importing & Running It](https://libgdx.com/dev/import_and_running/)
@@ -146,6 +145,7 @@
 ## Articles
 * [[Getting Help]]
 * [[External Tutorials]]
+* [[Java Development Kit - Selection]]
 * [[Deploying Your Application]]
 * [[Coordinate systems]]
 * [[Updating Your libGDX Version|Updating libGDX]]
