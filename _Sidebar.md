@@ -2,7 +2,7 @@
 [[Wiki Style Guide]]
 
 ## Getting Started
-* [Java Development Kit - Selection]
+* [[Java Development Kit - Selection]]
 * [Setting Up a Dev Environment](https://libgdx.com/dev/setup/)
 * [Creating Your First libGDX Project](https://libgdx.com/dev/project_generation/)
 * [Importing & Running It](https://libgdx.com/dev/import_and_running/)
