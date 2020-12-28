@@ -188,6 +188,7 @@
 
 * [[AdMob in libGDX]]
 * [[Airpush in libGDX]]
+* [[Firebase in libGDX]]
 * [[Smaato in libGDX]]
 * [[Google Play Games Services in libGDX]]
 * [[Pollfish in libGDX]]
