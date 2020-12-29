@@ -91,6 +91,8 @@
     * [[3D Animations and Skinning]]
     * [[Importing Blender Models in libGDX]]
     * [[3D Particle Effects]]
+    * [[Virtual Reality (VR)]]
+    * [[ImGui Bindings And 3D Graphics]]
     * Perspective Camera ??
     * Picking ??
 * [[Managing Your Assets]]
