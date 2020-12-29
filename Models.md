@@ -1,6 +1,6 @@
 A model represents a 3D asset consisting of a hierarchy of nodes, where each node is a combination of a geometry (mesh) and material. Optionally a model can also contain information about [animation and/or skinning](https://github.com/libgdx/libgdx/wiki/3D-animations-and-skinning).
 
-A model is not intended to be actually rendered. Instead you should create one or more ModelInstances of a Model, which are used for the actual rendering. The structure of a ModelInstance is roughly the same as a Model.
+A model is not intended to be rendered directly. Instead you should create one or more ModelInstances of a Model, which are used for the actual rendering. The structure of a ModelInstance is roughly the same as a Model.
 
 ## Nodes
 A model is a hierarchical representation of nodes. In practice this means that a model contains an array of nodes and each node contains also an array of nodes. Nodes can be accessed using the public `nodes` array or using one of the `getNode(...)` methods. Each node has a unique `id` within a model.
