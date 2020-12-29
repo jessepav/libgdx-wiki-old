@@ -58,4 +58,5 @@ ImGui.destroyContext();
 ```
 
 Result:
-![Screenshot of ImGui in libGDX](https://imgur.com/a/DQzdb2t)
+
+<img src="https://i.imgur.com/cnfOMDR.png" alt="Screenshot of ImGui in libGDX" width="500"/>
