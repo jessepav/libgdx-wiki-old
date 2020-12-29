@@ -8,3 +8,4 @@
  * [[3D Animations and Skinning]]
  * [[Importing Blender Models in libGDX]]
  * [[3D Particle Effects]]
+ * [[Virtual Reality (VR)]]
