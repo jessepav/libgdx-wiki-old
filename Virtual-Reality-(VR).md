@@ -7,3 +7,7 @@ The Maven coordinates can be found using the [LWJGL customize](https://www.lwjgl
 ### Example code
 
 Example code can be found at [https://github.com/badlogic/gdx-vr](https://github.com/badlogic/gdx-vr).
+
+Additionally, the following demos from LWJGL may be useful for debugging:
+[HelloOpenVR.java](https://github.com/LWJGL/lwjgl3/blob/master/modules/samples/src/test/java/org/lwjgl/demo/openvr/HelloOpenVR.java)
+[HelloLibOVR.java](https://github.com/LWJGL/lwjgl3/blob/master/modules/samples/src/test/java/org/lwjgl/demo/ovr/HelloLibOVR.java)
