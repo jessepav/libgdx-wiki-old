@@ -56,3 +56,6 @@ imGuiGl3.dispose();
 imGuiGlfw.dispose();
 ImGui.destroyContext();
 ```
+
+Result:
+![Screenshot of ImGui in libGDX](https://imgur.com/a/DQzdb2t)
