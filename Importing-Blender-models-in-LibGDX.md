@@ -1,6 +1,6 @@
 **Note:** _while this page uses Blender for practical examples, most of it applies to **other modeling applications** as well._
 
-**Warning**: This article is not finished. It does not specify how to load the model into LibGDX.
+**Warning**: This article is not finished. It does not elaborate on loading the models into LibGDX.
 
 Blender is an open-source modeling application you can use to create 3D models, scenes and animations. You can get Blender at [blender.org](http://www.blender.org/). If you are new to creating 3D models using Blender, you can checkout the [blender tutorials](http://www.blender.org/education-help/tutorials/). This page provides practical tips on preparing and converting your Blender model for use in LibGDX.
 
@@ -62,3 +62,11 @@ If your model contains multiple similar meshes with less than 32767 vertices, th
 **`fbx-conv` will never split your mesh**, unless your mesh is skinned and exceeds the maximum number amount of bones specified. Simply because it doesn't have enough information to do so.
 
 > Note that in contrast to java, both fbx-conv and opengl support `unsigned` indices. Therefor you might not notice issues between 32767 and 65535 vertices in some cases and devices. You should not rely on this though.
+
+### Loading a G3DJ file into libGDX
+
+The simplest way to load a G3DJ file into libGDX is the following.
+
+```
+Model model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal(modelFileName));
+```
