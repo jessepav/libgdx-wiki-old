@@ -1,4 +1,4 @@
-### Why would I want to use the AssetManager ###
+### Why would I want to use the AssetManager
 
 [AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/AssetManager.java) helps you load and manage your assets. It is the recommended way to load your assets, due to the following nice behaviors:
 
@@ -9,7 +9,7 @@
 
 Still with me? Then read on.
 
-### Creating an AssetManager ###
+### Creating an AssetManager
 
 This part is rather simple:
 
@@ -29,7 +29,7 @@ This will cause problems on Android because the life-cycle of the static variabl
 
 On Android, it is even possible for multiple instances of your Activity to be active at the same time, so do not think you're safe even if you handle life-cycle methods properly! (See [this StackOverflow question](http://stackoverflow.com/q/4341600/14637) for details.)
 
-### Loading Assets ###
+### Adding Assets to the queue
 
 To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There are two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the latter loads parts of the asset on another thread, e.g., the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
 
@@ -64,6 +64,37 @@ manager.load("data/mytexture.png", Texture.class, param);
 ```
 
 Look into the loaders mentioned above to find out about their parameters.
+
+### Actually loading the assets
+So far we only queued assets to be loaded. The AssetManager does not yet load anything. To kick this off we have to call AssetManager.update() continuously, say in our ApplicationListener.render() method:
+
+```java
+public MyAppListener implements ApplicationListener {
+
+   public void render() {
+      if(manager.update()) {
+         // we are done loading, let's move to another screen!
+      }
+
+      // display loading information
+      float progress = manager.getProgress()
+      ... left to the reader ...
+   }
+}
+```
+
+As long as AssetManager.update() returns false you know it's still loading assets. To poll the concrete state of loading you can use AssetManager.getProgress(), which returns a number between 0 and 1 indicating the percentage of assets loaded so far. There are other methods in AssetManager that give you similar information, like AssetManager.getLoadedAssets() or AssetManager.getQueuedAssets(). <b>You have to call AssetManager.update() to keep loading!</b>
+
+If you want to block and make sure all assets are loaded you can call:
+
+```java
+manager.finishLoading();
+```
+
+This will block until all the assets that have been queued are actually done loading. Kinda defeats the purpose of asynchronous loading, but sometimes one might need it (e.g., loading the assets needed to display the loading screen itself).
+
+### Optimize loading
+In order to perform loading as efficiently/fast as possible while trying to keep a certain FPS, AssetManager.update() should be called with parameters.<br>**E.g. AssetManager.update(17)** - In this case the AssetManager blocks for at least 17 milliseconds (only less if all assets are loaded) and loads as many assets as possible, before it returns control back to the render method. Blocking for 16 or 17 milliseconds leads to ~60FPS as 1/60*1000 = 16.66667. Note that it might block for longer, depending on the asset that is being loaded so **don't** take the desired FPS as guaranteed.
 
 ### Loading a TTF using the AssetHandler
 
@@ -124,36 +155,7 @@ arial20.fontParameters.size = 20;
 manager.load("arial20.ttf", BitmapFont.class, arial20);
 ```
 
------
-
-So far we only queued assets to be loaded. The AssetManager does not yet load anything. To kick this off we have to call AssetManager.update() continuously, say in our ApplicationListener.render() method:
-
-```java
-public MyAppListener implements ApplicationListener {
-
-   public void render() {
-      if(manager.update()) {
-         // we are done loading, let's move to another screen!
-      }
-
-      // display loading information
-      float progress = manager.getProgress()
-      ... left to the reader ...
-   }
-}
-```
-
-As long as AssetManager.update() returns false you know it's still loading assets. To poll the concrete state of loading you can use AssetManager.getProgress(), which returns a number between 0 and 1 indicating the percentage of assets loaded so far. There are other methods in AssetManager that give you similar information, like AssetManager.getLoadedAssets() or AssetManager.getQueuedAssets(). <b>You have to call AssetManager.update() to keep loading!</b>
-
-If you want to block and make sure all assets are loaded you can call:
-
-```java
-manager.finishLoading();
-```
-
-This will block until all the assets that have been queued are actually done loading. Kinda defeats the purpose of asynchronous loading, but sometimes one might need it (e.g., loading the assets needed to display the loading screen itself).
-
-### Getting Assets ###
+### Getting Assets
 That's again easy:
 
 ```java
@@ -170,7 +172,7 @@ if(manager.isLoaded("data/mytexture.png")) {
 }
 ```
 
-### Disposing Assets ###
+### Disposing Assets
 Easy again, and here you can see the real power of the AssetManager:
 
 ```java
@@ -197,7 +199,7 @@ Both will dispose all currently loaded assets and remove any queued and not yet 
 
 And that's pretty much everything there is. Now for the nitty-gritty parts.
 
-### I only supply Strings, where does the AssetManager load the assets from? ###
+### I only supply Strings, where does the AssetManager load the assets from?
 Every loader has a reference to a FileHandleResolver. That's a simple interface looking like this:
 
 ```java
@@ -216,7 +218,7 @@ AssetManager manager = new AssetManager(new ExternalFileHandleResolver());
 
 This will make sure all default loaders listed above will use that loader.
 
-### Writing your own Loaders ###
+### Writing your own Loaders
 I can't anticipate which other types of resources you want to load, so at some point you might want to write your own loaders. There are two interfaces called SynchronousAssetLoader and AsynchronousAssetLoader you can implement. Use the former if your asset type is fast to load, use the latter if you want your loading screen to be responsive. I suggest basing your loader on the code of one of the loaders listed above. Look into MusicLoader for a simple SynchronousAssetLoader, look into PixmapLoader for a simple AsynchronousAssetLoader. BitmapFontLoader is a good example of an asynchronous loader that also has dependencies that need to be loaded before the actual asset can be loaded (in that case it's the texture storing the glyphs). Again, you can do pretty much anything with this.
 
 Additionally, the `loadAsync` function _can_ be used to load parts of the assets where the loading can be delegated to another thread (this is a requirement for responsive loading screen). The `loadSync` function _must_ be used if some parts of the asset needs to be loaded on the main rendering thread. For example, OpenGL API function calls must be invoked on the main rendering thread, therefore any parts of the asset and its loading involving calls to OpenGL must be called in `loadSync`. 
@@ -230,7 +232,7 @@ manager.setLoader(MyAssetClass.class, new MyAssetLoader(new InternalFileHandleRe
 manager.load("data/myasset.mas", MyAssetClass.class);
 ```
 
-### Resuming with a Loading Screen ###
+### Resuming with a Loading Screen
 On Android, your app can be paused and resumed. Managed OpenGL resources like Textures need to be reloaded in that case, which can take a bit of time. If you want to display a loading screen on resume, you can do the following after you created your AssetManager.
 
 ```java
