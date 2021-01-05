@@ -6,14 +6,6 @@ Gdx.input.setCatchKey(Input.Keys.BACK, true);
 
 You will still receive key events if you have registered an [[InputProcessor|Event Handling]], but the operating system will not close your application.
 
-Note that the general paradigm in Android is to have the back key close the current activity. Deviating from this is usually viewed as bad practice.
-
-Another key that might need to be caught is the menu key. If uncaught, it will bring up the on-screen keyboard after a long press. Catching this key can be done as follows:
-
-```java
-Gdx.input.setCatchKey(Input.Keys.MENU, true);
-```
-Then a "keyDown" event will be thrown with a key code Keys.BACK:
 ```   
 @Override
 public boolean keyDown(int keycode) {
@@ -24,5 +16,15 @@ public boolean keyDown(int keycode) {
     return false;
 }
 ```
+
+Note that the general paradigm in Android is to have the back key close the current activity. Deviating from this is usually viewed as bad practice.
+
+Another key that might need to be caught is the menu key. If uncaught, it will bring up the on-screen keyboard after a long press. Catching this key can be done as follows:
+
+```java
+Gdx.input.setCatchKey(Input.Keys.MENU, true);
+```
+
+There might be other keys to catch as well. You should catch all keys used to control your game to tell the operating system to prevent triggering behaviour outside your apps. This could affect media control keys on Android TV, and some general keys if you target HTML5 as well (see [HTML 5 specifics article](https://github.com/libgdx/libgdx/wiki/HTML5-Backend-and-GWT-Specifics#preventing-keys-from-triggering-scrolling-and-other-browser-functions) for more information)
  
 [[Prev|Cursor Visibility and Catching]] | [[Next|On-Screen Keyboard]]
