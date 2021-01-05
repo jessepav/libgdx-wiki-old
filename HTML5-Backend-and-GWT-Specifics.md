@@ -115,32 +115,10 @@ Prior 1.9.12, you can use [an alternative backend](https://github.com/MrStahlfel
 
 ## Preventing Keys From Triggering Scrolling and Other Browser Functions
 
-On a normal web page, if you press the down arrow on your keyboard, it will scroll the page up. That's nice and all, but maybe you don't want that to happen when players are trying to move the character in your game. To prevent this, you have to add overriding functions to prevent the default actions of special keys. The following must be added to the script block of your index.html in the "html/webapp" folder (dist) and "html/war" folder (superDev):
+On a normal web page, if you press the down arrow on your keyboard, it will scroll the page up. That's nice and all, but maybe you don't want that to happen when players are trying to move the character in your game. To prevent this, you have to set libGDX to prevent the default actions of special keys by catching them:
 
-```javascript
-window.onkeydown =
-function(event) {
-    // prevent all navigation keys except the space key
-    if([33, 34, 35, 36, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
-        event.preventDefault();
-        return false;
-    }
-};
-```
-
-You can add any key code to that list to prevent it from activating its corresponding action in the browser. Get the keycodes by testing your keyboard on http://www.keycode.info/
-
-The space key needs to be handled in a special way. Add the following to the script block:
-
-```javascript
-window.onkeypress =
-function(event) {
-    // prevent the space key (page scroll)
-    if(event.keyCode == 32){
-        event.preventDefault();
-        return false;
-    }
-};
+```java
+Gdx.input.setCatchKey(Input.Keys.SPACE, true);
 ```
 
 ## Preventing Right Click Context Menu
