@@ -12,15 +12,15 @@ These are webpages where individuals or companies write about their experience w
 - [Some blog posts regarding libGDX – by Rotating Canvas](http://rotatingcanvas.com/category/tutorials/)
 
 **Complete tutorial series:**
-- [A dedicated blog for learning basic libGDX and using minGDX- a small libGDX-based game library](https://gdx-gaming.blogspot.com)
 - [GameDevelopment.blog – 17 parts](https://www.gamedevelopment.blog/full-libgdx-game-tutorial-flgt-home/) (2017)
-- [GameFromScratch.com - 17 parts](http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx) (2014)
 - [Flappy Bird Remake - 12 parts](http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html) (2016?)
+- [GameFromScratch.com - 17 parts](http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx) (2014)
 
 **Video tutorials:**
-- [By dermetfan – 25 parts](https://www.youtube.com/playlist?list=PLXY8okVWvwZ0JOwHiH1TntAdq-UDPnC2L) (2013)
-- [Asteroid game – by ForeignGuyMike](https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C) (2014)
+- [By Brandon Grasely – 12 parts](https://www.youtube.com/watch?v=DK1sGc4rOT4&list=PLfd-5Q3Fwq0WKrkEKw12nqpfER3MG5_Wi) (2020)
 - [By Coldwild Games – 27 parts](https://www.youtube.com/playlist?list=PLMpInWzi-D9Jf_Co---0L7K-MNDNf2FuO) (2017)
+- [Asteroid game – by ForeignGuyMike](https://www.youtube.com/playlist?list=PL-2t7SM0vDfeZUKeM7Jm4U9utHwFS1N-C) (2014)
+- [By dermetfan – 25 parts](https://www.youtube.com/playlist?list=PLXY8okVWvwZ0JOwHiH1TntAdq-UDPnC2L) (2013)
 
 # Topic Specific Tutorials #
 ### AdMob integration for libGDX Android projects ###
@@ -53,10 +53,11 @@ These are webpages where individuals or companies write about their experience w
 
 # Some simple open-source projects for reference #
 These are some open-source projects found on the web that use libGDX and can be used as reference. This list is intentionally kept as clean and interesting as possible (you won't see repeated projects nor _Hello-World kind-of-games_ here).
+* [Fire and Ice](https://github.com/lyze237/FireAndIce) (uses tile maps)
 * [On Guard](https://github.com/lyze237/On-Guard) (uses tile maps)
 * [Lendigastel](https://github.com/mgsx-dev/dl9) (3D; uses [gdx-gltf](https://github.com/mgsx-dev/gdx-gltf))
 * [libGDX vs Ray3K](https://github.com/raeleus/libgdx-jam-june-2020) (local multiplayer Smash Bros clone) 
-* [Super Spineboy](https://github.com/EsotericSoftware/spine-superspineboy) (a platformer using [spine](http://www.esotericsoftware.com))
+* [Super Spineboy](https://github.com/EsotericSoftware/spine-superspineboy) (a platformer using [Spine](http://www.esotericsoftware.com))
 * [Klooni 1010!](https://github.com/LonamiWebs/Klooni1010) (puzzle game based on the original 1010!)
 * [TDGalaxy](https://github.com/TheLogicMaster/Tower-Defense-Galaxy) (modular 3D tower defense game)
 * [bomberman](https://github.com/mcol/bombergame)
