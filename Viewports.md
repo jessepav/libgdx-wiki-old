@@ -71,7 +71,7 @@ above about multiple viewports is good.  Here is some additonal information to t
 ```java
     //****RENDER****//
     vp.apply();
-    sb.setProjectedMatrix(vp.getCamera().combined);
+    sb.setProjectionMatrix(vp.getCamera().combined);
     sb.begin();/*draw*/ sb.end();
     stage.getViewport().apply();
     stage.draw();
@@ -89,7 +89,7 @@ then set the size of the actors using the 2 lines
 
 ### Examples
 
-To see the viewports in action, have a look at the tests here: [ViewportTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest1.java), [ViewportTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java) and [ViewportTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest3.java).
+**To see the viewports in action, have a look at [this interactive example](https://crykn.github.io/viewports-showcase/)**. There are also some tests concerning viewports: [ViewportTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest1.java), [ViewportTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java) and [ViewportTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest3.java).
 
 ### StretchViewport ###
 The [`StretchViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/StretchViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/StretchViewport.java))  supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
