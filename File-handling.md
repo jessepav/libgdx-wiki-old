@@ -43,6 +43,13 @@ Finally, files can be stored on the external storage, accessible via `Gdx.files.
 * libGDX up to 1.9.11 uses the Android external storage directory. That is up to Android 4.3 the sd card directory, which might not always be available, and a virtual emulated sd card directory on later versions. For accessing these files, you need to add a permission to your AndroidManifest.xml file, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-and-configuration#permissions). From Android 6 on, even a runtime permission is needed to use the directory and starting from Android 11, access is forbidden completely for normal apps (if you want to publish on the Play Store).
 * libGDX 1.9.12 or later uses the App external storage directory. This directory (located at Android/data/data/your_package_id/) is readable and writable from your app without any further permission and changes, but other apps (like file managers) can access the files from here. Note: If the user uninstalls the app, the data saved here will be deleted if not copied to another location before by the user. 
 
+The App external storage is initialized at game start for you to use, therefore Android creates an empty directory. If you don't use external files and want to suppress this behaviour, you can do so by overriding the instantiation of `AndroidFiles` in `AndroidApplication#createFiles` (1.9.14 and up):
+
+	protected AndroidFiles createFiles() {
+		this.getFilesDir(); // workaround for Android bug #10515463
+		return new DefaultAndroidFiles(this.getAssets(), this, false);
+	}
+
 ### iOS ###
 On iOS all file types are available. 
 
