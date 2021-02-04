@@ -63,6 +63,12 @@ If your model contains multiple similar meshes with less than 32767 vertices, th
 
 > Note that in contrast to java, both fbx-conv and opengl support `unsigned` indices. Therefor you might not notice issues between 32767 and 65535 vertices in some cases and devices. You should not rely on this though.
 
+### Using the Model Preview Utility
+
+There is a model preview utility at https://github.com/ASneakyFox/libgdx-fbxconv-gui which you can use to preview your models. Download a precompiled release from [the releases section](https://github.com/ASneakyFox/libgdx-fbxconv-gui/releases).
+
+![](https://user-images.githubusercontent.com/7131566/35468742-9a5dd6ac-02f2-11e8-8988-d32ba45b03a2.PNG)
+
 ### Loading a G3DJ file into libGDX
 
 The simplest way to load a G3DJ file into libGDX is the following.
