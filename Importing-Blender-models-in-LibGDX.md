@@ -1,3 +1,5 @@
+LibGDX provides its own 3D format out of the box called **G3D** (g3dj and g3db files), this article describes steps from Blender to your game using this format. **OBJ** format is partially supported and not recommended for production. Alternatively, you can use **glTF** format via third party library [gdx-gltf](https://github.com/mgsx-dev/gdx-gltf) which also provides advanced features like PBR rendering. 
+
 **Note:** _while this page uses Blender for practical examples, most of it applies to **other modeling applications** as well._
 
 **Warning**: This article is not finished. It does not elaborate on loading the models into libGDX.
