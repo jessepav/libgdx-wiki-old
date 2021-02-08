@@ -64,7 +64,7 @@ public class ScreenPlay implements Screen {
 
 ### Alternatives
 
-One of the downsides of using a ShapeRenderer is that is uses its own Mesh, meaning if you want to alternate between ShapeRenderer and a Batch you need to start and end (and flush) each one before switching, which can significantly drop performance. An alternative is to use the third party library [ShapeDrawer](https://github.com/earlygrey/shapedrawer), which uses a user-provided Batch to draw shapes. It has most of the functionality of ShapeRenderer, plus some extras like line joining/bevelling. It also doesn't draw over itself when drawing shapes so it can be used with transparent colours, and doesn't need to be flushed when switching from drawing lines to filled shapes.
+One of the downsides of using a ShapeRenderer is that it uses its own Mesh, meaning if you want to alternate between ShapeRenderer and a Batch you need to start and end (and flush) each one before switching, which can significantly drop performance. An alternative is to use the third party library [ShapeDrawer](https://github.com/earlygrey/shapedrawer), which uses a user-provided Batch to draw shapes. It has most of the functionality of ShapeRenderer, plus some extras like line joining/bevelling. It also doesn't draw over itself when drawing shapes so it can be used with transparent colours, and doesn't need to be flushed when switching from drawing lines to filled shapes.
 
 Typical usage looks something like this:
 
