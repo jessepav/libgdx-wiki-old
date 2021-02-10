@@ -2,13 +2,13 @@ It is possible to use the [SpaiR/imgui-java](https://github.com/SpaiR/imgui-java
 
 ### Required Dependencies
 ```
-"io.imgui.java:imgui-java-binding:<version>"
-"io.imgui.java:imgui-java-lwjgl3:<version>"
-"io.imgui.java:imgui-java-natives-linux:<version>"
-"io.imgui.java:imgui-java-natives-linux-x86:<version>"
-"io.imgui.java:imgui-java-natives-macos:<version>"
-"io.imgui.java:imgui-java-natives-windows:<version>"
-"io.imgui.java:imgui-java-natives-windows-x86:<version>"
+"io.github.spair:imgui-java-binding:<version>"
+"io.github.spair:imgui-java-lwjgl3:<version>"
+"io.github.spair:imgui-java-natives-linux:<version>"
+"io.github.spair:imgui-java-natives-linux-x86:<version>"
+"io.github.spair:imgui-java-natives-macos:<version>"
+"io.github.spair:imgui-java-natives-windows:<version>"
+"io.github.spair:imgui-java-natives-windows-x86:<version>"
 ```
 
 ### Example Minimal Usage
