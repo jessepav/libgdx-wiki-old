@@ -118,7 +118,7 @@ FileHandle handle = Gdx.files.absolute("/some_dir/subdir/myfile.txt");
 
 In the case of absolute file handle, the file has to be exactly where the full path points. In `/some_dir/subdir/` of the current drive on Windows or the exact path on linux, MacOS and Android.
 
-FileHandle instances are passed to methods of classes the are responsible for reading and writing data. E.g. a FileHandle needs to be specified when loading an image via the Texture class, or when loading an audio file via the Audio module.
+FileHandle instances are passed to methods of classes they are responsible for reading and writing data. E.g. a FileHandle needs to be specified when loading an image via the Texture class, or when loading an audio file via the Audio module.
 
 ## Listing and Checking Properties of Files ##
 Sometimes it is necessary to check for the existence of a specific file or list the contents of a directory. FileHandle provides methods to do just that in a concise way.
