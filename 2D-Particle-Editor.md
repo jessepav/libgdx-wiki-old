@@ -4,7 +4,7 @@ The libGDX 2D Particle Editor is a powerful tool for making particle effects. Se
 
 ## Running the 2D Particle Editor ##
 
-To run the editor, you can check out libGDX and run it [[from source | Running Demos & Tests]]. The editor is in the gdx-tools project. Alternatively, download the editor [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-2D-particles.jar). Thirdly, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
+To run the editor, you can check out libGDX and run it [from source](https://libgdx.com/dev/from_source/). The editor is in the gdx-tools project. Alternatively, download the editor [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-2D-particles.jar). Thirdly, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
 
 ### ...on Windows ###
 
