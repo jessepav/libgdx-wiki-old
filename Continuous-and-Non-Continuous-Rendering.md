@@ -1,4 +1,4 @@
-By default in libgdx, the rendering thread calls the render() method of your ApplicationListener class continuously, with a frequency that depends on your hardware (30-50-80 times per second).
+By default in libGDX, the rendering thread calls the `render()` method of your ApplicationListener class continuously, with a frequency that depends on your hardware (30-50-80 times per second).
 
 If you have many still frames in your game (think about a card game) you can save precious battery power by disabling the continuous rendering, and calling it only when you really need it.
 
@@ -26,4 +26,4 @@ Stage.setActionsRequestRendering(false);
 
 Good article about this topic: http://bitiotic.com/blog/2012/10/01/enabling-non-continuous-rendering-in-libgdx
 
-Official libGDX blog post: http://www.badlogicgames.com/wordpress/?p=2289
+Official libGDX blog post: https://web.archive.org/web/20201028180041/https://www.badlogicgames.com/wordpress/?p=2289

@@ -1,14 +1,8 @@
 # Setting up Box2D with libGDX #
 
-Box2D is a 2D physics library. It is one of the most popular physics libraries for 2D games and has been ported to many languages and many different engines, including libgdx.
+Box2D is a 2D physics library. It is one of the most popular physics libraries for 2D games and has been ported to many languages and many different engines, including libGDX. The Box2D implementation in libGDX is a thin Java wrapper around the C++ engine. Therefore, their [documentation](https://box2d.org/documentation/) may come in handy.
 
-The Box2D implementation in libGDX is a thin Java wrapper around the C++ engine. Therefore, the excellent [official Box2D manual (PDF)](http://box2d.org/manual.pdf) may also come in handy.
-
-For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libGDX specifically can best be asked on their forum.
-
-A basic implementation and code sample for Box2D with Scene2D is also available on [LibGDX.info](https://libgdx.info/box2d-basic/)
-
-As of [libGDX 1.0](http://www.badlogicgames.com/wordpress/?p=3412), Box2D is an extension and is no longer included with libGDX by default. Thus a manual installation is required.
+Box2D is an extension and not included with libGDX by default. Thus a manual installation is required.
 
 ## Table of Contents ##
 
@@ -41,7 +35,7 @@ When setting up Box2D the first thing we need is a world. The world object is ba
 To create the world we use the following code:
 
 ```java
-World world = new World(new Vector2(0, -10), true); 
+World world = new World(new Vector2(0, -10), true);
 ```
 
 The first argument we supply is a 2D vector containing the gravity: 0 to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 meter.
@@ -70,7 +64,7 @@ To update our simulation we need to tell our world to step. Stepping basically u
 world.step(1/60f, 6, 2);
 ```
 
-The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libGDX recommends using a value between `1/45f` (which is 1/45th of a second) and `1/300f` (1/300th of a second). 
+The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libGDX recommends using a value between `1/45f` (which is 1/45th of a second) and `1/300f` (1/300th of a second).
 
 The other two arguments are `velocityIterations` and `positionIterations`. For now we will leave these at `6` and `2`, but you can read more about them in the Box2D documentation.
 
@@ -118,7 +112,7 @@ Bodies come in three different types: dynamic, kinematic and static. Each type i
 
 ### Dynamic Bodies ###
 
-Dynamic bodies are objects which move around and are affected by forces and other dynamic, kinematic and static objects. Dynamic bodies are suitable for any object which needs to move and be affected by forces. 
+Dynamic bodies are objects which move around and are affected by forces and other dynamic, kinematic and static objects. Dynamic bodies are suitable for any object which needs to move and be affected by forces.
 
 We have now learned about fixtures which make up our bodies, so let's get dirty and start to create some bodies and add fixtures to them!
 
@@ -140,7 +134,7 @@ circle.setRadius(6f);
 // Create a fixture definition to apply our shape to
 FixtureDef fixtureDef = new FixtureDef();
 fixtureDef.shape = circle;
-fixtureDef.density = 0.5f; 
+fixtureDef.density = 0.5f;
 fixtureDef.friction = 0.4f;
 fixtureDef.restitution = 0.6f; // Make it bounce a little bit
 
@@ -177,7 +171,7 @@ PolygonShape groundBox = new PolygonShape();
 // (setAsBox takes half-width and half-height as arguments)
 groundBox.setAsBox(camera.viewportWidth, 10.0f);
 // Create a fixture from our polygon shape and add it to our ground body  
-groundBody.createFixture(groundBox, 0.0f); 
+groundBody.createFixture(groundBox, 0.0f);
 // Clean up after ourselves
 groundBox.dispose();
 ```
@@ -203,7 +197,7 @@ kinematicBody.setLinearVelocity(0.0f, 1.0f);
 
 ## Impulses/Forces ##
 
-Impulses and Forces are used to move a body in addition to gravity and collision. 
+Impulses and Forces are used to move a body in addition to gravity and collision.
 
 Forces occur gradually over time to change the velocity of a body. For example, a rocket lifting off would slowly have forces applied as the rocket slowly begins to accelerate.
 
@@ -246,7 +240,7 @@ In this example, we will make a player run left or right and accelerate to a max
 ```java
 Vector2 vel = this.player.body.getLinearVelocity();
 Vector2 pos = this.player.body.getPosition();
-		
+
 // apply left impulse, but only if max velocity is not reached yet
 if (Gdx.input.isKeyPressed(Keys.A) && vel.x > -MAX_VELOCITY) {			
      this.player.body.applyLinearImpulse(-0.80f, 0, pos.x, pos.y, true);
@@ -411,12 +405,12 @@ joint.setMotorSpeed(1f);
 
 ## Fixture Shapes ##
 
-As mentioned previously, a fixture has a shape, density, friction and restitution attached to it. 
+As mentioned previously, a fixture has a shape, density, friction and restitution attached to it.
 Out of the box you can easily create boxes (as seen in the section [Static Bodies](box2d#static-bodies) section) and circle shapes (as seen in the [Dynamic Bodies](box2d#dynamic-bodies) section).
 
-You can programatically define more complex shapes using the following classes 
-* ChainShape, 
-* EdgeShape, 
+You can programatically define more complex shapes using the following classes
+* ChainShape,
+* EdgeShape,
 * PolygonShape
 
 However using third party tools you can simply define your shapes and import them into your game.
@@ -424,7 +418,7 @@ However using third party tools you can simply define your shapes and import the
 ### Importing Complex Shapes using box2d-editor ###
 
 [box2d-editor](https://github.com/julienvillegas/box2d-editor) is a free open source tool to define complex shapes and load them into your game.
-An example of how to import a shape into your game using box2d-editor is available on [Libgdx.info](https://libgdx.info/box2d-importing-complex-bodies/). 
+An example of how to import a shape into your game using box2d-editor is available on [Libgdx.info](https://libgdx.info/box2d-importing-complex-bodies/).
 
 Check out the [Tools section](box2d#Tools) for more tools.
 
@@ -478,9 +472,9 @@ To update all your actors/sprites you can loop through all the world's bodies ea
 Array<Body> bodies = new Array<Body>();
 // Now fill the array with all bodies
 world.getBodies(bodies);
-        	   
+
 for (Body b : bodies) {
-    // Get the body's user data - in this example, our user 
+    // Get the body's user data - in this example, our user
     // data is an instance of the Entity class
     Entity e = (Entity) b.getUserData();
 
@@ -516,12 +510,12 @@ The beginContact method is called when the object overlap another. When the obje
 public class ListenerClass implements ContactListener {
 		@Override
 		public void endContact(Contact contact) {
-				
+
 		}
-		
+
 		@Override
 		public void beginContact(Contact contact) {
-			
+
 		}
 	};
 ```

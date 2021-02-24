@@ -113,7 +113,7 @@ You can also load `BitmapFont`s generated via the FreeType extension using Asset
 
 ### latest info about caveats ###
 
-Quoting from http://www.badlogicgames.com/wordpress/?p=2300:
+Quoting from https://web.archive.org/web/20201128081723/https://www.badlogicgames.com/wordpress/?p=2300:
   * Asian scripts “might” work, see caveat above though. They contain just too many glyphs. I’m thinking about ways to fix this.
   * Right-to-left scripts like Arabic are a no-go. The layout “algorithms” in BitmapFont and BitmapFontCache have no idea how to handle that.
   * Throwing just any font at FreeType is not a super awesome idea. Some fonts in the wild are just terrible, with bad or no hinting information and will look like poopoo.

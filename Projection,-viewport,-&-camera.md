@@ -1,7 +1,7 @@
 # No Op: Not Translating
 
 
-# Summary 
+# Summary
 
 Learn about a viewport's proportions, how to specify a projection, and to use Camera
 
@@ -30,7 +30,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
     @Override
     public void create() {
         if (squarePartOne == null) {
-            squarePartOne = new Mesh(true, 3, 3, 
+            squarePartOne = new Mesh(true, 3, 3,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -42,7 +42,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
         }
 
         if (squarePartTwo == null) {
-            squarePartTwo = new Mesh(true, 3, 3, 
+            squarePartTwo = new Mesh(true, 3, 3,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -100,7 +100,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
     @Override
     public void create() {
         if (squareMesh == null) {
-            squareMesh = new Mesh(true, 4, 4, 
+            squareMesh = new Mesh(true, 4, 4,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -152,7 +152,7 @@ However, the viewport itself is wider than a square. In order to fill up the ext
 
 # Camera
 
-To correct this effect, we allow the viewport to render an area that is rectangular instead of square. The shape of this area will match the shape of viewport, sort of like a painter choosing a canvas size based on the picture frame's size. To accomplish this, we use the `Camera` class, in this a case a subclass called `OrthographicCamera`. The `Camera` class allows us to change the area shown by the viewport. Here's the new code: 
+To correct this effect, we allow the viewport to render an area that is rectangular instead of square. The shape of this area will match the shape of viewport, sort of like a painter choosing a canvas size based on the picture frame's size. To accomplish this, we use the `Camera` class, in this a case a subclass called `OrthographicCamera`. The `Camera` class allows us to change the area shown by the viewport. Here's the new code:
 
 ```java
 package com.example.projectionviewportcamera;
@@ -173,7 +173,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
     @Override
     public void create() {
         if (squareMesh == null) {
-            squareMesh = new Mesh(true, 4, 4, 
+            squareMesh = new Mesh(true, 4, 4,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -249,7 +249,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
     @Override
     public void create() {
         if (squareMesh == null) {
-            squareMesh = new Mesh(true, 4, 4, 
+            squareMesh = new Mesh(true, 4, 4,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -305,7 +305,7 @@ It's important to note that drawing a sprite changes the projection of the entir
 
 # Projection
 
-Up to this point, we've been laying out meshes and sprites as if they're on a flat surface. There's no sense of depth, dimension, or distance. The OrthographicCamera we've been using provides an orthographic projection of our scene. This type of projection is only meant to provide a 2D sense of space, like in the original Super Mario, or Pacman. To show depth and 3D space, we need to use a perspective projection. To learn more about projection, check out [Mario's blog post on the Camera class](http://www.badlogicgames.com/wordpress/?p=1550) (also good is [Jeff LaMarche's article on the subject](http://iphonedevelopment.blogspot.com/2009/04/opengl-es-from-ground-up-part-3.html)).
+Up to this point, we've been laying out meshes and sprites as if they're on a flat surface. There's no sense of depth, dimension, or distance. The OrthographicCamera we've been using provides an orthographic projection of our scene. This type of projection is only meant to provide a 2D sense of space, like in the original Super Mario, or Pacman. To show depth and 3D space, we need to use a perspective projection. To learn more about projection, check out [Mario's blog post on the Camera class](https://web.archive.org/web/20200427232345/https://www.badlogicgames.com/wordpress/?p=1550) (also good is [Jeff LaMarche's article on the subject](http://iphonedevelopment.blogspot.com/2009/04/opengl-es-from-ground-up-part-3.html)).
 
 To show how to use perspective projection in libgdx, lets introduce another square mesh, here's our new code:
 
@@ -330,7 +330,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
     @Override
     public void create() {
         if (squareMesh == null) {
-            squareMesh = new Mesh(true, 4, 4, 
+            squareMesh = new Mesh(true, 4, 4,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -343,7 +343,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
         }
 
         if (nearSquare == null) {
-            nearSquare = new Mesh(true, 4, 4, 
+            nearSquare = new Mesh(true, 4, 4,
                     new VertexAttribute(Usage.Position, 3, "a_position"),
                     new VertexAttribute(Usage.ColorPacked, 4, "a_color"));
 
@@ -402,7 +402,7 @@ Now the true distance between the squares and the user becomes obvious:
 
 [[images/projection_viewport_camera_perspective.png]]
 
-The only difference between the constructor of the `PerspectiveCamera` and that of the `OrthographicCamera` is that we now have to provide a field of view parameter, in this case `67`. The human field of view is roughly around 60 to 70 degrees, so 67 provides a pretty normal perspective. Note that by default, the `PerspectiveCamera` clips anything closer than one unit away from it. If you place an object too close to the camera, it will disappear. It also has a default far clipping pane one hundred units in front of itself, so objects too far away will not be rendered either. 
+The only difference between the constructor of the `PerspectiveCamera` and that of the `OrthographicCamera` is that we now have to provide a field of view parameter, in this case `67`. The human field of view is roughly around 60 to 70 degrees, so 67 provides a pretty normal perspective. Note that by default, the `PerspectiveCamera` clips anything closer than one unit away from it. If you place an object too close to the camera, it will disappear. It also has a default far clipping pane one hundred units in front of itself, so objects too far away will not be rendered either.
 
 The sense of perspective becomes more obvious when we move the camera. Modify the `render()` method to do exactly that:
 
@@ -428,7 +428,7 @@ The sense of perspective becomes more obvious when we move the camera. Modify th
     }
 ```
 
-We use the camera's `rotate()` and `translate()` methods to move the camera around the scene. As mentioned, when the camera moves too close the blue square, you'll see it start to clip and disappear. Calling `translate()` on an `OrthographicCamera` will move the camera around without providing a sense of 3D space. Look at [Mario's post](http://www.badlogicgames.com/wordpress/?p=1550) for other useful methods and start experimenting.
+We use the camera's `rotate()` and `translate()` methods to move the camera around the scene. As mentioned, when the camera moves too close the blue square, you'll see it start to clip and disappear. Calling `translate()` on an `OrthographicCamera` will move the camera around without providing a sense of 3D space. Look at [Mario's post](https://web.archive.org/web/20200427232345/https://www.badlogicgames.com/wordpress/?p=1550) for other useful methods and start experimenting.
 
 # Running it on Android
 

@@ -1,12 +1,12 @@
 
 FIXME out of date. This page is mostly an [RFC](https://en.wikipedia.org/wiki/Request_for_Comments)
 
-This page is mostly a copy-paste of the GSoC2013 page on the old Google Code wiki. The mentor list is not here, I might just make a section here for it. 
+This page is mostly a copy-paste of the GSoC2013 page on the old Google Code wiki. The mentor list is not here, I might just make a section here for it.
 
 ## Introduction ##
-We assume you already know what Google Summer of Code is, if not, please check out the [Google Summer of Code](http://www.google-melange.com/gsoc/homepage/google/gsoc2013) site for general information. 
+We assume you already know what Google Summer of Code is, if not, please check out the [Google Summer of Code](http://www.google-melange.com/gsoc/homepage/google/gsoc2013) site for general information.
 
-For **students**, we recommend to read up on what libGDX is, then proceed to the [Information For Students](google-summer-of-code-2014#Information_for_Students) section. 
+For **students**, we recommend to read up on what libGDX is, then proceed to the [Information For Students](google-summer-of-code-2014#Information_for_Students) section.
 
 *Mentors* must read the [Information for Mentors](google-summer-of-code-2014#Information_for_Mentors)  section, add themselves to existing ideas in the list below, and optionally create and add new ideas.
 
@@ -14,7 +14,7 @@ For **students**, we recommend to read up on what libGDX is, then proceed to the
 
 [libGDX](http://libgdx.badlogicgames.com) is a cross-platform game development framework. You write your game in Java, and have it working instantly on Windows, Linux, Mac, [Steam](http://store.steampowered.com/app/207710), [Android](https://play.google.com/store/apps/details?id=com.moistrue.zombiesmasher), [iOS](https://itunes.apple.com/ph/app/clash-of-the-olympians/id590049663?mt=8), [Facebook](https://www.facebook.com/stargazergame) and HTML/WebGL. The entire Java code base is shared across all these platforms. You can find more information on libGDX's feature set [here](http://libgdx.badlogicgames.com/features.html).
 
-libGDX was [born 3 years ago](http://www.badlogicgames.com/wordpress/?p=294), out of a desire to target multiple platforms with a single code base. It has since grown into a big OSS project with over [100 professional and amateur contributors](http://www.ohloh.net/p/libgdx), and is used by thousands of developers to create the games of their dreams. From [entries](http://www.ludumdare.com/compo/author/bompo/) for the 48 hour [Ludum Dare](http://www.ludumdare.com/) challenge, to [top grossing mobile games](https://play.google.com/store/apps/details?id=com.bithack.apparatus&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5iaXRoYWNrLmFwcGFyYXR1cyJd) to augmented reality experiments like [Google's Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5uaWFudGljcHJvamVjdC5pbmdyZXNzIl0).
+libGDX was born 3 years ago, out of a desire to target multiple platforms with a single code base. It has since grown into a big OSS project with over [100 professional and amateur contributors](http://www.ohloh.net/p/libgdx), and is used by thousands of developers to create the games of their dreams. From [entries](http://www.ludumdare.com/compo/author/bompo/) for the 48 hour [Ludum Dare](http://www.ludumdare.com/) challenge, to [top grossing mobile games](https://play.google.com/store/apps/details?id=com.bithack.apparatus&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5iaXRoYWNrLmFwcGFyYXR1cyJd) to augmented reality experiments like [Google's Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5uaWFudGljcHJvamVjdC5pbmdyZXNzIl0).
 
 libGDX has achieved wide adoption, especially on Android where it is powering [3.2% of all installed applications](http://www.appbrain.com/stats/libraries/details/libgdx/libgdx), with numerous top-grossing games. On that platform it can already compete with Unity3D.
 
@@ -29,7 +29,7 @@ libGDX offers students to explore a wide range of technologies:
   * Different languages (C, C++, Java, C#, Javascript)
   * Different fields of software development (data structures, 2D & 3D graphics, audio, peripheral  communication, etc.)
 
-Such broad environments are usually rare to find in many university settings. 
+Such broad environments are usually rare to find in many university settings.
 
 You will work in a globally distributed team, a setup that is becoming more common. You'll learn how to deal with the difficulties that arise in communication in such environments. Different time zones, different language skills (English is our lingua franca, but not everyone is a native speaker), miscommunication arising from limited expressiveness of text and so shapes how the team functions.
 
@@ -42,13 +42,13 @@ The ideas below have been compiled by the libGDX contributors and community. If 
 
   1. Fork the project on [Github](https://www.github.com/libgdx/libgdx).
   2. Get familiar on how to work with [[libgdx's source | Running demos & tests]].
-  3. Register on the [forums](http://www.badlogicgames.com/forum/) and introduce yourself. Drop by on IRC (#libgdx, irc.freenode.org), get to know the community. [This forum thread](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=7889) (FIXME) is where most of the GSoC students introduced themselves so far, make sure to subscribe to it to receive notifications for new messages. The subscribe button is at the bottom of the page.
+  3. Register on the forums and introduce yourself. Drop by on IRC (#libgdx, irc.freenode.org), get to know the community. [This forum thread](https://web.archive.org/web/20200928221625/https://www.badlogicgames.com/forum/viewtopic.php?f=11&t=7889) is where most of the GSoC students introduced themselves so far, make sure to subscribe to it to receive notifications for new messages. The subscribe button is at the bottom of the page.
   4. Pick one of the project ideas below or come up with your own. Prepare your application using our [student application template] (FIXME (todo)). You'll have to submit this application via the [Google Summer of Code 2013 site](http://www.google-melange.com/), from April 22 - May 3, 2013. You'll also need to sign the [Student Participation Agreement](http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/student_agreement). For more information on the process, read the [GSoC FAQ](http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page). Reading it is mandatory!
-  5. Get in contact with the mentors listed below, on IRC (irc.freenode.org, #libgdx) or the [forums](http://www.badlogicgames.com/forum/). Our mentors introduce themselves on this [Wiki page](GoogleSummerOfCode2013Mentors) (FIXME (todo)).
+  5. Get in contact with the mentors listed below, on IRC (irc.freenode.org, #libgdx) or the forums. Our mentors introduce themselves on this [Wiki page](GoogleSummerOfCode2013Mentors) (FIXME (todo)).
   6. Send a pull request for some issue or improvement you made to libGDX on Github, note that in your application. When selecting students, we'll favor those that already demonstrated that they can interact with our community and read the docs on [[how to contribute | Contributing]]
 
 ## Information for Mentors ##
-Since mentors have quite a bit of responsibility, I (badlogic) would want to limit potential mentors to the group of contributors. Exceptions to this rule may be made of course. Nex and I take on the project administrator role, which is different to that of a mentor. 
+Since mentors have quite a bit of responsibility, I (badlogic) would want to limit potential mentors to the group of contributors. Exceptions to this rule may be made of course. Nex and I take on the project administrator role, which is different to that of a mentor.
 
 Mentoring means commitment, once you agree to be a mentor, there's no way back after we submit the application to GSoC.
 
@@ -57,7 +57,7 @@ Mentoring means commitment, once you agree to be a mentor, there's no way back a
  2. Improve or add new ideas to the list below
  3. Read the [GSoC FAQ](http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page), which explains all the obligations of a mentor.
  4. Read the [GSoC Mentor Handbook](http://en.flossmanuals.net/GSoCMentoring/) which provides guidance on how to approach mentoring
- 5. We organize our mentor activity on [this thread](http://www.badlogicgames.com/forum/viewtopic.php?f=23&t=8113). Subscribe to it, the subscription button is at the bottom of the page.
+ 5. We organize our mentor activity on [this thread](https://web.archive.org/web/20150920202444/http://www.badlogicgames.com/forum/viewtopic.php?f=23&t=8113). Subscribe to it, the subscription button is at the bottom of the page.
  6. Look out for students on the forum and on IRC, welcome them to the community and show them around
 
 ## Idea List Guidelines ##
@@ -69,7 +69,7 @@ Please use the following format for ideas:
   * **Links:** further information, forum threads, etc.
   * **Potential Mentors:** contributors only
 
-If you are not a contributor, post your idea in [this thread](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=7889) (FIXME (todo))
+If you are not a contributor, post your idea in [this thread](https://web.archive.org/web/20200928221625/https://www.badlogicgames.com/forum/viewtopic.php?f=11&t=7889) (FIXME (todo))
 
 Please add `----` after each idea as a separator.
 
@@ -95,14 +95,14 @@ Please add `----` after each idea as a separator.
 
 ----
 
-### Project: RoboVM/iOS backend ### 
+### Project: RoboVM/iOS backend ###
 
 (FIXME done?)
 **Goals**: create a libGDX backend based on [RoboVM](http://www.robovm.org) for iOS.
 
 **Required Skills**: Java, C/C++, OpenGL ES, iOS, maybe LLVM
 
-**Links**: http://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7883 instructions on how to possibly approach this.
+**Links**: https://web.archive.org/web/20200426122040/https://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7883 instructions on how to possibly approach this.
 
 **Mentors**: [noblemaster](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Noblemaster), [badlogic](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic)
 
@@ -112,7 +112,7 @@ Please add `----` after each idea as a separator.
 
 **Required Skills**: Java, C/C++, ObjectiveC, OpenGL ES, iOS
 
-**Links**: http://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7883 instructions on how to possibly approach this for RoboVM, the same approach is applicable to Avian VM.
+**Links**: https://web.archive.org/web/20200426122040/https://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7883 instructions on how to possibly approach this for RoboVM, the same approach is applicable to Avian VM.
 
 **Mentors**: [noblemaster](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Noblemaster), [badlogic](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic)
 
@@ -163,7 +163,7 @@ This idea was orginally submitted by Fisherman on the forums.
 
 **Required Skills**: Java, game programming, potentially a scripting language like Lua, JavaScript, Squirrel etc.
 
-**Links**: 
+**Links**:
 [Block54 Leap Motion demo](http://www.youtube.com/watch?v=1x-eAvASIFc)
 [Information for Leap Motion developers](https://www.leapmotion.com/developers)
 
@@ -178,7 +178,7 @@ This idea was orginally submitted by Fisherman on the forums.
 
 **Required Skills**: Java, 3D programming, including GLSL shaders, linear algebra
 
-**Links**: [Discussion by core developers on the new 3D API](http://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7020), for topic specific links see goals text above.
+**Links**: [Discussion by core developers on the new 3D API](https://web.archive.org/web/20200928230726/https://www.badlogicgames.com/forum/viewtopic.php?f=23&t=7020), for topic specific links see goals text above.
 
 *Mentors*: [xoppa](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Xoppa), [bach](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Bach), [badlogic](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic)
 
@@ -190,7 +190,7 @@ This idea was orginally submitted by Fisherman on the forums.
 
 **Required Skills**: Java, network programming
 
-**Links**: [blog post with video of current implementation](http://www.badlogicgames.com/wordpress/?p=1590)
+**Links**: [blog post with video of current implementation](https://web.archive.org/web/20200928224908/https://www.badlogicgames.com/wordpress/?p=1590)
 
 **Mentors**: [nate](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Nate), [nex](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Nexsoftware), [badlogic](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic)
 
@@ -258,7 +258,7 @@ This project could be done in collaboration with the Scripting Support project a
 **Required Skills**: Java, Maven, Gradle, Eclipse, Intellij, Netbeans
 **Links**: [Google Doc with requirements](https://docs.google.com/document/d/1yy3Q5B0K06yz_Oool1ZCtavtSvASJa56lic_5Yg1C9c/edit?usp=sharing)
 
-**Mentors**: 
+**Mentors**:
 [tamas](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Tamas),[bach](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Bach), [nate](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Nate), [badlogic](https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic)
 
 ----
@@ -271,7 +271,7 @@ This project could be done in collaboration with the Scripting Support project a
 
 **Links**: [List of static analysis tools on Wikipedia](http://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java)
 
-**Mentors**: 
+**Mentors**:
 [https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Nate nate], [https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&updated=GoogleSummerOfCode2013Mentors#Badlogic badlogic]
 
 

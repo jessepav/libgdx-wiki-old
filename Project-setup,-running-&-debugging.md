@@ -22,7 +22,7 @@ Follow this if you don't want to read a lot of text. Otherwise continue below.
 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=mmH05k6HFsI
-" target="_blank"><img src="http://img.youtube.com/vi/mmH05k6HFsI/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/mmH05k6HFsI/0.jpg"
 alt="Libgdx setup video" width="480" height="360" border="10" /></a>
 
 
@@ -34,7 +34,7 @@ As of version 0.9.3, libGDX comes with an easy to use application called "libGDX
     * Specify your project's configuration (Configuration Panel)
     * Specify the libGDX stable/nightly release zip file or press one of the buttons to download the latest stable/nightly release (Library Selection Panel).
     * Hit the "Generate projects" button (Generation Panel)
-  * Open Eclipse and import the generated projects into your workspace 
+  * Open Eclipse and import the generated projects into your workspace
     * `File -> Import -> Existing Projects into Workspace`
     * Click "Browse", select the folder containing the generated projects.
     * Make sure all the projects are checked, then click "Finish"
@@ -58,7 +58,7 @@ All your application's assets should be stored in the Android project's assets f
   * **iOS RoboVM**: Right click the robovm project, `Run As -> iOS Device App` to run on a connected device, or `Run As -> iOS Simulator App` to run on the iOS simulator. If you run on a device, you need to [provision](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) it to be able to deploy to it!
   * **HTML5**: there are two modes in which you can run your application.
     * development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
-      * Right click the HTML5 project, `Run As -> Web Application`. 
+      * Right click the HTML5 project, `Run As -> Web Application`.
       * In the "Web Development" view, click the URL. Your standard browser will open up. If you have not installed the GWT plugin yet, you will be prompted to do so. After installation of the plugin, simply refresh the site in the browser.
     * production/web mode: you will need a web server that serves the compiled files (e.g. [Nginx](http://nginx.org/) or a browser that allows to execute JavaScript from local files.
       * Right click the HTML5 project, `Google -> GWT Compile`
@@ -72,16 +72,16 @@ All your application's assets should be stored in the Android project's assets f
   * **iOS RoboVM**: debugging is currently not supported by RoboVM
   * **HTML5**:
     * development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
-      * Right click the HTML5 project, `Debug As -> Web Application`. 
-      * In the "Web Development" view, click the URL. Your standard browser will open up. 
+      * Right click the HTML5 project, `Debug As -> Web Application`.
+      * In the "Web Development" view, click the URL. Your standard browser will open up.
       * Set breakpoints in your Java code. If you edit & save code, you'll have to refresh your browser for the changes to take effect. This will essentially restart your application. It's faster than recompiling though.
-    * production/web mode: 
+    * production/web mode:
       * Right click the HTML5 project, `Google -> GWT Compile`
       * Change the flags in "Advanced" to `-strict -draftCompile` and the "Output Style" to "detailed". This will produce very readable Javascript that you can map almost 1:1 to your Java code.
       * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       * Point your browser at an URL which will display the `.html` file.
       * Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
-    * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libGDX and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
+    * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libGDX and super dev mode](https://web.archive.org/web/20201028180932/https://www.badlogicgames.com/wordpress/?p=3073)
 
 ## Manual Project Setup ##
 Please refer to [Manual Project Setup](https://github.com/libgdx/libgdx/wiki/Manual-project-setup)

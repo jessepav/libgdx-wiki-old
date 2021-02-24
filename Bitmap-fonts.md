@@ -2,7 +2,7 @@ libGDX makes use of bitmap files (pngs) to render fonts.  Each glyph in the font
 
 [BitmapFont class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java)
 
-BitmapFont was refactored for the libGDX 1.5.6 release. [This blog post](http://www.badlogicgames.com/wordpress/?p=3658) has details about the changes and also a small example showing how to move from pre 1.5.6 code to the new API.
+BitmapFont was refactored for the libGDX 1.5.6 release. [This blog post](https://web.archive.org/web/20200928220256/https://www.badlogicgames.com/wordpress/?p=3658) has details about the changes and also a small example showing how to move from pre 1.5.6 code to the new API.
 
 A tutorial on using BitmapFont is available on [LibGDX.info](https://libgdx.info/basic-label/)
 
@@ -27,13 +27,13 @@ References point to bmFont being originally created by Andreas Jönsson over at 
 
 ## Other Tools
 
-[FreeTypeFontGenerator](http://www.badlogicgames.com/wordpress/?p=2300) - generating bitmaps for fonts instead of supplying a pre-rendered bitmap made by utilities like Hiero
+[FreeTypeFontGenerator](https://web.archive.org/web/20200423064636/ttp://www.badlogicgames.com/wordpress/?p=2300) - generating bitmaps for fonts instead of supplying a pre-rendered bitmap made by utilities like Hiero
 
-Examples 
+Examples
 : [(more)](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/extensions/InternationalFontsTest.java)
 
 	FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/unbom.ttf"));
- 
+
 	FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 	parameter.size = 18;
 	parameter.characters = "한국어/조선�?";

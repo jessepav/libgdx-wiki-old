@@ -27,13 +27,13 @@ public class MeshColorTexture implements ApplicationListener {
     @Override
     public void create() {
         if (mesh == null) {
-            mesh = new Mesh(true, 3, 3, 
+            mesh = new Mesh(true, 3, 3,
                     new VertexAttribute(Usage.Position, 3, "a_position"));
-                    
+
             mesh.setVertices(new float[] { -0.5f, -0.5f, 0,
                                             0.5f, -0.5f, 0,
                                             0, 0.5f, 0 });
-                                        
+
             mesh.setIndices(new short[] { 0, 1, 2 });
         }
     }
@@ -77,7 +77,7 @@ public class MeshColorTextureDesktop {
 Now lets go over in more detail what some of these methods do, starting with the `MeshColorTexture` class. In `create()`, we see:
 
 ```java
-mesh = new Mesh(true, 3, 3, 
+mesh = new Mesh(true, 3, 3,
         new VertexAttribute(Usage.Position, 3, "a_position"));
 ```
 
@@ -88,7 +88,7 @@ Finally, we pass in a `VertexAttribute` object to specified which type of inform
 ```java
 mesh.setVertices(new float[] { -0.5f, -0.5f, 0,
                                0.5f, -0.5f, 0,
-                               0, 0.5f, 0 });	
+                               0, 0.5f, 0 });
 mesh.setIndices(new short[] { 0, 1, 2 });
 ```
 
@@ -112,13 +112,13 @@ The `render()` method is where the meshes in the application are drawn. We call 
 If we wanted to this mesh to be colored, we only need to add another `VertexAttribute` and specify color information for the vertices. Modify the code to to look like following (you will need to import the `com.badlogic.gdx.graphics.Color` class):
 
 ```java
-mesh = new Mesh(true, 3, 3, 
+mesh = new Mesh(true, 3, 3,
         new VertexAttribute(Usage.Position, 3, "a_position"),
         new VertexAttribute(Usage.ColorPacked, 4, "a_color"));		
 
 mesh.setVertices(new float[] { -0.5f, -0.5f, 0, Color.toFloatBits(255, 0, 0, 255),
                                0.5f, -0.5f, 0, Color.toFloatBits(0, 255, 0, 255),
-                               0, 0.5f, 0, Color.toFloatBits(0, 0, 255, 255) });	
+                               0, 0.5f, 0, Color.toFloatBits(0, 0, 255, 255) });
 mesh.setIndices(new short[] { 0, 1, 2 });
 ```
 
@@ -143,7 +143,7 @@ private Texture texture;
 @Override
 public void create() {
     if (mesh == null) {
-        mesh = new Mesh(true, 3, 3, 
+        mesh = new Mesh(true, 3, 3,
                 new VertexAttribute(Usage.Position, 3, "a_position"),
                 new VertexAttribute(Usage.ColorPacked, 4, "a_color"),
                 new VertexAttribute(Usage.TextureCoordinates, 2, "a_texCoords"));
@@ -151,10 +151,10 @@ public void create() {
         mesh.setVertices(new float[] { -0.5f, -0.5f, 0, Color.toFloatBits(255, 0, 0, 255), 0, 1,
                                        0.5f, -0.5f, 0, Color.toFloatBits(0, 255, 0, 255), 1, 1,
                                        0, 0.5f, 0, Color.toFloatBits(0, 0, 255, 255), 0.5f, 0 });
-                                       
+
         mesh.setIndices(new short[] { 0, 1, 2 });
 
-        FileHandle imageFileHandle = Gdx.files.internal("data/badlogic.jpg"); 
+        FileHandle imageFileHandle = Gdx.files.internal("data/badlogic.jpg");
         texture = new Texture(imageFileHandle);
     }
 }
@@ -187,7 +187,7 @@ mesh.setVertices(new float[] { -0.5f, -0.5f, 0, Color.toFloatBits(255, 0, 0, 255
 We add the texture coordinate components to the float array of `VertexAttribute` data components, right after the color data. To interpret the data, imagine that the texture is mapped to a 2D coordinate system. The texture's upper-left corner lies at (0, 0), upper-right at (1, 0), lower-left (0, 1), lower-right (1, 1). Looking at the three rows of vertex components we just modified, we can see that the vertex representing the lower-left corner of the triangle is mapped to the lower-left corner of the texture. The lower-right corner is mapped to the lower-right corner of the texture. The upper-center corner is mapped ot the upper-center of the texture.
 
 ```java
-FileHandle imageFileHandle = Gdx.files.internal("data/badlogic.jpg"); 
+FileHandle imageFileHandle = Gdx.files.internal("data/badlogic.jpg");
 texture = new Texture(imageFileHandle);
 ```
 
@@ -220,11 +220,4 @@ The one last thing thing we need to do is to add the image file to the Android w
 
 ## Conclusion ##
 
-There are several resources to learn more about meshes, colors, and textures. In the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can get the source code of the game Invaders, which uses these element more extensively. The Javadoc is quite complete, and provides better details on the requirements of different classes and methods. Check out this [http://www.badlogicgames.com/wordpress/?p=1199 article] for more information about file access within libgdx. If you have more questions, please visit our forum or go on our IRC channel `#libgdx` hosted on `Freenode`. Also on the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can find `MeshColorTexture.zip`, which contains the source code to the examples used in this tutorial.
-
-= Change Log =
-== Feb 22 2011 ==
-  * fixed rendering on Mac OS X
-  * added screen shots
-  * moved `badlogic.jpg` into the wiki
-  * use the new `Texture` constructor instead of old factory method
+There are several resources to learn more about meshes, colors, and textures. In the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can get the source code of the game Invaders, which uses these element more extensively. The Javadoc is quite complete, and provides better details on the requirements of different classes and methods. Check out [this](https://github.com/libgdx/libgdx/wiki/File-handling) entry for more information about file access within libGDX.

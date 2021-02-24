@@ -199,7 +199,7 @@ It is highly recommended to read the [Table documentation](Table) before buildin
 
 ### <a id="Stack"></a>Stack ###
 
-[Stack](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Stack.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Stack.java)) is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
+[Stack](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Stack.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Stack.java)) is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top.
 
 ### <a id="ScrollPane"></a>ScrollPane ###
 
@@ -267,7 +267,7 @@ ImageButton extends Button which extends Table, so widgets can be added to the I
 
 ### <a id="TextField"></a>TextField ###
 
-[TextField](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/TextField.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java)) is a single line text entry field. It has drawables for the background, text cursor, and text selection, a font and font color for the entered text, and a font and font color for the message displayed when the text field is empty. Password mode can be enabled, where it will display asterisks instead of the entered text. 
+[TextField](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/TextField.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java)) is a single line text entry field. It has drawables for the background, text cursor, and text selection, a font and font color for the entered text, and a font and font color for the message displayed when the text field is empty. Password mode can be enabled, where it will display asterisks instead of the entered text.
 
 ### <a id="TextArea"></a>TextArea ###
 
@@ -313,7 +313,7 @@ Widgets can be used as simple actors in scene2d, without using tables or the res
 Some widgets, such as Table, don't have a default size after construction because their preferred size is based on the widgets they will contain. After the widgets have been added, the `pack` method can be used to set the width and height of the widget to its preferred width and height. This method also calls `invalidate` if the widget's size was changed, and then calls `validate` so that the widget adjusts itself to the new size.
 
 ## <a id="DragAndDrop"></a>Drag and Drop (DragAndDrop class) ##
-It should be noted that to make a drag start/source actor, a table and to have that table and all of its contents trigger a drag, one must enable Table.setTouchable(Enabled). It is set to ChildrenOnly by default. 
+It should be noted that to make a drag start/source actor, a table and to have that table and all of its contents trigger a drag, one must enable Table.setTouchable(Enabled). It is set to ChildrenOnly by default.
 
 ## <a id="Keycontrol"></a>Usage without touch or mouse ##
 
@@ -330,4 +330,3 @@ For now, please see these test programs:
  * [ImageTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ImageTest.java#L30)
  * [LabelTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LabelTest.java#L34)
  * [ScrollPaneTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ScrollPaneTest.java#L36)
- * [Relevant Badlogic forums post](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=8327#p37980)

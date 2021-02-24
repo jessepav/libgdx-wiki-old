@@ -25,7 +25,7 @@ This works out of the box, as the desktop libGDX back-end uses the JVM that you 
 
 This works for many languages, but it is sometimes unavailable. For best results, search on your favorite search engine “[JVM language of choice] on Android”.
 
-Some examples: 
+Some examples:
 
 * [Lein-droid for Clojure](https://github.com/clojure-android/lein-droid/wiki/Tutorial)
 * [SBT-Android for Scala](http://fxthomas.github.io/android-plugin/)
@@ -45,7 +45,7 @@ This could theoretically be fixed for JVM languages that have their own JavaScri
 
 Many people have used libGDX in their JVM language of choice. Here are some examples.
 
-* [Scala](https://github.com/ajhager/libgdx-sbt-project.g8) 
+* [Scala](https://github.com/ajhager/libgdx-sbt-project.g8)
 * [Ruby](https://github.com/kabbotta/LibGDX-and-Ruby)
 * [Ruby on Android with Ruboto](https://github.com/ashes999/libgdx-ruboto)
 * [Kotlin](https://github.com/libgdx/libgdx/wiki/Using-libGDX-with-Kotlin#examples-of-libgdx-projects-using-kotlin)
@@ -53,6 +53,6 @@ Many people have used libGDX in their JVM language of choice. Here are some exam
 TODO (find some recent examples, would love contributions!)
 
 
-## reference
+## Reference
 
-http://www.badlogicgames.com/wordpress/?p=2750
+https://web.archive.org/web/20201031162718/https://www.badlogicgames.com/wordpress/?p=2750

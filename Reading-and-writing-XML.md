@@ -3,4 +3,4 @@
 [XmlWriter](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/XmlWriter.html)
 [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/XmlWriter.java) uses a stack based API to emit XML.
 
-[Relevant blog post](http://www.badlogicgames.com/wordpress/?p=1712)
+[Relevant blog post](https://web.archive.org/web/20201031170506/https://www.badlogicgames.com/wordpress/?p=1712)

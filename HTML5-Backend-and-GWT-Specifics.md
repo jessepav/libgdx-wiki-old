@@ -4,7 +4,7 @@ Welcome to a place of magic and wonder, the World Wide Web! Even though some fol
 
 That's right! You can make your very own libGDX games that run in an HTML5-capable web browser, which I assume is some advanced form of Netscape Navigator. This is possible by GWT, or Google Web Toolkit! I know what you're thinking, Google? The guys who are trying to let people search the Internet with a form? What are they doing with libGDX? I have no idea either. If you want to make your own libGDX game deploy to the web using GWT, well, just make a project in the latest setup jar and make sure to check the `Html` checkbox. The rest should be straightforward!
 
-**BUT IT SOMETIMES ISN'T, AT FIRST** 
+**BUT IT SOMETIMES ISN'T, AT FIRST**
 
 So there are a few things that are fundamentally different about developing using GWT as opposed to running a desktop project. You'll want to get familiar with two Gradle tasks in particular; you can launch these tasks from your IDE if you aren't comfortable on the command line, but command-line Gradle tends to avoid problems when the IDE isn't working as well as we would like. `gradlew html:superDev` will be your main tool during development; it allows for a much-improved debugging experience and allows quickly reloading changes to the Java code. `gradlew html:dist` produces a fully-functioning web page that can be uploaded to a static web host (such as the free GitHub Pages service); it also optimizes the web page so the game in it will perform better, which makes `dist` take a little longer than `superDev`.
 
@@ -132,7 +132,7 @@ document.getElementById('embed-html').addEventListener('contextmenu', handleMous
 
 ## Sound and Music
 
-You will probably face some problems with sounds and music, especially on mobile platforms. It is not recommended to play sounds immediately on startup of the game as browsers probably will block this. 
+You will probably face some problems with sounds and music, especially on mobile platforms. It is not recommended to play sounds immediately on startup of the game as browsers probably will block this.
 
 The implementation the official HTML5 backend uses has some other restrictions, too. Pitch will not work and you will experience a lag on playing the sounds the first time. If you want to improve the situation, [check out this PR](https://github.com/libgdx/libgdx/pull/5659)
 
@@ -150,7 +150,7 @@ The implementation the official HTML5 backend uses has some other restrictions, 
 
 ### Other Known Limitations
 
-* Some java classes/features that are not supported: 
+* Some java classes/features that are not supported:
   * System.nanoTime
   * Java reflection. You must only use libGDX reflection utils, see [this wiki page](https://github.com/libgdx/libgdx/wiki/Reflection#gwt) for more details.
   * Multithreading is not supported.
@@ -161,16 +161,16 @@ The implementation the official HTML5 backend uses has some other restrictions, 
 * Pixmap
   * Some Pixmap methods are not supported (eg. loading from binary data).
   * Some drawings (eg. lines) are antialiased which is not always wanted. If you need non-antialiased lines, you can [draw it pixel by pixel](https://github.com/libgdx/libgdx/issues/6019#issuecomment-702916344) or use FrameBuffer with a ShapeRenderer to achieve it.
-* WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them: 
+* WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them:
   * NPOT (non power of two) textures are not supported with MipMap filters and/or Repeat wrapping.
   * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
-* Some libGDX extensions are not supported or require additional libraries : 
+* Some libGDX extensions are not supported or require additional libraries :
   * Bullet
   * Freetype requires https://github.com/intrigus/gdx-freetype-gwt
 
 ## Further Reading
 
-[The original Super Dev Instructions from Mario](https://www.badlogicgames.com/wordpress/?p=3073)
+[The original Super Dev Instructions from Mario](https://web.archive.org/web/20201028180932/https://www.badlogicgames.com/wordpress/?p=3073)
 
 [How to speed up GWT compilation](https://www.gamefromscratch.com/post/2013/10/07/Speeding-up-GWT-compilation-speeds-in-a-LibGDX-project.aspx)
 

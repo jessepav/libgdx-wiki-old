@@ -19,19 +19,19 @@ Distributing java applications as JAR file can be very unhandy and prone to issu
 
 * A very convenient way to distribute java application is to just bundle an JRE. See this [[entry|Bundling a JRE]] on how to do this. (**This is the recommended way to distribute an application!**)
 * Via electron, HTML5 applications can be deployed to desktop. See [here](https://medium.com/@bschulte19e/how-to-deploy-a-libgdx-game-with-electron-3f1b37f0c26e).
-* GWT applications can also be bundled as UWP Apps, see [here](http://www.badlogicgames.com/forum/viewtopic.php?f=17&t=14766).
+* GWT applications can also be bundled as UWP Apps, see [here](https://web.archive.org/web/20200428040905/https://www.badlogicgames.com/forum/viewtopic.php?f=17&t=14766).
 * Games can also be deployed as an [Applet](https://github.com/libgdx/libgdx/wiki/Deploying-as-an-Applet) (outdated, not recommended!)
 
 # <a id="Deploy_to_Android"></a>Deploy to Android
 `gradlew android:assembleRelease`
 
-This will create an unsigned APK file in the `android/build/outputs/apk` folder. Before you can install or publish this APK, you must [sign it](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you only need to follow the steps for keytool and jarsigner. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources). 
+This will create an unsigned APK file in the `android/build/outputs/apk` folder. Before you can install or publish this APK, you must [sign it](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you only need to follow the steps for keytool and jarsigner. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources).
 
 # <a id="Deploy_to_iOS"></a>Deploy to iOS ##
 *This section assumes you're familiar with the basic deployment steps for iOS apps.*
 
 ### Prerequisites:
-In order to upload the IPA to the app store, it must be signed with your distribution signature and linked to your provisioning profile. 
+In order to upload the IPA to the app store, it must be signed with your distribution signature and linked to your provisioning profile.
 You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) to create provisioning profiles and certificates.
 Once you have done that, you must define them in your root build.gradle file, in your IOS Project
 
@@ -57,12 +57,12 @@ project(":ios") {
 - Your Signing identity name is available in your keychain, under "My Certificates"
 
 ### Packaging:
-To create your IPA, run 
+To create your IPA, run
 
 `gradlew ios:createIPA`
- 
-This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. 
-To upload your app you will need to use the application loader within XCode (Xode->Open Developer Tool->Application loader) 
+
+This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store.
+To upload your app you will need to use the application loader within XCode (Xode->Open Developer Tool->Application loader)
 
 Note: as of iOS 11 instead of simply adding your icons into your data folder within your iOS project you need to include an asset Catalog.
 If you do not include one, you can still submit your app but later you receive a message regarding `Missing Info.plist value - A value for the Info.plist key CFBundleIconName is missing in the bundle '...'. Apps that provide icons in the asset catalog must also provide this Info.plist key.` To fix this, follow these [instructions to include an asset catalog](https://github.com/MobiVM/robovm/wiki/Howto-Create-an-Asset-Catalog-for-XCode-9-Appstore-Submission%3F).
