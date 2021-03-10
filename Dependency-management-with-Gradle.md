@@ -105,8 +105,7 @@ project(":android") {
         //Adds dependencies on the :core project as well as the android backends and all platform natives.
         //Note the 'natives' classifier in this project.
         implementation project(":core")
-        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"                
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
@@ -150,8 +149,7 @@ project(":android") {
 
     dependencies {
         implementation project(":core")
-        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
@@ -163,7 +161,6 @@ project(":android") {
 **We know our FreeType extension has declarations:**
 ```groovy
 implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
@@ -180,15 +177,13 @@ project(":android") {
 
     dependencies {
         implementation project(":core")
-        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
    
-        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"        
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
@@ -222,7 +217,6 @@ implementation "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-des
 **Android Dependency:**
 ```groovy
 implementation "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
@@ -253,7 +247,6 @@ implementation "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-de
 **Android Dependency:**
 ```groovy
 implementation "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-x86"
@@ -280,7 +273,6 @@ implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-
 **Android Dependency:**
 ```groovy
 implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
@@ -499,15 +491,13 @@ project(":android") {
 
     dependencies {
         implementation project(":core")
-        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
    
-        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"        
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
