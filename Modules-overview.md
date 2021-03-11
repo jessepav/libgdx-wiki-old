@@ -58,7 +58,7 @@ The following API versions are supported:
 |3.0 |`Gdx.graphics.getGL30();`|
 
 
-To learn more about the Graphics module check its documentation [[here|Graphics Module]].
+To learn more about the Graphics module check its documentation [[here|Graphics]].
 
 ### Files ###
 The _Files_ module provides a generic way to access files regardless of the platform.
