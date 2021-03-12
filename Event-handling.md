@@ -33,7 +33,7 @@ public class MyInputProcessor implements InputProcessor {
       return false;
    }
 
-   public boolean scrolled (int amount) {
+   public boolean scrolled (float amountX, float amountY) {
       return false;
    }
 }
