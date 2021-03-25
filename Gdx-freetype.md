@@ -12,7 +12,7 @@ Now imagine you have to ship all your big BitmapFonts with your game and your ga
 The solution to your problem is the `gdx-freetype` extension:
   * ship only lightweight .ttf files with your game
   * generate a BitmapFont of your desired size on the fly
-  * user might put his own fonts into your game
+  * user might put their own fonts into your game
 
 Tutorial available on [LibGDX.info](https://libgdx.info/basic-label/)
 
