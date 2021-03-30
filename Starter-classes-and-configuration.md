@@ -12,7 +12,7 @@
 
 For each target platform, a starter class has to be written. This class instantiates a back-end specific `Application` implementation and the `ApplicationListener` that implements the application logic. The starter classes are platform dependent, let's have a look at how to instantiate and configure these for each back-end.
 
-This article assumes you have followed the instruction in [Project Setup, Running & Debugging](https://github.com/libgdx/libgdx/wiki/Project-setup,-running-&-debugging) and have imported the generated core, desktop, Android and HTML5 projects into Eclipse.
+This article assumes you have followed the instruction in [Project Setup](https://libgdx.com/dev/project-generation/), [Importing & Running a Project](https://libgdx.com/dev/import-and-running/) and therefore have imported the generated core, desktop, Android and HTML5 projects into Eclipse.
 
 # Desktop (LWJGL) #
 Opening the `DesktopLauncher.java` class in `my-gdx-game` shows the following:
