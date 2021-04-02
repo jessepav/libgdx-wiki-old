@@ -126,7 +126,7 @@ effects.clear(); //clear the current effects array
 ## Batched effect example:
 ```java
 Array<PooledEffect> additiveEffects;
-ArraY<PooledEffect> normalEffects;
+Array<PooledEffect> normalEffects;
 
 ParticleEffect additiveEffect = new ParticleEffect();
 additiveEffect.load(//...);
