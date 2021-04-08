@@ -1,3 +1,3 @@
-In order to get started you must setup your development environment. libGDX supports the most popular Integrated Development Environment (IDE). 
+#### This page has moved! Check it out [here](https://libgdx.com/dev/setup/).
 
-Please follow the [official instructions](https://libgdx.com/dev/project-generation/).
+<!-- Keep this page, since apparently there are still some links pointing here -->
