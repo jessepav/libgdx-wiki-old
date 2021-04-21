@@ -6,7 +6,7 @@ This page gives a list of some **external tutorials**, if our wiki here isn't en
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
 **Some one-page tutorials for beginners:**
-- [Simple breakout game – focused on beginners with no prior game dev experience](http://tann.space/HelloLibgdx/)
+- [Simple breakout game – focused on beginners with no prior game dev experience](https://colourtann.github.io/HelloLibgdx/)
 - [Sprite Sheets & Physics with Box2d – Tutorial by Code and Web](https://www.codeandweb.com/texturepacker/tutorials/libgdx-physics)
 - [libGDX code samples (see the sidebar)](http://libgdx.info/)
 - [Some blog posts regarding libGDX – by Rotating Canvas](http://rotatingcanvas.com/category/tutorials/)
