@@ -10,7 +10,9 @@ The mechanism to deploy your game differs between platforms. This article aims t
 # <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X
 ### As JAR file
 The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR file. This can be done via the following console command:
-`gradlew desktop:dist`
+`./gradlew desktop:dist`
+
+If you are getting an error like `Unsupported class file major version 60`, your Java version (see [here](https://stackoverflow.com/q/9170832) for a list) is not supported by your Gradle version. To fix this, install an older JDK. 
 
 The generated JAR file will be located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
 
