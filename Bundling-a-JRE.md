@@ -5,25 +5,20 @@ The solution is to bundle a JRE with your app. This way you know exactly what us
 ## Packaging ##
 There are a number of tools available for bundling a JRE:
 
-### [jpackage](https://openjdk.java.net/jeps/343)
+### [jpackage](https://docs.oracle.com/en/java/javase/14/jpackage/packaging-overview.html#GUID-C1027043-587D-418D-8188-EF8F44A4C06A)
 
 Jpackage is a modern solution for providing native packaging options on Windows, MacOS and Linux introduced with [JEP-343](https://openjdk.java.net/jeps/343). It can be used to create an EXE that starts your bundled application via an embedded JRE. 
 
-See [this guide](https://github.com/raeleus/skin-composer/wiki/libGDX-and-JPackage) for more information. A video version can be found [here](https://www.youtube.com/watch?v=R7CMXeQ11GM).
-
-### [launch4j](http://launch4j.sourceforge.net/)
-
-_-- seems to be no longer maintained --_
-
-* On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
-* Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
-* Linux uses a shell script.
-
-### [Parcl](https://github.com/mini2Dx/parcl)
-A gradle plugin that performs similar actions as launch4j:
+See [this guide](https://github.com/raeleus/skin-composer/wiki/libGDX-and-JPackage) for more information on how to use it. A video version can be found [here](https://www.youtube.com/watch?v=R7CMXeQ11GM).
 
 ### [Packr](https://github.com/libgdx/packr)
-Tool created/maintained by the libGDX team.
+A packaging tool created and maintained by the libGDX team. Take a look at the [repository](https://github.com/libgdx/packr#usage) if you are interested in using it.
+
+### [Parcl](https://github.com/mini2Dx/parcl)
+A Gradle plugin that performs similar actions as launch4j. See its [README](https://github.com/mini2Dx/parcl#how-to-use) for instructions.
+
+### [launch4j](http://launch4j.sourceforge.net/)
+_-- seems to be no longer maintained --_
 
 ## MacOS Specifics
 
