@@ -93,8 +93,8 @@
     * [[3D Particle Effects]]
     * [[Virtual Reality (VR)]]
     * [[ImGui Bindings And 3D Graphics]]
+    * [[3D Picking]]
     * Perspective Camera ??
-    * Picking ??
 * [[Managing Your Assets]]
 * [[HTML5 Backend and GWT Specifics]]
 * [[Internationalization and Localization]]
