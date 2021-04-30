@@ -60,7 +60,7 @@ These are some open-source projects found on the web that use libGDX and can be 
 * [Super Spineboy](https://github.com/EsotericSoftware/spine-superspineboy) (a platformer using [Spine](http://www.esotericsoftware.com))
 * [Klooni 1010!](https://github.com/LonamiWebs/Klooni1010) (puzzle game based on the original 1010!)
 * [TDGalaxy](https://github.com/TheLogicMaster/Tower-Defense-Galaxy) (modular 3D tower defense game)
-* [bomberman](https://github.com/mcol/bombergame)
+* [bombergame](https://github.com/mcol/bombergame)
 * [martianrun](https://github.com/wmora/martianrun) (2D running game; uses AdMob and Google Play Game Services)
 * [GdxCombat](https://github.com/gamedevpl/GdxCombat) (2D mortal kombat like game)
 * [rpgboss-editor](https://github.com/rpgboss/rpgboss)
