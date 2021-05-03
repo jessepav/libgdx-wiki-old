@@ -4,7 +4,7 @@ Technically speaking, _internationalization_ is the process of designing a softw
  _Localization_ is the process of adapting internationalized software for a specific region or language by adding locale-specific components and translating text.
 Due to the length of the terms, both internationalization and localization are frequently abbreviated to i18n and l10n respectively, where 18 and 10 stand for the number of letters between the initial and the final letters of the respective words.
 
-In LibGDX, the [`I18NBundle` class](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/I18NBundle.html) is used to store and fetch strings that are locale sensitive. A bundle allows you to easily provide different translations for you application.
+In LibGDX, the [`I18NBundle` class](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/I18NBundle.html) is used to store and fetch strings that are locale sensitive. A bundle allows you to easily provide different translations for your application.
 
 
 ## Creating Properties Files ##
