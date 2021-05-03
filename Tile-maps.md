@@ -211,7 +211,7 @@ A small example: assume you have a tile map, where tiles are 32x32 pixels wide. 
 
 ```java
 OrthographicCamera camera = new OrthographicCamera();
-camera.setToOrtho(30, 20);
+camera.setToOrtho(false, 30, 20);
 ```
 
 Working with isometric maps is analogous, just create an IsometricTiledMapRenderer:
