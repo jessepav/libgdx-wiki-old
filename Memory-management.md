@@ -21,7 +21,6 @@ The following classes need to be disposed of manually (might not be complete, [c
   * Shader
   * ShaderProgram
   * Shape
-  * com.badlogic.gdx.physics.box2d.Shape
   * Skin
   * SpriteBatch
   * SpriteCache
