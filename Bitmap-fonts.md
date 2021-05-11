@@ -53,3 +53,24 @@ Examples
 
 ## Fonts in 3D space
 While libGDX does not support placing text in 3D space directly, it is still possible to do so relatively easily. Check [this gist](https://gist.github.com/Darkyenus/e9427b0655816d2a521227cb9313d303) for an example. Note that such text won't be occluded by objects in front of it, as `SpriteBatch` draws with constant `z`, but it would not be hard to fix that with a custom shader, that would set the appropriate 'z' from an uniform.
+
+## Fixed-Width Fonts
+Fonts that need to be displayed with the same width for every glyph present a special problem. The initial blank space at left before narrow chars such as `|` won't be shown by default, and the narrow char will "cling" to just after the previous char, without the intended blank space. This also can cause issues with the width of that char being smaller, and that makes multiple lines of text unaligned with each other. There's an existing `BitmapFont#setFixedWidthGlyphs(CharSequence)` method, which solves all this for the chars you have in the given `CharSequence` (usually a String). The catch is, you need to list every glyph in the font that needs to have the same width, and this can be a significant hassle for large fonts. If you're sticking to ASCII or a small extension of it, Hiero has ASCII and NeHe buttons to fill the text field with those common smaller character sets, and you can copy that text into a String you pass to setFixedWidthGlyphs(). If you have a fixed-width font where the list of all chars that you could use is very large or unknown, you can use this code to set every glyph to fixed-width, using the largest glyph width for every glyph:
+```java
+        public static void setAllFixedWidth(BitmapFont font) {
+            BitmapFont.BitmapFontData data = font.getData();
+            int maxAdvance = 0;
+            for (int index = 0, end = 65536; index < end; index++) {
+                BitmapFont.Glyph g = data.getGlyph((char) index);
+                if (g != null && g.xadvance > maxAdvance) maxAdvance = g.xadvance;
+            }
+            for (int index = 0, end = 65536; index < end; index++) {
+                BitmapFont.Glyph g = data.getGlyph((char) index);
+                if (g == null) continue;
+                g.xoffset += (maxAdvance - g.xadvance) / 2;
+                g.xadvance = maxAdvance;
+                g.kerning = null;
+                g.fixedWidth = true;
+            }
+        }
+```
