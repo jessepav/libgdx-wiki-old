@@ -73,6 +73,7 @@ Absolute and classpath files are mostly used for tools such as desktop editors, 
 
   * **Internal Files**: all the assets (images, audio files, etc.) that are packaged with your application are internal files. If you use the Setup UI, just drop them in your Android project's `assets` folder.
   * **Local Files**: if you need to write small files, e.g. save a game state, use local files. These are in general private to your application. If you want a key/value store instead, you can also look into [[Preferences]].
+    Note that Android's app-specific cache can be accessed using '../cache'. Files stored there can be cleared by the user via the 'clear cache' button found in the app's settings.
   * **External Files**: if you need to write big files, e.g. screenshots, or download files from the web, they could go on the external storage. Note that the external storage is volatile, a user can remove it or delete the files you wrote. Because they are not cleaned up and volatile, it is usually simpler to use local file storage.
 
 ## Checking Storage availability and paths ##
