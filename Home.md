@@ -81,6 +81,7 @@
       * [[scene2d.ui]]
         * [[Table]]
       * [[Skin]]
+    * [[ImGui]]
   * [[3D Graphics]]
     * [[Quick Start]]
     * [[Models]]
@@ -92,7 +93,6 @@
     * [[Importing Blender Models in libGDX]]
     * [[3D Particle Effects]]
     * [[Virtual Reality (VR)]]
-    * [[ImGui Bindings And 3D Graphics]]
     * [[3D Picking]]
     * Perspective Camera ??
 * [[Managing Your Assets]]
