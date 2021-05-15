@@ -44,7 +44,7 @@ The second value in the world creation is a boolean value which tells the world 
 
 It is advised to use the same scale you use for Box2D to draw graphics. This means drawing a Sprite with a width/height in meters. To scale up the graphics to make them visible, you should use a camera with a viewportWidth / viewportHeight also in meters. E.g: drawing a Sprite with a width of 2.0f (2 meters) and using a camera viewportWidth of 20.0f, the Sprite will fill 1/10th of the width on the window.
 
-
+**A common mistake** is measuring your world in pixels instead of meters. Box2D objects can only travel so fast. If pixels are used (such as 640 by 480) instead of meters (such as 12 by 9), objects will always move slowly no matter what you do.
 
 ## Debug Renderer ##
 
