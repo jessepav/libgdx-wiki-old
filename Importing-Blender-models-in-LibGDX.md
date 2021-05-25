@@ -73,18 +73,18 @@ There is a model preview utility at https://github.com/ASneakyFox/libgdx-fbxconv
 
 The simplest way to load a G3DJ file into libGDX is the following:
 
-```
+```java
 Model model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal(modelFileName));
 ```
 This will import the G3DJ file. To actually create a run-time instance of it, we can use a `ModelBuilder` in combination with a `ModelBatch`:
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 Model model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal(modelFileName));
 ModelInstance instance = new ModelInstance(model);
 ```
 
 #### Loading and rendering a G3DJ file example
-```
+```java
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
