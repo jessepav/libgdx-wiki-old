@@ -2,8 +2,6 @@ LibGDX provides its own 3D format out of the box called **G3D** (g3dj and g3db f
 
 **Note:** _while this page uses Blender for practical examples, most of it applies to **other modeling applications** as well._
 
-**Warning**: This article is not finished. It does not elaborate on loading the models into libGDX.
-
 Blender is an open-source modeling application you can use to create 3D models, scenes and animations. You can get Blender at [blender.org](http://www.blender.org/). If you are new to creating 3D models using Blender, you can checkout the [blender tutorials](http://www.blender.org/education-help/tutorials/). This page provides practical tips on preparing and converting your Blender model for use in libGDX.
 
 ### Blender considerations
@@ -71,10 +69,104 @@ There is a model preview utility at https://github.com/ASneakyFox/libgdx-fbxconv
 
 ![](https://user-images.githubusercontent.com/7131566/35468742-9a5dd6ac-02f2-11e8-8988-d32ba45b03a2.PNG)
 
-### Loading a G3DJ file into libGDX
+### Loading a G3DJ file into libGDX and instantiating it
 
-The simplest way to load a G3DJ file into libGDX is the following.
+The simplest way to load a G3DJ file into libGDX is the following:
 
 ```
 Model model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal(modelFileName));
+```
+This will import the G3DJ file. To actually create a run-time instance of it, we can use a `ModelBuilder` in combination with a `ModelBatch`:
+```
+ModelBuilder modelBuilder = new ModelBuilder();
+Model model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal(modelFileName));
+ModelInstance instance = new ModelInstance(model);
+```
+
+#### Loading and rendering a G3DJ file example
+```
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.VertexAttributes.Usage;
+import com.badlogic.gdx.graphics.g3d.Environment;
+import com.badlogic.gdx.graphics.g3d.Model;
+import com.badlogic.gdx.graphics.g3d.ModelBatch;
+import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
+import com.badlogic.gdx.graphics.g3d.Material;
+import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
+import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
+import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
+import com.badlogic.gdx.utils.JsonReader;
+
+/**
+ * Example program that imports "myModel.g3dj" from the assets folder and renders it onto the screen.
+ */
+public class ImportG3DJ implements ApplicationListener {
+    private Environment environment;
+    private PerspectiveCamera camera;
+    private CameraInputController cameraController;
+    private ModelBatch modelBatch;
+    private Model model;
+    private ModelInstance instance;
+
+    @Override
+    public void create() {
+        // Create an environment so we have some lighting
+        environment = new Environment();
+        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1f));
+        environment.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -1f, -0.8f, -0.2f));
+
+        modelBatch = new ModelBatch();
+
+        // Create a perspective camera with some sensible defaults
+        camera = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        camera.position.set(10f, 10f, 10f);
+        camera.lookAt(0, 0, 0);
+        camera.near = 1f;
+        camera.far = 300f;
+        camera.update();
+
+        // Import and instantiate our model (called "myModel.g3dj")
+        ModelBuilder modelBuilder = new ModelBuilder();
+        model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal("myModel.g3dj"));
+        instance = new ModelInstance(model);
+
+        cameraController = new CameraInputController(camera);
+        Gdx.input.setInputProcessor(cameraController);
+    }
+
+    @Override
+    public void render() {
+        cameraController.update();
+        
+        // Clear the stuff that is left over from the previous render cycle
+        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
+
+        // Let our ModelBatch take care of efficient rendering of our ModelInstance
+        modelBatch.begin(camera);
+        modelBatch.render(instance, environment);
+        modelBatch.end();
+    }
+
+    @Override
+    public void dispose() {
+        modelBatch.dispose();
+        model.dispose();
+    }
+
+    @Override
+    public void resize(int width, int height) { }
+
+    @Override
+    public void pause() { }
+
+    @Override
+    public void resume() { }
+}
 ```
