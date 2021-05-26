@@ -55,37 +55,6 @@ When using multiple Stages:
     stage2.getViewport().apply();
     stage2.draw();
 ```
-#### Using Stage (with its own viewport) along side another Viewport (used to render your sprite) ####
-When using stage and at the same time using another SpriteBatch with its own viewport to render its sprites you
-may find some undesirable effects if you don't know exactly what to do.  First of all,  the information
-above about multiple viewports is good.  Here is some additonal information to that:
-
-```java
-   //****INITIALIZATION****//
-   Viewport vp = new FitViewport(worldWidth, worldHeight); //to draw sprites along with the spritebatch
-   SpriteBatch sb = new SpriteBatch(); //to draw sprites along with viewport
-   st = new Stage(new FitViewport(worldWidth, worldHeight)); //to draw actors
-   st.getViewport().getCamera().position.setZero(); //(optional) centering the camera; don't use if not your style
-```
-
-```java
-    //****RENDER****//
-    vp.apply();
-    sb.setProjectionMatrix(vp.getCamera().combined);
-    sb.begin();/*draw*/ sb.end();
-    stage.getViewport().apply();
-    stage.draw();
-```
-
-then set the size of the actors using the 2 lines
-```java
-   //****SETTING ACTORS SIZE****//
-   //When using FitViewport in Stage,  the actors can be scaled really large.  The below allows you to rescale it to
-   //more visual appealling.
-   final float scaleValue = 1f/3.5f;//set this to whatever you want
-   gameButton.setTransform(true);
-   gameButton.setScale(scaleValue);
-```
 
 ### Examples
 
