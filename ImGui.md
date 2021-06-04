@@ -58,10 +58,8 @@ IO.fonts.addFontFromFileTTF("extraFonts/ArialUni.ttf", 18f, glyphRanges = IO.fon
 "io.github.spair:imgui-java-binding:<version>"
 "io.github.spair:imgui-java-lwjgl3:<version>"
 "io.github.spair:imgui-java-natives-linux:<version>"
-"io.github.spair:imgui-java-natives-linux-x86:<version>"
 "io.github.spair:imgui-java-natives-macos:<version>"
 "io.github.spair:imgui-java-natives-windows:<version>"
-"io.github.spair:imgui-java-natives-windows-x86:<version>"
 ```
 
 ### Example Minimal Usage
