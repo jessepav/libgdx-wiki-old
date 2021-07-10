@@ -4,23 +4,11 @@ The libGDX 2D Particle Editor is a powerful tool for making particle effects. Se
 
 ## Running the 2D Particle Editor ##
 
-To run the editor, you can check out libGDX and run it [from source](https://libgdx.com/dev/from_source/). The editor is in the gdx-tools project. Alternatively, download the editor [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-2D-particles.jar). Thirdly, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
-
-### ...on Windows ###
-
-```
-java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
-```
-
-### ...on Linux or Mac ###
-
-```
-java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
-```
+To run the editor, you can check out libGDX and run it [from source](https://libgdx.com/dev/from_source/). The editor is in the gdx-tools project. Alternatively, download the editor [here](http://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-2D-particles.jar). 
 
 ### ...in IntelliJ ###
 
-Ensure that you have gdx-tools listed as a dependency in the desktop section of your libGDX project. Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file.
+Thirdly, you can run the particle editor from the gdx-tools JAR. Ensure that you have gdx-tools listed as a dependency in the desktop section of your libGDX project. Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file.
 
 Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
