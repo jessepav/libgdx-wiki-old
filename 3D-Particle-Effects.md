@@ -4,19 +4,7 @@ Because of issues with perspective and depth, the 2D particle effects are not su
 
 ### Flame - 3D Particle Editor
 Much like their 2D cousins, 3D particle effects can be edited with a GUI editor included in libgdx.
-The editor is called Flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libGDX repo, you can run the editor by using the following command from the **dist** directory:
-
-Linux/Mac:
-```
-java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.flame.FlameMain
-```
-
-Windows:
-```
-java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.flame.FlameMain
-```
-
-Alternatively, you can download it [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-3D-particles.jar).
+The editor is called Flame, and can be downloaded [here](http://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-3D-particles.jar).
 
 ### Particle Effect Types
 There are 3 different kinds of 3D particle effects:
