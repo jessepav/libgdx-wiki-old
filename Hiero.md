@@ -4,23 +4,11 @@ Hiero is a bitmap font packing tool. It saves in the [Angel Code font](http://ww
 
 ## Running Hiero ##
 
-You can download the .jar file [here](https://libgdx.badlogicgames.com/nightlies/runnables/runnable-hiero.jar). Make it executable (if you are on a UNIX-like operating system) and then run it.
+You can download the .jar file [here](http://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-hiero.jar). Make it executable (if you are on a UNIX-like operating system) and then run it.
 
 If you are using Gradle and you added "Tools" extension to your project, you can easily run Hiero from your IDE, otherwise look at Downloading Hiero.
 
 Example for IntelliJ IDEA: Go to the Hiero class, right click and select `Run Hiero.main()`. On the `Run configurations` popup that will appear, select the `Desktop` module, and click `Run`.
-
-Hiero can also be run from source or from the [nightly build](http://libgdx.badlogicgames.com/nightlies/). Navigate to the folder where libGDX is installed, specifically the folder containing the gdx.jar, then:
-
-On Windows
-```
-java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-freetype\gdx-freetype.jar;extensions\gdx-freetype\gdx-freetype-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.hiero.Hiero
-```
-
-On Linux/OS X
-```
-java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-freetype/gdx-freetype.jar:extensions/gdx-freetype/gdx-freetype-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.hiero.Hiero
-```
 
 ## Rasterization ##
 
