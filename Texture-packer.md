@@ -71,17 +71,15 @@ task texturePacker {
 In this way, running `./gradlew texturePacker desktop:run` will perform the texture packing before the desktop:run task is started. And if the textures have not changed, then all one has to do is omit the texturePacker argument.
 
 
-TexturePacker can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
+TexturePacker can also be run from the [standalone nightly](http://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-texturepacker.jar):
 
 ```
 // OS X / Linux
-java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
+java -cp runnable-texturepacker.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 
 // WINDOWS
-java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
+java -cp runnable-texturepacker.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 ```
-
-TexturePacker can also be run from the [standalone nightly](https://libgdx.badlogicgames.com/nightlies/runnables/), just substitute `runnable-texturepacker.jar` for `gdx.jar;extensions/gdx-tools/gdx-tools.jar` in the above.
 
 Note that TexturePacker runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
 
