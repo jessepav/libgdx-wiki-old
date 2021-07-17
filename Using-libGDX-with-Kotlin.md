@@ -26,7 +26,7 @@ See the [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/)
 
 # Migrating an existing project to Kotlin
 
-This guide describes how to migrate an existing libGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
+This guide describes how to migrate an existing libGDX project to Kotlin. You can also start with a [fresh application](https://libgdx.com/dev/project-generation/).
 
 * [Configure Gradle](#configure-gradle)
   * [Setup the Kotlin Gradle plugin](#set-up-the-kotlin-gradle-plugin)
