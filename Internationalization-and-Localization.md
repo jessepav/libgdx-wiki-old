@@ -49,6 +49,8 @@ Locale locale = new Locale("fr", "CA", "VAR1");
 I18NBundle myBundle = I18NBundle.createBundle(baseFileHandle, locale);
 ````
 
+The path "i18n/MyBundle", in this case, refers to files whose names begin with _MyBundle_ that are located in the _i18n_ folder, more precisely in "assets/i18n". You do not need to create the _MyBundle_ subfolder as well.
+
 Or, if you're using [`AssetManager`](https://github.com/libgdx/libgdx/wiki/Managing-your-assets):
 ```
 assetManager.load("i18n/MyBundle", I18NBundle.class);
