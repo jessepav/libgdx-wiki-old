@@ -1,5 +1,5 @@
-* [Desktop (LWJGL)](#desktop-lwjgl)
 * [Desktop (LWJGL3)](#desktop-lwjgl3)
+* [Desktop (LWJGL)](#desktop-lwjgl)
 * [Android](#android)
   - [Game Activity](#game-activity)
   - [Game Fragment](#game-fragment)
@@ -14,7 +14,48 @@ For each target platform, a starter class has to be written. This class instanti
 
 This article assumes you have followed the instruction in [Project Setup](https://libgdx.com/dev/project-generation/), [Importing & Running a Project](https://libgdx.com/dev/import-and-running/) and therefore have imported the generated core, desktop, Android and HTML5 projects into Eclipse.
 
+# Desktop (LWJGL3) #
+
+Opening the `DesktopLauncher.java` class in `my-gdx-game` shows the following:
+
+```java
+package com.me.mygdxgame;
+
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+
+public class DesktopLauncher {
+   public static void main(String[] args) {
+      Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
+      config.setTitle("my-gdx-game");
+      config.setWindowedMode(480, 320);
+		
+      new Lwjgl3Application(new MyGdxGame(), config);
+   }
+}
+```
+
+First an [Lwjgl3ApplicationConfiguration](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-lwjgl3/src/com/badlogic/gdx/backends/lwjgl3/Lwjgl3ApplicationConfiguration.java) is instantiated. This class lets one specify various configuration settings, such as the initial screen resolution, whether to use OpenGL ES 2.0 or 3.0 and so on. Refer to the Javadocs of this class for more information.
+
+Once the configuration object is set, an `Lwjgl3Application` is instantiated. The `MyGdxGame()` class is the ApplicationListener implementing the game logic. 
+
+From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
+
+#### Common issues:
+
+On **macOS**, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE. If you're starting your project via gradle, add this line to `run` task of the desktop gradle file:
+```
+    jvmArgs = ['-XstartOnFirstThread']
+```
+   An alternative approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). If you want to deploy your game by packaging a JRE with it, jpackage or packr allow you to set the JVM arguments.
+
 # Desktop (LWJGL) #
+
+In version 1.10.1, libGDX switched its default desktop backend to LWJGL 3. If you want to upgrade, please take a look [here](https://gist.github.com/crykn/eb37cb4f7a03d006b3a0ecad27292a2d).
+
+<details>
+  <summary><b><i>Click here to show the old LWJGL backend instructions</b></i></summary>
+  
 Opening the `DesktopLauncher.java` class in `my-gdx-game` shows the following:
 
 ```java
@@ -47,45 +88,8 @@ From there on a window is created and the ApplicationListener is invoked as desc
 - When using a JDK of version 8 or later, an **"illegal reflective access"** warning is shown. This is nothing to be worried about. If it bothers you, downgrade the used JDK or switch to the LWJGL 3 backend.
 
 - If an error like **`Process 'command 'C:/.../java.exe'' finished with non-zero exit value -1`** is shown, this can safely be ignored. A workaround is disabling forceExit: `config.forceExit = false;`.
-
-# Desktop (LWJGL3) #
-
-LWJGL3 is the modern backend recommended for new projects. Unfortunately, it is not set as the default in the setup project. To enable it, you must change the following line in the build.gradle for your project:
-
-From:
-```groovy
-api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-```
-To:
-```groovy
-api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
-```
-
-Make sure to refresh your Gradle dependencies in your IDE. You will have to make the following changes to your DesktopLauncher class as well:
-
-```java
-package com.me.mygdxgame;
-
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-
-public class DesktopLauncher {
-   public static void main(String[] args) {
-      Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-      config.setTitle("my-gdx-game");
-      config.setWindowedMode(480, 320);
-		
-      new Lwjgl3Application(new MyGdxGame(), config);
-   }
-}
-```
-#### Common issues:
-
-On macOS, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE. If you're starting your project via gradle, add this line to `run` task of the desktop gradle file:
-```
-    jvmArgs = ['-XstartOnFirstThread']
-```
-   An alternative approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). If you want to deploy your game by packaging a JRE with it, jpackage or packr allow you to set the JVM arguments.
+  
+</details>
 
 # Android #
 
