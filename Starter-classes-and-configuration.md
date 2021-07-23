@@ -43,11 +43,11 @@ From there on a window is created and the ApplicationListener is invoked as desc
 
 #### Common issues:
 
-On **macOS**, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE. If you're starting your project via gradle, add this line to `run` task of the desktop gradle file:
+On **macOS**, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE, as is described [here](https://libgdx.com/dev/import-and-running/). Alternatively, if you're starting your project via Gradle, add this line to `run` task of the desktop gradle file:
 ```
     jvmArgs = ['-XstartOnFirstThread']
 ```
-   An alternative approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). If you want to deploy your game by packaging a JRE with it, jpackage or packr allow you to set the JVM arguments.
+   A third approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). Lastly, if you want to deploy your game by packaging a JRE with it (which is recommended if you intend to distribute your game), jpackage or packr allow you to set the JVM arguments.
 
 # Desktop (LWJGL) #
 
