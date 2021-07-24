@@ -102,7 +102,7 @@ The outer blue rectangle shows the size of the table widget. The inner blue rect
 
 ### Expand
 
-To make the logical table take up the entire size of the table widget, TableLayout needs to be told which cells will receive the extra space.
+To make the logical table take up the entire size of the table widget, TableLayout needs to be told which **cells will receive the extra space**.
 
 ```java
     table.add(nameLabel).expandX();
@@ -154,7 +154,7 @@ Similar to aligning the logical table, a widget can be aligned inside the cell.
 
 ### Fill
 
-The `fill` method causes a widget to be sized to the cell. Like expand, there are also `fillX` and `fillY` methods.
+The `fill` method causes a **widget to be sized to the cell**. Like expand, there are also `fillX` and `fillY` methods.
 
 ```java
     table.add(nameLabel).expand().bottom().fillX();
@@ -174,7 +174,7 @@ By default, the table attempts to size widgets to their preferred size. If the w
 
 It is a common beginner's mistake to attempt to size or position a widget in a table by setting the size on the widget. The table sizes and positions its children using their preferred, minimum, or maximum size, so the table will overwrite any size or position set previously.
 
-Widgets do not provide setters for their preferred, minimum, or maximum size. These values are typically computed by the widget, so would be confusing if they could also be set explicitly. Also, it is not advised to subclass a widget to change these values. Instead, set the preferred, minimum, or maximum size on the cell containing the widget and your value will be used instead of the widget's value.
+Widgets do not provide setters for their preferred, minimum, or maximum size. These values are typically computed by the widget, so would be confusing if they could also be set explicitly. Also, it is not advised to subclass a widget to change these values. Instead, set the **preferred, minimum, or maximum size** on the cell containing the widget and your value will be used instead of the widget's value.
 
 ```java
     table.add(nameLabel);
@@ -192,7 +192,7 @@ Here the `prefWidth` of 999 is larger than the table, so it is sized down to fit
 
 ### Padding
 
-Padding is extra space around the edges of a cell.
+Padding is **extra space around the edges** of a cell.
 
 ```java
     table.add(nameLabel);
@@ -214,7 +214,7 @@ Padding can also be applied to the edges of the table.
 
 ### Spacing
 
-Like padding, spacing is extra space around the edges of a cell. However, spacing between cells does not combine, instead the larger of the two is used. Also, spacing is not applied at the edge of the table. Spacing makes it easy to have consistent space between cells, eg for forms.
+Like padding, spacing is extra space around the edges of a cell. However, **spacing between cells does not combine**, instead the larger of the two is used. Also, spacing is not applied at the edge of the table. Spacing makes it easy to have consistent space between cells, eg for forms.
 
 ```java
     table.add(nameLabel);
@@ -230,7 +230,7 @@ Note that the spacing between cells doesn't combine, so there are 10 pixels betw
 
 ### Colspan
 
-A cell can span multiple columns.
+**A cell can span multiple columns**.
 
 ```java
     table.add(nameLabel);
@@ -261,7 +261,7 @@ Cells with `uniform` set to true will be the same size.
 
 ### Cell defaults
 
-Often many cells have the same properties, so setting the default properties for all cells can greatly reduce the code needed for a layout. The `defaults` method on the table returns a cell whose properties are the defaults for all cells.
+Often many cells have the same properties, so setting the default properties for all cells can greatly reduce the code needed for a layout. The `defaults` method on the table returns a cell whose properties are the **defaults for all cells**.
 
 ```java
     table.defaults().width(100);
@@ -276,7 +276,7 @@ Often many cells have the same properties, so setting the default properties for
 
 ### Column defaults
 
-The `columnDefaults` method on the table returns a cell whose properties are the defaults for all cells in that column. Any properties set here will override the cell default properties. Columns are indexed starting at 0.
+The `columnDefaults` method on the table returns a cell whose properties are the **defaults for all cells in that column**. Any properties set here will override the cell default properties. Columns are indexed starting at 0.
 
 ```java
     table.columnDefaults(1).width(150);
