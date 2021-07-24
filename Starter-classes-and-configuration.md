@@ -43,11 +43,19 @@ From there on a window is created and the ApplicationListener is invoked as desc
 
 #### Common issues:
 
-On **macOS**, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE, as is described [here](https://libgdx.com/dev/import-and-running/). Alternatively, if you're starting your project via Gradle, add this line to `run` task of the desktop gradle file:
-```
+1. On **macOS**, the LWJGL 3 backend is only working when the JVM is run with the **`-XstartOnFirstThread`** argument. This can typically be done in the Launch/Run Configurations of your IDE, as is described [here](https://libgdx.com/dev/import-and-running/). Alternatively, if you're starting your project via Gradle, add this line to `run` task of the desktop gradle file:
+   ```
     jvmArgs = ['-XstartOnFirstThread']
-```
-   A third approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). Lastly, if you want to deploy your game by packaging a JRE with it (which is recommended if you intend to distribute your game), jpackage or packr allow you to set the JVM arguments.
+   ```
+   A third approach is to just programatically restart the JVM if the argument is not present (see [here](https://github.com/crykn/guacamole/blob/master/gdx-desktop/src/main/java/de/damios/guacamole/gdx/StartOnFirstThreadHelper.java#L69) for a simple example). Lastly, if you want to deploy your game by packaging a JRE with it (which is the recommended way to distribute your later game), jpackage or packr allow you to set the JVM arguments.
+
+2. If you are using **gdx-tools** and the lwjgl3 backend in the same project, you need to modify your gdx-tools dependency like this: 
+   ```
+   compile ("com.badlogicgames.gdx:gdx-tools:$gdxVersion") {
+      exclude group: 'com.badlogicgames.gdx', module: 'gdx-backend-lwjgl'
+   }
+   ```
+   The cause of this is described [here](https://github.com/libgdx/libgdx/issues/3726#issuecomment-266227745).
 
 # Desktop (LWJGL) #
 
