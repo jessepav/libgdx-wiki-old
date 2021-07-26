@@ -20,6 +20,15 @@ Hiero has multiple options for rasterizing fonts:
 
 Hiero will output kerning information for fonts with kerning entries.
 
+## Command line arguments ##
+
+Hiero supports 4 command line arguments:
+
+* `--input <file>` or `-i <file>` loads the specified `.hiero` configuration file when launching. 
+* `--output <file>` or `-o <file>` sets the output `.fnt` file to the specified value.
+* `--batch` or `-b` makes hiero  automatically generate it's output and close to be used without human intervention.
+* `--scale <scale>` or `-s <scale>` scales the font by the specified amount.
+
 ## Alternatives ##
 
 ### BitmapFontWriter ###
