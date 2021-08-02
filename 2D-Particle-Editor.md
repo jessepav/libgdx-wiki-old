@@ -4,7 +4,7 @@ The libGDX 2D Particle Editor is a powerful tool for making particle effects. Se
 
 ## Running the 2D Particle Editor ##
 
-To run the editor, you can check out libGDX and run it [from source](https://libgdx.com/dev/from_source/). The editor is in the gdx-tools project. **Alternatively, download the editor [here](http://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-2D-particles.jar).**
+To run the editor, you can check out libGDX and run it [from source](https://libgdx.com/dev/from_source/). The editor is in the gdx-tools project. **Alternatively, download the editor [here](https://libgdx-nightlies.s3.eu-central-1.amazonaws.com/libgdx-runnables/runnable-2D-particles.jar).**
 
 Thirdly, if you are using Gradle and you added "Tools" extension to your project, you can easily run the particle editor from your IDE. For example, in IntelliJ: Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file. Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
