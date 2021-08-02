@@ -323,7 +323,7 @@ and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="c
 **Core Dependency:**
 Don't put me in core!
 
-**Desktop Dependency:**
+**Desktop Dependency (LWJGL2 only):**
 ```groovy
 implementation "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
 ```
