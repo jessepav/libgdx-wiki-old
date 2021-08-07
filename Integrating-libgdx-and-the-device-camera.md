@@ -2,7 +2,7 @@ This article shows how to integrate the Android device camera with your libGDX a
 This functionality can be used in order to let the user see what going on behind the device while playing and walking on the street, or even have some interaction between  the game and the real world (FPS game using the face detection mechanism?)
 
 
-#A Quick Outline#
+# A Quick Outline #
   * Create the libGDX view with alpha channel (this is not the default), so that the camera preview will be shown behind it.
   * Create the DeviceCameraController object responsible for the Camera surface where the preview is drawn.
   * Interact with the DeviceCameraController from your application code, most of the camera functionality is called asynchronously according to: https://code.google.com/p/libgdx-users/wiki/IntegratingAndroidNativeUiElements3TierProjectSetup
