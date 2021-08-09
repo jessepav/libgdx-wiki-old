@@ -78,7 +78,8 @@ ParticleEffects are no different than Sprites, in fact they [ARE](https://github
 
 # Examples
 
-[Example of Particle Effect on LibGDX.info](https://libgdx.info/particleeffect/)
+For a collection of community created particle effects for LibGDX see the [Particle Park](https://github.com/raeleus/Particle-Park)<br/>
+A coding example is available on [LibGDX.info](https://libgdx.info/particleeffect/)
 
 ## Pooled effect example:
 ```java
