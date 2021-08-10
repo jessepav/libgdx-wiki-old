@@ -24,7 +24,7 @@ Since this is an extension, it is not included in your libGDX project by default
 
 **For Projects Using Gradle**
 
-For new projects, simply select the Freetype option under extensions in the [setup ui](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
+For new projects, simply select the Freetype option under extensions in the [setup UI](https://libgdx.com/dev/project-generation/).
 
 To add to an existing Gradle project, see [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
 
