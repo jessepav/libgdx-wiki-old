@@ -28,18 +28,6 @@ For new projects, simply select the Freetype option under extensions in the [set
 
 To add to an existing Gradle project, see [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
 
-**For Projects NOT Using Gradle**
-
-In case you don't have it anymore, download the latest [nightly build](http://libgdx.badlogicgames.com/nightlies/).
-
-Open _libgdx-nightly-latest.zip/extensions/gdx-freetype_ and do the following:
-  * extract gdx-freetype.jar to your core project's libs folder
-  * link gdx-freetype.jar to your core, android and desktop project
-  * extract gdx-freetype-natives.jar to your desktop project's libs folder
-  * link gdx-freetype-natives.jar to your desktop project
-  * copy armeabi/libgdx-freetype.so to your android project's libs/armeabi folder
-  * copy armeabi-v7a/libgdx-freetype.so to your android project's libs/armeabi-v7a folder
-
 **HTML5**
 
 GDX Freetype is not compatible with HTML5. However, you may use the gdx-freetype-gwt lib by Intrigus to enable HTML5 functionality. Please follow the instructions here: https://github.com/intrigus/gdx-freetype-gwt
