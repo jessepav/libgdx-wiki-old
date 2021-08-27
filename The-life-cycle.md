@@ -1,7 +1,7 @@
 A libGDX application has a well defined life-cycle, governing the states of an application, like creating, pausing and resuming, rendering and disposing the application.
 
-## ApplicationListener ##
-An application developer hooks into these life-cycle events by implementing the [ApplicationListener](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ApplicationListener.html) interface and passing an instance of that implementation to the `Application` implementation of a specific back-end (see [[The Application Framework]]). From there on, the `Application` will call the `ApplicationListener` every time an application level event occurs. A bare-bones `ApplicationListener` implementation may look like this:
+## ApplicationListener
+An application developer hooks into these life-cycle events by implementing the [ApplicationListener](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/ApplicationListener.html) interface and passing an instance of that implementation to the `Application` implementation of a specific back-end (see [[The Application Framework]]). From there on, the `Application` will call the `ApplicationListener` every time an application level event occurs. A bare-bones `ApplicationListener` implementation may look like this:
 
 ```java
 public class MyGame implements ApplicationListener {
@@ -25,17 +25,17 @@ public class MyGame implements ApplicationListener {
 }
 ```
 
-One can also derive from the [ApplicationAdapter](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ApplicationAdapter.html) class if not all interface methods are of relevance.
+One can also derive from the [ApplicationAdapter](https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/ApplicationAdapter.html) class if not all interface methods are of relevance.
 
 Once passed to the `Application`, the `ApplicationListener` methods will be called as follows:
 
 | Method signature | Description |
 | ---------------- | ----------- |
 | `create ()` | Method called once when the application is created.|
-| `resize(int width, int height)` | This method is called every time the game screen is re-sized and the game is not in the paused state. It is also called once just after the `create()` method.<br/> The parameters are the new width and height the screen has been resized to in pixels.|
+| `resize (int width, int height)` | This method is called every time the game screen is re-sized and the game is not in the paused state. It is also called once just after the `create()` method.<br/> The parameters are the new width and height the screen has been resized to in pixels.|
 | `render ()` | Method called by the game loop from the application every time rendering should be performed. Game logic updates are usually also performed in this method.|
-| `pause ()` | On Android this method is called when the Home button is pressed or an incoming call is received. On desktop this is called just before `dispose()` when exiting the application.<br/> A good place to save the game state.|
-| `resume ()` | This method is only called on Android, when the application resumes from a paused state.|
+| `pause ()` | On Android this method is called when the Home button is pressed or an incoming call is received. On desktop this is called when the window is minimized and just before `dispose()` when exiting the application.<br/> A good place to save the game state.|
+| `resume ()` | This method is called on Android, when the application resumes from a paused state, and on desktop when unminimized.|
 | `dispose ()` | Called when the application is destroyed. It is preceded by a call to `pause()`.|
 
 The following diagram illustrates the life-cycle visually:
