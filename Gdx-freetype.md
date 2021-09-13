@@ -108,4 +108,4 @@ Quoting from https://web.archive.org/web/20201128081723/https://www.badlogicgame
 
 ----
 
-download an [example](https://bitbucket.org/dermetfan/somelibgdxtests/downloads/gdx-freetype%20test.jar)
+Download an [example](https://hg.sr.ht/~dermetfan/somelibgdxtests)
