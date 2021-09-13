@@ -18,8 +18,15 @@ Open up the build.gradle file located in the root of your project directory in a
 2. In the **dependencies** section add the following line:
   ```groovy
   compile "org.mini2Dx:universal-tween-engine:6.3.3"
+  compile "org.mini2Dx:universal-tween-engine:6.3.3:sources"
   ```
-3. Refresh dependencies
+3. **Required for HTML Projects**
+  * Add the following line to **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml**
+    * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
+  ```xml
+<inherits name='aurelienribon.tweenengine'/>
+  ```
+4. Refresh dependencies
   ```
   gradlew --refresh-dependencies
   ```
