@@ -16,7 +16,7 @@ An animation is a very simple state machine. The running man has 30 states as pe
 
 ## The Animation class
 
-LibGDX's [Animation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Animation.java) class can be used to easily manage an animation. It is constructed with a list of images and the frame interval time. During playback, its `getKeyFrame` method takes an elapsed time parameter and returns the appropriate image for that time.
+libGDX's [Animation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Animation.java) class can be used to easily manage an animation. It is constructed with a list of images and the frame interval time. During playback, its `getKeyFrame` method takes an elapsed time parameter and returns the appropriate image for that time.
 
 Animation has a generic type parameter for the type of class that represents the image. The type would typically be a TextureRegion or PolygonRegion, but any renderable object can be used. The type is declared by specifying the animation type in the Animation declaration, for example `Animation<TextureRegion> myAnimation = new Animation<TextureRegion>(/*...*/)`. Note that it would usually be inadvisable to use the Sprite class to represent frames of an animation, because the Sprite class contains positional data that would not carry from frame to frame.
 
@@ -121,4 +121,4 @@ Creating an animation is extremely simple by using the following constructor.
 
 ## Assets ##
 
-Get the sprite-sheet [here](images/sprite-animation4.png).
+Get the sprite sheet [here](images/sprite-animation4.png).
