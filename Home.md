@@ -64,6 +64,7 @@
     * [[SpriteBatch, TextureRegions, and Sprites]]
     * [[2D Animation]]
     * [[Clipping, With the Use of ScissorStack]]
+    * [[Masking]]
     * [[Orthographic Camera]]
     * Mapping Touch Coordinates ??
     * [[NinePatches]]
