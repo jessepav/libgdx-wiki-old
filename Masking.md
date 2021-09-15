@@ -3,6 +3,7 @@ Masking is the technique of hiding portions of an image using the pixel informat
 ## Table of Contents
   * [Masking using the ScissorStack](Masking#1-masking-using-the-scissorstack-rectangles)
   * [Masking using the ShapeRenderer](Masking#2-masking-using-the-shaperenderer-various-shapes)
+  * [Masking using the SpriteBatch](Masking#3-masking-using-the-spritebatch-any-shape)
 ## 1. Masking using the ScissorStack (Rectangles)
 For the simplest of masking needs here’s a technique that allows us to create simple rectangular masks using libGDX’s ScissorStack.
 ### Step 1 - Preparations
@@ -169,5 +170,102 @@ public void render() {
     shapeRenderer.end();
 }
 ```
-
 ![Circle masked by another circle and a triangle](https://imgur.com/Pmlfn7M.png)
+## 3. Masking using the SpriteBatch (Any shape)
+For the demanding GDXer with complex masking needs, this technique allows us to have any mask imaginable and take the alpha channel into account for the first time! For this we’ll be using libGDX’s SpriteBatch.
+### Step 1 - Preparations
+These are the images we're gonna use:
+| ![The mask](https://imgur.com/WPHeXdB.png) | ![The sprite](https://imgur.com/Gf2pQYJ.png) | ![The sprite's inverse alpha](https://imgur.com/sS4xjZD.png) |
+| :-: | :-: | :-: |
+| [The mask](https://imgur.com/J8dkKVI) | [The sprite to mask](https://imgur.com/JjMCVTh) | [The sprite's inverse alpha](https://imgur.com/P14Mrj4) |
+
+The images in a black background for clarity:
+| ![The mask](https://imgur.com/rm13HUV.png) | ![The sprite](https://imgur.com/eGoidRi.png) | ![The sprite's inverse alpha](https://imgur.com/QI5aGQ4.png) |
+| :-: | :-: | :-: |
+| The mask | The sprite to mask | The sprite's inverse alpha |
+```java
+/* Some attributes we're gonna need. */
+private SpriteBatch spriteBatch;
+private Sprite mask, maskedSprite, alphaInvertedMaskedSprite;
+
+@Override
+public void create() {
+    spriteBatch = new SpriteBatch();
+
+    /* Load the mask containing the alpha information. */
+    mask = new Sprite(new Texture("mask.png"));
+
+    /* Load the sprite which will be masked. */
+    maskedSprite = new Sprite(new Texture("sprite.png"));
+    maskedSprite.setColor(Color.RED);
+
+    /* The technique requires us to provide the inverted alpha version of the sprite we want to mask. */
+    alphaInvertedMaskedSprite = new Sprite(new Texture("alphaInvertedSprite.png"));
+}
+```
+### Step 2 - Draw the mask elements to the frame buffer
+```java
+private void drawMasks() {
+    /* Disable RGB color writing, enable alpha writing to the frame buffer. */
+    Gdx.gl.glColorMask(false, false, false, true);
+
+    /* Change the blending function for our alpha map. */
+    spriteBatch.setBlendFunction(GL20.GL_ONE, GL20.GL_ZERO);
+
+    /* Draw alpha masks. */
+    mask.draw(spriteBatch);
+
+    /* This blending function makes it so we subtract instead of adding to the alpha map. */
+    spriteBatch.setBlendFunction(GL20.GL_ZERO, GL20.GL_ONE_MINUS_SRC_ALPHA);
+
+    /* Remove the masked sprite's inverse alpha from the map. */
+    alphaInvertedMaskedSprite.draw(spriteBatch);
+
+    /* Flush the batch to the GPU. */
+    spriteBatch.flush();
+}
+```
+### Step 3 - Draw the masked elements
+```java
+private void drawMasked() {
+    /* Now that the buffer has our alpha, we simply draw the sprite with the mask applied. */
+    Gdx.gl.glColorMask(true, true, true, true);
+
+    /* Change the blending function so the rendered pixels alpha blend with our alpha map. */
+    spriteBatch.setBlendFunction(GL20.GL_DST_ALPHA, GL20.GL_ONE_MINUS_DST_ALPHA);
+
+    /* Draw our sprite to be masked. */
+    maskedSprite.draw(spriteBatch);
+
+    /* Remember to flush before changing GL states again. */
+    spriteBatch.flush();
+}
+```
+### Step 4 - Draw the original sprites for debugging purposes
+```java
+private void drawOriginals() {
+    /* Switch to the default blend function */
+    spriteBatch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+
+    /* Draw the source images separately */
+    spriteBatch.draw(mask, 0, 256);
+    spriteBatch.draw(maskedSprite, 256, 256);
+    spriteBatch.draw(alphaInvertedMaskedSprite, 512, 256);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    ScreenUtils.clear(Color.BLACK);
+
+    spriteBatch.begin();
+
+    drawMasks();
+    drawMasked();
+    drawOriginals();
+
+    spriteBatch.end();
+}
+```
+![Masked sprite and original sprites](https://imgur.com/BN4qUUi.png)
