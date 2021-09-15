@@ -1,14 +1,12 @@
-# Masking
-
 Masking is the technique of hiding portions of an image using the pixel information of another to decide whether a pixel of the original should or should not be shown. There’s more than one way to achieve this effect in libGDX.
 
-## Table of Contents ##
+# Table of Contents
 
-  * [Masking using the ScissorStack](Masking#1.-Masking-using-the-ScissorStack-(Rectangles))
+  * [Masking using the ScissorStack](Masking#1-masking-using-the-scissorstack-rectangles)
 
-## 1. Masking using the ScissorStack (Rectangles)
+# 1. Masking using the ScissorStack (Rectangles)
 
-### Step 1 - Preparations
+## Step 1 - Preparations
 
 ```java
 /* Some attributes we're gonna need. */
@@ -36,7 +34,7 @@ public void create() {
     clipBounds = new Rectangle(100, 100, 200, 200);
 }
 ```
-### Step 2 - Drawing our masked elements
+## Step 2 - Drawing our masked elements
 ```java
 private void drawMasked() {
     /* Feed the ScissorStack and store whether it could push the scissors or not. */
@@ -57,7 +55,7 @@ private void drawMasked() {
 }
 ```
 _It is also possible to push multiple rectangles. Only the pixels of the sprites or shapes that are within <b>all</b> of the rectangles will be rendered._
-### Step 3 - Drawing the contours for debugging purposes
+## Step 3 - Drawing the contours for debugging purposes
 ```java
 private void drawContours() {
     /* The rectangular mask. */
@@ -69,7 +67,7 @@ private void drawContours() {
     shapeRenderer.circle(100, 100, 100);
 }
 ```
-### Result
+## Result
 ```java
 @Override
 public void render() {
