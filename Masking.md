@@ -330,7 +330,7 @@ private Pixmap applyMask(Pixmap source) {
     /* We can also define the mask by loading an image:
      * result = new Pixmap(new FileHandle("image.png")); */
 
-    * Decide the color of each pixel using the AND bitwise operator. */
+    /* Decide the color of each pixel using the AND bitwise operator. */
     for (int x = 0; x < result.getWidth(); x++) {
         for (int y = 0; y < result.getHeight(); y++) {
             result.drawPixel(x, y, source.getPixel(x, y) & result.getPixel(x, y));
