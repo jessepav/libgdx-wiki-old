@@ -4,6 +4,7 @@ Masking is the technique of hiding portions of an image using the pixel informat
   * [Masking using the ScissorStack](Masking#1-masking-using-the-scissorstack-rectangles)
   * [Masking using the ShapeRenderer](Masking#2-masking-using-the-shaperenderer-various-shapes)
   * [Masking using the SpriteBatch](Masking#3-masking-using-the-spritebatch-any-shape)
+  * [Masking using Pixmaps](Masking#4-masking-using-pixmaps-any-shape)
 ## 1. Masking using the ScissorStack (Rectangles)
 For the simplest of masking needs here’s a technique that allows us to create simple rectangular masks using libGDX’s ScissorStack.
 ### Step 1 - Preparations
@@ -269,3 +270,116 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/BN4qUUi.png)
+## 4. Masking using Pixmaps (Any shape)
+This technique allows the mask to be any image or shape and takes the alpha channel into account. This time we'll be using the libGDX’s Pixmap class.
+### Step 1 - Preparations
+```java
+private ShapeRenderer shapeRenderer;
+private SpriteBatch spriteBatch;
+private Texture masked, original;
+private final int size = 256;
+
+@Override
+public void create() {
+    /* The ShapeRenderer will only be used to draw the mask contours */
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+    Gdx.gl20.glLineWidth(2);
+
+    /* Needed to render our textures, a ShapeRenderer won't work with this technique. */
+    spriteBatch = new SpriteBatch();
+
+    /* The path to the image to mask. */
+    FileHandle imagePath = new FileHandle("images/shared/weirdShape.png");
+
+    /* Load the pixels of our image into a Pixmap. */
+    Pixmap pixmap = new Pixmap(imagePath);
+
+    /* Have an unaltered version for comparison. */
+    original = new Texture(imagePath);
+
+    /* Apply the mask to our Pixmap. */
+    pixmap = applyMask(pixmap);
+
+    /* Load the pixel information of the Pixmap into a Texture for drawing. */
+    masked = new Texture(pixmap);
+}
+```
+### Step 2 - Applying the mask
+```java
+private Pixmap applyMask(Pixmap source) {
+    /* Create a Pixmap to store the mask information, at the end it will
+     * contain the result. */
+    Pixmap result = new Pixmap(source.getWidth(), source.getHeight(), Pixmap.Format.RGBA8888);
+
+    /* This setting lets us overwrite the pixels' transparency. */
+    result.setBlending(None);
+
+    /* Ignore RGB values unless you want funky results, alpha is for the mask. */
+    result.setColor(new Color(1f, 1f, 1f, 1f));
+
+    /* Draw a circle to our mask, any shape is possible since
+     * you can draw individual pixels to the Pixmap. */
+    result.fillCircle(size / 2, size / 2, size / 2);
+
+    /* Draw a rectangle with half alpha to our mask, this will turn
+    * a corner of the original image transparent. */
+    result.setColor(1f, 1f, 1f, 0.5f);
+    result.fillRectangle(size / 2, size / 2, size / 2, size / 2);
+
+    /* We can also define the mask by loading an image:
+     * result = new Pixmap(new FileHandle("image.png")); */
+
+    * Decide the color of each pixel using the AND bitwise operator. */
+    for (int x = 0; x < result.getWidth(); x++) {
+        for (int y = 0; y < result.getHeight(); y++) {
+            result.drawPixel(x, y, source.getPixel(x, y) & result.getPixel(x, y));
+        }
+    }
+
+    return result;
+}
+```
+### Step 3 - Drawing the original and masked images
+```java
+private void drawImages() {
+    /* Draw the original image in blue first to see transparency taking place. */
+    spriteBatch.setColor(Color.BLUE);
+    spriteBatch.draw(original, 0, 0, size, size);
+
+    /* Draw the masked image in red on top. */
+    spriteBatch.setColor(Color.RED);
+    spriteBatch.draw(masked, 0, 0, size, size);
+}
+```
+### Step 4 - Drawing the contours of the mask for debugging purposes
+```java
+private void drawContours() {
+    /* Draw the contour of the circle and rectangle used as masks. */
+    shapeRenderer.setColor(Color.CYAN);
+    shapeRenderer.circle(size / 2f, size / 2f, size / 2f);
+    shapeRenderer.rect(size / 2f, 0, size / 2f, size / 2f);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    ScreenUtils.clear(Color.BLACK);
+
+    spriteBatch.begin();
+    drawImages();
+    spriteBatch.end();
+
+    shapeRenderer.begin();
+    drawContours();
+    shapeRenderer.end();
+}
+```
+![Original and masked images + contours](https://imgur.com/93DNO1z.png)
+
+In red: The masked image
+
+In blue: The original image
+
+In purple: The masked image with transparency, blending with the original image
