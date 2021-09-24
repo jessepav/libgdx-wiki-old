@@ -9,7 +9,7 @@ Note: The following article is outdated and no longer works due to the exclusion
 
 The HelloWorld tutorial demonstrated how a libGDX application is structured by importing an existing project. Lets now go one step further and create project from scratch. This tutorial is more verbose in case the reader is also a novice with Eclipse. Future tutorials will have more concise instructions.
 
-The source files for this guide is contained within [`MyFirstTriangle_<data>.zip`](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libgdx/MyFirstTriangle.zip).
+The source files for this guide is contained within [`MyFirstTriangle.zip`](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libgdx/MyFirstTriangle.zip).
 
 # Creating the Desktop Project
 
