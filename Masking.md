@@ -1,18 +1,85 @@
 Masking is the technique of hiding portions of an image using the pixel information of another to decide whether a pixel of the original should or should not be shown. There’s more than one way to achieve this effect in libGDX.
 
 ## Table of Contents
-  * [Masking using the ScissorStack](Masking#1-masking-using-the-scissorstack-rectangles)
-  * [Masking using the ShapeRenderer](Masking#2-masking-using-the-shaperenderer-various-shapes)
-  * [Masking using the SpriteBatch](Masking#3-masking-using-the-spritebatch-any-shape)
-  * [Masking using Pixmaps](Masking#4-masking-using-pixmaps-any-shape)
-## 1. Masking using the ScissorStack (Rectangles)
-For the simplest of masking needs here’s a technique that allows us to create simple rectangular masks using libGDX’s ScissorStack.
+  * [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
+  * [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
+  * [Masking using the ShapeRenderer](Masking#3-masking-using-the-shaperenderer-various-shapes)
+  * [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
+  * [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
+## 1. Masking using glScissor (Rectangle)
+For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
+### Step 1 - Preparations
+```java
+private ShapeRenderer shapeRenderer;
+
+@Override
+public void create() {
+    /* We can use a SpriteBatch or a ShapeRenderer to draw our masked elements. */
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+
+    /* Increase the OpenGL line thickness for better visualization. */
+    Gdx.gl.glLineWidth(2);
+}
+```
+### Step 2 - Drawing our masked elements
+```java
+private void drawMasked() {
+    /* To activate the scissor test, first enable the GL_SCISSOR_TEST enumerator.
+     * Once enabled, pixels outside of the scissor box will be discarded. */
+    Gdx.gl.glEnable(GL20.GL_SCISSOR_TEST);
+
+    /* To define the scissor box, use this function: */
+    Gdx.gl.glScissor(100, 100, 200, 200);
+    /* The x and y is the window-space lower-left position of the scissor box,
+     * and width and height define the size of the rectangle. */
+
+    /* Draw our circle to be masked, we could also draw sprites with a SpriteBatch. */
+    shapeRenderer.set(Filled);
+    shapeRenderer.setColor(Color.RED);
+    shapeRenderer.circle(100, 100, 100);
+
+    /* Remember to flush before changing GL states again. */
+    shapeRenderer.flush();
+
+    /* Deactivate the scissor test before continuing with further rendering operations. */
+    Gdx.gl.glDisable(GL20.GL_SCISSOR_TEST);
+}
+```
+### Step 3 - Drawing the contours for debugging purposes
+```java
+private void drawContours() {
+    shapeRenderer.set(Line);
+
+    /* Draw the circle's contour for comparison. */
+    shapeRenderer.setColor(Color.GREEN);
+    shapeRenderer.circle(100, 100, 100);
+
+    /* Draw the clipped area contour for comparison. */
+    shapeRenderer.setColor(Color.CYAN);
+    shapeRenderer.rect(100, 100, 200, 200);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    shapeRenderer.begin();
+
+    drawMasked();
+    drawContours();
+
+    shapeRenderer.end();
+}
+```
+![Circle masked by a rectangle](https://i.imgur.com/8iNQ7FM.png)
+## 2. Masking using the ScissorStack (Rectangles)
+A single rectangle could easily not be enough, here’s a technique that allows us to create and apply multiple rectangular masks using libGDX’s ScissorStack.
 ### Step 1 - Preparations
 ```java
 /* Some attributes we're gonna need. */
-private OrthographicCamera camera;
 private ShapeRenderer shapeRenderer;
-private Rectangle scissors, clipBounds;
+private Rectangle scissors1, scissors2;
 
 @Override
 public void create() {
@@ -28,33 +95,45 @@ public void create() {
     /* Increase the OpenGL line thickness for better visualization. */
     Gdx.gl.glLineWidth(2);
 
-    /* Some rectangles the ScissorStack needs to perform the clipping, "clipBounds"
-     * defines the area where the clipping will happen. */
-    scissors = new Rectangle();
-    clipBounds = new Rectangle(100, 100, 200, 200);
+    /* scissors1 and scissors2 store the results of calculateScissors(...). 
+     * clipBounds is used to define the x, y, width and height of the clipping rectangles. */
+    scissors1 = new Rectangle();
+    Rectangle clipBounds = new Rectangle(100, 100, 200, 200);
+    ScissorStack.calculateScissors(camera, shapeRenderer.getTransformMatrix(), clipBounds, scissors1);
+
+    scissors2 = new Rectangle();
+    clipBounds.set(50f, 50f, 100f, 100f);
+    ScissorStack.calculateScissors(camera, shapeRenderer.getTransformMatrix(), clipBounds, scissors2);
 }
 ```
 ### Step 2 - Drawing our masked elements
 ```java
 private void drawMasked() {
     /* Feed the ScissorStack and store whether it could push the scissors or not. */
-    ScissorStack.calculateScissors(camera, shapeRenderer.getTransformMatrix(), clipBounds, scissors);
-    boolean pop = ScissorStack.pushScissors(scissors);
+    boolean pop1 = ScissorStack.pushScissors(scissors1);
+    boolean pop2 = ScissorStack.pushScissors(scissors2);
 
-    /* Draw the elements to be constrained to an area. */
+    /* Draw the elements to be constrained to an area,
+     * without masking this would render a red filled circle. */
     shapeRenderer.set(Filled);
     shapeRenderer.setColor(Color.RED);
     shapeRenderer.circle(100, 100, 100);
     shapeRenderer.flush();
 
     /* Safety check for the situations the scissor fails to be pushed to the stack
-     * (happens for example when the window is minimized on desktop). */
-    if (pop) {
+     * (happens for example when the window is minimized on desktop or the clipping
+     * area is <= 0). */
+    if (pop1) {
+        ScissorStack.popScissors();
+    }
+    if (pop2) {
         ScissorStack.popScissors();
     }
 }
 ```
 _It is also possible to push multiple rectangles. Only the pixels of the sprites or shapes that are within <b>all</b> of the rectangles will be rendered._
+
+_Also, if your camera moves, you'll need to recalculate the scissor area afterwards._
 ### Step 3 - Drawing the contours for debugging purposes
 ```java
 private void drawContours() {
@@ -63,6 +142,7 @@ private void drawContours() {
     /* The rectangular mask. */
     shapeRenderer.setColor(Color.CYAN);
     shapeRenderer.rect(100, 100, 200, 200);
+    shapeRenderer.rect(50, 50, 100, 100);
 
     /* The masked circle. */
     shapeRenderer.setColor(Color.GREEN);
@@ -83,8 +163,8 @@ public void render() {
     shapeRenderer.end();
 }
 ```
-![Circle masked by rectangle](https://i.imgur.com/8iNQ7FM.png)
-## 2. Masking using the ShapeRenderer (Various Shapes)
+![Circle masked by 2 rectangles](https://i.imgur.com/HEa7EQK.png)
+## 3. Masking using the ShapeRenderer (Various Shapes)
 Alright rectangles are great but our needs are greater what now. This upcoming technique allows us to create more diversely shaped masks using libGDX’s ShapeRenderer.
 ### Step 1 - Preparations
 ```java
@@ -172,7 +252,7 @@ public void render() {
 }
 ```
 ![Circle masked by another circle and a triangle](https://imgur.com/Pmlfn7M.png)
-## 3. Masking using the SpriteBatch (Any shape)
+## 4. Masking using the SpriteBatch (Any shape)
 For the demanding GDXer with complex masking needs, this technique allows us to have any mask imaginable and take the alpha channel into account for the first time! For this we’ll be using libGDX’s SpriteBatch.
 ### Step 1 - Preparations
 These are the images we're gonna use:
@@ -270,7 +350,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/BN4qUUi.png)
-## 4. Masking using Pixmaps (Any shape)
+## 5. Masking using Pixmaps (Any shape)
 This technique allows the mask to be any image or shape and takes the alpha channel into account. This time we'll be using the libGDX’s Pixmap class.
 ### Step 1 - Preparations
 ```java
