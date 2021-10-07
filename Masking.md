@@ -259,18 +259,18 @@ public void render() {
 For the demanding GDXer with complex masking needs, this technique allows us to have any mask imaginable and take the alpha channel into account for the first time! For this we’ll be using libGDX’s SpriteBatch.
 ### Step 1 - Preparations
 These are the images we're gonna use:
-| ![The mask](https://imgur.com/WPHeXdB.png) | ![The sprite](https://imgur.com/Gf2pQYJ.png) | ![The sprite's inverse alpha](https://imgur.com/sS4xjZD.png) |
-| :-: | :-: | :-: |
-| [The mask](https://imgur.com/J8dkKVI) | [The sprite to mask](https://imgur.com/JjMCVTh) | [The sprite's inverse alpha](https://imgur.com/P14Mrj4) |
+| ![The mask](https://imgur.com/WPHeXdB.png) | ![The sprite](https://imgur.com/Gf2pQYJ.png) |
+| :-: | :-: |
+| [The mask](https://imgur.com/J8dkKVI) | [The sprite to mask](https://imgur.com/JjMCVTh) |
 
 The images in a black background for clarity:
-| ![The mask](https://imgur.com/rm13HUV.png) | ![The sprite](https://imgur.com/eGoidRi.png) | ![The sprite's inverse alpha](https://imgur.com/QI5aGQ4.png) |
-| :-: | :-: | :-: |
-| The mask | The sprite to mask | The sprite's inverse alpha |
+| ![The mask](https://imgur.com/rm13HUV.png) | ![The sprite](https://imgur.com/eGoidRi.png) |
+| :-: | :-: |
+| The mask | The sprite to mask |
 ```java
 /* Some attributes we're gonna need. */
 private SpriteBatch spriteBatch;
-private Sprite mask, maskedSprite, alphaInvertedMaskedSprite;
+private Sprite mask, maskedSprite;
 
 @Override
 public void create() {
@@ -282,9 +282,6 @@ public void create() {
     /* Load the sprite which will be masked. */
     maskedSprite = new Sprite(new Texture("sprite.png"));
     maskedSprite.setColor(Color.RED);
-
-    /* The technique requires us to provide the inverted alpha version of the sprite we want to mask. */
-    alphaInvertedMaskedSprite = new Sprite(new Texture("alphaInvertedSprite.png"));
 }
 ```
 ### Step 2 - Draw the mask elements to the frame buffer
@@ -300,10 +297,10 @@ private void drawMasks() {
     mask.draw(spriteBatch);
 
     /* This blending function makes it so we subtract instead of adding to the alpha map. */
-    spriteBatch.setBlendFunction(GL20.GL_ZERO, GL20.GL_ONE_MINUS_SRC_ALPHA);
+    spriteBatch.setBlendFunction(GL20.GL_ZERO, GL20.GL_SRC_ALPHA);
 
     /* Remove the masked sprite's inverse alpha from the map. */
-    alphaInvertedMaskedSprite.draw(spriteBatch);
+    maskedSprite.draw(spriteBatch);
 
     /* Flush the batch to the GPU. */
     spriteBatch.flush();
@@ -334,7 +331,6 @@ private void drawOriginals() {
     /* Draw the source images separately */
     spriteBatch.draw(mask, 0, 256);
     spriteBatch.draw(maskedSprite, 256, 256);
-    spriteBatch.draw(alphaInvertedMaskedSprite, 512, 256);
 }
 ```
 ### Result
@@ -352,7 +348,7 @@ public void render() {
     spriteBatch.end();
 }
 ```
-![Masked sprite and original sprites](https://imgur.com/BN4qUUi.png)
+![Masked sprite and original sprites](https://imgur.com/Lmqecgk.png)
 ## 5. Masking using Pixmaps (Any shape)
 This technique allows the mask to be any image or shape and takes the alpha channel into account. This time we'll be using the libGDX’s Pixmap class.
 ### Step 1 - Preparations
