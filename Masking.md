@@ -1,12 +1,14 @@
 Masking is the technique of hiding portions of an image using the pixel information of another to decide whether a pixel of the original should or should not be shown. There’s more than one way to achieve this effect in libGDX.
 
 ## Table of Contents
-  * [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
-  * [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
-  * [Masking using the ShapeRenderer](Masking#3-masking-using-the-shaperenderer-various-shapes)
-  * [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
-  * [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
-  * [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
+1. [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
+2. [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
+3. [Masking using the ShapeRenderer](Masking#3-masking-using-the-shaperenderer-various-shapes)
+4. [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
+5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
+6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
+7. [Masking using the FrameBuffer (Removal)](Masking#7-masking-using-the-frame-buffer-removal)
+8. [Masking using the FrameBuffer (Tinting)](Masking#8-masking-using-the-frame-buffer-tinting)
 ## 1. Masking using glScissor (Rectangle)
 For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
 ### Step 1 - Preparations
@@ -627,3 +629,87 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/h7fgM3Z.png)
+## 7. Masking using the FrameBuffer (Removal)
+Ideal if you wanna use the mask to hide portions of the masked elements.
+### Step 1 - Preparations
+```java
+private ShapeRenderer shapeRenderer;
+private FrameBuffer frameBuffer;
+private SpriteBatch spriteBatch;
+
+@Override
+public void create() {
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+    Gdx.gl20.glLineWidth(2);
+
+    frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
+
+    spriteBatch = new SpriteBatch();
+}
+```
+### Step 2 - Drawing the masked elements and the mask elements
+```java
+private void drawCircles() {
+    shapeRenderer.set(Filled);
+
+    /* An example circle, remember to flush before changing the blending function */
+    shapeRenderer.setColor(Color.RED);
+    shapeRenderer.circle(200, 200, 100);
+    shapeRenderer.flush();
+
+    /* We'll need blending enabled for the technique to work*/
+    Gdx.gl.glEnable(GL20.GL_BLEND);
+
+    /* With this blending function, wherever we draw pixels next
+     * we will actually remove previously drawn pixels. */
+    Gdx.gl.glBlendFuncSeparate(GL20.GL_ZERO, GL20.GL_ZERO, GL20.GL_ONE_MINUS_SRC_ALPHA, GL20.GL_ONE_MINUS_DST_ALPHA);
+    shapeRenderer.circle(300, 200, 70);
+    shapeRenderer.circle(100, 200, 35);
+    shapeRenderer.flush();
+
+    /* Restore defaults. */
+    Gdx.gl.glDisable(GL20.GL_BLEND);
+
+    /* The default blend function in case we need standard blending elsewhere.
+     * Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA); */
+}
+```
+### Step 3 - Drawing the contours for debugging purposes
+```java
+private void drawContours() {
+    shapeRenderer.set(Line);
+
+    /* Contour of the masked circle */
+    shapeRenderer.setColor(Color.GREEN);
+    shapeRenderer.circle(200, 200, 100);
+
+    /* Contour of the masks */
+    shapeRenderer.setColor(Color.CYAN);
+    shapeRenderer.circle(300, 200, 70);
+    shapeRenderer.circle(100, 200, 35);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    ScreenUtils.clear(Color.GRAY);
+
+    frameBuffer.bind();
+    shapeRenderer.begin();
+    drawCircles();
+    drawContours();
+    shapeRenderer.end();
+    frameBuffer.end();
+
+    Texture texture = frameBuffer.getColorBufferTexture();
+    Sprite sprite = new Sprite(texture);
+    sprite.flip(false, true);
+
+    spriteBatch.begin();
+    sprite.draw(spriteBatch);
+    spriteBatch.end();
+}
+```
+![Masked sprite and original sprites](https://imgur.com/ZsA3PRq.png)
