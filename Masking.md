@@ -7,8 +7,8 @@ Masking is the technique of hiding portions of an image using the pixel informat
 4. [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
 5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
 6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
-7. [Masking using the FrameBuffer (Removal)](Masking#7-masking-using-the-frame-buffer-removal)
-8. [Masking using the FrameBuffer (Tinting)](Masking#8-masking-using-the-frame-buffer-tinting)
+7. [Masking using the FrameBuffer (Removal)](Masking#7-masking-using-the-framebuffer-removal)
+8. [Masking using the FrameBuffer (Tinting)](Masking#8-masking-using-the-framebuffer-tinting)
 ## 1. Masking using glScissor (Rectangle)
 For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
 ### Step 1 - Preparations
@@ -713,3 +713,77 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/ZsA3PRq.png)
+## 8. Masking using the FrameBuffer (Tinting)
+Ideal if you wanna use the mask to tint or texture portions of the masked elements.
+### Step 1 - Preparations
+```java
+private ShapeRenderer shapeRenderer;
+private SpriteBatch spriteBatch;
+private BitmapFont menuItemFont;
+private FrameBuffer frameBuffer;
+private float textWidth, textHeight, textX, textY;
+
+@Override
+public void create() {
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+
+    spriteBatch = new SpriteBatch();
+
+    menuItemFont = new BitmapFont();
+    menuItemFont.getData().setScale(6f);
+
+    int screenWidth = Gdx.graphics.getWidth();
+    int screenHeight = Gdx.graphics.getHeight();
+
+    GlyphLayout glyphLayout = new GlyphLayout();
+    glyphLayout.setText(menuItemFont, "ONE PLAYER");
+
+    textWidth = glyphLayout.width;
+    textHeight = glyphLayout.height;
+    textX = screenWidth / 2f - textWidth / 2f;
+    textY = screenHeight / 2f + textHeight / 2f;
+
+    frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, screenWidth, screenHeight, false);
+}
+```
+### Step 2 - Drawing the mask and masked elements
+```java
+private void draw() {
+    spriteBatch.begin();
+    menuItemFont.draw(spriteBatch, "ONE PLAYER", textX, textY);
+    spriteBatch.end();
+
+    Gdx.gl.glEnable(GL20.GL_BLEND);
+
+    Gdx.gl.glBlendFunc(GL20.GL_DST_COLOR, GL20.GL_ZERO);
+
+    shapeRenderer.begin();
+    shapeRenderer.set(Filled);
+    shapeRenderer.rect(textX - 10, textY + 10, textWidth + 20, -(textHeight + 20),
+            Color.LIME, Color.LIME, Color.BLACK, Color.BLACK);
+    shapeRenderer.end();
+
+    Gdx.gl.glDisable(GL20.GL_BLEND);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    ScreenUtils.clear(Color.RED);
+
+    frameBuffer.bind();
+    draw();
+    frameBuffer.end();
+
+    Texture texture = frameBuffer.getColorBufferTexture();
+    Sprite sprite = new Sprite(texture);
+    sprite.flip(false, true);
+
+    spriteBatch.begin();
+    sprite.draw(spriteBatch);
+    spriteBatch.end();
+}
+```
+![Masked sprite and original sprites](https://imgur.com/YsX0Rre.png)
