@@ -460,7 +460,7 @@ public void render() {
 ![Original and masked images + contours](https://imgur.com/NWR32Oj.png)
 ## 6. Masking using Shaders and Textures (Any shape)
 This technique allows the mask to be any image or shape and takes alpha channel into account. This time we'll be using the libGDX’s ShaderProgram class in conjunction with the Texture class.
-### Step 1 - Preparations and defining our mask
+### Step 1 - Preparations
 ```java
 private final int size = 300;
 private Texture texture;
@@ -469,6 +469,28 @@ private ShapeRenderer shapeRenderer;
 
 @Override
 public void create() {
+    /* We'll be using a pixmap to define the mask this time. */
+    defineMask();
+
+    /* Some regular textures to draw on the screen. */
+    texture = new Texture(WEIRD_SHAPE_PATH);
+    texture.setFilter(Linear, Linear);
+
+    setupShader();
+
+    /* An unmodified SpriteBatch to draw the original image as reference
+     * we could also change the shader of spriteBatch1 back to the default. */
+    spriteBatch2 = new SpriteBatch();
+
+    /* Construct a simple ShapeRenderer to draw reference contours. */
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+    Gdx.gl.glLineWidth(2);
+}
+```
+### Step 2 - Defining our mask
+```java
+private void defineMask() {
     /* The fragment shader simply multiplies the fragment's usual alpha with
      * our mask alpha, since we only care about the alpha channel, the Alpha
      * Pixmap format is just what we need. */
@@ -500,11 +522,11 @@ public void create() {
      * so we must now reset it to TEXTURE0 or else our mask will be
      * overwritten. */
     Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
-
-    /* Some regular textures to draw on the screen. */
-    texture = new Texture(WEIRD_SHAPE_PATH);
-    texture.setFilter(Linear, Linear);
-
+}
+```
+### Step 3 - Setting up the shader
+```java
+private void setupShader() {
     /* It's nicer to keep shader programs as text files in the assets
      * directory rather than dealing with horrid Java string formatting. */
     FileHandle vertexShader = Gdx.files.internal("shaders/shared/vertex.glsl");
@@ -533,18 +555,47 @@ public void create() {
     /* Construct a simple SpriteBatch using our shader program. */
     spriteBatch1 = new SpriteBatch();
     spriteBatch1.setShader(shader);
-
-    /* An unmodified SpriteBatch to draw the original image as reference
-     * we could also change the shader of spriteBatch1 back to the default. */
-    spriteBatch2 = new SpriteBatch();
-
-    /* Construct a simple ShapeRenderer to draw reference contours. */
-    shapeRenderer = new ShapeRenderer();
-    shapeRenderer.setAutoShapeType(true);
-    Gdx.gl.glLineWidth(2);
 }
 ```
-### Step 2 - Drawing the contours of the mask for debugging purposes
+**The vertex.glsl shader file:**
+```glsl
+uniform mat4 u_projTrans;
+
+attribute vec4 a_position;
+attribute vec4 a_color;
+attribute vec2 a_texCoord0;
+
+varying vec4 v_color;
+varying vec2 v_texCoord0;
+
+void main()
+{
+    v_color = a_color;
+    v_texCoord0 = a_texCoord0;
+    gl_Position = u_projTrans * a_position;
+}
+```
+**The fragment.glsl shader file:**
+```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform sampler2D u_texture;
+uniform sampler2D u_mask;
+
+varying vec4 v_color;
+varying vec2 v_texCoord0;
+
+void main()
+{
+    vec4 texColor = texture2D(u_texture, v_texCoord0);
+    vec4 mask = texture2D(u_mask, v_texCoord0);
+    texColor.a *= mask.a;
+    gl_FragColor = v_color * texColor;
+}
+```
+### Step 4 - Drawing the contours of the mask for debugging purposes
 ```java
 private void drawContours() {
     /* Draw the contour of the masks. */
