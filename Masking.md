@@ -6,6 +6,7 @@ Masking is the technique of hiding portions of an image using the pixel informat
   * [Masking using the ShapeRenderer](Masking#3-masking-using-the-shaperenderer-various-shapes)
   * [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
   * [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
+  * [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
 ## 1. Masking using glScissor (Rectangle)
 For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
 ### Step 1 - Preparations
@@ -402,9 +403,9 @@ private Pixmap applyMask(Pixmap source) {
      * you can draw individual pixels to the Pixmap. */
     result.fillCircle(size / 2, size / 2, size / 2);
 
-    /* Draw a rectangle with half alpha to our mask, this will turn
+    /* Draw a rectangle with little alpha to our mask, this will turn
     * a corner of the original image transparent. */
-    result.setColor(1f, 1f, 1f, 0.5f);
+    result.setColor(1f, 1f, 1f, 0.25f);
     result.fillRectangle(size / 2, size / 2, size / 2, size / 2);
 
     /* We can also define the mask by loading an image:
@@ -423,11 +424,11 @@ private Pixmap applyMask(Pixmap source) {
 ### Step 3 - Drawing the original and masked images
 ```java
 private void drawImages() {
-    /* Draw the original image in blue first to see transparency taking place. */
-    spriteBatch.setColor(Color.BLUE);
-    spriteBatch.draw(original, 0, 0, size, size);
-
-    /* Draw the masked image in red on top. */
+    /* Draw the original image for comparison. */
+    spriteBatch.setColor(Color.WHITE);
+    spriteBatch.draw(original, 0, size, size, size);
+    
+    /* Draw the masked image in red. */
     spriteBatch.setColor(Color.RED);
     spriteBatch.draw(masked, 0, 0, size, size);
 }
@@ -456,10 +457,122 @@ public void render() {
     shapeRenderer.end();
 }
 ```
-![Original and masked images + contours](https://imgur.com/93DNO1z.png)
+![Original and masked images + contours](https://imgur.com/NWR32Oj.png)
+## 6. Masking using Shaders and Textures (Any shape)
+This technique allows the mask to be any image or shape and takes alpha channel into account. This time we'll be using the libGDX’s ShaderProgram class in conjunction with the Texture class.
+### Step 1 - Preparations and defining our mask
+```java
+private final int size = 300;
+private Texture texture;
+private SpriteBatch spriteBatch1, spriteBatch2;
+private ShapeRenderer shapeRenderer;
 
-In red: The masked image
+@Override
+public void create() {
+    /* The fragment shader simply multiplies the fragment's usual alpha with
+     * our mask alpha, since we only care about the alpha channel, the Alpha
+     * Pixmap format is just what we need. */
+    Pixmap pixmap = new Pixmap(size, size, Alpha);
 
-In blue: The original image
+    /* Pixmap blending can result in some funky looking lines when
+     * drawing. You may need to disable it. */
+    pixmap.setBlending(None);
 
-In purple: The masked image with transparency, blending with the original image
+    /* The default color of a newly created Pixmap has an alpha value of 0
+     * play with different alpha values for different levels of transparency. */
+    pixmap.setColor(0, 0, 0, 1);
+
+    /* This setting will let us see some portions of the masked image. */
+    pixmap.fillCircle(size / 2, size / 4, size / 4);
+    pixmap.setColor(0, 0, 0, 0.25f);
+    pixmap.fillRectangle(size / 4, size / 2, size / 2, size / 2);
+
+    /* Create a Texture based on the pixmap.
+     * IMPORTANT: How we create the texture doesn't matter, this technique
+     * also allows, for example, to create it out of any supported format image */
+    Texture pixmapTex = new Texture(pixmap);
+
+    /* Bind the mask texture to TEXTURE<N> (TEXTURE1 for our purposes),
+     * which also sets the currently active texture unit. */
+    pixmapTex.bind(1);
+
+    /* However SpriteBatch will auto-bind to the current active texture,
+     * so we must now reset it to TEXTURE0 or else our mask will be
+     * overwritten. */
+    Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+
+    /* Some regular textures to draw on the screen. */
+    texture = new Texture(WEIRD_SHAPE_PATH);
+    texture.setFilter(Linear, Linear);
+
+    /* It's nicer to keep shader programs as text files in the assets
+     * directory rather than dealing with horrid Java string formatting. */
+    FileHandle vertexShader = Gdx.files.internal("shaders/shared/vertex.glsl");
+    FileHandle fragmentShader = Gdx.files.internal("shaders/masking/fragment.glsl");
+
+    /* Bonus: you can set `pedantic = false` while tinkering with your
+     * shaders. This will stop it from crashing if you have unused variables
+     * and so on. */
+    ShaderProgram.pedantic = false;
+
+    /* Construct our shader program. Spit out a log and quit if the shaders
+     * fail to compile. */
+    ShaderProgram shader = new ShaderProgram(vertexShader, fragmentShader);
+    if (!shader.isCompiled()) {
+        Gdx.app.log("Shader", shader.getLog());
+        Gdx.app.exit();
+    }
+
+    /* Tell our shader that u_texture will be in the TEXTURE0 spot and
+     * u_mask will be in the TEXTURE1 spot. We can set these now since
+     * they'll never change; we don't have to send them every render frame. */
+    shader.bind();
+    shader.setUniformi("u_texture", 0);
+    shader.setUniformi("u_mask", 1);
+
+    /* Construct a simple SpriteBatch using our shader program. */
+    spriteBatch1 = new SpriteBatch();
+    spriteBatch1.setShader(shader);
+
+    /* An unmodified SpriteBatch to draw the original image as reference
+     * we could also change the shader of spriteBatch1 back to the default. */
+    spriteBatch2 = new SpriteBatch();
+
+    /* Construct a simple ShapeRenderer to draw reference contours. */
+    shapeRenderer = new ShapeRenderer();
+    shapeRenderer.setAutoShapeType(true);
+    Gdx.gl.glLineWidth(2);
+}
+```
+### Step 2 - Drawing the contours of the mask for debugging purposes
+```java
+private void drawContours() {
+    /* Draw the contour of the masks. */
+    shapeRenderer.setColor(Color.CYAN);
+    shapeRenderer.rect(size / 4f, 0f, size / 2f, size / 2f);
+    shapeRenderer.circle(size / 2f, size * 0.75f, size / 4f);
+}
+```
+### Result
+```java
+@Override
+public void render() {
+    ScreenUtils.clear(Color.BLACK);
+
+    /* Draw our masked image. */
+    spriteBatch1.begin();
+    spriteBatch1.setColor(Color.RED);
+    spriteBatch1.draw(texture, 0, 0, size, size);
+    spriteBatch1.end();
+
+    /* Draw the original image unmasked for comparison. */
+    spriteBatch2.begin();
+    spriteBatch2.draw(texture, 0, size, size, size);
+    spriteBatch2.end();
+
+    shapeRenderer.begin();
+    drawContours();
+    shapeRenderer.end();
+}
+```
+![Masked sprite and original sprites](https://imgur.com/h7fgM3Z.png)
