@@ -38,7 +38,7 @@ private void drawMasked() {
      * and width and height define the size of the rectangle. */
 
     /* Draw our circle to be masked, we could also draw sprites with a SpriteBatch. */
-    shapeRenderer.set(Filled);
+    shapeRenderer.set(ShapeType.Filled);
     shapeRenderer.setColor(Color.RED);
     shapeRenderer.circle(100, 100, 100);
 
