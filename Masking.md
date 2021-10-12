@@ -168,7 +168,7 @@ public void render() {
 ```
 ![Circle masked by 2 rectangles](https://i.imgur.com/HEa7EQK.png)
 ## 3. Masking using the ShapeRenderer (Various Shapes)
-Alright rectangles are great but our needs are greater what now. This upcoming technique allows us to create more diversely shaped masks using libGDX’s ShapeRenderer.
+Alright rectangles are great but our needs are greater what now. This upcoming technique allows us to create more diversely shaped masks using libGDX’s ShapeRenderer. You can use a SpriteBatch, but because the masks are built from the geometry of what you're drawing it will not work as you expect. Texture regions will render as rectangles no matter what the image looks like.
 ### Step 1 - Preparations
 ```java
 private ShapeRenderer shapeRenderer;
