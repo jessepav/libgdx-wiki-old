@@ -118,7 +118,7 @@ private void drawMasked() {
 
     /* Draw the elements to be constrained to an area,
      * without masking this would render a red filled circle. */
-    shapeRenderer.set(Filled);
+    shapeRenderer.set(ShapeType.Filled);
     shapeRenderer.setColor(Color.RED);
     shapeRenderer.circle(100, 100, 100);
     shapeRenderer.flush();
@@ -199,7 +199,7 @@ private void drawMasks() {
     Gdx.gl.glColorMask(false, false, false, false);
 
     /* Render mask elements. */
-    shapeRenderer.set(Filled);
+    shapeRenderer.set(ShapeType.Filled);
     shapeRenderer.circle(100, 200, 100);
     shapeRenderer.triangle(0, 0, 100, 100, 200, 0);
     shapeRenderer.flush();
@@ -647,7 +647,7 @@ public void create() {
 ### Step 2 - Drawing the masked elements and the mask elements
 ```java
 private void drawCircles() {
-    shapeRenderer.set(Filled);
+    shapeRenderer.set(ShapeType.Filled);
 
     /* An example circle, remember to flush before changing the blending function */
     shapeRenderer.setColor(Color.RED);
@@ -755,7 +755,7 @@ private void draw() {
     Gdx.gl.glBlendFunc(GL20.GL_DST_COLOR, GL20.GL_ZERO);
 
     shapeRenderer.begin();
-    shapeRenderer.set(Filled);
+    shapeRenderer.set(ShapeType.Filled);
     shapeRenderer.rect(textX - 10, textY + 10, textWidth + 20, -(textHeight + 20),
             Color.LIME, Color.LIME, Color.BLACK, Color.BLACK);
     shapeRenderer.end();
