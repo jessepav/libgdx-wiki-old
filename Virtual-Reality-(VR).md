@@ -42,7 +42,7 @@ Gdx.app = <minimal implementation of Application interface>
 
 // setup a scene and model batch
 
-while (running)
+while (running) // See https://github.com/ValveSoftware/openvr/wiki/IVRCompositor_Overview
 {
    // OpenVR waitGetPoses();
    // OpenVR poll events
