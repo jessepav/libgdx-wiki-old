@@ -12,6 +12,8 @@ Additionally, the following demos from LWJGL may be useful for debugging:
 * [HelloOpenVR.java](https://github.com/LWJGL/lwjgl3/blob/master/modules/samples/src/test/java/org/lwjgl/demo/openvr/HelloOpenVR.java)
 * [HelloLibOVR.java](https://github.com/LWJGL/lwjgl3/blob/master/modules/samples/src/test/java/org/lwjgl/demo/ovr/HelloLibOVR.java)
 
+Also, see [https://github.com/Zomby2D/gdx-vr-extension](https://github.com/Zomby2D/gdx-vr-extension)
+
 ### OpenVR with offscreen GLFW window
 
 Using an offscreen GLFW window allows to render to VR without rendering or maintaining a window on the monitor's screen. This will allow achieving the fastest performance with OpenVR.
