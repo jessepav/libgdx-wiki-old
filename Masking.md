@@ -3,7 +3,7 @@ Masking is the technique of hiding portions of an image using the pixel informat
 ## Table of Contents
 1. [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
 2. [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
-3. [Masking using the ShapeRenderer](Masking#3-masking-using-the-shaperenderer-various-shapes)
+3. [Masking using the ShapeRenderer (Depth Buffer)](Masking#3-masking-using-the-shaperenderer-and-depth-buffer-various-shapes)
 4. [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
 5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
 6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
@@ -167,7 +167,7 @@ public void render() {
 }
 ```
 ![Circle masked by 2 rectangles](https://i.imgur.com/HEa7EQK.png)
-## 3. Masking using the ShapeRenderer (Various Shapes)
+## 3. Masking using the ShapeRenderer and Depth Buffer (Various Shapes)
 Alright rectangles are great but our needs are greater what now. This upcoming technique allows us to create more diversely shaped masks using libGDX’s ShapeRenderer. You can use a SpriteBatch, but because the masks are built from the geometry of what you're drawing it will not work as you expect. Texture regions will render as rectangles no matter what the image looks like.
 ### Step 1 - Preparations
 ```java
