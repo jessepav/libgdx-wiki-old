@@ -255,7 +255,7 @@ public void render() {
 }
 ```
 ![Circle masked by another circle and a triangle](https://imgur.com/Pmlfn7M.png)
-## 4. Masking using the Blending Mode (Shapes or Textures)
+## 4. Masking using Blending Mode (Shapes or Textures)
 For the demanding GDXer with complex masking needs, this technique allows us to have any mask imaginable and take the alpha channel into account for the first time! For this we’ll be using libGDX’s SpriteBatch.
 ### Step 1 - Preparations
 These are the images we're gonna use:
