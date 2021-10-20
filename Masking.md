@@ -3,12 +3,12 @@ Masking is the technique of hiding portions of an image using the pixel informat
 ## Table of Contents
 1. [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
 2. [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
-3. [Masking using the Depth Buffer](Masking#3-masking-using-the-depth-buffer)
-4. [Masking using blending mode](Masking#4-masking-using-blending-mode)
-5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
-6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures)
-7. [Masking using the BlendFuncSeparate (Removal)](Masking#7-masking-using-blendfuncseparate-removal)
-8. [Masking using blending mode (Tinting)](Masking#8-masking-using-blending-mode-tinting)
+3. [Masking using the Depth Buffer](Masking#3-masking-using-the-depth-buffer-shapes)
+4. [Masking using Blending Mode](Masking#4-masking-using-blending-mode-textures)
+5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-shapes-or-textures)
+6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-textures)
+7. [Masking using the BlendFuncSeparate](Masking#7-masking-using-blendfuncseparate-removal)
+8. [Masking using Blending Mode (Tinting)](Masking#8-masking-using-blending-mode-tinting)
 ## 1. Masking using glScissor (Rectangle)
 For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
 ### Step 1 - Preparations
@@ -167,7 +167,7 @@ public void render() {
 }
 ```
 ![Circle masked by 2 rectangles](https://i.imgur.com/HEa7EQK.png)
-## 3. Masking using the ShapeRenderer and Depth Buffer (Various Shapes)
+## 3. Masking using the Depth Buffer (Shapes)
 Alright rectangles are great but our needs are greater what now. This upcoming technique allows us to create more diversely shaped masks using libGDX’s ShapeRenderer. You can use a SpriteBatch, but because the masks are built from the geometry of what you're drawing it will not work as you expect. Texture regions will render as rectangles no matter what the image looks like.
 ### Step 1 - Preparations
 ```java
@@ -255,7 +255,7 @@ public void render() {
 }
 ```
 ![Circle masked by another circle and a triangle](https://imgur.com/Pmlfn7M.png)
-## 4. Masking using the SpriteBatch (Any shape)
+## 4. Masking using the Blending Mode (Shapes or Textures)
 For the demanding GDXer with complex masking needs, this technique allows us to have any mask imaginable and take the alpha channel into account for the first time! For this we’ll be using libGDX’s SpriteBatch.
 ### Step 1 - Preparations
 These are the images we're gonna use:
@@ -349,7 +349,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/Lmqecgk.png)
-## 5. Masking using Pixmaps (Any shape)
+## 5. Masking using Pixmaps (Shapes or Textures)
 This technique allows the mask to be any image or shape and takes the alpha channel into account. This time we'll be using the libGDX’s Pixmap class.
 ### Step 1 - Preparations
 ```java
@@ -456,7 +456,7 @@ public void render() {
 }
 ```
 ![Original and masked images + contours](https://imgur.com/NWR32Oj.png)
-## 6. Masking using Shaders and Textures (Any shape)
+## 6. Masking using Shaders (Textures)
 This technique allows the mask to be any image or shape and takes alpha channel into account. This time we'll be using the libGDX’s ShaderProgram class in conjunction with the Texture class.
 ### Step 1 - Preparations
 ```java
@@ -625,7 +625,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/h7fgM3Z.png)
-## 7. Masking using the FrameBuffer (Removal)
+## 7. Masking using the BlendFuncSeparate (Removal)
 Ideal if you wanna use the mask to hide portions of the masked elements.
 ### Step 1 - Preparations
 ```java
@@ -709,7 +709,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/ZsA3PRq.png)
-## 8. Masking using the FrameBuffer (Tinting)
+## 8. Masking using the Blending Mode (Tinting)
 Ideal if you wanna use the mask to tint or texture portions of the masked elements.
 ### Step 1 - Preparations
 ```java
