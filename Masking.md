@@ -4,9 +4,9 @@ Masking is the technique of hiding portions of an image using the pixel informat
 1. [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
 2. [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
 3. [Masking using the Depth Buffer](Masking#3-masking-using-the-depth-buffer-shapes)
-4. [Masking using Blending Mode](Masking#4-masking-using-blending-mode-textures)
+4. [Masking using Blending Mode](Masking#4-masking-using-blending-mode-shapes-or-textures)
 5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-shapes-or-textures)
-6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-textures)
+6. [Masking using Shaders](Masking#6-masking-using-shaders-textures)
 7. [Masking using the BlendFuncSeparate](Masking#7-masking-using-blendfuncseparate-removal)
 8. [Masking using Blending Mode (Tinting)](Masking#8-masking-using-blending-mode-tinting)
 ## 1. Masking using glScissor (Rectangle)
@@ -625,7 +625,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/h7fgM3Z.png)
-## 7. Masking using the BlendFuncSeparate (Removal)
+## 7. Masking using BlendFuncSeparate (Removal)
 Ideal if you wanna use the mask to hide portions of the masked elements.
 ### Step 1 - Preparations
 ```java
@@ -709,7 +709,7 @@ public void render() {
 }
 ```
 ![Masked sprite and original sprites](https://imgur.com/ZsA3PRq.png)
-## 8. Masking using the Blending Mode (Tinting)
+## 8. Masking using Blending Mode (Tinting)
 Ideal if you wanna use the mask to tint or texture portions of the masked elements.
 ### Step 1 - Preparations
 ```java
