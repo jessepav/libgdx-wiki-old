@@ -3,12 +3,12 @@ Masking is the technique of hiding portions of an image using the pixel informat
 ## Table of Contents
 1. [Masking using glScissor](Masking#1-masking-using-glScissor-rectangle)
 2. [Masking using the ScissorStack](Masking#2-masking-using-the-scissorstack-rectangles)
-3. [Masking using the ShapeRenderer (Depth Buffer)](Masking#3-masking-using-the-shaperenderer-and-depth-buffer-various-shapes)
-4. [Masking using the SpriteBatch](Masking#4-masking-using-the-spritebatch-any-shape)
+3. [Masking using the Depth Buffer](Masking#3-masking-using-the-depth-buffer)
+4. [Masking using blending mode](Masking#4-masking-using-blending-mode)
 5. [Masking using Pixmaps](Masking#5-masking-using-pixmaps-any-shape)
-6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures-any-shape)
-7. [Masking using the FrameBuffer (Removal)](Masking#7-masking-using-the-framebuffer-removal)
-8. [Masking using the FrameBuffer (Tinting)](Masking#8-masking-using-the-framebuffer-tinting)
+6. [Masking using Shaders + Textures](Masking#6-masking-using-shaders-and-textures)
+7. [Masking using the BlendFuncSeparate (Removal)](Masking#7-masking-using-blendfuncseparate-removal)
+8. [Masking using blending mode (Tinting)](Masking#8-masking-using-blending-mode-tinting)
 ## 1. Masking using glScissor (Rectangle)
 For the simplest of masking needs here’s a technique that allows us to create and apply a single rectangular mask using OpenGL's Scissor Test. The Scissor Test is a Per-Sample Processing operation that discards Fragments that fall outside of a certain rectangular portion of the screen.
 ### Step 1 - Preparations
