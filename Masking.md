@@ -52,7 +52,7 @@ private void drawMasked() {
 ### Step 3 - Drawing the contours for debugging purposes
 ```java
 private void drawContours() {
-    shapeRenderer.set(Line);
+    shapeRenderer.set(ShapeType.Line);
 
     /* Draw the circle's contour for comparison. */
     shapeRenderer.setColor(Color.GREEN);
@@ -140,7 +140,7 @@ _Also, if your camera moves, you'll need to recalculate the scissor area afterwa
 ### Step 3 - Drawing the contours for debugging purposes
 ```java
 private void drawContours() {
-    shapeRenderer.set(Line);
+    shapeRenderer.set(ShapeType.Line);
 
     /* The rectangular mask. */
     shapeRenderer.setColor(Color.CYAN);
@@ -227,7 +227,7 @@ private void drawContours() {
     /* Disable depth writing. */
     Gdx.gl.glDisable(GL20.GL_DEPTH_TEST);
 
-    shapeRenderer.set(Line);
+    shapeRenderer.set(ShapeType.Line);
 
     /* The circle and triangle masks. */
     shapeRenderer.setColor(Color.CYAN);
@@ -674,7 +674,7 @@ private void drawCircles() {
 ### Step 3 - Drawing the contours for debugging purposes
 ```java
 private void drawContours() {
-    shapeRenderer.set(Line);
+    shapeRenderer.set(ShapeType.Line);
 
     /* Contour of the masked circle */
     shapeRenderer.setColor(Color.GREEN);
