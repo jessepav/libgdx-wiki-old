@@ -75,7 +75,7 @@ public void render() {
     shapeRenderer.end();
 }
 ```
-![Circle masked by a rectangle](https://i.imgur.com/8iNQ7FM.png)
+![Circle masked by a rectangle](https://i.imgur.com/3VHdLDS.png)
 ## 2. Masking using the ScissorStack (Rectangles)
 A single rectangle could easily not be enough, here’s a technique that allows us to create and apply multiple rectangular masks using libGDX’s ScissorStack.
 ### Step 1 - Preparations
