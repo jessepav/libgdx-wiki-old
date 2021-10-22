@@ -87,7 +87,7 @@ private Rectangle scissors1, scissors2;
 @Override
 public void create() {
     /* The ScissorStack needs a camera to transform the clipping rectangles. */
-    camera = new OrthographicCamera();
+    OrthographicCamera camera = new OrthographicCamera();
     camera.setToOrtho(false, CAMERA_WIDTH, CAMERA_HEIGHT);
 
     /* We can use a SpriteBatch or a ShapeRenderer to draw our masked elements. */
