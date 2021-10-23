@@ -1,5 +1,5 @@
 # Configuration & querying
-libGDX has an elaborate API that lets you query monitors and display modes, and toggle vertical synchronization (vsync). This can be done either when configuring your application, or at runtime. **Note: Display mode changes are not supported by Android and iOS**
+libGDX has an elaborate API that lets you query monitors and display modes, and toggle vertical synchronization (vsync). This can be done either when configuring your application, or at runtime. **Note: Display mode changes are not supported by Android, iOS or HTML5.**
 
 ## Querying and setting monitors & display modes at configuration time
 Querying monitors and display modes at configuration time is platform specific. The following subsections illustrate what you can do on each platform with regards to monitors and display modes.
@@ -51,6 +51,8 @@ Finally, you can also specify whether your app should start with vsync enabled o
 ```java
 config.vSyncEnabled = true;
 ```
+
+Disabling vsync will allow your your app to run above your monitor's refresh rate, provided `foregroundFPS` has been set accordingly.
 
 ### LWJGL 3 backend
 The LWJGL 3 backend is much more elaborate when it comes to monitors and display modes. Unlike the LWJGL 2 backend, it supports multi-monitor setups.
