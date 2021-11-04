@@ -13,7 +13,7 @@ libGDX will automatically pause and resume all audio playback for you if your ap
 # Audio on Android #
 
 libGDX Android backend uses the `SoundPool` API to play `Sound`s and the `MediaPlayer` for `Music`. These API have some limitations and known issues in certain scenarios:
-- Latency is not great and the default implementation is not recommended for latency sensitive apps like rythm games.
+- Latency is not great and the default implementation is not recommended for latency sensitive apps like rhythm games.
 - Playing several sounds at the same time may cause performance issues on some devices. An easy way to fix it (with the limitation some methods are unsupported) is using the alternative Android implementation `AsynchronousAndroidAudio` by implementing `createAudio()`on `AndroidLauncher` like this:
 
 ```java
