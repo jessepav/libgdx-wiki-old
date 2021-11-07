@@ -34,7 +34,9 @@ sound.setLooping(id, true); // keeps the sound looping
 sound.stop(id);             // stops the looping sound 
 ```
 
-Note that these modifier methods have limited functionality in the JavaScript/WebGL back-end for now. As of 1.9.6 setPan() is only working when flash is supported and enabled `GwtApplicationConfiguration.preferFlash = true`
+***note:*** These modifier methods have limited functionality in the JavaScript/WebGL back-end for now. As of 1.9.6 `setPan()` is only working when flash is supported and enabled `GwtApplicationConfiguration.preferFlash = true`
+
+***note:*** `setPan()` method does not work with stereo sounds
 
 Once you no longer need a Sound, make sure you dispose of it:
 
