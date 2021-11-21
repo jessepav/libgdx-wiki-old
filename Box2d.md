@@ -504,7 +504,7 @@ In order to listen to this sensor contact, we need to implement the ContactListe
 
 ## Contact Listeners ##
 The Contact Listeners listen for collisions events on a specific fixture. The methods are passed a Contact object, which contain information about the two bodies involved.
-The beginContact method is called when the object overlap another. When the objects are no longer colliding, the endContact method is called.
+The beginContact method is called when the object overlaps another. When the objects are no longer colliding, the endContact method is called.
 
 ```java
 public class ListenerClass implements ContactListener {
