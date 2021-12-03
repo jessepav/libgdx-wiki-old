@@ -64,7 +64,7 @@ To update our simulation we need to tell our world to step. Stepping basically u
 world.step(1/60f, 6, 2);
 ```
 
-The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libGDX recommends using a value between `1/45f` (which is 1/45th of a second) and `1/300f` (1/300th of a second).
+The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libGDX recommends using a value between `1/60f` (which is 1/60th of a second) and `1/240f` (1/240th of a second).
 
 The other two arguments are `velocityIterations` and `positionIterations`. For now we will leave these at `6` and `2`, but you can read more about them in the Box2D documentation.
 
