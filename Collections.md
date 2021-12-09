@@ -41,7 +41,7 @@ If any code inside `begin()` and `end()` would modify the SnapshotArray, the int
 
 ### [DelayedRemovalArray](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/DelayedRemovalArray.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/DelayedRemovalArray.java) ###
 
-This is identical to Array except any removals done after `begin()` is called are queued and only occur once `end()` is called. This can be used to avoid concurrent modification. Note that code using this type of list must be aware that removed items are not actually removed immediately. Because of this, often !SnapshotArray is easier to use.
+This is identical to Array except any removals done after `begin()` is called are queued and only occur once `end()` is called. This can be used to avoid concurrent modification. Note that code using this type of list must be aware that removed items are not actually removed immediately. Because of this, often SnapshotArray is easier to use.
 
 
 ### [PooledLinkedList](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/PooledLinkedList.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/PooledLinkedList.java) ###
