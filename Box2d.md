@@ -122,7 +122,7 @@ BodyDef bodyDef = new BodyDef();
 // We set our body to dynamic, for something like ground which doesn't move we would set it to StaticBody
 bodyDef.type = BodyType.DynamicBody;
 // Set our body's starting position in the world
-bodyDef.position.set(100, 300);
+bodyDef.position.set(5, 10);
 
 // Create our body in the world using our body definition
 Body body = world.createBody(bodyDef);
