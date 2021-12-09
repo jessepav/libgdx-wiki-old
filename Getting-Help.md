@@ -3,7 +3,7 @@ The [libGDX community](https://libgdx.com/community/) is glad to help you when y
 ## Contents
 
 * [Helping Yourself](#helping-yourself)
-* [Help us help you](#help-us-help-you)
+* [Help Us Help You](#help-us-help-you)
 * [Title](#title)
 * [Context](#context)
 * [Relevance](#relevance)
