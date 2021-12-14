@@ -6,7 +6,7 @@ That's right! You can make your very own libGDX games that run in an HTML5-capab
 
 **BUT IT SOMETIMES ISN'T, AT FIRST**
 
-So there are a few things that are fundamentally different about developing using GWT as opposed to running a desktop project. You'll want to get familiar with two Gradle tasks in particular; you can launch these tasks from your IDE if you aren't comfortable on the command line, but command-line Gradle tends to avoid problems when the IDE isn't working as well as we would like. `gradlew html:superDev` will be your main tool during development; it allows for a much-improved debugging experience and allows quickly reloading changes to the Java code. `gradlew html:dist` produces a fully-functioning web page that can be uploaded to a static web host (such as the free GitHub Pages service); it also optimizes the web page so the game in it will perform better, which makes `dist` take a little longer than `superDev`.
+So there are a few things that are fundamentally different about developing using GWT as opposed to running a desktop project. You'll want to get familiar with two Gradle tasks in particular; you can launch these tasks from your IDE if you aren't comfortable on the command line, but command-line Gradle tends to avoid problems when the IDE isn't working as well as we would like. `gradlew html:superDev` will be your main tool during development; it allows for a much-improved debugging experience and allows quickly reloading changes to the Java code. `gradlew html:dist` produces a fully-functioning web page that can be uploaded to a static web host (such as [itch.io](https://itch.io/developers) or [GitHub Pages](https://pages.github.com/), both free); it also optimizes the web page so the game in it will perform better, which makes `dist` take a little longer than `superDev`.
 
 ## superDev
 
@@ -163,8 +163,8 @@ The implementation the official HTML5 backend uses has some other restrictions, 
   * Some drawings (eg. lines) are antialiased which is not always wanted. If you need non-antialiased lines, you can [draw it pixel by pixel](https://github.com/libgdx/libgdx/issues/6019#issuecomment-702916344) or use FrameBuffer with a ShapeRenderer to achieve it.
 * WebGL 1.0 is used and has its own limitations compared with OpenGL or GLES, among them:
   * NPOT (non power of two) textures are not supported with MipMap filters and/or Repeat wrapping.
-  * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders
-* Some libGDX extensions are not supported or require additional libraries :
+  * Gdx.graphics.supportsExtension(...) should be called for each extension prior to enabling it in shaders.
+* Some libGDX extensions are not supported or require additional libraries:
   * Bullet
   * Freetype requires https://github.com/intrigus/gdx-freetype-gwt
 
