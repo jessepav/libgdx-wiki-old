@@ -1,4 +1,4 @@
-**NOTICE:** This page is outdated. Java applets are no longer supported by any major browser other than Internet Explorer.
+**NOTICE:** This page is outdated. Java applets are no longer supported by any major web browser other than Internet Explorer. See [HTML5 Backend and GWT Specifics](https://github.com/libgdx/libgdx/wiki/HTML5-Backend-and-GWT-Specifics) instead.
 
 ## Rationale ##
 
