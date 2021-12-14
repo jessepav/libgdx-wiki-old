@@ -1,5 +1,3 @@
-# Deploying as an Applet #
-
 **NOTICE:** This page is outdated. Java applets are no longer supported by any major browser other than Internet Explorer.
 
 ## Rationale ##
