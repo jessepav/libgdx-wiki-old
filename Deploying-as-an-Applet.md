@@ -1,5 +1,7 @@
 # Deploying as an Applet #
 
+**NOTICE:** This page is outdated. Java applets are no longer supported by any major browser other than Internet Explorer.
+
 ## Rationale ##
 
 When you are ready to start distributing your game on PC, you will inevitably hit the first problem that many game devs face:  getting users to convert from seeing a trailer or Let's Play of your game to actually playing it themselves.  Particularly for free / free-to-play games, it can be surprisingly challenging to convince users to download an installer.  Our goal is to make it as easy as possible for users to try our game.
