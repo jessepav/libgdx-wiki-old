@@ -39,7 +39,7 @@ Surprisingly, fullscreen functionality actually works on the HTML backend. To en
 Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 ```
 
-The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iOS. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following ([PR pending](https://github.com/libgdx/libgdx/pull/5691)):
+The user will be prompted to press "ESC" to exit fullscreen. And it even works on mobile. Great! It does have some caveats though. Turns out you can't activate full screen on iOS. Also, if you choose to use the "Resizable Application" option in the HTML Launcher, you'll need to rewrite the ResizeListener to the following:
 
 ```java
 class ResizeListener implements ResizeHandler {
