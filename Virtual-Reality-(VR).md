@@ -20,7 +20,7 @@ Using an offscreen GLFW window allows to render to VR without rendering or maint
 
 This isn't supported yet by libGDX, because some hacking is required, but the general flow is the following.
 
-```
+```JAVA
 Lwjgl3NativesLoader.load();
 errorCallback = GLFWErrorCallback.createPrint(System.err);
 GLFW.glfwSetErrorCallback(errorCallback);
